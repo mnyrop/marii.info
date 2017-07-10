@@ -1,0 +1,31 @@
+---
+layout: page
+title: Omekyll— <br>Prototypes for Jekyll, IIIF, Lunr, D3js, and more.
+---
+## Objectives:
+Create proof-of-concept Jekyll sites for displaying digital collections, showcasing the extent of what static sites can do (i.e. without server scripts or databases!), and pushing those limits.
+
+## Related questions:
+
+1. How can I make a static site with an IIIF image viewer, starting from a local folder full of images? [&nbsp;__Spoiler:__ [Demo](../papergods_site)&nbsp;]
+
+2. How can I make a IIIF static site, starting with a table of links to existing IIIF images? [&nbsp;__Spoiler:__ [Demo](../historical-photos)&nbsp;]
+
+3. How can I generate IIIF image pages, including proper metadata? [&nbsp;__Spoiler:__ [Plugin](https://github.com/mnyrop/YAML-Splitter)&nbsp;]
+
+4. How can I integrate client-side search? [&nbsp;__Spoiler:__ [Library](https://lunrjs.com/)&nbsp;]
+
+5. How can I make my Jekyll site power a D3js visualization? [&nbsp;__Spoiler:__ [Blog Post]({{ site.url }}/main/2017/04/03/autogenerate-json-for-d3-from-jekyll-collection-data/)&nbsp;]
+
+6. How can I generate complex Jekyll collections, modeling the functionality of a (relational) database statically? [ __???__ ]
+
+<br>
+<hr>
+<br>
+
+## Demo Sites:
+[ [v1-Paper-Gods](../papergods_site) ] [ [v2-Butler-Historical-Photos](../historical-photos) ]
+## Repos:
+[ [v1-Paper-Gods](https://github.com/mnyrop/Paper-Gods-DLST-Demo) ] [ [v2-Butler-Historical-Photos](https://github.com/mnyrop/Butler-Historical-Photos) ]
+## Tools:
+[ [YAML-Splitter Plugin](https://github.com/mnyrop/YAML-Splitter) ]

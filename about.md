@@ -1,6 +1,15 @@
 ---
 layout: page
-title: marii
+title: marii_nø
 permalink: about
 ---
-{{ site.description }}
+<center>
+<p>
+
+<strong>digital humanities developer</strong><br/>
+@columbia university<br/><br/>
+planetary computation, cybernetic history, soviet sci-fi, &fiber art.
+<br/>
+
+</p>
+</center>

@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Moving from Wordpress to Jekyll: Tips for the Alternate Route"
+title:  "Moving from Wordpress to Jekyll:<br> Tips for the Alternate Route"
 categories: main
 date: 2017-05-05
 ---
@@ -11,10 +11,10 @@ So, if you're like me and can't get the plugin to work (for whatever your reason
 
 ## The roadmap:
 
-1-2 &emsp;| A Wordpress plugin spits out a `.csv`<br/>
-3 &emsp;| You transform it into a clean/usable `.csv` using OpenRefine<br/>
-4 &emsp;| An in-browser or command line tool of choice converts it to `.yaml`<br/>
-5-6 &emsp;| A Jekyll plugin generates new `.markdown` pages from the `.yaml`
+__1-2__ — A Wordpress plugin spits out a `.csv`<br/>
+__3__ — You transform it into a clean/usable `.csv` using OpenRefine<br/>
+__4__ — An in-browser or command line tool of choice converts it to `.yaml`<br/>
+__5-6__ — A Jekyll plugin generates new `.markdown` pages from the `.yaml`
 
 ## Roadmap explained, with gotchas:
 
@@ -55,9 +55,9 @@ __VI. Relativize your permalinks__ by removing the protocol, domain, and any tra
 __VII. Export!__ (sticking with comma separated values.)
 
 <br/>
-<hr><hr>
+<hr>
 ___Note: These steps do not guarantee that you'll have valid YAML after you export and convert your CSV, but they'll help you avoid a lot of the pitfalls that I fell into on and off for a day.___
-<hr><hr>
+<hr>
 <br/>
 
 #### 4. Convert to YAML and lint it.

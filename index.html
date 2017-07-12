@@ -8,7 +8,10 @@ layout: default
 
 	words and detritus re: digital-humanities, jekyll, static-sites, json, yaml, python, pandas, numpy, minimal-computing, digital-collections, digital-publishing, natural-language-processing, data-visualization, web-scraping, document-parsing, media-materialism, shell-scripting, speculative-fiction, and ____________________________.
 
-	{% for post in site.posts %}
+	<br/><br/><br/>
+
+	{% assign sticky_posts = site.posts | where: "sticky", true %}
+	{% for post in sticky_posts  %}
 		{% unless post.next %}
 			<h3>{{ post.date | date: '%Y' }} &#172;</h3>
 		{% else %}
@@ -21,11 +24,13 @@ layout: default
 
 		<ul>
 			<li>
-				<div class="post-date">
-					<span>&nbsp;&nbsp;{{ post.date | date: "%b %d" }}&nbsp;&nbsp;</span>
+				<div class="post-date" style="padding-top:10px;">
+					<a href="{{ post.url | prepend: site.baseurl }}">
+						<span>&nbsp;{{ post.date | date: "%b %d" }}&nbsp;</span>
+					</a>
 				</div>
 				<div class="title">
-					<a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+					<a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}<a/>
 				</div>
 			</li>
 		</ul>

@@ -6,7 +6,7 @@ layout: default
 
 	<h1 style="font-size:40px">marii_nø</h1>
 
-	words and detritus re: digital-humanities, jekyll, static-sites, json, yaml, python, pandas, numpy, digital-collections, digital-publishing, natural-language-processing, data-visualization, web-scraping, document-parsing, shell-scripting, and ___________________________________.
+	words and detritus re: digital-humanities, jekyll, static-sites, json, yaml, python, pandas, numpy, minimal-computing, digital-collections, digital-publishing, natural-language-processing, data-visualization, web-scraping, document-parsing, media-materialism, shell-scripting, speculative-fiction, and ____________________________.
 
 	{% for post in site.posts %}
 		{% unless post.next %}
@@ -22,7 +22,7 @@ layout: default
 		<ul>
 			<li>
 				<div class="post-date">
-					<span>{{ post.date | date: "%b %d" }}</span>
+					<span>&nbsp;&nbsp;{{ post.date | date: "%b %d" }}&nbsp;&nbsp;</span>
 				</div>
 				<div class="title">
 					<a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>

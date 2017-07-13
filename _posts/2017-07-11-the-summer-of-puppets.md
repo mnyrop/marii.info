@@ -16,7 +16,7 @@ This post is part 1 of 4 in a series. Feel free to skip around to:<br/><br/>__[p
 
 # Enter: Bunraku
 
-A few months ago, I was given access to a MySQL database with 27 tables of data on _[Bunraku](https://en.wikipedia.org/wiki/Bunraku)_, or Japanese puppet theater. The data consists primarily of digitized images from the Barbara Curtis Adachi Bunraku Collection housed here at [Columbia University Libraries](http://library.columbia.edu), but it also contains an lot of relational data on the Bunraku community as Barbara encountered it—which is to say, as a rich network of performers, plays, productions, puppets, craftsmen, narrators, musicians, authors, theaters, instruments, old friends, and even older tales. To be more specific, though, the data models the complex interrelations of...
+A few months ago, I was given access to a MySQL database with 27 tables of data on _[Bunraku](https://en.wikipedia.org/wiki/Bunraku)_, or Japanese puppet theater. The data consists primarily of digitized images from the Barbara Curtis Adachi Bunraku Collection here at [Columbia University Libraries](http://library.columbia.edu), but it also contains an lot of relational data on the Bunraku community as Barbara encountered it—which is to say, as a rich network of performers, plays, productions, puppets, craftsmen, narrators, musicians, authors, theaters, instruments, old friends, and even older tales. To be more specific, though, the data models the complex interrelations of...
 
 - 123 __authors__,<br/>
 - 2,107 __characters__,<br/>
@@ -37,7 +37,7 @@ A few months ago, I was given access to a MySQL database with 27 tables of data 
 
 # Act 1: The Task
 
-Both the MySQL database and the PHP site it powers have been slated for retirement this summer, so my task has been to create a modern, sustainable, and [static](https://en.wikipedia.org/wiki/Web_template_system#Static_page_generators) replacement. It will need to handle each of the ten main data types, connecting authors to the plays they'd written, connecting those plays to their respective performances (via productions), connecting performers to those performances, and so on in a semi-hierarchical and sprawling fashion.
+Both the MySQL database and the PHP site it powers have been slated for retirement this summer, so my task has been to create a modern, sustainable, and [static](https://en.wikipedia.org/wiki/Web_template_system#Static_page_generators) replacement. It needs to handle each of the ten main data types—connecting authors to the plays they'd written, connecting those plays to their respective performances (via productions), connecting performers to those performances, and so on in a semi-hierarchical and sprawling fashion.
 
 
 Sounds a bit tedious but simple enough. Yet the project necessitated tackling several difficult (or at least new) questions, namely:

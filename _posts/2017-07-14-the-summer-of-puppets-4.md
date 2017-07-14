@@ -39,6 +39,11 @@ It handles relative/massive image sets by implementing lazy load in a jQuery car
 <iframe width="100%" height="700" src="//jsfiddle.net/marii_/zkdzy0qq/2/embedded/result,js/" allowfullscreen="allowfullscreen" frameborder="0" style="box-shadow: 2px 2px 4pc #23352a;"></iframe>
 <br/><br/>
 
+# tl;dr.
+
+
+In: Cake PHP site powered by Relational MYSQL database<br/>1: MySQL dump to CSVs<br/>2: Import CSVs into [IPython](https://ipython.org/) as [Pandas](http://pandas.pydata.org/) dataframes<br/>3: Merge relational data (from CSV jointables) onto Dataframes by type<br/>4: Export Dataframes as JSON records (and CSVs, for archival purposes only).<br/>5: Drop null key:value pairs from JSON (bash [JQ](https://stedolan.github.io/jq/))<br/>6: Convert (no nulls) JSON to YAML (bash [Pyyaml](http://pyyaml.org/))<br/>7: Generate [Jekyll collections](https://jekyllrb.com/docs/collections/) (and pages) from YAML using [Yaml-Splitter plugin](https://github.com/mnyrop/yaml-splitter)<br/>Out: Static Jekyll site powered by YAML data, with JSON index for static search
+
 # sequel/teaser
 
 On the horizon:

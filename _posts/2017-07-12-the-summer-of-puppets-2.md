@@ -19,7 +19,7 @@ After taking a detour prototyping with [Google Lovefield](https://google.github.
 
 #### In: <span style="font-weight:400">MySQL dump</span><br/>Tools: <span style="font-weight:400">[OpenRefine](http://openrefine.org/) / [json-schema](http://json-schema.org/)</span>
 
-I started by using a simple entity relationship diagramming (ERD) tool and [JSON Schema](http://json-schema.org/) to plan out what each data type (e.g. play, kashira, character, etc.) should look like at the end of the processing stage by asking/answerinq questions like: _Which keys does each type need? Which keys should be named in a standardized way across data types? What kind of value does a given key expect (maybe an int? a nullable string...? ), and does it expect 1 or many?_
+I started by using a simple entity relationship diagramming (ERD) tool and [JSON Schema](http://json-schema.org/) to plan out what each object type (e.g. play, kashira, character, etc.) should look like at the end of the processing stage by asking/answerinq questions like: _Which keys does each type need? Which keys should be named in a standardized way across object types? What kind of value does a given key expect (maybe an int? a nullable string...? ), and does it expect 1 or many?_
 
 <br/><a href="{{ "/images/erd.png" | relative_url }}"><img src="{{ "/images/erd.png" | relative_url }}" style="box-shadow: 2px 2px 4pc #23352a;"/><a/><br/><br/>
 
@@ -38,13 +38,13 @@ Once each type was reasonably mapped out, I exported the MySQL database as a set
 
 Next I created an [iPython](https://ipython.org/) (aka Jupyter) notebook running Python 2.7 and imported [Pandas](http://pandas.pydata.org/), which is a data analysis library built on [Numpy](http://www.numpy.org/). Pandas works primarily with a datatype called a dataframe, which takes its name from the same type in [R](https://www.r-project.org/about.html).
 
-After reading each CSV file into my Jupyter notebook as a Pandas dataframe, I was able to perform powerful SQL-like tasks on the data, including a chained `.merge()`, `.groupby()`, `.apply(list)` function that allowed me to merge a join table onto dataframe, appending an array of ids from the join to each row.
+After reading each CSV file into my Jupyter notebook as a Pandas dataframe, I was able to perform powerful SQL-like tasks on the data, including a chained `.merge()`, `.groupby()`, `.apply(list)` function that allowed me to merge a join table onto a dataframe, appending an array of ids from the join onto each row.
 
-For example, given a dataframe of authors and a join table of `author_ids` and `play_ids`, the function (shown below) will merge a list of `play_ids` on to each corresponding author record. This is exactly the task I needed to perform for most datatypes—adding multiple plays to each author, add multiple performances to each play, and multiple scenes to each performance, and so on.
+For example, given a dataframe of authors and a join table of `author_ids` and `play_ids`, the function (shown below) will merge a list of `play_ids` on to each corresponding author record. This is exactly the task I needed to perform on most data objects—adding multiple plays to each author, multiple performances to each play, multiple scenes to each performance, and so on.
 
 <br/><img src="{{ "/images/ipy.png" | relative_url }}" style="box-shadow: 2px 2px 4pc #23352a;max-width:600px;"/><br/><br/>
 
-Once each dataframe was transformed to mirror the JSON schema I'd planned, I wrote them out to new json files using Pandas' `df.to_json()` function. [You can see the complete process and notebook [here](https://github.com/mnyrop/bunraku-ipy/blob/master/bunraku-online.ipynb).]
+Once each dataframe was transformed to mirror the JSON schema I'd planned, I wrote them out to new json files using Pandas' `.to_json(orient='records')` function. [You can see the complete process and notebook [here](https://github.com/mnyrop/bunraku-ipy/blob/master/bunraku-online.ipynb).]
 
 #### Out: <span style="font-weight:400">[JSON](https://github.com/mnyrop/bunraku-ipy/tree/master/out/json)</span>
 
@@ -54,7 +54,7 @@ Once each dataframe was transformed to mirror the JSON schema I'd planned, I wro
 
 #### In: <span style="font-weight:400">[JSON](https://github.com/mnyrop/bunraku-ipy/tree/master/out/json)</span><br/>Tools: <span style="font-weight:400">[JQ](https://stedolan.github.io/jq/) / [PyYaml](http://pyyaml.org/)</span>
 
-With the bulk of the processing done, I used a few post-processing tricks to make my JSON files smaller and more usable. I used the JSON manipulation library [JQ](https://stedolan.github.io/jq/) to drop null ket:value pairs from my files, since most dataypes (especially images) had a _lot_ of empty fields. I also used the option `--compact-output` to minify the non-null files:
+With the bulk of the processing done, I used a few post-processing tricks to make my JSON files smaller and more usable. I used the JSON manipulation library [JQ](https://stedolan.github.io/jq/) to drop null key:value pairs from my files, since most objects (especially images) had a _lot_ of empty fields. I also used the option `--compact-output` to minify the non-null files:
 
 ```bash
 $ jq 'del(.[][] | nulls)' --compact-output [IN-FILENAME] > [OUT-FILENAME]

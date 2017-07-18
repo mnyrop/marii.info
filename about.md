@@ -9,7 +9,6 @@ permalink: about
 <strong>digital humanities developer</strong><br/>
 @columbia university<br/><br/>
 planetary computation, cybernetic history, soviet sci-fi, &fiber art.
-<br/>
-
+<br/><br/>
 </p>
 </center>

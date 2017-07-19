@@ -9,11 +9,11 @@ sticky: true
 <iframe width="100%" height="600" src="//jsfiddle.net/marii_/uwzpnv5r/27/embedded/result,js/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 
 
-## The goal:
+# The goal:
 
 Produce a d3.js [force-directed graph](https://bl.ocks.org/mbostock/4062045) that visualizes a collection in your [Jekyll site](https://jekyllrb.com/) via tag clusters.
 
-## How to do it:
+# How to do it:
 __1.  Set up your Jekyll collection.__<br/>
 You can find tips for how to do that [here](https://jekyllrb.com/docs/collections/#step1).
 <br/><br/>
@@ -37,7 +37,7 @@ Whew. This sounds like a lot, but it's really not so bad. I promise that the hur
 __4.   Lastly, write or borrow some d3 + js force graph code.__<br/>
 You're welcome to use [mine](https://jsfiddle.net/marii_/uwzpnv5r/27/) as a starting place.
 
-## The JSON:
+# The JSON:
 
 Different visualizations generally want different data in different formats and/or structures. Luckily, most force-directed graphs (with the exception of [hierarchical graphs!](https://bl.ocks.org/mbostock/1093130)) want two JSON arrays: one with nodes, one with links. A rule of thumb: at minimum, each node needs an identifier key (e.g an `id`, `title`, or `name`), and each link needs a `source` node and a `target` node. You can add additional key/value pairs for more complex visualizations, but the following is a good standard:
 <br/><br/>
@@ -61,73 +61,63 @@ In our example, nodes should include individual collection items as well as tags
 
 *__Note!__* &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The following is for writing liquid to generate both the list of nodes __and__ the list of links. However, many templates for force graphs can generate the list of nodes for you, from your list of links. So feel free to cheat/simplify what's below, to only generate the link array!
 <br/><br/>
-## The Liquid
+# The Liquid
 
-Below you'll find step-by-step instructions for writing Liquid > JSON that can drive a D3 force graph. It assumes that you understand Jekyll and the basics of its templating engine Liquid. If you just want to copy the Liquid code in its entirety, you can grab the raw file [here](https://gist.githubusercontent.com/mnyrop/d5087941c49ef23f2926f7fe84a9ff49/raw/159424e38d386da8340a98766ade1e6d7ce7ac26/force-tag-json-gen.json)—just make sure its saved as a `.json` file in the root of your site, and Jekyll will compile it as valid JSON in your `_site` folder for you. But if you know the basics of Liquid and want to better understand the process in order to power your own visualizations, keep reading.
+Below you'll find step-by-step instructions for writing Liquid > JSON that can drive a D3 force graph. It assumes that you understand Jekyll and the basics of its templating engine Liquid. If you just want to copy the Liquid code in its entirety, you can grab the raw file [here](https://gist.github.com/mnyrop/17c54380e347f37beaa64cf8d2a64785)—just make sure its saved as a `.json` file in the root of your site, and Jekyll will compile it as valid JSON in your `_site` folder for you. But if you know the basics of Liquid and want to better understand the process in order to power your own visualizations, keep reading.
 
-__1. Create a variable `{% raw  %}{{ tags }}{% endraw %}` by looping through each collection item and joining its tag(s) into one long string, each separated by a `^` character. Then make a unique [pseudo-array / substring list](https://shopify.github.io/liquid/basics/types/#initializing-arrays) from `{% raw  %}{{ tags }}{% endraw %}` called `{% raw  %}{{ tag_list }}{% endraw %}`.__
+__1. Create a variable `{% raw  %}{{ tags }}{% endraw %}` by looping through each collection item and joining its tag(s) into one long string, each separated by a `^` character. Then make a unique [pseudo-array / substring list](https://shopify.github.io/liquid/basics/types/#initializing-arrays) from `{% raw  %}{{ tags }}{% endraw %}` called `{% raw  %}{{ tag_nodes }}{% endraw %}`.__
 
 {% highlight liquid %}{% raw  %}
 
 {% capture tags %}
-  {% for item in site.[[MY_COLLECTION]] %}
-    {% for t in item.tags %}
-      {{ t }}
-      {% unless forloop.last %}^{% endunless %}
-    {% endfor %}
-    {% unless forloop.last %}^{% endunless %}
-  {% endfor %}
-{% endcapture %}
-
-{% assign tag_list = tags | strip | strip_newlines| split: "^" | uniq %}
-
-{% endraw %}{% endhighlight %}
-
-__2. Now the tricky part: make a variable `{% raw  %}{{ links }}{% endraw %}`. Then loop through the collection to see if a given item has a given tag from tag list and, if so, capture it as d3 link json and append it to `{% raw  %}{{ links }}{% endraw %}` separated by a `^` character. Then make another unique pseudo-array / substring `{% raw  %}{{ link_list }}{% endraw %}` by splitting `{% raw  %}{{ links }}{% endraw %}` and cleaning any mistakenly captured tabs, trailing spaces, or newlines.__
-
-{% highlight liquid %}{% raw  %}
-{% capture links %}
-  {% for item in site.[MY_COLLECTION] %}
-    {% for tag in taglist %}
-      {% for t in item.tags %}
-        {% if t == tag %}
-          {% capture link_temp %}
-            {"source": {{ item.title | strip_newlines | jsonify }}, "target": {{ t | jsonify }}, "value": 1}^
-          {% endcapture %}
-          {% if link_temp != "" %}
-            {{ links | append: link_temp }}
-          {% endif %}
-          {% assign link_temp = "" %}
-        {% endif %}
-      {% endfor %}
+  {% for item in site.paper_gods %}
+    {% assign last = forloop.last %}
+    {% for tag in item.tag %}
+      {{ tag | strip_html | strip_newlines }}{% unless last %}^{% endunless %}
     {% endfor %}
   {% endfor %}
 {% endcapture %}
 
-{% assign link_list = links | strip | split: "^" %}
+{% assign tag_nodes = tags | split: '^' | uniq %}
 
 {% endraw %}{% endhighlight %}
 
-__3. Make a variable `{% raw  %}{{ my_json }}{% endraw %}` by printing the appropriate json formatting, assigning nodes (including collection items as well as unique tags from `{% raw  %}{{ tag_list }}{% endraw %}`), and links from `{% raw  %}{{ link_list }}{% endraw %}`. Nodes can include site URLs if you want to use your force graph as a tool for navigating your Jekyll site.__
+__2. Now make a variable `{% raw  %}{{ links }}{% endraw %}`. Then loop through each collection item and, for each tag associated with that item, make A JSON object with the item as the `source` and the tag as the `target` and capture it as the temporary variable `{% raw  %}{{ linkstring }}{% endraw %}`. Append that captured `{% raw  %}{{ linkstring }}{% endraw %}` to `{% raw  %}{{ links }}{% endraw %}`, separated by a `^` character. Finally, make another unique pseudo-array / substring `{% raw  %}{{ link_array }}{% endraw %}` by splitting `{% raw  %}{{ links }}{% endraw %}` by the `^` character and cleaning any mistakenly captured tabs, trailing spaces, or newlines.__
 
 {% highlight liquid %}{% raw  %}
 
-{% capture my_json %}
-  {
-    "nodes": [
-      {% for item in site.[MY_COLLECTION] %}
-        { "id": {{ item.title | strip_newlines | jsonify }}},
-      {% endfor %}
-      {% for tag in tag_list %}
-        { "id": {{ tag | jsonify }}}{% unless forloop.last %},{% endunless %}
-      {% endfor %}
-    ],
-    "links": [
-      {% for link in link_list %}
-        {{ link | strip | strip_newlines }}{% unless forloop.last %},{% endunless %}
-      {% endfor %}
-    ]
-  }
+{% assign links = "" %}
+
+{% for item in site.paper_gods %}
+  {% for tag in item.tag %}
+    {% capture linkstring %}
+      { "source": {{ item.title | strip_newlines | strip_html | strip | jsonify }}, "target": {{ tag | jsonify }} }^
+    {% endcapture %}
+    {% assign links = links | append: linkstring %}
+  {% endfor %}
+{% endfor %}
+
+{% assign link_array = links | strip | strip_newlines | split: "^" %}
+
+{% endraw %}{% endhighlight %}
+
+__3. Make a variable `{% raw  %}{{ json }}{% endraw %}` by printing the appropriate json formatting, assigning nodes (including collection items as well as unique tags from `{% raw  %}{{ tag_nodes }}{% endraw %}`), and links from `{% raw  %}{{ link_array }}{% endraw %}`. Nodes can include site URLs if you want to use your force graph as a tool for navigating your Jekyll site, or groups if you want to differentiate nodes for future functional/style distinctions.__
+
+{% highlight liquid %}{% raw  %}
+
+{% capture json %}
+{
+  "nodes": [
+    {% for item in site.paper_gods %}{ "id": {{ item.title | strip_newlines | jsonify }}, "url": {{ site.baseurl | append: item.url | jsonify }}, "group": 1 },
+    {% endfor %}
+    {% for tag in tag_nodes %}{ "id": {{ tag | strip | strip_newlines | jsonify }}, "group": 2 }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ],
+  "links": [
+    {% for link in link_array %}{{ link | strip | strip_newlines }}{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ]
+}
 {% endcapture %}
 
 {% endraw %}
@@ -136,7 +126,7 @@ __3. Make a variable `{% raw  %}{{ my_json }}{% endraw %}` by printing the appro
 __4. Finally, print the resulting json with any leftover tabs, trailing spaces, and/or newlines removed. Your final file (rendered in your `_site` folder) will be the output of this one line, since the Liquid above only captures and assigns information—it doesn't print it out.__
 {% highlight liquid %}{% raw  %}
 
-{{ my_json | strip }}
+{{ json | strip }}
 
 {% endraw %}
 {% endhighlight %}
@@ -210,10 +200,9 @@ For my example collection, the json output looks like this:
 
 <br/><br/>
 
-## Final Thoughts:
+# Last Thoughts:
 
 This result might not look super impressive just yet—especially since our example output is barely larger than our liquid template! However, you can use the same or a similar process to generate JSON that is way larger, way more complicated, and way more visually impactful. And did I mention that it will update automatically as your site grows??!! Since liquid is parsed on `jekyll build` and `jekyll serve` just like markdown, you won't need to touch your JSON-generating file again (unless you want to change the structure of it, and prototype something new).
 
-*Check back for an improved example with overlapping categories and nodes that link to generated pages!*
 
 <br/><br/><br/><br/><br/>

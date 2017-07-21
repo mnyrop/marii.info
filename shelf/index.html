@@ -1,0 +1,35 @@
+---
+layout: shelf
+---
+<center><h1 style="font-size:46px;margin-top:100px;">recent reads</h1></center>
+<main class="shelf">
+  <!-- current -->
+  {% for book in site.data.books_current %}
+    <article class="book">
+      <figure class="book-cover">
+        <a href="{{ book.link }}">
+          <img src="../bookimages/{{ book.image }}" alt="{{ book.title }}">
+        </a>
+      </figure>
+      <div class="book-info">
+        <h2><span style="color:blue">Current!</span><br/>{{ book.title }}</h2>
+        <p>{{ book.author }}</p>
+      </div>
+    </article>
+  {% endfor %}
+  <!-- sorted -->
+  {% assign booksort = site.data.books | sort: 'sort' %}
+  {% for book in booksort %}
+    <article class="book">
+      <figure class="book-cover">
+        <a href="{{ book.link }}">
+          <img src="../bookimages/{{ book.image }}" alt="{{ book.title }}">
+        </a>
+      </figure>
+      <div class="book-info">
+        <h2>{{ book.title }}</h2>
+        <p>{{ book.author }}</p>
+      </div>
+    </article>
+  {% endfor %}
+</main>

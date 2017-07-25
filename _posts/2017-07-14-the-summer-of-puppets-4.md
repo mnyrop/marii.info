@@ -33,7 +33,7 @@ with individual layouts displaying and linking object data together.
 
 It is navigable through the above directory listings, through several dynamic search boxes running client-side [Lunrjs](https://lunrjs.com/), and via clickable [D3js](https://d3js.org/) data visualizations. It handles relative/massive image sets by implementing lazy load in a jQuery carousel.
 
-To learn more about implementing D3 visualizations in Jekyll, you can check out [this post](http://localhost:4000/notes/autogenerate-json-for-d3-from-jekyll-collection-data). And a post on building multi-language Lunr indexes in Jekyll should be coming soon!
+To learn more about implementing D3 visualizations in Jekyll, you can check out [this post](autogenerate-json-for-d3-from-jekyll-collection-data). And a post on building multi-language Lunr indexes in Jekyll should be coming soon!
 
 <br/>
 <iframe width="100%" height="700" src="//jsfiddle.net/marii_/zkdzy0qq/2/embedded/result,js/" allowfullscreen="allowfullscreen" frameborder="0" style="box-shadow: 2px 2px 4pc #23352a;"></iframe>

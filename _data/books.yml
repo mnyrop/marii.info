@@ -163,3 +163,13 @@
   image: "collapse-of-horses.jpg"
   link:
   sort: "evenson"
+- title: "roadside picnic"
+  author: "boris + arkady strugatsky"
+  image: "roadside-picnic.jpg"
+  link:
+  sort: strugatsky
+- title: "sleep, death's brother"
+  author: "jesse ball"
+  image: "sleep-deaths-brother.jpg"
+  link:
+  sort: ball

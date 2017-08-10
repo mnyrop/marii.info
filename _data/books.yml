@@ -173,3 +173,13 @@
   image: "sleep-deaths-brother.jpg"
   link:
   sort: ball
+- title: "how to start a fire and why"
+  author: "jesse ball"
+  image: "how-to-start-a-fire.jpg"
+  link:
+  sort: ball
+- title: "the curfew"
+  author: "jesse ball"
+  image: "the-curfew.jpg"
+  link:
+  sort: ball

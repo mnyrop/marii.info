@@ -10,7 +10,7 @@ sticky: true
 <br><br>
 
 
-This post is part 1 of 4 in a series. Feel free to skip around to:<br><br>__[part 2: data transformation]({{ site.url }}/the-summer-of-puppets-2)__,<br>__[part 3: the site]({{ site.url }}/the-summer-of-puppets-3)__, or<br>__[part 4: epilogue]({{ site.url }}/the-summer-of-puppets-4)__.
+This post is part 1 of 4 in a series. Feel free to skip around to:<br><br>__[part 2: data transformation]({{ site.url }}/notes/the-summer-of-puppets-2)__,<br>__[part 3: the site]({{ site.url }}/notes/the-summer-of-puppets-3)__, or<br>__[part 4: epilogue]({{ site.url }}/notes/the-summer-of-puppets-4)__.
 
 <hr/>
 

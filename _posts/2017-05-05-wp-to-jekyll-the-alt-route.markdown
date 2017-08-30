@@ -12,9 +12,9 @@ So, if you're like me and can't get the plugin to work (for whatever your reason
 
 ## The roadmap:
 
-__1-2__ — A Wordpress plugin spits out a `.csv`<br/>
-__3__ — You transform it into a clean/usable `.csv` using OpenRefine<br/>
-__4__ — An in-browser or command line tool of choice converts it to `.yaml`<br/>
+__1-2__ — A Wordpress plugin spits out a `.csv`<br>
+__3__ — You transform it into a clean/usable `.csv` using OpenRefine<br>
+__4__ — An in-browser or command line tool of choice converts it to `.yaml`<br>
 __5-6__ — A Jekyll plugin generates new `.markdown` pages from the `.yaml`
 
 ## Roadmap explained, with gotchas:
@@ -55,11 +55,11 @@ __VI. Relativize your permalinks__ by removing the protocol, domain, and any tra
 
 __VII. Export!__ (sticking with comma separated values.)
 
-<br/>
+<br>
 <hr>
 ___Note: These steps do not guarantee that you'll have valid YAML after you export and convert your CSV, but they'll help you avoid a lot of the pitfalls that I fell into on and off for a day.___
 <hr>
-<br/>
+<br>
 
 #### 4. Convert to YAML and lint it.
 
@@ -72,4 +72,4 @@ If you have multiple YAML files (e.g. `posts.yaml` and `pages.yml`, like I did),
 
 Depending on the data you exported, you'll want to render it on each page/post in different ways. If you included the content from your WP pages and posts in your CSV and renamed the field to something like `wp-content` back in OpenRefine, you'll want to change `page.html` and/or `post.html` in your `_layouts` folder to reflect that by replacing `{{ "{{ content " }}}}` with `{{ "{{ page.wp-content " }}}}`.
 
-<br/><br/><br/><br/><br/><br/>
+<br><br><br><br><br><br>

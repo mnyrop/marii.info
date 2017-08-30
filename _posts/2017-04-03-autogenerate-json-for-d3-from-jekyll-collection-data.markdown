@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "How To: <br/>Auto-generate D3.js JSON from a Jekyll collection"
+title:  "How To: <br>Auto-generate D3.js JSON from a Jekyll collection"
 categories: main
 date: 2017-04-03
 sticky: true
@@ -14,11 +14,11 @@ sticky: true
 Produce a d3.js [force-directed graph](https://bl.ocks.org/mbostock/4062045) that visualizes a collection in your [Jekyll site](https://jekyllrb.com/) via tag clusters.
 
 # How to do it:
-__1.  Set up your Jekyll collection.__<br/>
+__1.  Set up your Jekyll collection.__<br>
 You can find tips for how to do that [here](https://jekyllrb.com/docs/collections/#step1).
-<br/><br/>
+<br><br>
 
-__2.  Add your tag(s) to each collection page's YAML front matter.__<br/>For example:
+__2.  Add your tag(s) to each collection page's YAML front matter.__<br>For example:
 ```
 layout: default
 title: 土地　正神
@@ -27,20 +27,20 @@ tags:
 - God of Wealth
 ---
 ```
-<br/>
-__3.  Write some [Liquid](https://help.shopify.com/themes/liquid/basics) that will translate your collection data/pages into the JSON file that drives the D3 visualization.__<br/>
-This is the only tricky part of the process and, as such, will constitute pretty much the entirety of this post. To underscore this further:<br/><br/>
-*The following is a guide for writing Liquid “code."<br/> For your Jekyll site.<br/> That generates a JSON file.<br/> That drives a D3 force graph.<br/> That visualizes a Jekyll collection.<br/> Based on shared tags.*<br/><br/>
+<br>
+__3.  Write some [Liquid](https://help.shopify.com/themes/liquid/basics) that will translate your collection data/pages into the JSON file that drives the D3 visualization.__<br>
+This is the only tricky part of the process and, as such, will constitute pretty much the entirety of this post. To underscore this further:<br><br>
+*The following is a guide for writing Liquid “code."<br> For your Jekyll site.<br> That generates a JSON file.<br> That drives a D3 force graph.<br> That visualizes a Jekyll collection.<br> Based on shared tags.*<br><br>
 Whew. This sounds like a lot, but it's really not so bad. I promise that the hurdles are 90% cognitive (rather than technical), and only require that you understand the data you have versus the data you need.
 
 
-__4.   Lastly, write or borrow some d3 + js force graph code.__<br/>
+__4.   Lastly, write or borrow some d3 + js force graph code.__<br>
 You're welcome to use [mine](https://jsfiddle.net/marii_/uwzpnv5r/27/) as a starting place.
 
 # The JSON:
 
 Different visualizations generally want different data in different formats and/or structures. Luckily, most force-directed graphs (with the exception of [hierarchical graphs!](https://bl.ocks.org/mbostock/1093130)) want two JSON arrays: one with nodes, one with links. A rule of thumb: at minimum, each node needs an identifier key (e.g an `id`, `title`, or `name`), and each link needs a `source` node and a `target` node. You can add additional key/value pairs for more complex visualizations, but the following is a good standard:
-<br/><br/>
+<br><br>
 ```json
 {
     "nodes": [
@@ -55,12 +55,12 @@ Different visualizations generally want different data in different formats and/
     ]
 }
 ```
-<br/><br/>
+<br><br>
 In our example, nodes should include individual collection items as well as tags. Links are created to join items to their tags (and subsequently to other items with that tag).
-<br/><br/>
+<br><br>
 
 *__Note!__* &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The following is for writing liquid to generate both the list of nodes __and__ the list of links. However, many templates for force graphs can generate the list of nodes for you, from your list of links. So feel free to cheat/simplify what's below, to only generate the link array!
-<br/><br/>
+<br><br>
 # The Liquid
 
 Below you'll find step-by-step instructions for writing Liquid > JSON that can drive a D3 force graph. It assumes that you understand Jekyll and the basics of its templating engine Liquid. If you just want to copy the Liquid code in its entirety, you can grab the raw file [here](https://gist.github.com/mnyrop/17c54380e347f37beaa64cf8d2a64785)—just make sure its saved as a `.json` file in the root of your site, and Jekyll will compile it as valid JSON in your `_site` folder for you. But if you know the basics of Liquid and want to better understand the process in order to power your own visualizations, keep reading.
@@ -198,11 +198,11 @@ For my example collection, the json output looks like this:
 }
 ```
 
-<br/><br/>
+<br><br>
 
 # Last Thoughts:
 
 This result might not look super impressive just yet—especially since our example output is barely larger than our liquid template! However, you can use the same or a similar process to generate JSON that is way larger, way more complicated, and way more visually impactful. And did I mention that it will update automatically as your site grows??!! Since liquid is parsed on `jekyll build` and `jekyll serve` just like markdown, you won't need to touch your JSON-generating file again (unless you want to change the structure of it, and prototype something new).
 
 
-<br/><br/><br/><br/><br/>
+<br><br><br><br><br>

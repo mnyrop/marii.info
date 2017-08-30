@@ -6,13 +6,13 @@ date: 2017-07-11
 
 <iframe height="450px" src="https://www.youtube.com/embed/ZaI8fN4176k" frameborder="0" allowfullscreen></iframe>
 
-This post is part 3 of 4 in a series. Feel free to skip around to:<br/><br/>__[part 1: the task]({{ site.url }}/the-summer-of-puppets)__,<br/>__[part 2: data transformation]({{ site.url }}/the-summer-of-puppets-2)__, or <br/>__[part 3: the site]({{ site.url }}/the-summer-of-puppets-3)__.
+This post is part 3 of 4 in a series. Feel free to skip around to:<br><br>__[part 1: the task]({{ site.url }}/the-summer-of-puppets)__,<br>__[part 2: data transformation]({{ site.url }}/the-summer-of-puppets-2)__, or <br>__[part 3: the site]({{ site.url }}/the-summer-of-puppets-3)__.
 
 <hr/>
 
 # epilogue
 
-<br/><a href="https://mnyrop.github.io/bunraku-demo"><img src="{{ "/images/demo.png" | relative_url }}" style="box-shadow: 2px 2px 4pc #23352a;"/><a/><br/><br/>
+<br><a href="https://mnyrop.github.io/bunraku-demo"><img src="{{ "/images/demo.png" | relative_url }}" style="box-shadow: 2px 2px 4pc #23352a;"/><a/><br><br>
 
 ## [The demo](https://mnyrop.github.io/bunraku-demo)!
 
@@ -35,9 +35,9 @@ It is navigable through the above directory listings, through several dynamic se
 
 To learn more about implementing D3 visualizations in Jekyll, you can check out [this post](autogenerate-json-for-d3-from-jekyll-collection-data). And a post on building multi-language Lunr indexes in Jekyll should be coming soon!
 
-<br/>
+<br>
 <iframe width="100%" height="700" src="//jsfiddle.net/marii_/zkdzy0qq/2/embedded/result,js/" allowfullscreen="allowfullscreen" frameborder="0" style="box-shadow: 2px 2px 4pc #23352a;"></iframe>
-<br/><br/>
+<br><br>
 
 # tl;dr.
 
@@ -68,7 +68,7 @@ Generated [Jekyll collections](https://jekyllrb.com/docs/collections/) (and page
 <i class="fa fa-chevron-circle-right" aria-hidden="true"></i>&nbsp;&nbsp;
 Ended with a ~40k page static Jekyll site powered by YAML data, with JSON index for client-side search.
 
-<br/>
+<br>
 
 # On the horizon
 
@@ -90,7 +90,7 @@ Refactoring layouts and asset scripts
 <i class="fa fa-minus-square-o" aria-hidden="true"></i>&nbsp;&nbsp;
 Adding IIIF manifests in Mirador for realia images
 
-<br/>
+<br>
 
 # last thoughts/notes
 
@@ -108,4 +108,4 @@ Processing data in iPy with Pandas is super easy, and the notebooks can double a
 Apparently you can just throw ~40k pages at GitHub pages without a hitch...?
 
 
-<br/><br/>
+<br><br>

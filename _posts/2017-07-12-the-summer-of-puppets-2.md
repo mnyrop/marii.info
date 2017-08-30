@@ -7,7 +7,7 @@ date: 2017-07-11
 <img src="http://www.columbia.edu/cgi-bin/dlo?obj=ldpd_bun_slide_493_2_0779_0826&size=medium" style="box-shadow: 2px 2px 4pc #23352a;"/>
 <br><br>
 
-This post is part 2 of 4 in a series. Feel free to skip around to:<br><br>__[part 1: the task]({{ site.url }}/the-summer-of-puppets)__,<br>__[part 3: the site]({{ site.url }}/the-summer-of-puppets-3)__, or<br>__[part 4: epilogue]({{ site.url }}/the-summer-of-puppets-4)__.
+This post is part 2 of 4 in a series. Feel free to skip around to:<br><br>__[part 1: the task]({{ site.url }}/notes/the-summer-of-puppets)__,<br>__[part 3: the site]({{ site.url }}/notes/the-summer-of-puppets-3)__, or<br>__[part 4: epilogue]({{ site.url }}/notes/the-summer-of-puppets-4)__.
 
 <hr/>
 
@@ -111,5 +111,5 @@ sys.stdout, default_flow_style=False)' < authors-min.json > authors-min.yaml
 #### Out: <span style="font-weight:400">[YAML](https://github.com/mnyrop/bunraku-ipy/tree/master/post-processing/yaml)</span>
 
 <br>
-### <span style="font-weight:400">Next \>> </span>[part 3: the site]({{ site.url }}/the-summer-of-puppets-3)
+### <span style="font-weight:400">Next \>> </span>[part 3: the site]({{ site.url }}/notes/the-summer-of-puppets-3)
 <br><br>

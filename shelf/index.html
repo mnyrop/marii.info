@@ -3,24 +3,20 @@ layout: page
 title: shelf
 ---
 <center>
-<i>ordered by most recent,<br/>starting with those currently being read.</i>
-<br/><br/>
-{% for book in site.data.books_current %}
-    <div class="book">
-      <img src="/bookimages/{{ book.image }}" alt="{{ book.title | slugify }}" width="150" style="margin-bottom:-30px;margin-top:30px; box-shadow: 2px 2px 4pc;"/>
-      <h4 style="margin-bottom:-10px"><span style="color:blue">Current!</span><br/>{{ book.title }}</h4>
-      <p>{{ book.author }}</p>
-    </div>
-{% endfor %}
-<!-- sorted -->
-{% assign booksort = site.data.books | reverse %}
-{% assign num = booksort | size %}
-{% for book in booksort %}
-    {% assign num = num | minus: 1 %}
-    <div class="book">
+  <i>ordered by most recent,<br/>starting with those currently being read.</i>
+  <br/><br/>
+  {% for book in site.data.books_current %}
+    <img src="/bookimages/{{ book.image }}" alt="{{ book.title | slugify }}" width="150" style="margin-bottom:-30px;margin-top:30px; box-shadow: 2px 2px 4pc;"/>
+    <h4 style="margin-bottom:-10px"><span style="color:blue">Current!</span><br/>{{ book.title }}</h4>
+    <p>{{ book.author }}</p>
+  {% endfor %}
+  <!-- sorted -->
+  {% assign booksort = site.data.books | reverse %}
+  {% assign num = booksort | size %}
+  {% for book in booksort %}
+      {% assign num = num | minus: 1 %}
       <img src="/bookimages/{{ book.image }}" alt="{{ book.title | slugify }}" width="150" style="margin-bottom:-30px;margin-top:30px; box-shadow: 2px 2px 4pc;"/>
       <h4 style="margin-bottom:-10px"><span style="color:grey">no. {{ num }}</span><br/>{{ book.title }}</h4>
       <p>{{ book.author }}</p>
-    </div>
-{% endfor %}
+  {% endfor %}
 </center>

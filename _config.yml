@@ -1,6 +1,6 @@
 # Site Info
 title:              "marii nø"
-description:        "dh developer @columbia; planetary computation, cybernetic history, soviet sci-fi, &fiber art;"
+description:        "dh developer @columbia; planetary computation, cybernetic history, soviet sci-fi, fiber art;"
 
 # Author Info
 author_name:        "marii" # Your name here
@@ -8,7 +8,7 @@ twitter_username:   mariinyrop # Your Twitter username here
 github_username:    mnyrop # Your GitHub username here
 
 # Site Settings
-baseurl:            "" # Base URL must end WITHOUT a slash, default: ""
+url:                "http://marii.info"
 permalink:          /notes/:title # Post permalink
 
 # Site Build

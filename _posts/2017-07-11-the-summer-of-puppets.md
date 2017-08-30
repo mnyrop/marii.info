@@ -57,5 +57,5 @@ Sounds a bit tedious but simple enough. Yet the project necessitated tackling se
 7. Can I implement advanced English/Japanese search? With both roman and kanji characters?
 
 <br>
-### <span style="font-weight:400">Next \>> </span>[part 2: data transformation]({{ site.url }}/the-summer-of-puppets-2)
+### <span style="font-weight:400">Next \>> </span>[part 2: data transformation]({{ site.url }}/notes/the-summer-of-puppets-2)
 <br><br>

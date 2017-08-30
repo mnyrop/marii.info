@@ -25,12 +25,12 @@ layout: default
 		<ul>
 			<li>
 				<div class="post-date" style="padding-top:10px;">
-					<a href="{{ post.url | prepend: site.baseurl }}">
+					<a href="{{ site.url }}{{ post.url }}">
 						<span>&nbsp;{{ post.date | date: "%b %d" }}&nbsp;</span>
 					</a>
 				</div>
 				<div class="title">
-					<a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}<a/>
+					<a href="{{ site.url }}{{ post.url }}">{{ post.title }}<a/>
 				</div>
 			</li>
 		</ul>

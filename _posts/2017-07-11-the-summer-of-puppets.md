@@ -10,7 +10,7 @@ sticky: true
 <br/><br/>
 
 
-This post is part 1 of 4 in a series. Feel free to skip around to:<br/><br/>__[part 2: data transformation](the-summer-of-puppets-2)__,<br/>__[part 3: the site](the-summer-of-puppets-3)__, or<br/>__[part 4: epilogue](the-summer-of-puppets-4)__.
+This post is part 1 of 4 in a series. Feel free to skip around to:<br/><br/>__[part 2: data transformation]({{ site.url }}/the-summer-of-puppets-2)__,<br/>__[part 3: the site]({{ site.url }}/the-summer-of-puppets-3)__, or<br/>__[part 4: epilogue]({{ site.url }}/the-summer-of-puppets-4)__.
 
 <hr/>
 
@@ -57,5 +57,5 @@ Sounds a bit tedious but simple enough. Yet the project necessitated tackling se
 7. Can I implement advanced English/Japanese search? With both roman and kanji characters?
 
 <br/>
-### <span style="font-weight:400">Next \>> </span>[part 2: data transformation](the-summer-of-puppets-2)
+### <span style="font-weight:400">Next \>> </span>[part 2: data transformation]({{ site.url }}/the-summer-of-puppets-2)
 <br/><br/>

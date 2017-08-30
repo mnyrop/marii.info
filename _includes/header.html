@@ -3,7 +3,7 @@
 <aside class="logo">
 
 	{% if page.url == '/index.html' or page.url == '/' %}
-		{% assign link = '/about' %}
+		{% assign link = '{{ site.url }}/about' %}
 		{% assign prompt = 'About' %}
 	{% else %}
 		{% assign link = '/' %}

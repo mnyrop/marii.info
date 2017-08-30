@@ -8,7 +8,7 @@ date: 2017-07-11
 
 <br/>
 
-This post is part 3 of 4 in a series. Feel free to skip around to:<br/><br/>__[part 1: the task](the-summer-of-puppets)__,<br/>__[part 2: data transformation](the-summer-of-puppets-2)__, or <br/>__[part 4: epilogue](the-summer-of-puppets-4)__.
+This post is part 3 of 4 in a series. Feel free to skip around to:<br/><br/>__[part 1: the task]({{ site.url }}/the-summer-of-puppets)__,<br/>__[part 2: data transformation]({{ site.url }}/the-summer-of-puppets-2)__, or <br/>__[part 4: epilogue]({{ site.url }}/the-summer-of-puppets-4)__.
 
 <hr/>
 
@@ -90,5 +90,5 @@ After writing templates for each object type as well as templates for viewing th
 <br/>
 
 <br/>
-### <span style="font-weight:400">Next \>> </span>[part 4: epilogue](the-summer-of-puppets-4)
+### <span style="font-weight:400">Next \>> </span>[part 4: epilogue]({{ site.url }}/the-summer-of-puppets-4)
 <br/><br/>

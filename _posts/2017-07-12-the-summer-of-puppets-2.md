@@ -21,7 +21,7 @@ After taking a detour prototyping with [Google Lovefield](https://google.github.
 
 I started by using a simple entity relationship diagramming (ERD) tool and [JSON Schema](http://json-schema.org/) to plan out what each object type (e.g. play, kashira, character, etc.) should look like at the end of the processing stage by asking/answerinq questions like: _Which keys does each type need? Which keys should be named in a standardized way across object types? What kind of value does a given key expect (maybe an int? a nullable string...? ), and does it expect 1 or many? What does the object need to "know" about itself, and what can it inherit from other types?_
 
-<br><a href="{{ "/images/erd.png" | relative_url }}"><img src="{{ "/images/erd.png" | relative_url }}" style="box-shadow: 2px 2px 4pc #23352a;"/><a/><br><br>
+<br><a href="{{ "/images/erd.png" | relative_url }}"><img src="{{ "/images/erd.png" | relative_url }}" style="box-shadow: 2px 2px 4pc #23352a;"/></a><br><br>
 
 
 ```json

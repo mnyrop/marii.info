@@ -1,5 +1,10 @@
-- title: "the coming community"
-  author: "giorgio agamben"
-  image: "coming-community.jpg"
+- title: "the age of extremes:<br/>the short twentieth century, 1914–1991"
+  author: "eric hobswam"
+  image: "age-of-extremes.jpg"
   link:
-  sort: agamben
+  sort: hobswam
+# - title: "the coming community"
+#   author: "giorgio agamben"
+#   image: "coming-community.jpg"
+#   link:
+#   sort: agamben

@@ -1,3 +1,4 @@
 source "https://rubygems.org"
 gem "jekyll", "3.5.2"
-gem 'html-proofer'
+gem "html-proofer"
+gem "jekyll-sitemap"

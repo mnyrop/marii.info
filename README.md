@@ -1,4 +1,5 @@
 # marii.info
 just a jekyll blog
 
-<img src="https://travis-ci.org/mnyrop/mnyrop.github.io.svg?branch=master"/>
+![]("https://travis-ci.org/mnyrop/mnyrop.github.io.svg?branch=master") ![](https://gemnasium.com/badges/github.com/mnyrop/mnyrop.github.io.svg)
+

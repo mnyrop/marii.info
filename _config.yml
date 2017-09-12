@@ -8,7 +8,7 @@ twitter_username:   mariinyrop # Your Twitter username here
 github_username:    mnyrop # Your GitHub username here
 
 # Site Settings
-url:                "http://marii.info"
+url:                ""
 permalink:          /notes/:title # Post permalink
 
 # Site Build

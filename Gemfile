@@ -1,3 +1,6 @@
 source "https://rubygems.org"
 gem "jekyll", "3.5.2"
-gem "html-proofer"
+
+group :development, :test do
+  gem "html-proofer"
+end

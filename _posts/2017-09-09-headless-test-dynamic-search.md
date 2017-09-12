@@ -1,19 +1,22 @@
 ---
 layout: post
-title:  "Headless test Jekyll search with Travis, RSpec, Capybara, and Poltergeist"
+title:  "Continuous Integration II:<br>Unit Tests with RSpec, Capybara, and Poltergeist"
 categories: main
-date: 2017-08-26
-sticky: false
+date: 2017-09-12
+sticky: true
 ---
+
+<img src="http://bh-s2.azureedge.net/bh-uploads/2016/05/poltergeist-ii-moustache-skeleton.jpg" style="box-shadow: 2px 2px 4pc #23352a"/>
+<sup>Still from ***Poltergeist III*** (1988), director: Gary Sherman.</sup>
 
 __Gemfile__:
 
 ```yaml
 source "https://rubygems.org"
-gem "jekyll", "~>3.5.0"
-gem 'html-proofer'
+gem "jekyll", "3.5.2"
 
 group :development, :test do
+  gem 'html-proofer'
   gem "rspec"
   gem 'capybara'
   gem 'launchy'
@@ -22,12 +25,21 @@ group :development, :test do
 end
 ```
 
-**.rspec**:
+**_config.yml**:
 
-```
---color
---require spec_helper
---format documentation
+```yaml
+# rspec test settings
+search_tests:
+  main:
+    page: search.html
+    terms:
+      - headless
+      - rack-jekyll
+  tags:
+    page: tags.html
+    terms:
+      - travis
+      - poltergeist
 ```
 
 **/spec/spec_helper.rb**:
@@ -43,54 +55,58 @@ RSpec.configure do |config|
   config.include Capybara::DSL
 
   $jekyll_config = YAML.load_file('_config.yml')
-  $baseurl = $jekyll_config['baseurl']
+  $baseurl = $jekyll_config['baseurl'].to_s
   $search_tests = $jekyll_config['search_tests']
 
   Capybara.current_driver = :poltergeist
   Capybara.javascript_driver = :poltergeist
-  Capybara.app = Rack::Jekyll.new(:force_build => false, :baseurl => $baseurl)
+  Capybara.app = Rack::Jekyll.new(:force_build => false)
 end
 ```
 
-**_config.yml**:
+**.rspec**:
 
-```yaml
-# rspec test settings
-search_tests:
-  full:
-    page: search.html
-    term: poltergeist
-  tags:
-    page: tags.html
-    term: jekyll
+```
+--color
+--require spec_helper
+--format documentation
 ```
 
 **/spec/lunr_spec.rb**:
 
 ```ruby
-
 $search_tests.each do |search|
   search_page = search[1]['page']
-  term = search[1]['term']
+  terms = search[1]['terms']
 
   describe search_page, :type => :feature, :js => true do
-    it "has a search bar" do
+    before(:all) do
       visit($baseurl + "/" + search_page)
-      expect(find(:css, "#search"))
-      $search_bar = find(:css, "#search")
+      @search_bar = find(:css, "#search")
     end
-    it "which yields at least 1 result for \"" + term + "\"" do
-      $search_bar.set term
-      expect(have_css(".result"))
+    it "has a search bar." do
+      expect(@search_bar)
     end
-    it "which successfully links to an existing page" do
-      $search_bar.set term
-      @result_link = first(".result").first("a")['href']
-      visit(@result_link)
-      expect(status_code == 200)
-    end
-    it "which totally includes the term \"" + term + "\"." do
-      expect(have_text(term))
+    terms.each do |term|
+      context "when searching the term \"" + term + "\"" do
+        before(:all) do
+          @search_bar.set term
+          @result_link = first(".result").first("a")['href']
+        end
+        after(:all) do
+          visit($baseurl + "/" + search_page)
+        end
+        it "yields at least 1 result" do
+          expect(@result_link)
+        end
+        it "which sucessfully links to an existing page" do
+          visit(@result_link)
+          expect(status_code == 200)
+        end
+        it "which totally includes \"" + term + "\"" do
+          expect(have_text(term))
+        end
+      end
     end
   end
 end
@@ -135,17 +151,26 @@ script:
 ```bash
 $ bundle exec rspec
 
-  search.html
-    has a search bar
-    which yields at least 1 result for "poltergeist"
-    which successfully links to an existing page
-    which totally includes the term "poltergeist"
-  tags.html
-    has a search bar
-    which yields at least 1 result for "jekyll"
-    which successfully links to an existing page
-    which totally includes the term "jekyll"
+search.html
+  has a search bar.
+  when searching the term "headless"
+    yields at least 1 result
+    which sucessfully links to an existing page
+    which totally includes "headless"
+  when searching the term "rack-jekyll"
+    yields at least 1 result
+    which sucessfully links to an existing page
+    which totally includes "rack-jekyll"
+tags.html
+  has a search bar.
+  when searching the term "travis"
+    yields at least 1 result
+    which sucessfully links to an existing page
+    which totally includes "travis"
+  when searching the term "poltergeist"
+    yields at least 1 result
+    which sucessfully links to an existing page
+    which totally includes "poltergeist
 
-  8 examples, 0 failures
-  The command "bundle exec rspec" exited with 0.
+10 examples, 0 failures
 ```

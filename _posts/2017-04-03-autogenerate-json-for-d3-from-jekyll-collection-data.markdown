@@ -1,7 +1,6 @@
 ---
 layout: post
 title:  "Auto-generate D3.js JSON from a Jekyll collection"
-categories: main
 date: 2017-04-03
 sticky: true
 category: dev

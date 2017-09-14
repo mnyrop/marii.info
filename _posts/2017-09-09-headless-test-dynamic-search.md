@@ -1,7 +1,6 @@
 ---
 layout: post
 title:  "Continuous Integration II:<br>Headless Tests for Jekyll with RSpec, Capybara, and Poltergeist"
-categories: main
 date: 2017-09-12
 sticky: true
 category: dev

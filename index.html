@@ -9,12 +9,29 @@ layout: default
 	tips, words, and detritus re: digital-humanities, jekyll, static-sites, json, yaml, python, pandas, numpy, minimal-computing, digital-collections, digital-publishing, natural-language-processing, data-visualization, web-scraping, document-parsing, media-materialism, shell-scripting, speculative-fiction, and ____________________________.
 
 	<br><br><br>
-
+	<h3>projects &#172;</h3>
+	<ul>
+	{% for project in site.projects %}
+		<li>
+			<div class="title">
+				<a href="{{ site.url }}{{ project.url }}" class="home-post-link">{{ project.title }}<a/><br>
+					{% for tag in project.tags %}
+						{% capture thecycle %}{% cycle 'odd', 'even' %}{% endcapture %}
+						{% if thecycle == 'odd' %}
+							{% assign color = "#234d77" %}
+						{% else %}
+							{% assign color = "#70a09f" %}
+						{% endif %}
+						<!-- <a href="">--><span style="color:{{ color }}" class="tag">#{{ tag }}</span><!--</a>-->{% unless forloop.last %}&nbsp;&nbsp;{% endunless %}
+					{% endfor %}
+			</div>
+		</li>
+	{% endfor %}
 	{% assign sticky_posts = site.posts | where: "sticky", true %}
 	{% for post in sticky_posts  %}
 		{% unless post.next %}
 			<!-- <h3>{{ post.date | date: '%Y' }} &#172;</h3> -->
-			<h3>{{ post.date | date: '%Y' }} / {{ post.category }} &#172;</h3>
+			<h3>posts ~ {{ post.date | date: '%Y' }} &#172;</h3>
 		{% else %}
 			{% capture year %}{{ post.date | date: '%Y' }}{% endcapture %}
 			{% capture nyear %}{{ post.next.date | date: '%Y' }}{% endcapture %}
@@ -22,7 +39,6 @@ layout: default
 				<h3>{{ post.date | date: '%Y' }} &#172;</h3>
 			{% endif %}
 		{% endunless %}
-
 		<ul>
 			<li>
 				<div class="post-date" style="padding-top:10px;">

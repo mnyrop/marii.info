@@ -2,7 +2,12 @@
 layout: post
 title: The Summer of Japanese Puppets<br>(Part 1 of 4)
 date: 2017-07-11
+category: dev
 sticky: true
+tags:
+  - sql
+  - jekyll
+  - php
 ---
 
 <br>

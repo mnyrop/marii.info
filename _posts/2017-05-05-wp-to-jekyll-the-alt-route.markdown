@@ -3,7 +3,11 @@ layout: post
 title:  "Moving from Wordpress to Jekyll:<br> Tips for the Alternate Route"
 categories: main
 date: 2017-05-05
+category: dev
 sticky: true
+tags:
+  - jekyll
+  - wordpress
 ---
 
 Before I start explaining myself and my hacky process, I should say that there *is* a [Wordpress plugin for exporting to Jekyll](https://wordpress.org/plugins/jekyll-exporter/). It might work amazingly well, automatically doing everything I needed it to and more. I say 'might' because I genuinely don't know; I didn't get a chance to try it, which I'll blame on the outdated PHP (5.3) that the WP server was running. (The plugin requires >= 5.5).

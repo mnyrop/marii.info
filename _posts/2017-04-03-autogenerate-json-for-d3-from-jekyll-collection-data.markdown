@@ -4,6 +4,12 @@ title:  "Auto-generate D3.js JSON from a Jekyll collection"
 categories: main
 date: 2017-04-03
 sticky: true
+category: dev
+tags:
+  - jekyll
+  - d3js
+  - json
+  - liquid
 ---
 
 <iframe width="100%" height="600" src="//jsfiddle.net/marii_/uwzpnv5r/27/embedded/result,js/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>

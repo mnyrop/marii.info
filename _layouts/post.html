@@ -14,7 +14,7 @@ layout: default
 				{% else %}
 					{% assign color = "#70a09f" %}
   			{% endif %}
-				<span style="color:{{ color }}">#{{ tag }}</b></span>{% unless forloop.last %}&nbsp;&nbsp;{% endunless %}
+				<span style="color:{{ color }}">#{{ tag }}</span>{% unless forloop.last %}&nbsp;&nbsp;{% endunless %}
 			{% endfor %}
 		</p>
 		<time>{{ page.date | date: '%B %-d, %Y' }}</time>

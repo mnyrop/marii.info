@@ -2,6 +2,11 @@
 layout: post
 title: The Summer of Japanese Puppets, Part 3
 date: 2017-07-11
+category: dev
+tags:
+  - jekyll
+  - github-pages
+  - liquid
 ---
 
 <div style="height:550px;width:100%;background-size:cover;background-image:url( '/images/gabu.jpg');background-position:center center;"></div>

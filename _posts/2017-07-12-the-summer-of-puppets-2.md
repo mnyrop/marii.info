@@ -2,6 +2,13 @@
 layout: post
 title: The Summer of Japanese Puppets, Part 2
 date: 2017-07-11
+category: dev
+tags:
+  - jupyter
+  - python
+  - json
+  - yaml
+  - relational-data
 ---
 <br>
 <img src="http://www.columbia.edu/cgi-bin/dlo?obj=ldpd_bun_slide_493_2_0779_0826&size=medium" style="box-shadow: 2px 2px 4pc #23352a;"/>

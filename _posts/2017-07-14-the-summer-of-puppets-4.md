@@ -2,6 +2,11 @@
 layout: post
 title: The Summer of Japanese Puppets, Part 4
 date: 2017-07-11
+category: dev
+tags:
+  - d3js
+  - lunr
+  - jekyll
 ---
 
 <iframe height="450px" src="https://www.youtube.com/embed/ZaI8fN4176k" frameborder="0" allowfullscreen></iframe>

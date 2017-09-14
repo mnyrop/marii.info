@@ -4,6 +4,16 @@ title:  "Continuous Integration II:<br>Headless Tests for Jekyll with RSpec, Cap
 categories: main
 date: 2017-09-12
 sticky: true
+category: dev
+tags:
+  - continuous-integration
+  - travis
+  - jekyll
+  - rspec
+  - capybara
+  - poltergeist
+  - rack
+  - lunr
 ---
 
 <img src="http://bh-s2.azureedge.net/bh-uploads/2016/05/poltergeist-ii-moustache-skeleton.jpg" style="box-shadow: 2px 2px 4pc #23352a;width:100%;margin-bottom:10px;"/>

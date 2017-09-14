@@ -318,6 +318,8 @@ section {
         //text-overflow: ellipsis !important;
         //white-space: nowrap !important;
         word-wrap: normal !important;
+        font-size: 18px;
+        font-weight: 500;
       }
       a {
         text-decoration: none;
@@ -329,7 +331,7 @@ section {
         float: right;
         margin: 0 0 0 20px;
       }
-      span {
+      .yellow {
         display: inline-block;
         background-color: yellow;
         color:#757575;
@@ -337,13 +339,20 @@ section {
         text-transform: lowercase;
         font-size:11px;
       }
-      @media (min-width: 992px) {a {
+      @media (min-width: 992px) {.home-post-link {
           border-bottom: 2px solid transparent;
           &:hover {
             border-color: #000;
           }
         }
       }
+      .tag {
+        font-size:12px;
+        font-weight:bold;
+      }
+      // .tag:hover{
+      //   font-style: italic;
+      // }
     }
   }
 }

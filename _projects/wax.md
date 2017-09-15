@@ -42,7 +42,6 @@ Though the objectives of jekyll-wax are ongoing, its success will be tied to the
 <i class="fa fa-check-square-o" aria-hidden="true"></i> **Method:** Convert an existing WordPress site to Jekyll. ↠ <br>
 <i class="fa fa-check-square-o" aria-hidden="true"></i> **Method:** Generate interactive D3 visualizations from Jekyll data. ↠ <br>
 <i class="fa fa-check-square-o" aria-hidden="true"></i> **Method:** Automate build tests with [Travis-CI](). ↠ <br>
-<br>
 <i class="fa fa-check-square-o" aria-hidden="true"></i> **Method:** Automate html tests with [html-proofer](). ↠ <br>
 <i class="fa fa-check-square-o" aria-hidden="true"></i> **Method:** Automate headless feature tests with [Rspec](), [Capybara](), and [Poltergesit](). ↠ <br>
 <br>

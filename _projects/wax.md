@@ -33,10 +33,10 @@ Though the objectives of jekyll-wax are ongoing, its success will be tied to the
 
 <i class="fa fa-check-square-o" aria-hidden="true"></i>
 **Experiment:** Client-side custom search index with [Lunrjs](https://lunrjs.com).
-<a href="/historical-photos/" style="border-bottom:none;"><i class="fa fa-flask" aria-hidden="true"></i></a><br>
+<a href="http://marii.info/historical-photos/" style="border-bottom:none;"><i class="fa fa-flask" aria-hidden="true"></i></a><br>
 <i class="fa fa-check-square-o" aria-hidden="true"></i> **Experiment:** [IIIF](http://iiif.io/) digital exhibition from local image tiles with [Mirador viewer](http://projectmirador.org).<br>
 <i class="fa fa-check-square-o" aria-hidden="true"></i> **Experiment:** [IIIF](http://iiif.io/) digital exhibition from remote image server with [Openseadragon](https://openseadragon.github.io/).
-<a href="/historical-photos/" style="border-bottom:none;"><i class="fa fa-flask" aria-hidden="true"></i></a><br>
+<a href="http://marii.info/historical-photos/" style="border-bottom:none;"><i class="fa fa-flask" aria-hidden="true"></i></a><br>
 <i class="fa fa-check-square-o" aria-hidden="true"></i> **Experiment:** [D3js](https://d3js.org/) visualization of a Jekyll collection auto-generated via Liquid template.
 <a href="https://cul.github.io/bunraku-demo/visualize/connected-characters/" style="border-bottom:none;"><i class="fa fa-flask" aria-hidden="true"></i></a><br>
 <i class="fa fa-check-square-o" aria-hidden="true"></i> **Experiment:** Convert an entire WordPress blog theme to work with Jekyll.

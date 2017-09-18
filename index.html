@@ -17,15 +17,18 @@ layout: default
 			<li>
 				<div class="title">
 					<a href="{{ site.url }}{{ project.url }}" class="home-post-link"><b>{{ project.era }}: </b> {{ project.title }}<a/><br>
-						{% for tag in project.tags %}
-							{% capture thecycle %}{% cycle 'odd', 'even' %}{% endcapture %}
-							{% if thecycle == 'odd' %}
-								{% assign color = "#234d77" %}
-							{% else %}
-								{% assign color = "#70a09f" %}
-							{% endif %}
-							<!-- <a href="">--><span style="color:{{ color }}" class="tag">#{{ tag }}</span><!--</a>-->{% unless forloop.last %}&nbsp;&nbsp;{% endunless %}
-						{% endfor %}
+					<span class="tag">
+						<i class="fa fa-tags" aria-hidden="true" style="color:#e05e64"></i>&nbsp;&nbsp;
+					</span>
+					{% for tag in project.tags %}
+						{% capture thecycle %}{% cycle 'odd', 'even' %}{% endcapture %}
+						{% if thecycle == 'odd' %}
+							{% assign color = "#234d77" %}
+						{% else %}
+							{% assign color = "#70a09f" %}
+						{% endif %}
+						<!-- <a href="">--><span style="color:{{ color }}" class="tag">#{{ tag }}</span><!--</a>-->{% unless forloop.last %}&nbsp;&nbsp;{% endunless %}
+					{% endfor %}
 				</div>
 			</li>
 		{% endfor %}
@@ -52,6 +55,9 @@ layout: default
 				</div>
 				<div class="title">
 					<a href="{{ site.url }}{{ post.url }}" class="home-post-link">{{ post.title }}<a/><br>
+					<span class="tag">
+						<i class="fa fa-tags" aria-hidden="true" style="color:#e05e64"></i>&nbsp;&nbsp;
+					</span>
 					{% for tag in post.tags %}
 						{% capture thecycle %}{% cycle 'odd', 'even' %}{% endcapture %}
 						{% if thecycle == 'odd' %}

@@ -341,6 +341,7 @@ section {
       }
       @media (min-width: 992px) {.home-post-link {
           border-bottom: 2px solid transparent;
+          line-height: 1.3em;
           &:hover {
             border-color: #000;
           }

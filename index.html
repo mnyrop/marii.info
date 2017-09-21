@@ -6,10 +6,10 @@ layout: default
 
 	<h1 style="font-size:40px">marii.info &#172;</h1>
 
-	tips, words, and detritus re: digital-humanities, jekyll, static-sites, json, yaml, python, pandas, numpy, minimal-computing, digital-collections, digital-publishing, natural-language-processing, data-visualization, web-scraping, document-parsing, media-materialism, shell-scripting, speculative-fiction, and ____________________________.
+	projects, tips, words, and detritus re: digital-humanities, jekyll, static-sites, json, yaml, python, pandas, numpy, minimal-computing, digital-collections, digital-publishing, natural-language-processing, data-visualization, web-scraping, document-parsing, media-materialism, shell-scripting, speculative-fiction, and ____________________________.
 
 	<br><br><br>
-	{% assign projects = site.projects | sort: "era" %}
+	{% assign projects = site.projects | sort: "order" %}
 	{% if projects.size != 0%}
 		<h3>projects &#172;</h3>
 		<ul>
@@ -37,8 +37,7 @@ layout: default
 	{% assign sticky_posts = site.posts | where: "sticky", true %}
 	{% for post in sticky_posts  %}
 		{% unless post.next %}
-			<!-- <h3>{{ post.date | date: '%Y' }} &#172;</h3> -->
-			<h3>{{ post.date | date: '%Y' }} &#172;</h3>
+			<h3>posts / {{ post.date | date: '%Y' }} &#172;</h3>
 		{% else %}
 			{% capture year %}{{ post.date | date: '%Y' }}{% endcapture %}
 			{% capture nyear %}{{ post.next.date | date: '%Y' }}{% endcapture %}

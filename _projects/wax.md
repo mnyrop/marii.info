@@ -2,12 +2,14 @@
 layout: page
 title:  "Jekyll-Wax: Modules + Methods for Jekyll in the Expanded Field"
 era: current
+order: 1
 tags:
   - minimal-computing
   - static-search
   - relational-data
   - digital-collections
   - digital-publishing
+  - 2017
 ---
 <img src="http://www.vvork.com/wp-content/uploads/2009/01/picture-8.png"/>
 

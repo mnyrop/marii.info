@@ -2,17 +2,20 @@
 layout: page
 title:  "Embarrassment.Party"
 era: past
+order: 4
 tags:
   - cloud-computing
   - contemporary-art
   - curatorial-practice
+  - thesis
+  - 2014
 ---
 <center>
   <img src="http://embarrassment.party/voidsample.gif" width="400"/><br><br>
   <sup>cristine brache for <b>embarrassment.party</b></sup>
 </center>
 
-## statement
+## curatorial statement
 
 *isn’t it time to rename the internet? isn’t the web 2.0 more of a cloud for falling than a net for catching? the internet’s external inter-connections have been wholly consumed—internalized and made mobile. the cloud is always simultaneously here—in our local drives, intuitively integrated with our bodies and preeminently available to them—and way over there—on servers far away, in metaphors up in the air, and peripheral to individual comprehension or control. we ask: what does this remote intimacy of the cloud imply? and what does it obscure?*
 
@@ -29,6 +32,8 @@ residents were selected and notified in january 2014, and the virtual "residency
 ## artists in residence
 
 annelyse gelman (.us/.nz/.de), jesse darling (.uk/.de), viktor timofeev (.lv/.us/.ne), sanguine cb (n/a), cristine brache (.fr/.cn), mehron abdollmohammadi (.us), emilio vavarella (.us/.it), + marii nyröp (.us/.hk).
+
+## the [installation](http://embarrassment.party/)
 
 
 <h1></h1>

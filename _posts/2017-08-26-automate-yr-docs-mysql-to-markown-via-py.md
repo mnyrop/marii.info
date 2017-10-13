@@ -10,7 +10,15 @@ tags:
   - python
   - pandas
 ---
-<center><img src="http://nsarchive2.gwu.edu/NSAEBB/NSAEBB601-British-appealed-to-US-in-1952-for-coup-against-Mosaddeq-in-Iran/images/1.jpg"/><p><sup><b>above:</b> "British appealed to US in 1952 for coup against Mosaddeq in Iran", from <a href="http://nsarchive2.gwu.edu/NSAEBB/NSAEBB601-British-appealed-to-US-in-1952-for-coup-against-Mosaddeq-in-Iran/">nsarchive.gwu.edu</a></sup></p></center>
+<center>
+  <img src="http://nsarchive2.gwu.edu/NSAEBB/NSAEBB601-British-appealed-to-US-in-1952-for-coup-against-Mosaddeq-in-Iran/images/1.jpg"/>
+  <p>
+    <sup>
+      <b>above:</b> 'British appealed to US in 1952 for coup against Mosaddeq in Iran', from
+      <a href="http://nsarchive2.gwu.edu/NSAEBB/NSAEBB601-British-appealed-to-US-in-1952-for-coup-against-Mosaddeq-in-Iran/">nsarchive.gwu.edu</a>
+    </sup>
+  </p>
+</center>
 <br><br>
 
 As part of my gig as the DH developer for Columbia University Libraries, I've become the data steward of the [Foreign Relations of the United States](https://history.state.gov/historicaldocuments/about-frus) (FRUS) collection for the  [History Lab](http://history-lab.org/) project.

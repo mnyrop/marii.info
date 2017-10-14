@@ -15,7 +15,9 @@ title: shelf
   {% assign num = booksort | size %}
   {% for book in booksort %}
       {% assign num = num | minus: 1 %}
-      <img src="/bookimages/{{ book.image }}" alt="{{ book.title | slugify }}" width="150" style="margin-bottom:-30px;margin-top:30px; box-shadow: 2px 2px 4pc;"/>
+      <a href="{{ book.link }}" target="_none">
+        <img src="/bookimages/{{ book.image }}" alt="{{ book.title | slugify }}" width="150" style="margin-bottom:-30px;margin-top:30px; box-shadow: 2px 2px 4pc;"/>
+      </a>
       <h4 style="margin-bottom:-10px"><span style="color:grey">no. {{ num }}</span><br/>{{ book.title }}</h4>
       <p>{{ book.author }}</p>
   {% endfor %}

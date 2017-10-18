@@ -90,3 +90,9 @@ other than preparing for and participating in each session, the only assignment 
 - hito steyerl. “the politics of post-representation.” interview with marvin jordan for dis magazine.
 - alexander galloway and eugene thacker. “appendix: notes for a liberated computer language.” the exploit: a theory of networks. (at the very end of the .pdf!)
 - amalia ulman. “stock images of war (trailer).” uploaded to youtube.
+
+
+## / the p2p_reader: //
+
+<div data-configid="17139687/12886037" style="width:100%; height:500px;" class="issuuembed"></div>
+<script type="text/javascript" src="//e.issuu.com/embed.js" async="true"></script>

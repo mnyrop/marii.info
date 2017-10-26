@@ -37,12 +37,9 @@ img {
 a {
   color: inherit;
   text-decoration: none;
-  border-bottom: 1px solid #555;
   &.image {
     display: block;
     text-align: center;
-    border: 0;
-    border-radius: 5px;
     margin: 30px 0;
   }
 }
@@ -69,20 +66,19 @@ blockquote {
   a {
     // background: #ededed; url("gravatar_wrapper.png");
     // color: #ededed;
-    text-decoration: none;
+    text-decoration: none !important;
     font-weight: 700;
-    height: 120px;
-    width: 120px;
+    height: 100px;
+    width: 250px;
     font-size: 1.5em;
     // border-radius: 100%;
     display: inline-block;
     text-align: center;
     line-height: 100px;
     // border: 5px solid #fff;
-    box-sizing: border-box;
     &:hover,
     &:focus {
-      border: 2px solid yellow;
+      // border: 2px solid yellow;
     }
     &:hover + .logo-prompt,
     &:focus + .logo-prompt {
@@ -114,7 +110,7 @@ blockquote {
     text-align: center;
     line-height: 1.2;
     top: 50%;
-    margin-top: -10px;
+    margin-top: -45px;
     &:before {
       content: "";
       border-width: 5px 5px 5px 0;
@@ -333,7 +329,7 @@ section {
       }
       .yellow {
         display: inline-block;
-        background-color: yellow;
+        background-color: #ffbd82;
         color:#757575;
         letter-spacing: 1px;
         text-transform: lowercase;

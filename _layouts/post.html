@@ -8,12 +8,12 @@ layout: default
 		<h1>{{ page.title }}</h1>
 		<p>
 			{% for tag in page.tags %}
-  			{% capture thecycle %}{% cycle 'odd', 'even' %}{% endcapture %}
-  			{% if thecycle == 'odd' %}
-    			{% assign color = "#234d77" %}
-				{% else %}
-					{% assign color = "#70a09f" %}
-  			{% endif %}
+			{% capture thecycle %}{% cycle 'odd', 'even' %}{% endcapture %}
+			{% if thecycle == 'odd' %}
+				{% assign color = "#325666" %}
+			{% else %}
+				{% assign color = "#71909e" %}
+			{% endif %}
 				<span style="color:{{ color }}">#{{ tag }}</span>{% unless forloop.last %}&nbsp;&nbsp;{% endunless %}
 			{% endfor %}
 		</p>

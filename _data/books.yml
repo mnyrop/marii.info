@@ -198,11 +198,3 @@
   image: "soviet-science.png"
   link: "https://www.goodreads.com/book/show/3226127-soviet-science"
   sort: medvedev
-- title: "nuclear distaster in the urals"
-  author: "zhores a. medvedev"
-  link: "https://www.goodreads.com/book/show/7258695-nuclear-disaster-in-the-urals"
-  sort: medvedev
-- title: "babylon"
-  author: "victor pelevin"
-  link: "https://www.goodreads.com/book/show/418126.Babylon"
-  sort: pelevin

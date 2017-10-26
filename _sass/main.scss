@@ -396,3 +396,11 @@ button:hover {
   -webkit-box-shadow: 2px 4px 6px rgba(237, 255, 48, .5);
   box-shadow: 2px 4px 6px rgba(237, 255, 48, .5);
 }
+
+.line-link{
+  border-bottom: 2px solid transparent;
+  line-height: 1.3em;
+  &:hover {
+    border-color: #000;
+  }
+}

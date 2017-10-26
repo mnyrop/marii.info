@@ -23,7 +23,7 @@ tags:
 
 As part of my gig as the DH developer for Columbia University Libraries, I've become the data steward of the [Foreign Relations of the United States](https://history.state.gov/historicaldocuments/about-frus) (FRUS) collection for the  [History Lab](http://history-lab.org/) project.
 
-This means that, as newly declassified and processed FRUS volumes are released by the State Department as [XML files](https://github.com/HistoryAtState/frus/tree/master/volumes), it's my job to re-process the collection with the newly added volumes, ingest the processed data into to our MySQL database, and make sure the metadata connecting the volumes to History_Lab's own bleeding edge [topic modeling and named-entity recognition (NER)](http://www.history-lab.org/documentation) is preserved for further research.
+This means that, as newly declassified and processed FRUS volumes are released by the State Department as [XML files](https://github.com/HistoryAtState/frus/tree/master/volumes), it's my job to re-process the collection with the newly added volumes, ingest the processed data into to our MySQL database, and make sure the metadata connecting the volumes to History_Lab's own bleeding edge [topic modeling and named-entity recognition (NER)](http://www.history-lab.org/documentation/) is preserved for further research.
 
 In practice, this means I need to: regenerate the data as a brand new, 'update' database, copy over a select number of tables containing the additional data that History_Lab has produced, and test the fidelity of the new database before passing it up the chain of command.
 

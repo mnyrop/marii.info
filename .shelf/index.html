@@ -1,0 +1,12 @@
+---
+layout: page
+title: shelf
+---
+<h3>current/recent reads &#172;</h3>
+{% assign booksort = site.data.books | reverse %}
+{% assign num = booksort | size %}
+<p>
+{% for book in booksort %}
+  <b>{{ book.title }}</b> ({{ book.author }}){% unless forloop.last %}, {% endunless %}
+{% endfor %}
+</p>

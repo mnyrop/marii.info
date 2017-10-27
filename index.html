@@ -4,7 +4,8 @@ layout: default
 
 <section>
 
-	<h1 style="font-size:40px">marii.info &#172;</h1>
+	<h1 style="font-size:40px">marii nyröp&#172;</h1>
+	<h4 style="margin-top:-15px;">dh developer @ columbia university libraries</h4>
 
 	projects, tips, and detritus re: digital-humanities, libraries, jekyll, static-sites, iiif, json, yaml, python, pandas, numpy, minimal-computing, digital-collections, digital-publishing, natural-language-processing, data-visualization, web-scraping, document-parsing, media-materialism, shell-scripting, speculative-fiction, and ____________________________.
 
@@ -13,7 +14,7 @@ layout: default
 	{% if projects.size != 0%}
 		<h3>projects &#172;</h3>
 		<p>
-			<b><a href="/projects/wax" class="line-link">Jekyll-Wax</a>:</b> Modules + Methods for Jekyll in the Expanded Field&nbsp;&nbsp;<span style="color:#325666">#dev</span><br>
+			<b><a href="/projects/wax" class="line-link">Wax</a>:</b> Modules + Methods for Jekyll in the Expanded Field&nbsp;&nbsp;<span style="color:#325666">#dev</span><br>
 			<b><a href="/projects/p2p" class="line-link">p2p?</a>:</b> Democracy, Deregulation, and Discontents&nbsp;&nbsp;<span style="color:#71909e">#teaching</span><br>
 			<b><a href="/projects/embarrassmentparty" class="line-link">Embarrassment.Party</a>:</b> Internat'l Artists Residency Program&nbsp;&nbsp;<span style="color:#325666">#curatorial</span></b>
 		<p>
@@ -47,7 +48,7 @@ layout: default
 	{% assign sticky_posts = site.posts | where: "sticky", true %}
 	{% for post in sticky_posts  %}
 		{% unless post.next %}
-			<h3>posts / {{ post.date | date: '%Y' }} &#172;</h3>
+			<h3>posts-{{ post.category }} / {{ post.date | date: '%Y' }} &#172;</h3>
 		{% else %}
 			{% capture year %}{{ post.date | date: '%Y' }}{% endcapture %}
 			{% capture nyear %}{{ post.next.date | date: '%Y' }}{% endcapture %}
@@ -75,7 +76,7 @@ layout: default
 						{% else %}
 							{% assign color = "#71909e" %}
 						{% endif %}
-						<!-- <a href="">--><span style="color:{{ color }}" class="tag">#{{ tag }}</span><!--</a>-->{% unless forloop.last %}&nbsp;&nbsp;{% endunless %}
+						<span style="color:{{ color }}" class="tag">#{{ tag }}</span>{% unless forloop.last %}&nbsp;&nbsp;{% endunless %}
 					{% endfor %}
 				</p>
 				<!-- </div>
@@ -83,7 +84,7 @@ layout: default
 		</ul> -->
 	{% endfor %}
 
-	<h3>current/recent reads &#172;</h3>
+	<h3>current+recent reads &#172;</h3>
 	<p>
 		{% for book in site.data.books_current %}
 			<i class="fa fa-circle-o" aria-hidden="true"></i> <b><a href="{{ book.link }}" target="_blank" class="line-link">{{ book.title }}</a></b> ({{ book.author }}),

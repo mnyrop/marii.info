@@ -1,6 +1,6 @@
 ---
 layout: post
-title: The Summer of Japanese Puppets<br>(Part 1 of 4)
+title: The Summer of Japanese Puppets, Part 1
 date: 2017-07-11
 category: dev
 sticky: true

@@ -3,6 +3,7 @@ layout: post
 title: The Summer of Japanese Puppets, Part 3
 date: 2017-07-11
 category: dev
+sticky: true
 tags:
   - jekyll
   - github-pages

@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+
+	<title>Auto-generate D3.js JSON from a Jekyll collection · marii</title>
+
+
+<meta name="description" content="">
+
+
+<link rel="icon" href="http://localhost:8000/assets/favicon.png">
+<link rel="stylesheet" href="http://localhost:8000/assets/core.css">
+<link rel="canonical" href="http://localhost:8000/notes/autogenerate-json-for-d3-from-jekyll-collection-data">
+
+<script src="https://use.fontawesome.com/884e80fbb8.js"></script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-106423521-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+	</head>
+
+	<body>
+
+		<br/><br/>
+
+<aside class="logo">
+
+	
+
+	<a href="http://localhost:8000/">
+		<img src="/assets/snake.png" class="gravatar">
+	</a>
+	<span class="logo-prompt">Home</span>
+
+</aside>
+
+
+		<main>
+			<article>
+
+	<div class="center">
+		<h1>Auto-generate D3.js JSON from a Jekyll collection</h1>
+		<p>
+			
+			
+			
+				<span style="color:#325666">#jekyll</span>&nbsp;&nbsp;
+			
+			
+			
+				<span style="color:#71909e">#d3js</span>&nbsp;&nbsp;
+			
+			
+			
+				<span style="color:#325666">#json</span>&nbsp;&nbsp;
+			
+			
+			
+				<span style="color:#71909e">#liquid</span>
+			
+		</p>
+		<time>April 3, 2017</time>
+	</div>
+
+	<div class="divider"></div>
+
+	<iframe width="100%" height="600" src="//jsfiddle.net/marii_/uwzpnv5r/27/embedded/result,js/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+<h1 id="the-goal">The goal:</h1>
+
+<p>Produce a d3.js <a href="https://bl.ocks.org/mbostock/4062045">force-directed graph</a> that visualizes a collection in your <a href="https://jekyllrb.com/">Jekyll site</a> via tag clusters.</p>
+
+<h1 id="how-to-do-it">How to do it:</h1>
+<p><strong>1.  Set up your Jekyll collection.</strong><br />
+You can find tips for how to do that <a href="https://jekyllrb.com/docs/collections/#step1">here</a>.
+<br /><br /></p>
+
+<p><strong>2.  Add your tag(s) to each collection page’s YAML front matter.</strong><br />For example:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>layout: default
+title: 土地　正神
+tags:
+- Earth
+- God of Wealth
+---
+</code></pre></div></div>
+<p><br />
+<strong>3.  Write some <a href="https://help.shopify.com/themes/liquid/basics">Liquid</a> that will translate your collection data/pages into the JSON file that drives the D3 visualization.</strong><br />
+This is the only tricky part of the process and, as such, will constitute pretty much the entirety of this post. To underscore this further:<br /><br />
+<em>The following is a guide for writing Liquid “code.”<br /> For your Jekyll site.<br /> That generates a JSON file.<br /> That drives a D3 force graph.<br /> That visualizes a Jekyll collection.<br /> Based on shared tags.</em><br /><br />
+Whew. This sounds like a lot, but it’s really not so bad. I promise that the hurdles are 90% cognitive (rather than technical), and only require that you understand the data you have versus the data you need.</p>
+
+<p><strong>4.   Lastly, write or borrow some d3 + js force graph code.</strong><br />
+You’re welcome to use <a href="https://jsfiddle.net/marii_/uwzpnv5r/27/">mine</a> as a starting place.</p>
+
+<h1 id="the-json">The JSON:</h1>
+
+<p>Different visualizations generally want different data in different formats and/or structures. Luckily, most force-directed graphs (with the exception of <a href="https://bl.ocks.org/mbostock/1093130">hierarchical graphs!</a>) want two JSON arrays: one with nodes, one with links. A rule of thumb: at minimum, each node needs an identifier key (e.g an <code class="highlighter-rouge">id</code>, <code class="highlighter-rouge">title</code>, or <code class="highlighter-rouge">name</code>), and each link needs a <code class="highlighter-rouge">source</code> node and a <code class="highlighter-rouge">target</code> node. You can add additional key/value pairs for more complex visualizations, but the following is a good standard:
+<br /><br /></p>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"nodes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NODE_NAME"</span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NODE_NAME"</span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NODE_NAME"</span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="s2">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SOURCE_NODE_ID"</span><span class="p">,</span><span class="w"> </span><span class="s2">"target"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TARGET_NODE_ID"</span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="s2">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SOURCE_NODE_ID"</span><span class="p">,</span><span class="w"> </span><span class="s2">"target"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TARGET_NODE_ID"</span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="s2">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SOURCE_NODE_ID"</span><span class="p">,</span><span class="w"> </span><span class="s2">"target"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TARGET_NODE_ID"</span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+<p><br /><br />
+In our example, nodes should include individual collection items as well as tags. Links are created to join items to their tags (and subsequently to other items with that tag).
+<br /><br /></p>
+
+<p><em><strong>Note!</strong></em>      The following is for writing liquid to generate both the list of nodes <strong>and</strong> the list of links. However, many templates for force graphs can generate the list of nodes for you, from your list of links. So feel free to cheat/simplify what’s below, to only generate the link array!
+<br /><br /></p>
+<h1 id="the-liquid">The Liquid</h1>
+
+<p>Below you’ll find step-by-step instructions for writing Liquid &gt; JSON that can drive a D3 force graph. It assumes that you understand Jekyll and the basics of its templating engine Liquid. If you just want to copy the Liquid code in its entirety, you can grab the raw file <a href="https://gist.github.com/mnyrop/17c54380e347f37beaa64cf8d2a64785">here</a>—just make sure its saved as a <code class="highlighter-rouge">.json</code> file in the root of your site, and Jekyll will compile it as valid JSON in your <code class="highlighter-rouge">_site</code> folder for you. But if you know the basics of Liquid and want to better understand the process in order to power your own visualizations, keep reading.</p>
+
+<p><strong>1. Create a variable <code class="highlighter-rouge">{{ tags }}</code> by looping through each collection item and joining its tag(s) into one long string, each separated by a <code class="highlighter-rouge">^</code> character. Then make a unique <a href="https://shopify.github.io/liquid/basics/types/#initializing-arrays">pseudo-array / substring list</a> from <code class="highlighter-rouge">{{ tags }}</code> called <code class="highlighter-rouge">{{ tag_nodes }}</code>.</strong></p>
+
+<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid"><span class="p">{%</span><span class="w"> </span><span class="nt">capture</span><span class="w"> </span><span class="na">tags</span><span class="w"> </span><span class="p">%}</span>
+  <span class="p">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span>item<span class="w"> </span>in<span class="w"> </span>site.paper_gods<span class="w"> </span><span class="p">%}</span>
+    <span class="p">{%</span><span class="w"> </span><span class="nt">assign</span><span class="w"> </span><span class="nv">last</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">forloop</span><span class="p">.</span><span class="nv">last</span><span class="w"> </span><span class="p">%}</span>
+    <span class="p">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span>tag<span class="w"> </span>in<span class="w"> </span>item.tag<span class="w"> </span><span class="p">%}</span>
+      <span class="p">{{</span><span class="w"> </span><span class="nv">tag</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">strip_html</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">strip_newlines</span><span class="w"> </span><span class="p">}}{%</span><span class="w"> </span><span class="kr">unless</span><span class="w"> </span><span class="nv">last</span><span class="w"> </span><span class="p">%}</span>^<span class="p">{%</span><span class="w"> </span><span class="kr">endunless</span><span class="w"> </span><span class="p">%}</span>
+    <span class="p">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="p">%}</span>
+  <span class="p">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="p">%}</span>
+<span class="p">{%</span><span class="w"> </span><span class="nt">endcapture</span><span class="w"> </span><span class="p">%}</span>
+
+<span class="p">{%</span><span class="w"> </span><span class="nt">assign</span><span class="w"> </span><span class="nv">tag_nodes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">tags</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">split</span><span class="p">:</span><span class="w"> </span><span class="s1">'^'</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">uniq</span><span class="w"> </span><span class="p">%}</span></code></pre></figure>
+
+<p><strong>2. Now make a variable <code class="highlighter-rouge">{{ links }}</code>. Then loop through each collection item and, for each tag associated with that item, make A JSON object with the item as the <code class="highlighter-rouge">source</code> and the tag as the <code class="highlighter-rouge">target</code> and capture it as the temporary variable <code class="highlighter-rouge">{{ linkstring }}</code>. Append that captured <code class="highlighter-rouge">{{ linkstring }}</code> to <code class="highlighter-rouge">{{ links }}</code>, separated by a <code class="highlighter-rouge">^</code> character. Finally, make another unique pseudo-array / substring <code class="highlighter-rouge">{{ link_array }}</code> by splitting <code class="highlighter-rouge">{{ links }}</code> by the <code class="highlighter-rouge">^</code> character and cleaning any mistakenly captured tabs, trailing spaces, or newlines.</strong></p>
+
+<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid"><span class="p">{%</span><span class="w"> </span><span class="nt">assign</span><span class="w"> </span><span class="nv">links</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">""</span><span class="w"> </span><span class="p">%}</span>
+
+<span class="p">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span>item<span class="w"> </span>in<span class="w"> </span>site.paper_gods<span class="w"> </span><span class="p">%}</span>
+  <span class="p">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span>tag<span class="w"> </span>in<span class="w"> </span>item.tag<span class="w"> </span><span class="p">%}</span>
+    <span class="p">{%</span><span class="w"> </span><span class="nt">capture</span><span class="w"> </span><span class="na">linkstring</span><span class="w"> </span><span class="p">%}</span>
+      { "source": <span class="p">{{</span><span class="w"> </span><span class="nv">item</span><span class="p">.</span><span class="nv">title</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">strip_newlines</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">strip_html</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">strip</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">jsonify</span><span class="w"> </span><span class="p">}}</span>, "target": <span class="p">{{</span><span class="w"> </span><span class="nv">tag</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">jsonify</span><span class="w"> </span><span class="p">}}</span> }^
+    <span class="p">{%</span><span class="w"> </span><span class="nt">endcapture</span><span class="w"> </span><span class="p">%}</span>
+    <span class="p">{%</span><span class="w"> </span><span class="nt">assign</span><span class="w"> </span><span class="nv">links</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">links</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">append</span><span class="p">:</span><span class="w"> </span>linkstring<span class="w"> </span><span class="p">%}</span>
+  <span class="p">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="p">%}</span>
+<span class="p">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="p">%}</span>
+
+<span class="p">{%</span><span class="w"> </span><span class="nt">assign</span><span class="w"> </span><span class="nv">link_array</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">links</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">strip</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">strip_newlines</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">split</span><span class="p">:</span><span class="w"> </span><span class="s2">"^"</span><span class="w"> </span><span class="p">%}</span></code></pre></figure>
+
+<p><strong>3. Make a variable <code class="highlighter-rouge">{{ json }}</code> by printing the appropriate json formatting, assigning nodes (including collection items as well as unique tags from <code class="highlighter-rouge">{{ tag_nodes }}</code>), and links from <code class="highlighter-rouge">{{ link_array }}</code>. Nodes can include site URLs if you want to use your force graph as a tool for navigating your Jekyll site, or groups if you want to differentiate nodes for future functional/style distinctions.</strong></p>
+
+<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid"><span class="p">{%</span><span class="w"> </span><span class="nt">capture</span><span class="w"> </span><span class="na">json</span><span class="w"> </span><span class="p">%}</span>
+{
+  "nodes": [
+    <span class="p">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span>item<span class="w"> </span>in<span class="w"> </span>site.paper_gods<span class="w"> </span><span class="p">%}</span>{ "id": <span class="p">{{</span><span class="w"> </span><span class="nv">item</span><span class="p">.</span><span class="nv">title</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">strip_newlines</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">jsonify</span><span class="w"> </span><span class="p">}}</span>, "url": <span class="p">{{</span><span class="w"> </span><span class="nv">site</span><span class="p">.</span><span class="nv">baseurl</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">append</span><span class="p">:</span><span class="w"> </span>item.url<span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">jsonify</span><span class="w"> </span><span class="p">}}</span>, "group": 1 },
+    <span class="p">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="p">%}</span>
+    <span class="p">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span>tag<span class="w"> </span>in<span class="w"> </span>tag_nodes<span class="w"> </span><span class="p">%}</span>{ "id": <span class="p">{{</span><span class="w"> </span><span class="nv">tag</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">strip</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">strip_newlines</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">jsonify</span><span class="w"> </span><span class="p">}}</span>, "group": 2 }<span class="p">{%</span><span class="w"> </span><span class="kr">unless</span><span class="w"> </span><span class="nv">forloop</span><span class="p">.</span><span class="nv">last</span><span class="w"> </span><span class="p">%}</span>,<span class="p">{%</span><span class="w"> </span><span class="kr">endunless</span><span class="w"> </span><span class="p">%}</span>
+    <span class="p">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="p">%}</span>
+  ],
+  "links": [
+    <span class="p">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span>link<span class="w"> </span>in<span class="w"> </span>link_array<span class="w"> </span><span class="p">%}{{</span><span class="w"> </span><span class="nv">link</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">strip</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">strip_newlines</span><span class="w"> </span><span class="p">}}{%</span><span class="w"> </span><span class="kr">unless</span><span class="w"> </span><span class="nv">forloop</span><span class="p">.</span><span class="nv">last</span><span class="w"> </span><span class="p">%}</span>,<span class="p">{%</span><span class="w"> </span><span class="kr">endunless</span><span class="w"> </span><span class="p">%}</span>
+    <span class="p">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="p">%}</span>
+  ]
+}
+<span class="p">{%</span><span class="w"> </span><span class="nt">endcapture</span><span class="w"> </span><span class="p">%}</span></code></pre></figure>
+
+<p><strong>4. Finally, print the resulting json with any leftover tabs, trailing spaces, and/or newlines removed. Your final file (rendered in your <code class="highlighter-rouge">_site</code> folder) will be the output of this one line, since the Liquid above only captures and assigns information—it doesn’t print it out.</strong></p>
+
+<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid"><span class="p">{{</span><span class="w"> </span><span class="nv">json</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">strip</span><span class="w"> </span><span class="p">}}</span></code></pre></figure>
+
+<p>For my example collection, the json output looks like this:</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"nodes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w"> </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"土地　正神"</span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w"> </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"利市　迊喜　仙官"</span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w"> </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"王　二爺　之　神"</span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w"> </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"南天門　東廚　司命"</span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w"> </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"天地　三界　十方　萬靈　眞宰 [碑亭]"</span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w"> </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"玄壇　趙　元帥"</span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w"> </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"玄壇　趙　元帥"</span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w"> </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"威顯　關聖　大帝"</span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w"> </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"大　中華　民國　二十年　灶君　之　神位"</span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w"> </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"東廚　司命"</span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w"> </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"五路　之　神"</span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w"> </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"家宅　六神"</span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w"> </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"財公　財母"</span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w"> </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"管山　之　神"</span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w"> </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"水草　馬明王"</span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w"> </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"增 福 財神"</span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w"> </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"增 福 財神"</span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w"> </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"培姑　娘娘"</span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w"> </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"龍王　之　神"</span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w"> </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"青龍　之　神"</span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w"> </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"白馬　先逢"</span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w"> </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"土公　土母"</span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w"> </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"黄河　金龍　四大王"</span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w"> </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"太上　老君"</span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w"> </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Earth"</span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w"> </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"God of Wealth"</span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w"> </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Kitchen"</span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w"> </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pantheons"</span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w"> </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Underworld"</span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w"> </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Central Figures"</span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w"> </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Buddhas and Bodhisattvas"</span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w"> </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Heaven"</span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="s2">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"土地　正神"</span><span class="p">,</span><span class="w"> </span><span class="s2">"target"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Earth"</span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="s2">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"利市　迊喜　仙官"</span><span class="p">,</span><span class="w"> </span><span class="s2">"target"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Earth"</span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="s2">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"王　二爺　之　神"</span><span class="p">,</span><span class="w"> </span><span class="s2">"target"</span><span class="p">:</span><span class="w"> </span><span class="s2">"God of Wealth"</span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="s2">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"南天門　東廚　司命"</span><span class="p">,</span><span class="w"> </span><span class="s2">"target"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Kitchen"</span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="s2">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"天地　三界　十方　萬靈　眞宰 [碑亭]"</span><span class="p">,</span><span class="w"> </span><span class="s2">"target"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pantheons"</span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="s2">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"玄壇　趙　元帥"</span><span class="p">,</span><span class="w"> </span><span class="s2">"target"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Underworld"</span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="s2">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"玄壇　趙　元帥"</span><span class="p">,</span><span class="w"> </span><span class="s2">"target"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Underworld"</span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="s2">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"威顯　關聖　大帝"</span><span class="p">,</span><span class="w"> </span><span class="s2">"target"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Central Figures"</span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="s2">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"大　中華　民國　二十年　灶君　之　神位"</span><span class="p">,</span><span class="w"> </span><span class="s2">"target"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Kitchen"</span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="s2">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"東廚　司命"</span><span class="p">,</span><span class="w"> </span><span class="s2">"target"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Kitchen"</span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="s2">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"五路　之　神"</span><span class="p">,</span><span class="w"> </span><span class="s2">"target"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Earth"</span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="s2">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"家宅　六神"</span><span class="p">,</span><span class="w"> </span><span class="s2">"target"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Earth"</span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="s2">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"財公　財母"</span><span class="p">,</span><span class="w"> </span><span class="s2">"target"</span><span class="p">:</span><span class="w"> </span><span class="s2">"God of Wealth"</span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="s2">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"管山　之　神"</span><span class="p">,</span><span class="w"> </span><span class="s2">"target"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Earth"</span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="s2">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"水草　馬明王"</span><span class="p">,</span><span class="w"> </span><span class="s2">"target"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Earth"</span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="s2">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"增 福 財神"</span><span class="p">,</span><span class="w"> </span><span class="s2">"target"</span><span class="p">:</span><span class="w"> </span><span class="s2">"God of Wealth"</span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="s2">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"增 福 財神"</span><span class="p">,</span><span class="w"> </span><span class="s2">"target"</span><span class="p">:</span><span class="w"> </span><span class="s2">"God of Wealth"</span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="s2">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"培姑　娘娘"</span><span class="p">,</span><span class="w"> </span><span class="s2">"target"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Buddhas and Bodhisattvas"</span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="s2">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"龍王　之　神"</span><span class="p">,</span><span class="w"> </span><span class="s2">"target"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Earth"</span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="s2">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"青龍　之　神"</span><span class="p">,</span><span class="w"> </span><span class="s2">"target"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Earth"</span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="s2">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"白馬　先逢"</span><span class="p">,</span><span class="w"> </span><span class="s2">"target"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Earth"</span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="s2">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"土公　土母"</span><span class="p">,</span><span class="w"> </span><span class="s2">"target"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Earth"</span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="s2">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"黄河　金龍　四大王"</span><span class="p">,</span><span class="w"> </span><span class="s2">"target"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Earth"</span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="s2">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"太上　老君"</span><span class="p">,</span><span class="w"> </span><span class="s2">"target"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Heaven"</span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p><br /><br /></p>
+
+<h1 id="last-thoughts">Last Thoughts:</h1>
+
+<p>This result might not look super impressive just yet—especially since our example output is barely larger than our liquid template! However, you can use the same or a similar process to generate JSON that is way larger, way more complicated, and way more visually impactful. And did I mention that it will update automatically as your site grows??!! Since liquid is parsed on <code class="highlighter-rouge">jekyll build</code> and <code class="highlighter-rouge">jekyll serve</code> just like markdown, you won’t need to touch your JSON-generating file again (unless you want to change the structure of it, and prototype something new).</p>
+
+<p><br /><br /><br /><br /><br /></p>
+
+
+</article>
+
+<div class="page-navigation">
+	
+    <a class="next" href="http://localhost:8000/notes/wp-to-jekyll-the-alt-route" title="NEXT: Moving from Wordpress to Jekyll:<br> Tips for the Alternate Route">&lt;&lt;</a>
+		<span> &middot; </span>
+  
+		<a class="home" href="http://localhost:8000/" title="Back to Homepage">Home</a>
+  
+</div>
+
+		</main>
+
+		<div class="footer">
+  <br><br><br><br>
+  <button>
+    <a href="https://twitter.com/mariinyrop" target="_none">
+      <i class="fa fa-lg fa-twitter" aria-hidden="true"></i>
+    </a>
+  </button>
+  &nbsp;&nbsp;
+  <button>
+    <a href="https://github.com/mnyrop" target="_none">
+      <i class="fa fa-lg fa-code-fork" aria-hidden="true"></i>
+    </a>
+  </button>
+  &nbsp;&nbsp;
+  <button id="btn" data-clipboard-text="m.nyrop@columbia.edu">
+    <i class="fa fa-lg fa-envelope-o" aria-hidden="true"></i>
+  </button>
+  &nbsp;&nbsp;
+  <button>
+    <a href="https://stackoverflow.com/users/8227741/marii" target="_none">
+      <i class="fa fa-lg fa-stack-overflow" aria-hidden="true"></i>
+    </a>
+  </button>
+  &nbsp;&nbsp;
+  <button>
+    <a href="https://jsfiddle.net/user/marii_/fiddles/" target="_none">
+      <i class="fa fa-lg fa-jsfiddle" aria-hidden="true"></i>
+    </a>
+  </button>
+  &nbsp;&nbsp;
+  <button>
+    <a href="https://rubygems.org/profiles/marii" target="_none">
+      <i class="fa fa-lg fa-diamond" aria-hidden="true"></i>
+    </a>
+  </button>
+  &nbsp;&nbsp;
+  <!-- <button>
+    <a href="/shelf">
+      <i class="fa fa-lg fa-book" aria-hidden="true"></i>
+    </a>
+  </button> -->
+  <br><br>
+  <br><br><br>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.10/clipboard.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<style>
+  .tooltip{position:absolute;z-index:1030;display:block;font-size:12px;line-height:1.4;opacity:0;filter:alpha(opacity=0);visibility:visible}.tooltip.in{opacity:.9;filter:alpha(opacity=90)}.tooltip.top{padding:5px 0;margin-top:-3px}.tooltip.right{padding:0 5px;margin-left:3px}.tooltip.bottom{padding:5px 0;margin-top:3px}.tooltip.left{padding:0 5px;margin-left:-3px}.tooltip-inner{max-width:200px;padding:3px 8px;color:#fff;text-align:center;text-decoration:none;background-color:#000;border-radius:4px}.tooltip-arrow{position:absolute;width:0;height:0;border-color:transparent;border-style:solid}.tooltip.top .tooltip-arrow{bottom:0;left:50%;margin-left:-5px;border-top-color:#000;border-width:5px 5px 0}.tooltip.top-left .tooltip-arrow{bottom:0;left:5px;border-top-color:#000;border-width:5px 5px 0}.tooltip.top-right .tooltip-arrow{right:5px;bottom:0;border-top-color:#000;border-width:5px 5px 0}.tooltip.right .tooltip-arrow{top:50%;left:0;margin-top:-5px;border-right-color:#000;border-width:5px 5px 5px 0}.tooltip.left .tooltip-arrow{top:50%;right:0;margin-top:-5px;border-left-color:#000;border-width:5px 0 5px 5px}.tooltip.bottom .tooltip-arrow{top:0;left:50%;margin-left:-5px;border-bottom-color:#000;border-width:0 5px 5px}.tooltip.bottom-left .tooltip-arrow{top:0;left:5px;border-bottom-color:#000;border-width:0 5px 5px}.tooltip.bottom-right .tooltip-arrow{top:0;right:5px;border-bottom-color:#000;border-width:0 5px 5px}
+</style>
+<script>
+  $('#btn').tooltip({
+    trigger: 'click',
+    placement: 'bottom'
+  });
+  function setTooltip(message) {
+    $('#btn').tooltip('hide')
+      .attr('data-original-title', message)
+      .tooltip('show');
+  }
+  function hideTooltip() {
+    setTimeout(function() {
+      $('button').tooltip('hide');
+    }, 1000);
+  }
+  // Clipboard
+  var clipboard = new Clipboard('button');
+  clipboard.on('success', function(e) {
+    setTooltip('Copied to clipboard!');
+    hideTooltip();
+  });
+  clipboard.on('error', function(e) {
+    setTooltip('Failed!');
+    hideTooltip();
+  });
+</script>
+
+
+	</body>
+
+</html>

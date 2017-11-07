@@ -17,8 +17,7 @@ So, if you're like me and can't get the plugin to work (for whatever your reason
 
 __1-2__ — A Wordpress plugin spits out a `.csv`<br>
 __3__ — You transform it into a clean/usable `.csv` using OpenRefine<br>
-__4__ — An in-browser or command line tool of choice converts it to `.yaml`<br>
-__5-6__ — A Jekyll plugin generates new `.markdown` pages from the `.yaml`
+__4-5__ — A Jekyll plugin generates new `.markdown` pages from the `.csv`
 
 ## Roadmap explained, with gotchas:
 
@@ -56,23 +55,11 @@ __V. Turn a multi-value cell into a YAML array in advance__ with a simple GREL e
 
 __VI. Relativize your permalinks__ by removing the protocol, domain, and any trailing directories, leaving only the unique slug. If, for example, your posts all follow the URL pattern `https://example.edu/blog/the-post-slug`, you can use the expression `value.replace("https://example.edu/blog/", "/")` to return just `/the-post-slug`.
 
-__VII. Export!__ (sticking with comma separated values.)
+__VII. Export!__ as a .csv file (e.g. `posts.csv`) and put it in the `_data` folder in the root of your Jekyll site.
 
-<br>
-<hr>
-___Note: These steps do not guarantee that you'll have valid YAML after you export and convert your CSV, but they'll help you avoid a lot of the pitfalls that I fell into on and off for a day.___
-<hr>
-<br>
+#### 4. Generate posts/pages from your CSV file using __[pagemaster](https://github.com/mnyrop/pagemaster)__.
+If you have multiple CSV files (e.g. `posts.csv` and `pages.csv`, like I did), set each one up as a separate Jekyll collection in your `config.yml` file, add `gem pagemaster` to your Gemfile and install it with `$ bundle install`, then run `$ bundle exec jekyll build` or  `$ bundle exec jekyll serve` to build your site and generate the pages/posts. Detailed instructions for setting up your collection(s) in `config` and using the plugin are in the [README.md](https://github.com/mnyrop/pagemaster).
 
-#### 4. Convert to YAML and lint it.
-
-Depending on the size and privacy concerns of your data, you can avoid installing anything and special CLI tools and use [CSV to YAML](http://www.convertcsv.com/csv-to-yaml.htm) and [YAML Lint](http://www.yamllint.com/) in your browser. When you get the green "Valid YAML!" light, go ahead and save your file (e.g. `posts.yaml`) into the `_data` folder in the root of your Jekyll site.
-
-#### 5. Generate posts/pages from your YAML file using [YAML-Splitter](https://github.com/mnyrop/yaml-splitter).
-If you have multiple YAML files (e.g. `posts.yaml` and `pages.yml`, like I did), set each one up as a separate Jekyll collection in your `config.yml` file, then add the file `yml_splitter.rb` to the `_plugins` directory in the root of your site, and run `jekyll build`. Detailed instructions for setting up your collection(s) in `config` and using the plugin are in the [README.md](https://github.com/mnyrop/yaml-splitter).
-
-#### 6. Augment your Jekyll layouts.
+#### 5. Augment your Jekyll layouts.
 
 Depending on the data you exported, you'll want to render it on each page/post in different ways. If you included the content from your WP pages and posts in your CSV and renamed the field to something like `wp-content` back in OpenRefine, you'll want to change `page.html` and/or `post.html` in your `_layouts` folder to reflect that by replacing `{{ "{{ content " }}}}` with `{{ "{{ page.wp-content " }}}}`.
-
-<br><br><br><br><br><br>

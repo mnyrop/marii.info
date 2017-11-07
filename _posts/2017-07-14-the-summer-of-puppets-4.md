@@ -69,32 +69,11 @@ Dropped null key:value pairs from JSON using [JQ](https://stedolan.github.io/jq/
 Converted (non-nulls) JSON to YAML using [Pyyaml](http://pyyaml.org/).
 
 <i class="fa fa-chevron-circle-right" aria-hidden="true"></i>&nbsp;&nbsp;
-Generated [Jekyll collections](https://jekyllrb.com/docs/collections/) (and pages) from YAML using [Yaml-Splitter plugin](https://github.com/mnyrop/yaml-splitter).
+Generated [Jekyll collections](https://jekyllrb.com/docs/collections/) (and pages) from YAML using [pagemaster jekyll plugin](https://github.com/mnyrop/pagemaster).
 
 <i class="fa fa-chevron-circle-right" aria-hidden="true"></i>&nbsp;&nbsp;
 Ended with a ~40k page static Jekyll site powered by YAML data, with JSON index for client-side search.
 
-<br>
-
-# On the horizon
-
-<i class="fa fa-minus-square-o" aria-hidden="true"></i>&nbsp;&nbsp;
-Implementing dual English/Japanese search
-
-<i class="fa fa-minus-square-o" aria-hidden="true"></i>&nbsp;&nbsp;
-Adding advanced/structured search
-
-<i class="fa fa-minus-square-o" aria-hidden="true"></i>&nbsp;&nbsp;
-Adding drop-down menu navigation
-
-<i class="fa fa-minus-square-o" aria-hidden="true"></i>&nbsp;&nbsp;
-Adding more data visualizations in various formats
-
-<i class="fa fa-minus-square-o" aria-hidden="true"></i>&nbsp;&nbsp;
-Refactoring layouts and asset scripts
-
-<i class="fa fa-minus-square-o" aria-hidden="true"></i>&nbsp;&nbsp;
-Adding IIIF manifests in Mirador for realia images
 
 <br>
 

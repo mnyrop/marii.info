@@ -28,7 +28,7 @@ This post is part 3 of 4 in a series. Feel free to skip around to:<br><br>__[par
 
 ## iv. Ingest + generate
 
-#### In: <span style="font-weight:400">[YAML](https://github.com/mnyrop/bunraku-ipy/tree/master/post-processing/yaml)</span><br>Tools: <span style="font-weight:400">[Jekyll](https://jekyllrb.com/) / [YAML-Splitter](https://github.com/mnyrop/yaml-splitter)</span>
+#### In: <span style="font-weight:400">[YAML](https://github.com/mnyrop/bunraku-ipy/tree/master/post-processing/yaml)</span><br>Tools: <span style="font-weight:400">[Jekyll](https://jekyllrb.com/) / [pagemaster gem](https://github.com/mnyrop/pagemaster)</span>
 
 Once I had my data packaged and ready in individual YAML array files (e.g. `authors.yaml`), I needed to create a Jekyll collection for each type, and 'split' the array of objects into individual markdown pages (e.g. `/_authors/1.md`) with the YAML as the pages' [front matter](https://jekyllrb.com/docs/frontmatter/):
 
@@ -48,14 +48,34 @@ layout: author_page
 ---
 ```
 
-To generate metadata'd pages like the one above, I cloned the [YAML-Splitter](https://github.com/mnyrop/yaml-splitter) Jekyll plugin I'd made a few months ago into a directory called `_plugins` in the root of my Jekyll site, then configured my collections to work with it in `_config.yml`:
+To generate metadata'd pages like the one above, I added the [pagemaster gem](https://rubygems.org/gems/pagemaster) to my Gemfile, installed it with `$ bundle install`, then configured my collections to work with it in `_config.yml`:
 
-<br><img src="{{ "/images/jekyll-config.png" | relative_url }}" style="box-shadow: 2px 2px 4pc #23352a;max-width:600px;"/><br><br>
+```yaml
+collections:
+  authors:
+    output: true
+    pm_generate: true
+    pm_input: yaml
+    pm_source: authors
+    pm_key: id
+    pm_directory: authors
+    pm_layout: author_page
+  characters:
+    output: true
+    pm_generate: true
+    pm_input: yaml
+    pm_source: characters
+    pm_key: id
+    pm_directory: characters
+    pm_layout: character_page
 
-If your collection's `yml_split` and `output` parameters are set to `true`, YAML-Splitter will generate the pages in separate directories of your choosing for each type (e.g. `_authors`, `_kashira`, etc.) within the site's root folder.
+  ...
+```
 
-[__Note:__ You can find more thorough documentation on how to configure your collections to work with YAML-Splitter
-[here](https://github.com/mnyrop/yaml-splitter/blob/master/README.md).]
+If your collection's `pm_generate` and `output` parameters are set to `true`, `pagemaster` will generate the pages in separate directories of your choosing for each type (e.g. `_authors`, `_kashira`, etc.) within the site's root folder.
+
+[__Note:__ You can find more thorough documentation on how to configure your collections to work with `pagemaster`
+[here](https://github.com/mnyrop/pagemaster/blob/master/README.md).]
 
 
 #### Out: <span style="font-weight:400">[Jekyll Collections](https://github.com/mnyrop/bunraku-jekyll)</span>
@@ -68,7 +88,7 @@ If your collection's `yml_split` and `output` parameters are set to `true`, YAML
 
 #### In: <span style="font-weight:400">[Jekyll Collections](https://github.com/mnyrop/bunraku-jekyll)</span><br>Tools: <span style="font-weight:400">[Liquid](https://shopify.github.io/liquid/)</span>
 
-YAML-Splitter also gives you the option to designate a layout for each collection, and will add that metadata to each markdown page it creates. I gave each type its own layout, for example `author-page.html`, shown below:
+Pagemaster also gives you the option to designate a layout for each collection, and will add that metadata to each markdown page it creates. I gave each type its own layout, for example `author-page.html`, shown below:
 
 <br><img src="{{ "/images/layout.png" | relative_url }}" style="box-shadow: 2px 2px 4pc #23352a;"/><br><br>
 

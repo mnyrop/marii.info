@@ -14,6 +14,8 @@ Before I start explaining myself and my hacky process, I should say that there *
 
 So, if you're like me and can't get the plugin to work (for whatever your reason might be), you're going to need a Plan B. Depending on the relative size and complexity of your Wordpress site, I can all but guarantee it will be messy and a bit painful getting your WP data over into a new Jekyll site. But while I don't have a turnkey solution to offer you (this is the alternate route, after all!), I can at least offer the guidance and a few warnings that I wish I'd had ahead of time myself.
 
+<br><img src="{{ site.baseurl }}/images/macgyver.gif" style="width:100%"/>
+
 ## The roadmap:
 
 __1-2__ — A Wordpress plugin spits out a `.csv`<br>

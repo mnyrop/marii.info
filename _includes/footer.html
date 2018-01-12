@@ -1,44 +1,15 @@
 <div class="footer">
   <br><br><br><br>
-  <button>
-    <a href="https://twitter.com/mariinyrop" target="_none">
-      <i class="fa fa-lg fa-twitter" aria-hidden="true"></i>
-    </a>
-  </button>
-  &nbsp;&nbsp;
-  <button>
-    <a href="https://github.com/mnyrop" target="_none">
-      <i class="fa fa-lg fa-code-fork" aria-hidden="true"></i>
-    </a>
-  </button>
-  &nbsp;&nbsp;
   <button id="btn" data-clipboard-text="m.nyrop@columbia.edu">
     <i class="fa fa-lg fa-envelope-o" aria-hidden="true"></i>
   </button>
   &nbsp;&nbsp;
-  <button>
-    <a href="https://stackoverflow.com/users/8227741/marii" target="_none">
-      <i class="fa fa-lg fa-stack-overflow" aria-hidden="true"></i>
-    </a>
-  </button>
+  {% for item in site.footer_links %}
+  <a href="{{ item.link }}" target="_none">
+    <button><i class="{{ item.icon }}" aria-hidden="true"></i></button>
+  </a>
   &nbsp;&nbsp;
-  <button>
-    <a href="https://jsfiddle.net/user/marii_/fiddles/" target="_none">
-      <i class="fa fa-lg fa-jsfiddle" aria-hidden="true"></i>
-    </a>
-  </button>
-  &nbsp;&nbsp;
-  <button>
-    <a href="https://rubygems.org/profiles/marii" target="_none">
-      <i class="fa fa-lg fa-diamond" aria-hidden="true"></i>
-    </a>
-  </button>
-  &nbsp;&nbsp;
-  <!-- <button>
-    <a href="/shelf">
-      <i class="fa fa-lg fa-book" aria-hidden="true"></i>
-    </a>
-  </button> -->
+  {% endfor %}
   <br><br>
   <br><br><br>
 </div>

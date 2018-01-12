@@ -26,3 +26,15 @@ exclude:            [ "LICENSE", "README.md", "CNAME", "vendor", "Gemfile*" ]
 collections:
   projects:
     output: true
+
+footer_links:
+  - icon: fa fa-lg fa-twitter
+    link: https://twitter.com/mariinyrop
+  - icon: fa fa-lg fa-code-fork
+    link: https://github.com/mnyrop
+  - icon: fa fa-lg fa-stack-overflow
+    link: https://stackoverflow.com/users/8227741/marii
+  - icon: fa fa-lg fa-jsfiddle
+    link: https://jsfiddle.net/user/marii_/fiddles/
+  - icon: fa fa-lg fa-diamond
+    link: https://rubygems.org/profiles/marii

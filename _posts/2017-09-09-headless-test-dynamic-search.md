@@ -24,14 +24,14 @@ The term "headless" refers to software capable of working without a GUI. Accordi
 
 **In simpler terms:** they're programs that go test your features for you, and come back bearing some good or not-so-good news.
 
-Headless feature tests (like any [unit tests](http://searchsoftwarequality.techtarget.com/definition/unit-testing)) are an important part of any **[Continuous Integration](https://aws.amazon.com/devops/continuous-integration/) (CI)** architecture. If you're new to CI and want to figure out how to set up your Jekyll site in a continuously integrated way, check out [this other post](jekyll-ci) first. If you're all set up with CI for Jekyll and want to take it to the next step, this post is for you.
+Headless feature tests (like any [unit tests](http://searchsoftwarequality.techtarget.com/definition/unit-testing)) are an important part of any **[Continuous Integration](https://aws.amazon.com/devops/continuous-integration/) (CI)** architecture. If you're new to CI and want to figure out how to set up your Jekyll site in a continuously integrated way, check out [this other post]({{ site.baseurl }}/notes/jekyll-ci/) first. If you're all set up with CI for Jekyll and want to take it to the next step, this post is for you.
 
 
 
 ### What tools do we need?
 
 #### [Travis-CI](https://travis-ci.org)
-"... is a hosted, distributed continuous integration service used to build and test software projects hosted at GitHub," that basically tests your build and performs any other tasks you specify on a VM in the cloud. For more on Jekyll and Travis, refer back to [this post](jekyll-ci).
+"... is a hosted, distributed continuous integration service used to build and test software projects hosted at GitHub," that basically tests your build and performs any other tasks you specify on a VM in the cloud. For more on Jekyll and Travis, refer back to [this post]({{ site.baseurl }}/notes/jekyll-ci/).
 
 #### [Rspec](http://rspec.info/)
 ... is a Ruby gem and "spec runner" for *behavior-driven development*, which is exactly what it sounds like. Rspec lets you write tests for what your code *should* do, which in turn helps you write better, less fickle code.

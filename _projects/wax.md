@@ -13,7 +13,7 @@ tags:
 ---
 
 <div id="openseadragon1" style="height:600px;background-color:#999;margin:15px 0px 10px 0px;"></div>
-<script src="../assets/openseadragon/openseadragon.min.js"></script>
+<script src="{{ site.baseurl }}/assets/openseadragon/openseadragon.min.js"></script>
 
 <script type="text/javascript">
     var viewer = OpenSeadragon({

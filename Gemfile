@@ -1,6 +1,7 @@
 source "https://rubygems.org"
-gem "jekyll", "3.7.0"
+gem "jekyll", "3.7.2"
 
 group :development, :test do
-  gem "html-proofer", "3.8.0"
+  gem "html-proofer"
+  gem "rake"
 end

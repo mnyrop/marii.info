@@ -9,7 +9,7 @@ github_username:    mnyrop # Your GitHub username here
 
 # Site Settings
 url:                ""
-permalink:          /notes/:title # Post permalink
+permalink:          /notes/:title/ # Post permalink
 
 # Site Build
 highlighter:        rouge
@@ -20,8 +20,8 @@ sass:
     style:          :compressed
 
 # Other Params
-include:            [ "robots.txt" ]
-exclude:            [ "LICENSE", "README.md", "CNAME", "vendor", "Gemfile*" ]
+include:            [robots.txt]
+exclude:            [LICENSE, README.md, CNAME, vendor, Gemfile*, Rakefile]
 
 collections:
   projects:

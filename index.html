@@ -1,8 +1,9 @@
 ---
 layout: default
 ---
+{% include smooth-scroll.html %}
 
-<section>
+<section id="home-button-container">
 
 	<h1 style="font-size:40px">marii nyröp&#172;</h1>
 	<h4 style="margin-top:-15px;">dh developer @ columbia university libraries</h4>
@@ -10,9 +11,16 @@ layout: default
 	projects, tips, and detritus re: digital-humanities, libraries, jekyll, static-sites, iiif, json, yaml, ruby, python, pandas, numpy, minimal-computing, digital-collections, natural-language-processing, data-visualization, web-scraping, document-parsing, media-materialism, shell-scripting, speculative-fiction, and ____________________________.
 
 	<br><br><br>
+	<a class="button" href="#projects">projects</a>&nbsp;&nbsp;&nbsp;
+	<a class="button" href="#labs">labs</a>&nbsp;&nbsp;&nbsp;
+	<a class="button" href="#posts">posts</a>&nbsp;&nbsp;&nbsp;
+	<a class="button" href="#reads">reads</a>
+	<br><br>
+
+
 	{% assign projects = site.projects | sort: "order" %}
 	{% if projects.size != 0%}
-		<h3>projects &#172;</h3>
+		<h3 id ="projects">projects &#172;</h3>
 		<p>
 			<b><a href="/projects/wax/" class="line-link">Minicomp/Wax</a>:</b> Minimal IIIF Exhibitions with Jekyll&nbsp;&nbsp;<span style="color:#325666">#dev</span><br>
 			<b><a href="/projects/p2p/" class="line-link">p2p</a>:</b> Democracy, Deregulation, and Discontents&nbsp;&nbsp;<span style="color:#71909e">#teaching</span><br>
@@ -20,7 +28,7 @@ layout: default
 		<p>
 	{% endif %}
 
-	<h3>labs &#172;</h3>
+	<h3 id="labs">labs &#172;</h3>
 	<p>
 		<b><a href="http://history-lab.org" class="line-link" target="_blank">History Lab</a>:</b> History as Data Science<br>
 		<b><a href="http://xpmethod.plaintext.in/" class="line-link" target="_blank">xpMethod</a>:</b> Columbia's Group for Experimental Methods in the Humanities<br>
@@ -30,7 +38,7 @@ layout: default
 	{% assign sticky_posts = site.posts | where: "sticky", true %}
 	{% for post in sticky_posts  %}
 		{% unless post.next %}
-			<h3>posts-{{ post.category }} / {{ post.date | date: '%Y' }} &#172;</h3>
+			<h3 id="posts">posts-{{ post.category }} / {{ post.date | date: '%Y' }} &#172;</h3>
 		{% else %}
 			{% capture year %}{{ post.date | date: '%Y' }}{% endcapture %}
 			{% capture nyear %}{{ post.next.date | date: '%Y' }}{% endcapture %}
@@ -52,7 +60,7 @@ layout: default
 			</p>
 	{% endfor %}
 
-	<h3>current+recent reads &#172;</h3>
+	<h3 id="reads">current+recent reads &#172;</h3>
 	<p>
 		{% for book in site.data.books_current %}
 			<i class="fa fa-circle-o" aria-hidden="true"></i> <b><a href="{{ book.link }}" target="_blank" class="line-link">{{ book.title }}</a></b> ({{ book.author }}),

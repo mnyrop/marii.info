@@ -405,3 +405,26 @@ button:hover {
     border-color: #000;
   }
 }
+#home-button-container{
+  .button {
+      display: inline-block;
+      text-align: center;
+      vertical-align: middle;
+      padding: 4px 21px;
+      border: 0px solid #c2a800;
+      border-radius: 8px;
+      background: #f7f7f7 /*#ededed*/;
+      -webkit-box-shadow: #ccc200 4px 7px 9px 0px;
+      -moz-box-shadow: #ccc200 4px 7px 9px 0px;
+      box-shadow: #ccc200 4px 7px 9px 0px;
+      font: normal normal bold 10px;
+      text-decoration: none;
+  }
+  .button:hover,
+  .button:focus,
+  .button:active {
+  	-webkit-box-shadow: #dcc209 6px 9px 11px 0px;
+  	-moz-box-shadow: #dcc209 6px 9px 11px 0px;
+  	box-shadow: #dcc209 6px 9px 11px 0px;
+  }
+}

@@ -11,16 +11,9 @@ tags:
   - 2017
 ---
 
-<!-- <div id="openseadragon1" style="height:600px;background-color:#999;margin:15px 0px 10px 0px;"></div>
-<script src="{{ site.baseurl }}/assets/openseadragon/openseadragon.min.js"></script>
-<script type="text/javascript">var viewer = OpenSeadragon({ id: "openseadragon1", tileSources: "https://derivativo-1.library.columbia.edu/iiif/2/ldpd:113768/info.json"});
-</script> -->
 <center>
   <img src="https://github.com/mnyrop/wax_tasks/raw/master/docs/wax_screen.gif?raw=true"/>
 </center>
-
-{% comment %}Hongmun Sŏgwan, “Pigŭk sosŏl - Pulsanghan insaeng (An unhappy life),” [Columbia University Libraries Online Exhibitions](https://dlc.library.columbia.edu/catalog/ldpd:113768), accessed October 2, 2017. IIIF image shown in [OpenSeaDragon](https://openseadragon.github.io/) viewer.{% endcomment %}
-
 
 ### three sentence summary:
 

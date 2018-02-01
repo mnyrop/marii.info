@@ -22,18 +22,17 @@ This post is part 3 of 4 in a series. Feel free to skip around to:<br><br>__[par
 ## [The demo](https://bunraku.cul.columbia.edu/)!
 
 The mostly finished demo has directories of
-[plays](https://bunraku.cul.columbia.edu/plays),
-[productions](https://bunraku.cul.columbia.edu/productions),
-[performances](https://bunraku.cul.columbia.edu/performances),
-[authors](https://bunraku.cul.columbia.edu/authors),
-[performers](https://bunraku.cul.columbia.edu/performers),
-[characters](https://bunraku.cul.columbia.edu/characters),
-[kashira](https://bunraku.cul.columbia.edu/kashira),
-[scenes](https://bunraku.cul.columbia.edu/performances/scenes/2671),
-[image tags](https://bunraku.cul.columbia.edu/tags),
-[slide images](https://bunraku.cul.columbia.edu/slides),
-[image albums](https://bunraku.cul.columbia.edu/albums), and
-[realia images](https://bunraku.cul.columbia.edu/realia),
+[plays](https://bunraku.cul.columbia.edu/plays/),
+[productions](https://bunraku.cul.columbia.edu/productions/),
+[performances](https://bunraku.cul.columbia.edu/performances/),
+[authors](https://bunraku.cul.columbia.edu/authors/),
+[performers](https://bunraku.cul.columbia.edu/performers/),
+[characters](https://bunraku.cul.columbia.edu/characters/),
+[kashira](https://bunraku.cul.columbia.edu/kashira/),
+[scenes](https://bunraku.cul.columbia.edu/scenes/2671/),
+[image tags](https://bunraku.cul.columbia.edu/tags/),
+[slide images](https://bunraku.cul.columbia.edu/slides/), and
+[image albums](https://bunraku.cul.columbia.edu/albums/)
 with individual layouts displaying and linking object data together.
 
 It is navigable through the above directory listings, through several dynamic search boxes running client-side [Lunrjs](https://lunrjs.com/), and via clickable [D3js](https://d3js.org/) data visualizations. It handles relative/massive image sets by implementing lazy load in a jQuery carousel.

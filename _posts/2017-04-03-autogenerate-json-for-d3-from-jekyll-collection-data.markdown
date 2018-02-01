@@ -68,7 +68,7 @@ In our example, nodes should include individual collection items as well as tags
 <br><br>
 # The Liquid
 
-Below you'll find step-by-step instructions for writing Liquid > JSON that can drive a D3 force graph. It assumes that you understand Jekyll and the basics of its templating engine Liquid. If you just want to copy the Liquid code in its entirety, you can grab the raw file [here](https://gist.github.com/mnyrop/17c54380e347f37beaa64cf8d2a64785)—just make sure its saved as a `.json` file in the root of your site, and Jekyll will compile it as valid JSON in your `_site` folder for you. But if you know the basics of Liquid and want to better understand the process in order to power your own visualizations, keep reading.
+Below you'll find step-by-step instructions for writing Liquid > JSON that can drive a D3 force graph. It assumes that you understand Jekyll and the basics of its templating engine Liquid.
 
 __1. Create a variable `{% raw  %}{{ tags }}{% endraw %}` by looping through each collection item and joining its tag(s) into one long string, each separated by a `^` character. Then make a unique [pseudo-array / substring list](https://shopify.github.io/liquid/basics/types/#initializing-arrays) from `{% raw  %}{{ tags }}{% endraw %}` called `{% raw  %}{{ tag_nodes }}{% endraw %}`.__
 

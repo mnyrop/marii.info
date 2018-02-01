@@ -191,11 +191,11 @@ def format_list(heading, list): # returns md formatted list w h3 heading
 
 ```
 
-## Results (excerpt):
+{% comment %}## Results (excerpt):
 
-*<sup>(The real report is __much__ longer than this, and would be way more tedious to produce manually!)</sup>*
+*<sup>(The real report is __much__ longer than this, and would be way more tedious to produce manually!)</sup>*{% endcomment %}
 
-<script src="https://gist.github.com/mnyrop/4d50065321edd0d445c7e66eed9483b6.js"></script>
+
 
 
 ## Final thoughts:

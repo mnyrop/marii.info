@@ -12,26 +12,36 @@ layout: default
 	<br><br><br>
 	<a class="button" href="#projects">projects</a>&nbsp;&nbsp;&nbsp;
 	<a class="button" href="#labs">labs</a>&nbsp;&nbsp;&nbsp;
+	<a class="button" href="#sites">sites</a>&nbsp;&nbsp;&nbsp;
 	<a class="button" href="#posts">posts</a>&nbsp;&nbsp;&nbsp;
 	<a class="button" href="#reads">reads</a>
 	<br><br><br>
 
-	{% assign projects = site.projects | sort: "order" %}
-	{% if projects.size != 0%}
-		<h3 id ="projects">projects &#172;</h3>
-		<p>
-			<b><a href="/projects/wax/" class="line-link">Minicomp/Wax</a>: </b> Minimal IIIF Exhibitions with Jekyll&nbsp;&nbsp; <a href="/projects/wax/">🌄🔍⚡️</a> &nbsp;&nbsp;<span style="color:#325666">#dev</span><br>
-			<b><a href="/projects/p2p/" class="line-link">p2p</a>:</b> Democracy, Deregulation, and Discontents&nbsp;&nbsp; <a href="/projects/p2p/">👥</a> &nbsp;&nbsp;<span style="color:#71909e">#teaching</span><br>
-			<b><a href="/projects/embarrassmentparty/" class="line-link">Embarrassment.Party</a>:</b> International Artists Residency Program&nbsp;&nbsp;<a href="/projects/embarrassmentparty/">☁️💻🎨</a> &nbsp;&nbsp;<span style="color:#325666">#curatorial</span>
-		<p>
-	{% endif %}
+
+	<h3 id ="projects">projects &#172;</h3>
+	<p>
+		<b><a href="/projects/wax/" class="line-link">Minicomp/Wax</a>: </b> Minimal IIIF Exhibitions with Jekyll&nbsp;&nbsp; <a href="/projects/wax/">🌄🔍⚡️</a>&nbsp;&nbsp;<span style="color:#325666">#dev</span><br>
+		<b><a href="/projects/p2p/" class="line-link">p2p</a>:</b> Democracy, Deregulation, and Discontents&nbsp;&nbsp; <a href="/projects/p2p/">👥</a> &nbsp;&nbsp;<span style="color:#71909e">#teaching</span><br>
+		<b><a href="/projects/embarrassmentparty/" class="line-link">Embarrassment.Party</a>:</b> International Artists Residency Program&nbsp;&nbsp;<a href="/projects/embarrassmentparty/">☁️💻🎨</a>&nbsp;&nbsp;<span style="color:#325666">#curatorial</span>
+	<p>
+
 
 	<h3 id="labs">labs &#172;</h3>
 	<p>
-		<b><a href="http://history-lab.org" class="line-link" target="_blank">History Lab</a>:</b> History as Data Science<br>
-		<b><a href="http://xpmethod.plaintext.in/" class="line-link" target="_blank">xpMethod</a>:</b> Columbia's Group for Experimental Methods in the Humanities<br>
-		<b><a href="http://irlhumanities.org" class="line-link" target="_blank">irlHumanities</a>:</b> Immersive Reality Lab for the Humanities
+		<b><a href="http://history-lab.org" class="line-link" target="_blank">HistoryLab</a>:</b> History as Data Science&nbsp;&nbsp; <a href="http://history-lab.org">📚📈</a><br>
+		<b><a href="http://xpmethod.plaintext.in/" class="line-link" target="_blank">xpMethod</a>:</b> Columbia's Group for Experimental Methods in the Humanities&nbsp;&nbsp; <a href="http://xpmethod.plaintext.in/">💬📝🎉</a><br>
+		<b><a href="http://irlhumanities.org" class="line-link" target="_blank">irlHumanities</a>:</b> Immersive Reality Lab for the Humanities&nbsp;&nbsp;  <a href="http://irlhumanities.org">😎🎮👾</a><br>
 	</p>
+
+
+	<h3 id="sites">sites &#172;</h3>
+	<p>
+		<b><a href="http://ourbelovedkin.com/awikhigan/index" target="_blank" class="line-link">OurBelovedKin</a>:</b> Remapping a New History of King Philip's War&nbsp;&nbsp;<a href="http://ourbelovedkin.com/awikhigan/index">📍🌳🚣</a><br>
+		<b><a href="http://sudanphoto.uofk.edu" target="_blank" class="line-link">SudanPhoto</a>:</b> University of Khartoum Sudan Historical Photography Archive&nbsp;&nbsp;<a href="http://sudanphoto.uofk.edu">🇸🇩📷</a><br>
+		<b><a href="https://bunraku.cul.columbia.edu/" target="_blank" class="line-link">Bunraku</a>:</b> The Barbara Curtis Adachi Bunraku Collection&nbsp;&nbsp;<a href="https://bunraku.cul.columbia.edu/">🎎</a><br>
+		<b><a href="https://stylerevolution.github.io" target="_blank" class="line-link">StyleRevolution</a>:</b> Journal des Dames et des Modes&nbsp;&nbsp;<a href="https://stylerevolution.github.io/">📰👒👗</a><br>
+	</p>
+
 
 	<h3 id="posts">posts &#172;</h3>
 	{% assign sticky_posts = site.posts | where: "sticky", true %}
@@ -59,7 +69,6 @@ layout: default
 			</p>
 	{% endfor %}
 	<br>
-	<a class="button" href="{{ site.baseurl }}/notes/">see all</a>
 
 	<h3 id="reads">current+recent reads &#172;</h3>
 	<p>

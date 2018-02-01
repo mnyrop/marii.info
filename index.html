@@ -6,25 +6,23 @@ layout: default
 <section id="home-button-container">
 
 	<h1 style="font-size:40px">marii nyröp&#172;</h1>
-	<h4 style="margin-top:-15px;">dh developer @ columbia university libraries</h4>
 
-	projects, tips, and detritus re: digital-humanities, libraries, jekyll, static-sites, iiif, json, yaml, ruby, python, pandas, numpy, minimal-computing, digital-collections, natural-language-processing, data-visualization, web-scraping, document-parsing, media-materialism, shell-scripting, speculative-fiction, and ____________________________.
+	projects, tips, and detritus re: digital-humanities, libraries, jekyll, static-sites, iiif, json, yaml, ruby, python, pandas, numpy, minimal-computing, digital-collections, natural-language-processing, data-visualization, web-scraping, document-parsing, media-materialism, shell-scripting, speculative-fiction, and ________.
 
 	<br><br><br>
 	<a class="button" href="#projects">projects</a>&nbsp;&nbsp;&nbsp;
 	<a class="button" href="#labs">labs</a>&nbsp;&nbsp;&nbsp;
 	<a class="button" href="#posts">posts</a>&nbsp;&nbsp;&nbsp;
 	<a class="button" href="#reads">reads</a>
-	<br><br>
-
+	<br><br><br>
 
 	{% assign projects = site.projects | sort: "order" %}
 	{% if projects.size != 0%}
 		<h3 id ="projects">projects &#172;</h3>
 		<p>
-			<b><a href="/projects/wax/" class="line-link">Minicomp/Wax</a>:</b> Minimal IIIF Exhibitions with Jekyll&nbsp;&nbsp;<span style="color:#325666">#dev</span><br>
-			<b><a href="/projects/p2p/" class="line-link">p2p</a>:</b> Democracy, Deregulation, and Discontents&nbsp;&nbsp;<span style="color:#71909e">#teaching</span><br>
-			<b><a href="/projects/embarrassmentparty/" class="line-link">Embarrassment.Party</a>:</b> International Artists Residency Program&nbsp;&nbsp;<span style="color:#325666">#curatorial</span>
+			<b><a href="/projects/wax/" class="line-link">Minicomp/Wax</a>: </b> Minimal IIIF Exhibitions with Jekyll&nbsp;&nbsp; <a href="/projects/wax/">🌄🔍⚡️</a> &nbsp;&nbsp;<span style="color:#325666">#dev</span><br>
+			<b><a href="/projects/p2p/" class="line-link">p2p</a>:</b> Democracy, Deregulation, and Discontents&nbsp;&nbsp; <a href="/projects/p2p/">👥</a> &nbsp;&nbsp;<span style="color:#71909e">#teaching</span><br>
+			<b><a href="/projects/embarrassmentparty/" class="line-link">Embarrassment.Party</a>:</b> International Artists Residency Program&nbsp;&nbsp;<a href="/projects/embarrassmentparty/">☁️💻🎨</a> &nbsp;&nbsp;<span style="color:#325666">#curatorial</span>
 		<p>
 	{% endif %}
 
@@ -35,15 +33,16 @@ layout: default
 		<b><a href="http://irlhumanities.org" class="line-link" target="_blank">irlHumanities</a>:</b> Immersive Reality Lab for the Humanities
 	</p>
 
+	<h3 id="posts">posts &#172;</h3>
 	{% assign sticky_posts = site.posts | where: "sticky", true %}
 	{% for post in sticky_posts  %}
 		{% unless post.next %}
-			<h3 id="posts">posts-{{ post.category }} / {{ post.date | date: '%Y' }} &#172;</h3>
+			<h4>{{ post.date | date: '%Y' }} &#172;</h4>
 		{% else %}
 			{% capture year %}{{ post.date | date: '%Y' }}{% endcapture %}
 			{% capture nyear %}{{ post.next.date | date: '%Y' }}{% endcapture %}
 			{% if year != nyear %}
-				<h3>{{ post.date | date: '%Y' }} &#172;</h3>
+				<h4>{{ post.date | date: '%Y' }} &#172;</h4>
 			{% endif %}
 		{% endunless %}
 			<p>
@@ -59,6 +58,8 @@ layout: default
 				{% endfor %}
 			</p>
 	{% endfor %}
+	<br>
+	<a class="button" href="{{ site.baseurl }}/notes/">see all</a>
 
 	<h3 id="reads">current+recent reads &#172;</h3>
 	<p>

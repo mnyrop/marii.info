@@ -1,0 +1,34 @@
+---
+layout: page
+title: posts
+permalink: /notes/
+---
+<style>a{color:black !important;}</style>
+{% include smooth-scroll.html %}
+
+<a class="button" href="#2018">2018</a>&nbsp;&nbsp;&nbsp;
+<a class="button" href="#2017">2017</a>&nbsp;&nbsp;&nbsp;
+
+{% for post in site.posts  %}
+  {% unless post.next %}
+    <h4 id ="{{ post.date | date: '%Y' }}">{{ post.date | date: '%Y' }} &#172;</h4>
+  {% else %}
+    {% capture year %}{{ post.date | date: '%Y' }}{% endcapture %}
+    {% capture nyear %}{{ post.next.date | date: '%Y' }}{% endcapture %}
+    {% if year != nyear %}
+      <h4 id ="{{ post.date | date: '%Y' }}">{{ post.date | date: '%Y' }} &#172;</h4>
+    {% endif %}
+  {% endunless %}
+    <p>
+      <b><a href="{{ site.url }}{{ post.url }}" class="line-link">{{ post.title }}<a/></b><br>
+      {% for tag in post.tags %}
+        {% capture thecycle %}{% cycle 'odd', 'even' %}{% endcapture %}
+        {% if thecycle == 'odd' %}
+          {% assign color = "#325666" %}
+        {% else %}
+          {% assign color = "#71909e" %}
+        {% endif %}
+        <span style="color:{{ color }}" class="tag">#{{ tag }}</span>{% unless forloop.last %}&nbsp;&nbsp;{% endunless %}
+      {% endfor %}
+    </p>
+{% endfor %}

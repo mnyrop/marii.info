@@ -3,7 +3,6 @@ layout: post
 title: The Summer of Japanese Puppets, Part 4
 date: 2017-07-11
 category: dev
-sticky: true
 tags:
   - d3js
   - lunr
@@ -18,23 +17,23 @@ This post is part 3 of 4 in a series. Feel free to skip around to:<br><br>__[par
 
 # epilogue
 
-<br><a href="https://mnyrop.github.io/bunraku-demo"><img src="{{ "/images/demo.png" | relative_url }}" style="box-shadow: 2px 2px 4pc #23352a;"/></a><br><br>
+<br><a href="https://bunraku.cul.columbia.edu/"><img src="{{ "/images/demo.png" | relative_url }}" style="box-shadow: 2px 2px 4pc #23352a;"/></a><br><br>
 
-## [The demo](https://mnyrop.github.io/bunraku-demo)!
+## [The demo](https://bunraku.cul.columbia.edu/)!
 
 The mostly finished demo has directories of
-[plays](https://mnyrop.github.io/bunraku-demo/plays),
-[productions](https://mnyrop.github.io/bunraku-demo/productions),
-[performances](https://mnyrop.github.io/bunraku-demo/performances),
-[authors](https://mnyrop.github.io/bunraku-demo/authors),
-[performers](https://mnyrop.github.io/bunraku-demo/performers),
-[characters](https://mnyrop.github.io/bunraku-demo/characters),
-[kashira](https://mnyrop.github.io/bunraku-demo/kashira),
-[scenes](https://mnyrop.github.io/bunraku-demo/performances/scenes/2671),
-[image tags](https://mnyrop.github.io/bunraku-demo/tags),
-[slide images](https://mnyrop.github.io/bunraku-demo/slides),
-[image albums](https://mnyrop.github.io/bunraku-demo/albums), and
-[realia images](https://mnyrop.github.io/bunraku-demo/realia),
+[plays](https://bunraku.cul.columbia.edu/plays),
+[productions](https://bunraku.cul.columbia.edu/productions),
+[performances](https://bunraku.cul.columbia.edu/performances),
+[authors](https://bunraku.cul.columbia.edu/authors),
+[performers](https://bunraku.cul.columbia.edu/performers),
+[characters](https://bunraku.cul.columbia.edu/characters),
+[kashira](https://bunraku.cul.columbia.edu/kashira),
+[scenes](https://bunraku.cul.columbia.edu/performances/scenes/2671),
+[image tags](https://bunraku.cul.columbia.edu/tags),
+[slide images](https://bunraku.cul.columbia.edu/slides),
+[image albums](https://bunraku.cul.columbia.edu/albums), and
+[realia images](https://bunraku.cul.columbia.edu/realia),
 with individual layouts displaying and linking object data together.
 
 It is navigable through the above directory listings, through several dynamic search boxes running client-side [Lunrjs](https://lunrjs.com/), and via clickable [D3js](https://d3js.org/) data visualizations. It handles relative/massive image sets by implementing lazy load in a jQuery carousel.
@@ -65,32 +64,13 @@ Exported dataframes as JSON records (and CSVs, for archival purposes only).
 <i class="fa fa-chevron-circle-right" aria-hidden="true"></i>&nbsp;&nbsp;
 Dropped null key:value pairs from JSON using [JQ](https://stedolan.github.io/jq/).
 
-<i class="fa fa-chevron-circle-right" aria-hidden="true"></i>&nbsp;&nbsp;
-Converted (non-nulls) JSON to YAML using [Pyyaml](http://pyyaml.org/).
 
 <i class="fa fa-chevron-circle-right" aria-hidden="true"></i>&nbsp;&nbsp;
-Generated [Jekyll collections](https://jekyllrb.com/docs/collections/) (and pages) from YAML using [pagemaster jekyll plugin](https://github.com/mnyrop/pagemaster).
+Generated [Jekyll collections](https://jekyllrb.com/docs/collections/) (and pages) from YAML using [wax_tasks gem](https://github.com/mnyrop/wax_tasks).
 
 <i class="fa fa-chevron-circle-right" aria-hidden="true"></i>&nbsp;&nbsp;
 Ended with a ~40k page static Jekyll site powered by YAML data, with JSON index for client-side search.
 
-
-<br>
-
-# last thoughts/notes
-
-<i class="fa fa-hand-o-right" aria-hidden="true"></i>&nbsp;&nbsp;
-Jekyll is shockingly powerful, but WOW is it slow when building a site at this scale.
-
-
-<i class="fa fa-hand-o-right" aria-hidden="true"></i>&nbsp;&nbsp;
-Having your data set at-the-ready in clean JSON is great for the long term, and leaves plenty of room for others to play with/visualize it.
-
-<i class="fa fa-hand-o-right" aria-hidden="true"></i>&nbsp;&nbsp;
-Processing data in iPy with Pandas is super easy, and the notebooks can double as documentation for what you've done.
-
-<i class="fa fa-hand-o-right" aria-hidden="true"></i>&nbsp;&nbsp;
-Apparently you can just throw ~40k pages at GitHub pages without a hitch...?
 
 
 <br><br>

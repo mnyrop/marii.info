@@ -3,7 +3,6 @@ layout: post
 title:  "Moving from Wordpress to Jekyll:<br> Tips for the Alternate Route"
 date: 2017-05-05
 category: dev
-sticky: true
 tags:
   - jekyll
   - wordpress

@@ -3,7 +3,6 @@ layout: post
 title: The Summer of Japanese Puppets, Part 2
 date: 2017-07-11
 category: dev
-sticky: true
 tags:
   - jupyter
   - python
@@ -90,9 +89,9 @@ Once each dataframe was transformed to mirror the JSON schema I'd planned, I wro
 
 <br>
 
-## scene iii. Minify + convert to YAML
+## scene iii. Minify
 
-#### In: <span style="font-weight:400">[JSON](https://github.com/mnyrop/bunraku-ipy/tree/master/out/json)</span><br>Tools: <span style="font-weight:400">[JQ](https://stedolan.github.io/jq/) / [PyYaml](http://pyyaml.org/)</span>
+#### In: <span style="font-weight:400">[JSON](https://github.com/mnyrop/bunraku-ipy/tree/master/out/json)</span><br>Tools: <span style="font-weight:400">[JQ](https://stedolan.github.io/jq/)</span>
 
 With the bulk of the processing done, I used a few post-processing tricks to make my JSON files smaller and more usable. I used the JSON manipulation library [JQ](https://stedolan.github.io/jq/) to drop null key:value pairs from my files, since most objects (especially images) had a _lot_ of empty fields. I also used the option `--compact-output` to minify the non-null files:
 
@@ -107,16 +106,8 @@ replace "[null]" "null" -- authors.json
 replace "\"nan\"" "null" -- authors.json
 ```
 
-Since I knew the next step for my data was to to build [Jekyll](https://jekyllrb.com) pages (which use [YAML](http://www.yaml.org/start.html) front-matter for metadata), I then preemptively converted my JSON files to YAML to make the process of building my site faster. Since YAML is, for all intents and purposes, a _[natural superset of JSON](http://www.yaml.org/spec/1.2/spec.html#id2759572)_, converting from JSON to YAML is trivial. I used a one-line Python shell script with [PyYaml](http://pyyaml.org/) to write out my non-null JSON files to Jekyll-ready YAML ones:
 
-```bash
-$ python -c 'import sys, yaml, json; yaml.safe_dump(json.load(sys.stdin),
-sys.stdout, default_flow_style=False)' < authors-min.json > authors-min.yaml
-```
-
-<br><img src="{{ "/images/bash.png" | relative_url }}" style="box-shadow: 2px 2px 4pc #23352a;max-width:600px;"/><br><br>
-
-#### Out: <span style="font-weight:400">[YAML](https://github.com/mnyrop/bunraku-ipy/tree/master/post-processing/yaml)</span>
+#### Out: <span style="font-weight:400">[better JSON](https://github.com/mnyrop/bunraku-ipy/tree/master/post-processing/json)</span>
 
 <br>
 ### <span style="font-weight:400">Next \>> </span>[part 3: the site]({{ site.url }}/notes/the-summer-of-puppets-3)

@@ -11,9 +11,11 @@ tags:
 
 <iframe height="450px" src="https://www.youtube.com/embed/ZaI8fN4176k" frameborder="0" allowfullscreen></iframe>
 
-This post is part 3 of 4 in a series. Feel free to skip around to:<br><br>__[part 1: the task]({{ site.url }}/notes/the-summer-of-puppets)__,<br>__[part 2: data transformation]({{ site.url }}/notes/the-summer-of-puppets-2)__, or <br>__[part 3: the site]({{ site.url }}/notes/the-summer-of-puppets-3)__.
+This post is part 3 of 4 in a series. Feel free to skip around to:
 
-<hr/>
+__[part 1: the task]({{ site.url }}/notes/the-summer-of-puppets)__,<br>__[part 2: data transformation]({{ site.url }}/notes/the-summer-of-puppets-2)__, or <br>__[part 3: the site]({{ site.url }}/notes/the-summer-of-puppets-3)__.
+
+<hr>
 
 # epilogue
 

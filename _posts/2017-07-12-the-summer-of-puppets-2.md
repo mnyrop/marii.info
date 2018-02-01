@@ -7,16 +7,18 @@ tags:
   - jupyter
   - python
   - json
-  - yaml
-  - relational-data
+  - openrefine
+  - jq
 ---
 <br>
 <img src="http://www.columbia.edu/cgi-bin/dlo?obj=ldpd_bun_slide_493_2_0779_0826&size=medium" style="box-shadow: 2px 2px 4pc #23352a;"/>
 <br><br>
 
-This post is part 2 of 4 in a series. Feel free to skip around to:<br><br>__[part 1: the task]({{ site.url }}/notes/the-summer-of-puppets)__,<br>__[part 3: the site]({{ site.url }}/notes/the-summer-of-puppets-3)__, or<br>__[part 4: epilogue]({{ site.url }}/notes/the-summer-of-puppets-4)__.
+This post is part 2 of 4 in a series. Feel free to skip around to:
 
-<hr/>
+__[part 1: the task]({{ site.url }}/notes/the-summer-of-puppets)__,<br>__[part 3: the site]({{ site.url }}/notes/the-summer-of-puppets-3)__, or<br>__[part 4: epilogue]({{ site.url }}/notes/the-summer-of-puppets-4)__.
+
+<hr>
 
 # Act 2: Data transformation montage
 
@@ -62,7 +64,7 @@ I started by using a simple entity relationship diagramming (ERD) tool and [JSON
 }
 ```
 
-Once each type was reasonably mapped out, I exported the MySQL database as a set of CSV files and turned to [OpenRefine](http://openrefine.org/) (formerly known as GoogleRefine) to clean them up. I used faceting to get a better sense of each set, recast strings as ints and visa versa, scrubbed out line breaks, dropped unused columns, consolidated similar cells, and so on. Then I renamed as many columns as possible to cohere to the somewhat-standardized JSON schema I'd created, and re-exported them as spiffed-up CSVs.
+Once each type was reasonably mapped out, I exported the MySQL database as a set of CSV files and turned to [OpenRefine](http://openrefine.org/) to clean them up. I used faceting to get a better sense of each set, recast strings as ints and visa versa, scrubbed out line breaks, dropped unused columns, consolidated similar cells, and so on. Then I renamed as many columns as possible to cohere to the somewhat-standardized JSON schema I'd created, and re-exported them as spiffed-up CSVs.
 
 <br><img src="{{ "/images/open-refine.png" | relative_url }}" style="box-shadow: 2px 2px 4pc #23352a;max-width:600px;"/><br><br>
 
@@ -75,7 +77,7 @@ Once each type was reasonably mapped out, I exported the MySQL database as a set
 
 #### In: <span style="font-weight:400">[CSVs](https://github.com/mnyrop/bunraku-ipy/tree/master/in)</span><br>Tools: <span style="font-weight:400">[iPython](https://ipython.org/) / [Pandas](http://pandas.pydata.org/)</span>
 
-Next I created an [iPython](https://ipython.org/) (aka Jupyter) notebook running Python 2.7 and imported [Pandas](http://pandas.pydata.org/), which is a data analysis library built on [Numpy](http://www.numpy.org/). Pandas works primarily with a datatype called a dataframe, which takes its name from the same type in [R](https://www.r-project.org/about.html).
+Next I created an [iPython](https://ipython.org/) (aka Jupyter) notebook imported [Pandas](http://pandas.pydata.org/), which is a data analysis library built on [Numpy](http://www.numpy.org/). Pandas works primarily with a datatype called a dataframe, which takes its name from the same type in [R](https://www.r-project.org/about.html).
 
 After reading each CSV file into my Jupyter notebook as a Pandas dataframe, I was able to perform powerful SQL-like tasks on the data, including a chained `.merge()` `.groupby()` `.apply(list)` function that allowed me to merge a join table onto a dataframe, appending an array of ids from the join onto each row.
 
@@ -83,7 +85,9 @@ For example, given a dataframe of authors and a join table of `author_ids` and `
 
 <br><a href="{{ "/images/ipy.png" | relative_url }}"><img src="{{ "/images/ipy.png" | relative_url }}" style="box-shadow: 2px 2px 4pc #23352a;max-width:600px;"/></a><br><br>
 
-Once each dataframe was transformed to mirror the JSON schema I'd planned, I wrote them out to new json files using Pandas' `.to_json(orient='records')` function. [You can see the complete process and notebook [here](https://github.com/mnyrop/bunraku-ipy/blob/master/bunraku-online.ipynb).]
+Once each dataframe was transformed to mirror the JSON schema I'd planned, I wrote them out to new json files using Pandas' `.to_json(orient='records')` function. (You can see the complete process and notebook [here](https://github.com/mnyrop/bunraku-ipy/blob/master/bunraku-online.ipynb).)
+
+An aside: _If i were more versed in the powers of Jupyter and Pandas at the time, I could have connected my notebook directly to the MySQL database and performed the cleaning tasks of OpenRefine with Pandas, skipping the CSV steps entirely. For tips on something similar, check out **[this post]({{ site.baseurl }}/notes/automate-yr-docs-mysql-to-markown-via-py/)**._
 
 #### Out: <span style="font-weight:400">[JSON](https://github.com/mnyrop/bunraku-ipy/tree/master/out/json)</span>
 
@@ -99,16 +103,16 @@ With the bulk of the processing done, I used a few post-processing tricks to mak
 $ jq 'del(.[][] | nulls)' --compact-output authors.json > authors-min.json
 ```
 
-[__Bonus:__ if you have MySQL installed on your machine, you can use the [string REPLACE function](https://stackoverflow.com/questions/5956993/mysql-string-replace) to swap out any null arrays (`[null]`) or null values that stayed defined as Pandas' `NaN` for a true `null` before using JQ, and make sure that it drops _every_ null pair possible.]
+Bonus: _if you have MySQL installed on your machine, you can use the [string REPLACE function](https://stackoverflow.com/questions/5956993/mysql-string-replace) to swap out any null arrays (`[null]`) or null values that stayed defined as Pandas' `NaN` for a true `null` before using JQ, and make sure that it drops *every* null pair possible. If not, you can also use `grep` and `sed`, though it's less straightforward._
 
 ```bash
-replace "[null]" "null" -- authors.json
-replace "\"nan\"" "null" -- authors.json
+$ replace "[null]" "null" -- authors.json
+$ replace "\"nan\"" "null" -- authors.json
 ```
 
 
 #### Out: <span style="font-weight:400">[better JSON](https://github.com/mnyrop/bunraku-ipy/tree/master/post-processing/json)</span>
 
 <br>
-### <span style="font-weight:400">Next \>> </span>[part 3: the site]({{ site.url }}/notes/the-summer-of-puppets-3)
+<span style="font-weight:400">Next \>> </span>[part 3: the site]({{ site.url }}/notes/the-summer-of-puppets-3)
 <br><br>

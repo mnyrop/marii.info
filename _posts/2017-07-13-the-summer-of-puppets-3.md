@@ -12,14 +12,11 @@ tags:
 
 <br>
 
-This post is part 3 of 4 in a series. Feel free to skip around to:<br><br>__[part 1: the task]({{ site.url }}/notes/the-summer-of-puppets)__,<br>__[part 2: data transformation]({{ site.url }}/notes/the-summer-of-puppets-2)__, or <br>__[part 4: epilogue]({{ site.url }}/notes/the-summer-of-puppets-4)__.
+This post is part 3 of 4 in a series. Feel free to skip around to:
 
-<hr/>
+__[part 1: the task]({{ site.url }}/notes/the-summer-of-puppets)__,<br>__[part 2: data transformation]({{ site.url }}/notes/the-summer-of-puppets-2)__, or <br>__[part 4: epilogue]({{ site.url }}/notes/the-summer-of-puppets-4)__.
 
-
-
-
-
+<hr>
 
 
 # Act 3: The site emerges
@@ -62,8 +59,8 @@ collections:
 ```
 
 
-[__Note:__ You can find more thorough documentation on how to configure your collections to work with `wax_tasks`
-[here](https://github.com/mnyrop/wax_tasks/blob/master/README.md).]
+Note: *You can find more thorough documentation on how to configure your collections to work with `wax_tasks`
+[here](https://github.com/mnyrop/wax_tasks/blob/master/README.md).*
 
 
 #### Out: <span style="font-weight:400">Jekyll Collections</span>
@@ -104,5 +101,5 @@ After writing templates for each object type as well as templates for viewing th
 <br>
 
 <br>
-### <span style="font-weight:400">Next \>> </span>[part 4: epilogue]({{ site.url }}/notes/the-summer-of-puppets-4)
+<span style="font-weight:400">Next \>> </span>[part 4: epilogue]({{ site.url }}/notes/the-summer-of-puppets-4)
 <br><br>

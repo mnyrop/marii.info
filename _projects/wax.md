@@ -15,11 +15,11 @@ tags:
   <img src="https://github.com/mnyrop/wax_tasks/raw/master/docs/wax_screen.gif?raw=true"/>
 </center>
 
-### three sentence summary:
-
-__Minicomp/Wax__ is a heterogeneous collection of experiments, strategies, and functional components for adapting [Jekyll](http://jekyllrb.com) for minimal exhibition sites. It centers on a Jekyll theme ([`wax_theme`](https://github.com/minicomp/wax/)) and set of Rake tasks ([`wax_tasks`](https://github.com/minicomp/wax_tasks/)) that together enable digital humanists to create impactful sites with IIIF viewers, elastic search, and complex metadata with very little technical overhead.
-
-It is a sister project to [Minicomp/Ed](https://github.com/minicomp/ed): Jekyll for Minimal Scholarly Editions.
+<br>
+<hr/>
+### <span style="font-weight:400">__Minicomp/Wax__ is a heterogeneous collection of experiments, strategies, and functional components for adapting [Jekyll](http://jekyllrb.com) for minimal exhibition sites.<br><br>It centers on a Jekyll theme ([wax](https://github.com/minicomp/wax/)) and set of Rake tasks ([wax_tasks](https://github.com/minicomp/wax_tasks/)) that together enable digital humanists to create impactful sites with [IIIF](http://iiif.io/) viewers, elastic search, and complex metadata with very little technical overhead.<br><br>It is a sister project to [Minicomp/Ed](https://github.com/minicomp/ed): Jekyll for Minimal Scholarly Editions.</span>
+<hr/>
+<br>
 
 
 ### project context:

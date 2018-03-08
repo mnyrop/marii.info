@@ -3,7 +3,9 @@ rvm:
   - 2.4
 script:
   - bundle exec jekyll build
-  - bundle exec htmlproofer ./_site --only-4xx --check-html --allow_hash_href --alt-ignore '/.*/'
+  - bundle exec rake test
+after_success: bash ./deploy.sh
 env:
   global:
     - NOKOGIRI_USE_SYSTEM_LIBRARIES=true # speeds up installation of html-proofer
+secure: "tday7b42RCEKPftyCw1at6gwU5An+8RqAfnLzRmbx5Kb6VRN5IbcbJkBoE+JqjmrTdpUA1t2pw65ZMnSpYsU2QoFlWYoCcwjKuj5T1IJSQSA09tXtS9uNkvzuINd0DPwgg3VsOu5f2bsfEFROMimjAUg4MbwsDZ3RKQUwurUGWVOhzgkuiMF7Llha8iS62n/zJH5BBGLsNW2wsCeJ4BDbyW3iSqSlr4nVepSovsqVQkGt7SvEn9WQPQ/6AeP3U5gj6Jxw90q8517DqUt1tJpOxCSOqf77KPuZrlbYikZOY7TZ+ZddnAVIJYNH5zR7w4C2kgSLn4k+7NGNPdLcxFD6Vu3F+IawyfBMJqHQZClhi0YNgahHHOrQljDA0hDxYGSqXvY0x4eiLKpuyHKd3P0UsCE6+UdfEUMkOVBG7bWcRPpD4QylotM4y99+Lyq07LUD3/W12QD+HCpt7eBVXK2d+CfDQ9kPsGsVX1s0jHWoBOsYRzhzvsQKhSRKJIwjz2e4jNv9btlbMuwsB8+ZepQgwTQFFQ5+hO+U7Y31LsML6mA8e+28/8wY6Cxg6zsV+s49vNOtiwPBMjjKhM+jeQ6hVMKZTbc0rUXp6471xH3AmUU7cAEUEvpHPC8NLnk59UeKf8fzqvtTZoI2RPI3ly88XCYG48SAqOR8IShRkj6lyI="

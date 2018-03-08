@@ -26,9 +26,6 @@ cd ..
 # Clean out existing contents
 rm -rf out/**/* || exit 0
 
-# Run our compile script
-npm run spec
-
 # Now let's go have some fun with the cloned repo
 cd out
 git config user.name "Travis CI"

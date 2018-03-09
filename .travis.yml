@@ -12,6 +12,7 @@ deploy:
   skip-cleanup: true
   github-token: $repo_access_token
   keep-history: true
-  edge: true
+  edge:
+    branch: v1.8.47
   on:
     branch: master

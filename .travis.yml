@@ -12,5 +12,6 @@ deploy:
   skip-cleanup: true
   github-token: $repo_access_token
   keep-history: true
+  edge: true
   on:
     branch: master

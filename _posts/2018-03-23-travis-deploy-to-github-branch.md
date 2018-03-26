@@ -8,12 +8,8 @@ tags:
   - travis
   - github
   - deploy
-  - rake
+  - wax
 ---
-<!-- <div style="width:100%;background-color:white;margin:50px 0 50px 0;">
-<center><img src="http://cameronmcefee.com/img/work/the-octocat/walk-3.gif" width="250"/></center>
-</div> -->
-
 <img src="{{ site.baseurl }}/images/explore-octocat.png"/>
 
 Lately, I've been all but living in [Travis-CI](https://travis-ci.com/). It **runs my tasks**, **performs my tests**, and now **pushes my sites out for deployment**. It's almost as though—gasp!—I've achieved continuous integration. That being said, it took a ton of trial and error to get here. If this post can spare you some of rigmarole, my efforts will be affirmed.
@@ -93,3 +89,9 @@ branches:
 after_success:
   - bundle exec rake deploy:branch # or: bundle exec rake wax:push:gh
 ```
+
+That's it!
+
+<div style="width:100%;background-color:white;margin:50px 0 50px 0;">
+<center><img src="http://cameronmcefee.com/img/work/the-octocat/walk-3.gif" width="250"/></center>
+</div>

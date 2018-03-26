@@ -1,0 +1,95 @@
+---
+layout: post
+title:  "Push Compiled Sites to GitHub Branches from Travis"
+date: 2018-03-26
+category: dev
+sticky: true
+tags:
+  - travis
+  - github
+  - deploy
+  - rake
+---
+<!-- <div style="width:100%;background-color:white;margin:50px 0 50px 0;">
+<center><img src="http://cameronmcefee.com/img/work/the-octocat/walk-3.gif" width="250"/></center>
+</div> -->
+
+<img src="{{ site.baseurl }}/images/explore-octocat.png"/>
+
+Lately, I've been all but living in [Travis-CI](https://travis-ci.com/). It **runs my tasks**, **performs my tests**, and now **pushes my sites out for deployment**. It's almost as though—gasp!—I've achieved continuous integration. That being said, it took a ton of trial and error to get here. If this post can spare you some of rigmarole, my efforts will be affirmed.
+
+You might be asking yourself, ___doesn't Travis have a deploy provider for GitHub Pages___? This is a fair question, especially because the answer is [yes](https://docs.travis-ci.com/user/deployment/pages/). However, the built-in GH Pages deploy is pretty inflexible.
+
+For example, I couldn't get it to ignore my `.bundle` and `vendor` directories, both of which it deployed to my site every time. I also couldn't get it to use a custom `baseurl` or branch. Why is this important? At least in my case, I have many GH Pages sites within my GitHub account. My main blog uses the root url `mnyrop.github.io`, and all the others need to be served using a `baseurl` that matches the name of the repository.
+
+But I don't want to add the `baseurl` to my `_config.yml` file, because *only* the `gh-pages` branch should use it. I need the master branch clean and uncluttered so it can generate *other branches* like `s3` for—you guessed it—deployment to [AmazonS3](https://aws.amazon.com/s3/). The advantage here is that I can treat GH Pages like a built-in Dev or Test server, and can have a separate branch automatically generated for Production when my tests pass.
+
+This is all to say, I need more flexibility and control. And I got it with the workflow below.
+
+
+<br><br>
+## 1: Authorize Travis with an Access Token
+
+The first step is to give Travis-CI the authority to push to a branch in your GitHub repository. Since you **DO NOT** want to add any private credentials to your public build (or to any files in your repository), the way you do this is via SSH [Access Token](https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/). This [page](https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/) will tell you how to generate a token, but long story short: log in to GitHub, go to [personal access tokens](https://github.com/settings/tokens), generate new token with **Repo** only access, and copy the code.
+
+<br><img src="https://help.github.com/assets/images/help/settings/personal_access_tokens.png"/><br><br>
+
+Next log into your [Travis-CI](https://travis-ci.com/) account, and navigate to the settings for the repository you want to use. Scroll to the section called **Environment Variables**. Variables you add here will be available within your Travis build for this repository.
+
+Add a variable called `ACCESS_TOKEN` and paste in the value from your GitHub token. **Make sure "Display value in Build log" is set to "off" !!!** This ensures your token cannot be printed out to the log, and instead will display `[SECURE]`.
+
+<br><img src="{{ site.baseurl }}/images/access_token.png"/><br><br>
+
+
+## 2: Pull in or create your own branch deploy task
+
+The easiest way at this point to get Travis to push your site to a branch is by using my Ruby gem [wax_tasks](https://github.com/mnyrop/wax_tasks/). After following instructions for installation and setup, you will immediately have access to the Rake tasks `wax:push:gh` and `wax:push:s3`, which push your compiled site to `gh-pages` (with the baseurl!) and `s3` branches respectively. If you go this route, you can skip ahead to step 3.
+
+If you want to use your own task, though, below is a basic template. Just make sure `gem 'rake'` is in your `Gemfile` and add the code below to your `Rakefile`. As a summary, it gets your user name, your access token, and the name of the repository, and creates an authorized `origin` for force updating your target branch. This one in particular uses the `_site` directory (because I use [Jekyll](http://jekyllrb.com)), but you can change this to wherever your site is compiled.
+
+
+```ruby
+include FileUtils
+
+namespace :deploy do
+  desc "push built site to target branch"
+  task :branch do
+    REPO_SLUG = ENV['TRAVIS_REPO_SLUG']
+    TARGET_BRANCH =  #add your target branch, e.g. 'gh-pages'
+    USER = REPO_SLUG.split("/")[0]
+    TOKEN = ENV['ACCESS_TOKEN']
+    COMMIT_MSG = "Site updated via #{ENV['TRAVIS_COMMIT']}".freeze
+    ORIGIN = "https://#{USER}:#{TOKEN}@github.com/#{REPO_SLUG}.git".freeze
+    puts "Deploying to #{TARGET_BRANCH} branch from Travis as #{USER}"
+
+    Dir.mktmpdir do |tmp|
+      cp_r '_site/.', tmp
+      Dir.chdir tmp
+      system 'git init'
+      system "git add . && git commit -m '#{COMMIT_MSG}'"
+      system 'git remote add origin ' + ORIGIN
+      system "git push origin master:refs/heads/#{TARGET_BRANCH} --force"
+    end
+  end
+end
+```
+
+The above tasks can be invoked with __$__`rake deploy:branch`. You can rename this whatever you like by changing the `namespace` and `task` declarations.
+
+<br>
+## 3: Add the tasks to your .travis.yml file
+
+Lastly, add your task(s). In this case, I only want to have travis push from successful builds on my master branch, so I added my `RSpec` tests to the `script` block, specified `branches: only: master`, and am only running my branch deploy `after_success`. You can read more about this configuration [here](https://docs.travis-ci.com/user/customizing-the-build/).
+
+```yml
+language: ruby
+rvm: 2.4
+script:
+  - bundle exec jekyll build
+  - bundle exec rspec
+branches:
+  only:
+    - master
+after_success:
+  - bundle exec rake deploy:branch # or: bundle exec rake wax:push:gh
+```

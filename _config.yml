@@ -19,6 +19,8 @@ kramdown:
 sass:
     style:          :compressed
 
+plugins:            [jekyll-admin]
+
 # Other Params
 include:            [robots.txt]
 exclude:            [LICENSE, README.md, CNAME, vendor, Gemfile*, Rakefile]

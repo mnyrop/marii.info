@@ -1,0 +1,9 @@
+---
+layout: default
+---
+
+{{ content }}
+
+{% for post in site.posts %}
+  {% include blog.html %}
+{% endfor %}

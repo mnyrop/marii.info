@@ -2,25 +2,4 @@
 layout: default
 ---
 
-<article>
-
-	<h1 class="title">{{ page.title }}</h1>
-	<center><p>
-		{% for tag in page.tags %}
-			{% capture thecycle %}{% cycle 'odd', 'even' %}{% endcapture %}
-			{% if thecycle == 'odd' %}
-				{% assign color = "#325666" %}
-			{% else %}
-				{% assign color = "#71909e" %}
-			{% endif %}
-			<span style="color:{{ color }}">#{{ tag }}</span>{% unless forloop.last %}&nbsp;&nbsp;{% endunless %}
-		{% endfor %}
-	</p></center>
-
-	<div class="divider"></div>
-
-	{{ content }}
-
-	{% include footer.html %}
-
-</article>
+{{ content }}

@@ -2,7 +2,8 @@
 layout: post
 title: The Summer of Japanese Puppets, Part 2
 date: 2017-07-11
-category: dev
+overlay: orange
+hero: 'http://www.columbia.edu/cgi-bin/dlo?obj=ldpd_bun_slide_493_2_0779_0826&size=medium'
 tags:
   - jupyter
   - python
@@ -10,15 +11,12 @@ tags:
   - openrefine
   - jq
 ---
-<br>
-<img src="http://www.columbia.edu/cgi-bin/dlo?obj=ldpd_bun_slide_493_2_0779_0826&size=medium" style="box-shadow: 2px 2px 4pc #23352a;"/>
-<br><br>
 
 This post is part 2 of 4 in a series. Feel free to skip around to:
 
-__[part 1: the task]({{ site.url }}/notes/the-summer-of-puppets)__,<br>__[part 3: the site]({{ site.url }}/notes/the-summer-of-puppets-3)__, or<br>__[part 4: epilogue]({{ site.url }}/notes/the-summer-of-puppets-4)__.
-
-<hr>
+[part 1: the task]({{ site.url }}/notes/the-summer-of-puppets),
+[part 3: the site]({{ site.url }}/notes/the-summer-of-puppets-3), or
+[part 4: epilogue]({{ site.url }}/notes/the-summer-of-puppets-4).
 
 # Act 2: Data transformation montage
 
@@ -26,7 +24,9 @@ After taking a detour prototyping with [Google Lovefield](https://google.github.
 
 ## scene i. plan + tidy
 
-#### In: <span style="font-weight:400">MySQL dump</span><br>Tools: <span style="font-weight:400">any ol' [erd](https://www.draw.io/) / [OpenRefine](http://openrefine.org/) / [json-schema](http://json-schema.org/)</span>
+__In:__ MySQL dump
+
+__Tools:__ any ol' [erd](https://www.draw.io/) / [OpenRefine](http://openrefine.org/) / [json-schema](http://json-schema.org/)
 
 I started by using a simple entity relationship diagramming (ERD) tool and [JSON Schema](http://json-schema.org/) to plan out what each object type (e.g. play, kashira, character, etc.) should look like at the end of the processing stage by asking/answerinq questions like: _Which keys does each type need? Which keys should be named in a standardized way across object types? What kind of value does a given key expect (maybe an int? a nullable string...? ), and does it expect 1 or many? What does the object need to "know" about itself, and what can it inherit from other types?_
 
@@ -68,14 +68,16 @@ Once each type was reasonably mapped out, I exported the MySQL database as a set
 
 <br><img src="{{ "/images/open-refine.png" | relative_url }}" style="box-shadow: 2px 2px 4pc #23352a;max-width:600px;"/><br><br>
 
-#### Out: <span style="font-weight:400">[Optimized CSVs](https://github.com/mnyrop/bunraku-ipy/tree/master/in)</span>
+__Out:__ [Optimized CSVs](https://github.com/mnyrop/bunraku-ipy/tree/master/in)
 
 <br>
 
 
 ## scene ii. Process + convert to JSON
 
-#### In: <span style="font-weight:400">[CSVs](https://github.com/mnyrop/bunraku-ipy/tree/master/in)</span><br>Tools: <span style="font-weight:400">[iPython](https://ipython.org/) / [Pandas](http://pandas.pydata.org/)</span>
+__In:__ [CSVs](https://github.com/mnyrop/bunraku-ipy/tree/master/in)</span>
+
+__Tools:__ [iPython](https://ipython.org/) / [Pandas](http://pandas.pydata.org/)
 
 Next I created an [iPython](https://ipython.org/) (aka Jupyter) notebook imported [Pandas](http://pandas.pydata.org/), which is a data analysis library built on [Numpy](http://www.numpy.org/). Pandas works primarily with a datatype called a dataframe, which takes its name from the same type in [R](https://www.r-project.org/about.html).
 
@@ -87,15 +89,17 @@ For example, given a dataframe of authors and a join table of `author_ids` and `
 
 Once each dataframe was transformed to mirror the JSON schema I'd planned, I wrote them out to new json files using Pandas' `.to_json(orient='records')` function. (You can see the complete process and notebook [here](https://github.com/mnyrop/bunraku-ipy/blob/master/bunraku-online.ipynb).)
 
-An aside: _If i were more versed in the powers of Jupyter and Pandas at the time, I could have connected my notebook directly to the MySQL database and performed the cleaning tasks of OpenRefine with Pandas, skipping the CSV steps entirely. For tips on something similar, check out **[this post]({{ site.baseurl }}/notes/automate-yr-docs-mysql-to-markown-via-py/)**._
+An aside: _If i were more versed in the powers of Jupyter and Pandas at the time, I could have connected my notebook directly to the MySQL database and performed the cleaning tasks of OpenRefine with Pandas, skipping the CSV steps entirely. For tips on something similar, check out **[this post]({{ site.baseurl }}/notes/automate-yr-docs-mysql-to-markown-via-py)**._
 
-#### Out: <span style="font-weight:400">[JSON](https://github.com/mnyrop/bunraku-ipy/tree/master/out/json)</span>
+__Out:__ [JSON](https://github.com/mnyrop/bunraku-ipy/tree/master/out/json)
 
 <br>
 
 ## scene iii. Minify
 
-#### In: <span style="font-weight:400">[JSON](https://github.com/mnyrop/bunraku-ipy/tree/master/out/json)</span><br>Tools: <span style="font-weight:400">[JQ](https://stedolan.github.io/jq/)</span>
+__In:__ [JSON](https://github.com/mnyrop/bunraku-ipy/tree/master/out/json)<
+
+__Tools:__ [JQ](https://stedolan.github.io/jq/)
 
 With the bulk of the processing done, I used a few post-processing tricks to make my JSON files smaller and more usable. I used the JSON manipulation library [JQ](https://stedolan.github.io/jq/) to drop null key:value pairs from my files, since most objects (especially images) had a _lot_ of empty fields. I also used the option `--compact-output` to minify the non-null files:
 
@@ -111,8 +115,8 @@ $ replace "\"nan\"" "null" -- authors.json
 ```
 
 
-#### Out: <span style="font-weight:400">[better JSON](https://github.com/mnyrop/bunraku-ipy/tree/master/post-processing/json)</span>
+__Out:__ [better JSON](https://github.com/mnyrop/bunraku-ipy/tree/master/post-processing/json)
 
 <br>
-<span style="font-weight:400">Next \>> </span>[part 3: the site]({{ site.url }}/notes/the-summer-of-puppets-3)
+Next > [part 3: the site]({{ site.url }}/notes/the-summer-of-puppets-3)
 <br><br>

@@ -2,28 +2,28 @@
 layout: post
 title: The Summer of Japanese Puppets, Part 3
 date: 2017-07-11
+overlay: purple
+hero: 'https://www1.columbia.edu/sec-cgi-bin/cul/dlo?obj=ldpd_bun_slide_677_4_0606_0607&size=medium'
 tags:
   - jekyll
   - github-pages
   - liquid
 ---
 
-<div style="height:550px;width:100%;background-size:cover;background-image:url( '/images/gabu.jpg');background-position:center center;"></div>
-
-<br>
-
 This post is part 3 of 4 in a series. Feel free to skip around to:
 
-__[part 1: the task]({{ site.url }}/notes/the-summer-of-puppets)__,<br>__[part 2: data transformation]({{ site.url }}/notes/the-summer-of-puppets-2)__, or <br>__[part 4: epilogue]({{ site.url }}/notes/the-summer-of-puppets-4)__.
-
-<hr>
+[part 1: the task]({{ site.url }}/notes/the-summer-of-puppets),
+[part 2: data transformation]({{ site.url }}/notes/the-summer-of-puppets-2), or
+[part 4: epilogue]({{ site.url }}/notes/the-summer-of-puppets-4).
 
 
 # Act 3: The site emerges
 
 ## iv. Ingest + generate
 
-#### In: <span style="font-weight:400">[JSON](https://github.com/mnyrop/bunraku-ipy/tree/master/post-processing/json)</span><br>Tools: <span style="font-weight:400">[Jekyll](https://jekyllrb.com/) / [wax_tasks gem](https://github.com/mnyrop/wax_tasks)</span>
+__In:__ [JSON](https://github.com/mnyrop/bunraku-ipy/tree/master/post-processing/json)
+
+__Tools:__ [Jekyll](https://jekyllrb.com/) / [wax_tasks gem](https://github.com/mnyrop/wax_tasks)
 
 Once I had my data packaged and ready in individual JSON array files (e.g. `authors.json`), I needed to create a Jekyll collection for each type, and 'split' the array of objects into individual markdown pages (e.g. `/_authors/1.md`) with YAML as the pages' [front matter](https://jekyllrb.com/docs/frontmatter/):
 
@@ -59,11 +59,11 @@ collections:
 ```
 
 
-Note: *You can find more thorough documentation on how to configure your collections to work with `wax_tasks`
+> Note: You can find more thorough documentation on how to configure your collections to work with `wax_tasks`
 [here](https://github.com/mnyrop/wax_tasks/blob/master/README.md).*
 
 
-#### Out: <span style="font-weight:400">Jekyll Collections</span>
+__Out:__ Jekyll Collections
 
 <br>
 
@@ -71,7 +71,9 @@ Note: *You can find more thorough documentation on how to configure your collect
 ## v.  Template + build
 
 
-#### In: <span style="font-weight:400">Jekyll Collections</span><br>Tools: <span style="font-weight:400">[Liquid](https://shopify.github.io/liquid/)</span>
+__In:__ Jekyll Collections
+
+__Tools:__ [Liquid](https://shopify.github.io/liquid/)
 
 `wax_tasks` also gives you the option to designate a layout for each collection, and will add that metadata to each markdown page it creates. I gave each type its own layout, for example `author-page.html`, shown below:
 
@@ -92,7 +94,7 @@ __This is where everything starts to come together.__ Because the author markdow
 You _must_ include the pipe `| first` at the end of your tag because Liquid `| where:` pipes will always return an array (regardless of the fact that _we_ know `id` is a primary key, and will only match one play.)
 
 
-#### Out: <span style="font-weight:400">Compiled Jekyll Pages</span>
+__Out:__ Compiled Jekyll Pages
 
 <br><img src="{{ "/images/author.png" | relative_url }}" style="box-shadow: 2px 2px 4pc #23352a;"/><br><br>
 
@@ -101,5 +103,5 @@ After writing templates for each object type as well as templates for viewing th
 <br>
 
 <br>
-<span style="font-weight:400">Next \>> </span>[part 4: epilogue]({{ site.url }}/notes/the-summer-of-puppets-4)
+Next > [part 4: epilogue]({{ site.url }}/notes/the-summer-of-puppets-4)
 <br><br>

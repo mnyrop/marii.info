@@ -2,44 +2,11 @@
 layout: default
 ---
 
-<article>
 
-	<div class="center">
-		<h1>{{ page.title }}</h1>
-		<p>
-			{% for tag in page.tags %}
-			{% capture thecycle %}{% cycle 'odd', 'even' %}{% endcapture %}
-			{% if thecycle == 'odd' %}
-				{% assign color = "#325666" %}
-			{% else %}
-				{% assign color = "#71909e" %}
-			{% endif %}
-				<span style="color:{{ color }}">#{{ tag }}</span>{% unless forloop.last %}&nbsp;&nbsp;{% endunless %}
-			{% endfor %}
-		</p>
-		<time>{{ page.date | date: '%B %-d, %Y' }}</time>
-	</div>
+{% include post.html post=page %}
 
-	<div class="divider"></div>
+{% if site.author.disqus %}
+    {% include externals/disqus.html %}
+{% endif %}
 
-	{{ content }}
-
-	<div class="page-navigation">
-		{% if page.next.url %}
-	    <a class="next" href="{{ site.url }}{{page.next.url}}" title="NEXT: {{page.next.title}}">&lt;&lt;</a>
-			<span> &middot; </span>
-	  {% endif %}
-			<a class="home" href="{{ site.url }}/" title="Back to Homepage">Home</a>
-	  {% if page.previous.url %}
-			<span> &middot; </span>
-	    <a class="prev" href="{{ site.url }}{{page.previous.url}}" title="PREV: {{page.previous.title}}">&gt;&gt;</a>
-	  {% endif %}
-	</div>
-
-	{% include footer.html %}
-
-	<div class="divider"></div>
-
-	{% include comments.html %}
-
-</article>
+{% include post/related.html %}

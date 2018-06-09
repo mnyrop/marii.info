@@ -1,11 +1,11 @@
 source 'https://rubygems.org'
-gem 'jekyll', '3.7.3'
+
+gem 'jekyll', '~> 3.8'
 
 group :development, :test do
   gem 'html-proofer'
   gem 'rake'
-end
-
-group :jekyll_plugins do
-  gem "jekyll-admin"
+  gem 'jekyll-feed'
+  gem 'jekyll-sitemap'
+  gem 'jekyll-paginate'
 end

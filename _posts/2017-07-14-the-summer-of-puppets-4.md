@@ -2,20 +2,23 @@
 layout: post
 title: The Summer of Japanese Puppets, Part 4
 date: 2017-07-11
-category: dev
+overlay: green
+hero: 'https://www1.columbia.edu/sec-cgi-bin/cul/dlo?obj=ldpd_bun_slide_024_1_0427_0621&size=medium'
 tags:
   - d3js
   - lunr
   - jekyll
 ---
 
-<iframe height="450px" src="https://www.youtube.com/embed/ZaI8fN4176k" frameborder="0" allowfullscreen></iframe>
+<iframe style="height:450px; width:100%" src="https://www.youtube.com/embed/ZaI8fN4176k" frameborder="0" allowfullscreen></iframe>
 
-This post is part 3 of 4 in a series. Feel free to skip around to:
+This post is part 4 of 4 in a series. Feel free to skip around to:
 
-__[part 1: the task]({{ site.url }}/notes/the-summer-of-puppets)__,<br>__[part 2: data transformation]({{ site.url }}/notes/the-summer-of-puppets-2)__, or <br>__[part 3: the site]({{ site.url }}/notes/the-summer-of-puppets-3)__.
+[part 1: the task]({{ site.url }}/notes/the-summer-of-puppets),
+[part 2: data transformation]({{ site.url }}/notes/the-summer-of-puppets-2), or
+[part 3: the site]({{ site.url }}/notes/the-summer-of-puppets-3).
 
-<hr>
+<br><br>
 
 # epilogue
 

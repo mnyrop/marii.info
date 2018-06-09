@@ -1,8 +1,7 @@
 ---
 layout: post
-title:  "Moving from Wordpress to Jekyll:<br> Tips for the Alternate Route"
-date: 2017-05-05
-category: dev
+title:  "Moving from Wordpress to Jekyll: Tips for the Alternate Route"
+overlay: green
 tags:
   - jekyll
   - wordpress

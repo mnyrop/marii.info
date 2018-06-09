@@ -1,8 +1,10 @@
 ---
-layout: page
+layout: post
 title:  "Embarrassment.Party"
 era: past
-order: 4
+order: 3
+overlay: orange
+hero: 'http://embarrassment.party/smoke_water.gif'
 tags:
   - cloud-computing
   - contemporary-art
@@ -10,10 +12,6 @@ tags:
   - thesis
   - 2014
 ---
-<center>
-  <img src="http://embarrassment.party/voidsample.gif" width="400"/><br><br>
-  <sup>cristine brache for <b>embarrassment.party</b></sup>
-</center>
 
 ## curatorial statement
 

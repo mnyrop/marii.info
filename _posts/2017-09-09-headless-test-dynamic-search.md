@@ -1,9 +1,9 @@
 ---
 layout: post
-title:  "Continuous Integration II:<br>Headless Tests for Jekyll with RSpec, Capybara, and Poltergeist"
+title:  "Continuous Integration II: Headless Tests for Jekyll with RSpec, Capybara, and Poltergeist"
 date: 2017-09-12
-sticky: true
-category: dev
+overlay: red
+hero: 'http://www.elotrocine.cl/wp-content/uploads/2015/06/poltergeist1982b.jpg'
 tags:
   - continuous-integration
   - travis
@@ -15,49 +15,47 @@ tags:
   - lunr
 ---
 
-<img src="http://bh-s2.azureedge.net/bh-uploads/2016/05/poltergeist-ii-moustache-skeleton.jpg" style="box-shadow: 2px 2px 4pc #23352a;width:100%;margin-bottom:10px;"/>
-<sup>Still from ***Poltergeist III*** (1988), director: Gary Sherman.</sup>
-
-### What is a headless feature test?
+# What is a headless feature test?
 
 The term "headless" refers to software capable of working without a GUI. Accordingly, **headless feature tests** are programmatic actions that **simulate in-brower user interactions with site features** (without needing to actually open a GUI browser!) **and then return results on the success (or failure)** of that interaction.
 
 **In simpler terms:** they're programs that go test your features for you, and come back bearing some good or not-so-good news.
 
-Headless feature tests (like any [unit tests](http://searchsoftwarequality.techtarget.com/definition/unit-testing)) are an important part of any **[Continuous Integration](https://aws.amazon.com/devops/continuous-integration/) (CI)** architecture. If you're new to CI and want to figure out how to set up your Jekyll site in a continuously integrated way, check out [this other post]({{ site.baseurl }}/notes/jekyll-ci/) first. If you're all set up with CI for Jekyll and want to take it to the next step, this post is for you.
+Headless feature tests (like any [unit tests](http://searchsoftwarequality.techtarget.com/definition/unit-testing)) are an important part of any **[Continuous Integration](https://aws.amazon.com/devops/continuous-integration/) (CI)** architecture. If you're new to CI and want to figure out how to set up your Jekyll site in a continuously integrated way, check out [this other post]({{ site.baseurl }}/notes/jekyll-ci) first. If you're all set up with CI for Jekyll and want to take it to the next step, this post is for you.
 
 
 
-### What tools do we need?
+# What tools do we need?
 
-#### [Travis-CI](https://travis-ci.org)
-"... is a hosted, distributed continuous integration service used to build and test software projects hosted at GitHub," that basically tests your build and performs any other tasks you specify on a VM in the cloud. For more on Jekyll and Travis, refer back to [this post]({{ site.baseurl }}/notes/jekyll-ci/).
+## [Travis-CI](https://travis-ci.org)
+"... is a hosted, distributed continuous integration service used to build and test software projects hosted at GitHub," that basically tests your build and performs any other tasks you specify on a VM in the cloud. For more on Jekyll and Travis, refer back to [this post]({{ site.baseurl }}/notes/jekyll-ci).
 
-#### [Rspec](http://rspec.info/)
+## [Rspec](http://rspec.info/)
 ... is a Ruby gem and "spec runner" for *behavior-driven development*, which is exactly what it sounds like. Rspec lets you write tests for what your code *should* do, which in turn helps you write better, less fickle code.
 
-#### [Rack-Jekyll](https://github.com/adaoraul/rack-jekyll)
+## [Rack-Jekyll](https://github.com/adaoraul/rack-jekyll)
 ... is a Ruby gem and Jekyll plugin that transforms your Jekyll site into a [Rack](https://rack.github.io/) application. If you're not familiar with Rack, all you need to know is that it is the preferred app format for Capybara, so Jekyll-Rack is just translating our Jekyll site to an app that Capybara will get along with better.
 
-#### [Capybara](http://teamcapybara.github.io/capybara/)
+## [Capybara](http://teamcapybara.github.io/capybara/)
 ... is a Ruby gem that "helps you test web applications by simulating how a real user would interact with your app." It's basically what makes Rspec act like a user.
 
-#### [Poltergeist](https://github.com/teampoltergeist/poltergeist)
+## [Poltergeist](https://github.com/teampoltergeist/poltergeist)
 ... is a Ruby gem and driver for Capybara that allows you to run your tests on a headless WebKit browser provided by PhantomJS. It's basically what gives Capybara access to your browser in order to go around pretending like a user.
 
 __To summarize (very roughly):__ You write Rspec tests. Rack-Jekyll will translate your Jekyll site to a Rack app. Capybara, pretending to be a user, will access a headless (non-GUI) browser with the help of Poltergeist, open your Rack-like Jekyll site and, finally, perform your RSpec tests on it. This is a crude depiction, since many of these roles overlap. But you get the picture.
 
 # Example: testing your site search
 
-I have [Lunr]() search enabled on several of my Jekyll sites and, since Lunr indexing is a little wild and prone to errors, I've make a headless test for my search feature.
+I have Lunr search enabled on several of my Jekyll sites and, since Lunr indexing is a little wild and prone to errors, I've make a headless test for my search feature.
 
-This headless test needs to:<br>
+This headless test needs to:
+
 __1. visit pages that have a unique search index,<br>2. confirm that the pages have search bars,<br>3. confirm that terms theoretically present in the index actually yield results when searched,<br>4. confirm that the results link to existing internal pages, and<br>5. confirm that the terms expected are indeed present on those pages.__
 
 The following will show you step-by-step how to configure and write such a test.
 
 
-### part 1 – rspec configuration
+## part 1 – rspec configuration
 
 <div class="highlighter-rouge">
   <pre class="highlight"><code>
@@ -79,7 +77,7 @@ The following will show you step-by-step how to configure and write such a test.
 
 Add a `spec` directory to the root of your site, and create `spec_helper.rb` and `lunr_spec.rb` inside it. You'll leave these empty for now and come back to them later.
 
-#### .rspec:
+### .rspec:
 
 Next add an `.rspec` file to the root of your site and give it the following information:
 
@@ -89,7 +87,7 @@ Next add an `.rspec` file to the root of your site and give it the following inf
 --format documentation
 ```
 
-#### Gemfile:
+### Gemfile:
 
 Add `rspec`, `capybara`, `poltergeist`, and `rack-jekyll` to the dev/test group of your `Gemfile`:
 
@@ -108,7 +106,7 @@ Add `rspec`, `capybara`, `poltergeist`, and `rack-jekyll` to the dev/test group 
   </code></pre>
 </div>
 
-#### .travis.yml:
+### .travis.yml:
 
 Add `bundle exec rspec` test to the `script` group of your `.travis.yml` file:
 
@@ -128,17 +126,13 @@ Add `bundle exec rspec` test to the `script` group of your `.travis.yml` file:
 Then execute `$ bundle` or `$ bundle install` to load the gems and update your `Gemfile.lock`.
 
 
-<img src="http://www.elotrocine.cl/wp-content/uploads/2015/06/poltergeist1982b.jpg" style="box-shadow: 2px 2px 4pc #23352a;width:100%;margin-top:40px;margin-bottom:10px;"/>
-<sup>Another amazing and gratuitous still, this time from the first ***Poltergeist*** (1982), director: Tobe Hooper.</sup>
+## part 2 – set up for your search spec
 
-
-### part 2 – set up for your search spec
-
-__{ Note:__ This example test assumes that you have search enabled on your Jekyll site, presumably with [Lunr](http://lunrjs.com) client-side search. I won't get into indexing your site with Lunr here (that will have to wait for another post), but if you have a working search bar with `id="search"`, and it dynamically generates html results with `class="results"`, this spec should work for you. For sample jQuery for dynamically showing search results, check out [this gist](https://gist.github.com/mnyrop/a0a8834e29a3d3ed403242660719f87b). __}__
+> __Note:__ This example test assumes that you have search enabled on your Jekyll site, presumably with [Lunr](http://lunrjs.com) client-side search. I won't get into indexing your site with Lunr here (that will have to wait for another post), but if you have a working search bar with `id="search"`, and it dynamically generates html results with `class="results"`, this spec should work for you. For sample jQuery for dynamically showing search results, check out [this gist](https://gist.github.com/mnyrop/a0a8834e29a3d3ed403242660719f87b).
 
 
 
-#### _config.yml:<span style="display:none">_</span>
+### _config.yml:<span style="display:none">_</span>
 
 For our search spec specifically, you'll need to tell your `_config.yml` which pages have (unique) search bars/indexes and which terms you want to test on each of those pages.
 
@@ -161,13 +155,10 @@ search_tests:
       - poltergeist
 ```
 
-<center><img src="http://www.claudinho.com.br/wp-content/uploads/2015/12/capivara-sem-fundo.png" style="width:70%;margin-top:40px;margin-bottom:10px;"/>
-<br><sup>An altogether unjustifiable image of a <a href="https://en.wikipedia.org/wiki/Capybara_(software)">Capybara</a>.</sup></center>
 
+## part 3 – write a helper spec
 
-### part 3 – write a helper spec
-
-#### spec_helper.rb:
+### spec_helper.rb:
 
 Add the following to the `spec_helper.rb` file in your `spec` directory:
 
@@ -195,9 +186,9 @@ end
 ```
 This will: hand your spec test the necessary gems, tell RSpec to use Capybara, tell Capybara to use Poltergeist, and tell rack-jekyll to register the Jekyll site. It will also read in your `baseurl` and `search_tests` info from your `_config.yml`, in order to correctly visit your pages and test the queries that you expect.
 
-### part 4 – write a test spec
+## part 4 – write a test spec
 
-#### lunr_spec.rb:
+### lunr_spec.rb:
 
 Add the following to the `lunr_spec.rb` file in your `spec` directory:
 
@@ -252,7 +243,7 @@ something
 ... and should be very readable. For more information on formatting RSpec tests, I recommend exploring the documentation on  [Relish](https://relishapp.com/rspec/rspec-core/v/3-6/docs/example-groups/basic-structure-describe-it).
 
 
-### results
+## results
 
 When you run your Rspec test (either locally with `$ bundle exec rspec`) or via Git commit with Travis, you should see results logged that resemble the following:
 

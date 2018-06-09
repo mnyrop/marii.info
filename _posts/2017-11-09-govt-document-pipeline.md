@@ -2,8 +2,8 @@
 layout: post
 title:  "Create a Gov't Document Pipeline from Scraping through Full Text Extraction"
 date: 2017-11-09
-sticky: true
-category: dev
+hero: '/images/asad.png'
+overlay: purple
 tags:
   - cia
   - beautifulsoup
@@ -12,15 +12,15 @@ tags:
   - ocr
 ---
 
-<a href="https://www.cia.gov/library/readingroom/docs/CIA-RDP87T00434R000300250002-6.pdf" target="\_none">
-  <img src="/images/asad.png" style="box-shadow: 2px 2px 4pc #23352a;"/>
-</a>
+# Steps:
 
-## Steps:
+1. Scrape and save metadata with Python
+2. Scrape and download .pdfs to local directory with Python
+3. Convert .pdfs to .tifs with ImageMagick
+4. Extract raw text from .tifs using Tesseract OCR
+5. Connect raw text to metadata (in a static format like csv or in a database)
 
-#### 1: Scrape and save metadata with Python<br> 2: Scrape and download .pdfs to local directory with Python<br> 3. Convert .pdfs to .tifs with ImageMagick<br> 4. Extract raw text from .tifs using Tesseract OCR<br>5. Connect raw text to metadata (in a static format like csv or in a database)
-
-### cia-scraper.python&#172;
+## cia-scraper.python&#172;
 
 ```python
 from bs4 import BeautifulSoup
@@ -111,7 +111,7 @@ df = meta_df(True)
 
 
 
-### tif-convert.sh&#172;
+## tif-convert.sh&#172;
 
 ```bash
 TIF_DIR="tif"
@@ -132,7 +132,7 @@ mv ${TIF_DIR} ..
 ```
 
 
-### tesseract.sh &#172;
+## tesseract.sh &#172;
 
 ```bash
 TXT_DIR="texts"

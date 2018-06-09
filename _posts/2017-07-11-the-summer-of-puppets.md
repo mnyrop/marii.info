@@ -2,24 +2,19 @@
 layout: post
 title: The Summer of Japanese Puppets, Part 1
 date: 2017-07-11
-category: dev
-sticky: true
+overlay: red
+hero: 'http://www.columbia.edu/cgi-bin/dlo?obj=ldpd_bun_slide_362_1_6665_8069&size=medium'
 tags:
   - sql
   - jekyll
   - php
 ---
 
-<br>
-<img src="http://www.columbia.edu/cgi-bin/dlo?obj=ldpd_bun_slide_362_1_6665_8069&size=medium" style="box-shadow: 2px 2px 4pc #23352a;"/>
-<br><br>
-
 
 This post is part 1 of 4 in a series. Feel free to skip around to:
 
-__[part 2: data transformation]({{ site.url }}/notes/the-summer-of-puppets-2)__,<br>__[part 3: the site]({{ site.url }}/notes/the-summer-of-puppets-3)__, or<br>__[part 4: epilogue]({{ site.url }}/notes/the-summer-of-puppets-4)__.
-
-<hr>
+[part 2: data transformation]({{ site.url }}/notes/the-summer-of-puppets-2),
+[part 3: the site]({{ site.url }}/notes/the-summer-of-puppets-3), or [part 4: epilogue]({{ site.url }}/notes/the-summer-of-puppets-4).
 
 # Enter: Bunraku
 
@@ -33,7 +28,7 @@ A few months ago, I was given access to a MySQL database with 27 tables of data 
 - 184 __performers__,
 - 178 __plays__,
 - 293 __productions__,
-- 2,609 __scenes__, and 
+- 2,609 __scenes__, and
 - 76 __image subject tags__
 
 ... spanning decades of Barbara's involvement with the leading Bunraku troupes in Japan (1964-2003).
@@ -66,5 +61,5 @@ Sounds a bit tedious but simple enough. Yet the project necessitated tackling se
 7. Can I implement advanced English/Japanese search? With both roman and kanji characters?
 
 <br>
-<span style="font-weight:400">Next \>> </span>[part 2: data transformation]({{ site.url }}/notes/the-summer-of-puppets-2)
+Next > [part 2: data transformation]({{ site.url }}/notes/the-summer-of-puppets-2)
 <br><br>

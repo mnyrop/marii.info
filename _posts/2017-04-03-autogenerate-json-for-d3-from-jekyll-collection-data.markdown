@@ -2,8 +2,7 @@
 layout: post
 title:  "Auto-generate D3.js JSON from a Jekyll collection"
 date: 2017-04-03
-sticky: true
-category: dev
+overlay: purple
 tags:
   - jekyll
   - d3js
@@ -208,6 +207,3 @@ For my example collection, the json output looks like this:
 # Last Thoughts:
 
 This result might not look super impressive just yet—especially since our example output is barely larger than our liquid template! However, you can use the same or a similar process to generate JSON that is way larger, way more complicated, and way more visually impactful. And did I mention that it will update automatically as your site grows??!! Since liquid is parsed on `jekyll build` and `jekyll serve` just like markdown, you won't need to touch your JSON-generating file again (unless you want to change the structure of it, and prototype something new).
-
-
-<br><br><br><br><br>

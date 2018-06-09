@@ -1,42 +1,86 @@
-# Site Info
-title:              "marii"
-description:        "marii nyrop — dh developer @columbia. planetary computation, cybernetic history, soviet sci-fi, fiber art."
+# Base blog settings
+baseurl                      : ''
+url                          : ''
 
-# Author Info
-author_name:        "marii" # Your name here
-twitter_username:   mariinyrop # Your Twitter username here
-github_username:    mnyrop # Your GitHub username here
+blog:
+  title                      : marii
+  description                : ''
+  logo_path                  : '/assets/img/snake.svg'
+  search_path                : ''
+  hero_layout                : true
+  hero_placeholder           : '/assets/img/generic_hero.jpg'
+  excerpts                   : true
+  inline_footnotes           : true
+  titles_only                : false
 
-# Site Settings
-url:                ""
-permalink:          /notes/:title/ # Post permalink
+# Fonts
+  font                       : "Rubik', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif"
+  load_google_fonts          : 'Rubik:400,400italic,700,700italic'
 
-# Site Build
-highlighter:        rouge
-markdown:           kramdown
-kramdown:
-    input:          GFM
-sass:
-    style:          :compressed
 
-plugins:            [jekyll-admin]
+# Author info
+author:
+  fullname                  : Marii Nyröp
+  rss                       : false
+  mail                      : your@email.com
+  twitter                   : mariinyrop
+  github                    : mnyrop
+  rubygems                  : marii
+  disqus                    : ''
+  google_analytics          : ''
+  photo                     : '/uploads/me2.png'
+  photo2x                   : '/uploads/me.png'
 
-# Other Params
-include:            [robots.txt]
-exclude:            [LICENSE, README.md, CNAME, vendor, Gemfile*, Rakefile]
 
+
+## Advanced blog settings
+
+# Gems
+plugins:
+  - jekyll-sitemap
+  - jekyll-paginate
+
+# Pagination
+paginate                     : 5
+paginate_path                : '/page-:num/'
+
+# Permalinks
+permalink                    : notes/:slug
+
+# Posts
+excerpt_separator            : <!–-break-–>
+
+# Tags
 collections:
+  tags:
+    output: true
+    permalink: /tag/:slug
   projects:
     output: true
+    permalink: /projects/:slug
+defaults:
+  -
+    scope:
+      path: ''
+      type: my_tags
+    values:
+      layout: blog-by-tag
 
-footer_links:
-  - icon: fa fa-lg fa-twitter
-    link: https://twitter.com/mariinyrop
-  - icon: fa fa-lg fa-code-fork
-    link: https://github.com/mnyrop
-  - icon: fa fa-lg fa-stack-overflow
-    link: https://stackoverflow.com/users/8227741/marii
-  - icon: fa fa-lg fa-jsfiddle
-    link: https://jsfiddle.net/user/marii_/fiddles/
-  - icon: fa fa-lg fa-diamond
-    link: https://rubygems.org/profiles/marii
+# Handling Reading
+exclude                    : ['README.md', 'README.html']
+
+# Sass settings
+sass:
+  sass_dir                : _sass
+  style                   : compressed # http://sass-lang.com/documentation/file.SASS_REFERENCE.html#output_style
+
+# HTML Compression
+# - http://jch.penibelst.de/
+compress_html:
+  clippings               : all
+  endings                 : all
+  comments                : ['<!-- ', ' -->']
+  blanklines              : true
+  profile                 : false
+  ignore:
+  envs                    : [local]

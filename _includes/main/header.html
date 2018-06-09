@@ -1,0 +1,56 @@
+<header>
+    <div class="menu">
+        <div class="logo">
+            <a href="{{ '/' | prepend: site.baseurl }}">
+                <img src="{{ site.blog.logo_path | relative_url }}" class="logosvg" style="cursor: pointer !important;" />
+            </a>
+        </div>
+
+        <ul>
+            <li><a href="{{ '/about' | prepend: site.baseurl }}">about</a></li>
+            <li><a href="{{ '/' | prepend: site.baseurl }}">notes</a></li>
+            <li><a href="{{ '/projects/' | prepend: site.baseurl }}">projects</a></li>
+            <li><a href="{{ '/search' | prepend: site.baseurl }}">search</a></li>
+        </ul>
+    </div>
+    <div class="social">
+        <ul>
+            {% if site.author.twitter %}
+            <li>
+                <a href="https://twitter.com/{{ site.author.twitter }}" target="_blank" class="smaller">
+                    <i class="fab fa-twitter"></i>
+                </a>
+            </li>
+            {% endif %} {% if site.author.github %}
+            <li>
+                <a href="https://github.com/{{ site.author.github }}" target="_blank" class="smaller">
+                    <i class="fas fa-code-branch"></i>
+                </a>
+            </li>
+            {% endif %} {% if site.author.rubygems %}
+            <li>
+                <a href="https://rubygems.org/profiles/{{ site.author.rubygems }}" target="_blank" class="smaller">
+                    <i class="far fa-gem"></i>
+                </a>
+            </li>
+            {% endif %}
+            <li>
+              <a id="mail-btn" href="#" class="smaller" data-clipboard-text="m.nyrop@columbia.edu">
+                <i class="fas fa-envelope"></i>
+              </a>
+            </li>
+            <li>
+                <a href="#" onclick="switchTheme()" title="Switch theme?" id="theme-switcher">
+                    <i class="fas fa-adjust"></i>
+                </a>
+            </li>
+            {% if site.author.rss %}
+            <li>
+                <a href="{{ '/feed.xml' | prepend: site.baseurl }}" target="_blank" class="smaller">
+                    <i class="fas fa-rss-square"></i>
+                </a>
+            </li>
+            {% endif %}
+        </ul>
+    </div>
+</header>

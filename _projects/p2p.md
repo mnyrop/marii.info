@@ -1,8 +1,10 @@
 ---
-layout: page
+layout: post
 title:  "p2p?: Democracy, Deregulation, and Discontents"
 era: past
-order: 3
+order: 2
+overlay: blue
+hero: '/images/p2p.jpg'
 tags:
   - course
   - teaching
@@ -12,8 +14,6 @@ tags:
   - philosophy
   - 2015
 ---
-
-<img src="/images/p2p.jpg"/>
 
 Course taught @ Hampshire College, January 2015.
 

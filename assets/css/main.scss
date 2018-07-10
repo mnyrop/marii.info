@@ -4,6 +4,7 @@ sitemap:
   exclude: 'yes'
 ---
 @charset "utf-8";
+
 @import "mixins";
 @import "variables";
 @import "base";
@@ -20,4 +21,7 @@ sitemap:
 @import "pagination";
 @import "footer";
 @import "jekyll-github";
+@import "variables";
+@import "barefoot";
+/* mine */
 @import "marii";

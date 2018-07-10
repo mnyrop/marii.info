@@ -1,7 +1,6 @@
 # Base blog settings
 baseurl                      : ''
 url                          : ''
-source                       : 'src'
 
 blog:
   title                      : marii
@@ -18,12 +17,10 @@ blog:
   font                       : "Rubik', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif"
   load_google_fonts          : 'Rubik:400,400italic,700,700italic'
 
-
 # Author info
 author:
   fullname                  : Marii Nyröp
   rss                       : false
-  mail                      : your@email.com
   twitter                   : mariinyrop
   github                    : mnyrop
   rubygems                  : marii
@@ -67,21 +64,6 @@ defaults:
     values:
       layout: blog-by-tag
 
-# Handling Reading
-exclude                    : ['README.md', 'README.html']
-
-# Sass settings
 sass:
-  sass_dir                : _sass
-  style                   : compressed # http://sass-lang.com/documentation/file.SASS_REFERENCE.html#output_style
-
-# HTML Compression
-# - http://jch.penibelst.de/
-compress_html:
-  clippings               : all
-  endings                 : all
-  comments                : ['<!-- ', ' -->']
-  blanklines              : true
-  profile                 : false
-  ignore:
-  envs                    : [local]
+  sass_dir                : _scss
+  style                   : compressed

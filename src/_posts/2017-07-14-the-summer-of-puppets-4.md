@@ -9,7 +9,6 @@ tags:
   - lunr
   - jekyll
 ---
-
 <iframe style="height:450px; width:100%" src="https://www.youtube.com/embed/ZaI8fN4176k" frameborder="0" allowfullscreen></iframe>
 
 This post is part 4 of 4 in a series. Feel free to skip around to:
@@ -34,10 +33,9 @@ The mostly finished demo has directories of
 [performers](https://bunraku.cul.columbia.edu/performers/),
 [characters](https://bunraku.cul.columbia.edu/characters/),
 [kashira](https://bunraku.cul.columbia.edu/kashira/),
-[scenes](https://bunraku.cul.columbia.edu/scenes/2671/),
-[image tags](https://bunraku.cul.columbia.edu/tags/),
-[slide images](https://bunraku.cul.columbia.edu/slides/), and
-[image albums](https://bunraku.cul.columbia.edu/albums/)
+[scenes](https://bunraku.cul.columbia.edu/scenes/2671/), and
+[image tags](https://bunraku.cul.columbia.edu/tags/)
+
 with individual layouts displaying and linking object data together.
 
 It is navigable through the above directory listings, through several dynamic search boxes running client-side [Lunrjs](https://lunrjs.com/), and via clickable [D3js](https://d3js.org/) data visualizations. It handles relative/massive image sets by implementing lazy load in a jQuery carousel.
@@ -74,7 +72,6 @@ Generated [Jekyll collections](https://jekyllrb.com/docs/collections/) (and page
 
 <i class="fa fa-chevron-circle-right" aria-hidden="true"></i>&nbsp;&nbsp;
 Ended with a ~40k page static Jekyll site powered by YAML data, with JSON index for client-side search.
-
 
 
 <br><br>

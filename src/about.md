@@ -5,7 +5,7 @@ permalink: /about/
 published: true
 ---
 
-<img src="https://pbs.twimg.com/profile_images/978862817544728576/fGZOac3f_400x400.jpg" style="float:left;display:block;margin-right:2em;"/>
+<img src="{{ '/images/avatar.jpg' | relative_url }}" style="float:left;display:block;margin-right:2em;max-width:300px;"/>
 <br><br>
 
 # marii
@@ -15,7 +15,7 @@ libraries ☞ minimal computing ☞ cybernetic history ☞ soviet sci-fi ☞ fib
 __current:__ digital humanities developer @ columbia<br>
 __past:__ post-baccalaureate technologist @ five college digital humanities
 
-<br><br>
+<br><br><br><br>
 
 ## labs ¬
 

@@ -1,6 +1,7 @@
 # Base blog settings
 baseurl                      : ''
 url                          : ''
+source                       : 'src'
 
 blog:
   title                      : marii

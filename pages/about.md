@@ -23,17 +23,14 @@ __past:__ post-baccalaureate technologist @ five college digital humanities
 - __[xpMethod](http://xpmethod.plaintext.in/):__ Columbia's Group for Experimental Methods in the Humanities
 - __[irlHumanities](http://irlhumanities.org/):__ Immersive Reality Lab for the Humanities
 
-## dh sites ¬
+## talks given / workshops + courses led ¬
 
-- __[OurBelovedKin](http://ourbelovedkin.com/awikhigan/index):__ Remapping a New History of King Philip's War
-- __[SudanPhoto](http://sudanphoto.uofk.edu/):__ University of Khartoum Sudan Historical Photography Archive
-- __[Bunraku](https://bunraku.cul.columbia.edu/):__ The Barbara Curtis Adachi Bunraku Collection
-- __[StyleRevolution](https://stylerevolution.github.io/):__ Journal des Dames et des Modes
-
-## talks / workshops ¬
-
-- __[Wax:  Minimal IIIF  for Experiments, Exhibitions, and Pedagogy](https://slides.com/marii/wax-minimal-iiif-for-experiments-exhibitions-and-pedagogy/)__.<br>2018 IIIF Conference, Library of Congress.
-- __[Publishing Sites with GitHub Pages](/notes/nycdh-2018)__.<br>NYCDH Week workshop.
+- __[Minimal Computing: Nimble Projects for Shaping and Sharing Histories](http://web.sas.upenn.edu/dream-lab/2018/09/14/minimal-computing/)__. Digital Resources and Methods (DReAM) Lab @ University of Pennsylvania. June 2019.
+- __[Research Computing with Python](https://columbiaswc.github.io/2019-01-17-Columbia-Section-3/)__. Foundations for Research Computing x Software Carpentries Bootcamp @ Columbia University. January 2019.
+- __[Minimal Computing for Image Collections: The Case of Wax](https://slides.com/marii/dlf2018-wax/#/)__. October 2018. Digital Library Federation (DLF) Forum.
+- __[Research Computing with Python](https://columbiaswc.github.io/2018-08-27-Columbia-B/)__. Foundations for Research Computing x Software Carpentries Bootcamp @ Columbia University. August 2018.
+- __[Wax:  Minimal IIIF  for Experiments, Exhibitions, and Pedagogy](https://slides.com/marii/wax-minimal-iiif-for-experiments-exhibitions-and-pedagogy/)__. May 2018. IIIF Conference @ Library of Congress.
+- __[Publishing Sites with GitHub Pages](/notes/nycdh-2018)__. February 2018. NYCDH Week @ Columbia University.
 
 
 ## recent reads ¬

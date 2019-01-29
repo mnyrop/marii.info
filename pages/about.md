@@ -31,7 +31,7 @@ __past:__ post-baccalaureate technologist @ five college digital humanities
 - __[Research Computing with Python](https://columbiaswc.github.io/2018-08-27-Columbia-B/)__. Foundations for Research Computing x Software Carpentries Bootcamp @ Columbia University. August 2018.
 - __[Wax:  Minimal IIIF  for Experiments, Exhibitions, and Pedagogy](https://slides.com/marii/wax-minimal-iiif-for-experiments-exhibitions-and-pedagogy/)__. May 2018. IIIF Conference @ Library of Congress.
 - __[Publishing Sites with GitHub Pages](/notes/nycdh-2018)__. February 2018. NYCDH Week @ Columbia University.
-
+- __[P2P?: Democracy, Deregulation, and Discontents](/projects/p2p)__. January 2015. Undergraduate course at Hampshire College, sponsored by [5CollDH](http://5colldh.org).
 
 ## recent reads ¬
 

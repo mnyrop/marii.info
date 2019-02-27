@@ -1,17 +1,11 @@
 ---
 layout: default
-comments: true
 ---
 
 
 {% include post.html post=page %}
+{% include post/related.html %}
 
 {% if site.author.disqus %}
     {% include externals/disqus.html %}
 {% endif %}
-
-{% include post/related.html %}
-
-
-
-<br><br>

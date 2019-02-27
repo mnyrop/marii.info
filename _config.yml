@@ -33,14 +33,10 @@ author:
 
 ## Advanced blog settings
 
+exclude: [Rakefile]
 # Gems
 plugins:
   - jekyll-sitemap
-  - jekyll-paginate
-
-# Pagination
-paginate                     : 5
-paginate_path                : '/page-:num/'
 
 # Permalinks
 permalink                    : notes/:slug

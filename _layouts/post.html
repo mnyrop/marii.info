@@ -2,10 +2,9 @@
 layout: default
 ---
 
-
 {% include post.html post=page %}
 {% include post/related.html %}
 
 {% if site.author.disqus %}
-    {% include externals/disqus.html %}
+  {% include externals/disqus.html %}
 {% endif %}

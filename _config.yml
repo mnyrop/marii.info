@@ -1,6 +1,6 @@
 # Base blog settings
 baseurl                      : ''
-url                          : ''
+url                          : 'http://marii.info'
 
 blog:
   title                      : marii

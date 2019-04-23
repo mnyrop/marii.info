@@ -12,7 +12,7 @@ published: true
 
 libraries ☞ minimal computing ☞ cybernetic history ☞ soviet sci-fi ☞ fiber art.
 
-__current:__ digital humanities developer @ columbia<br>
+__current:__ digital humanities developer @ columbia university libraries<br>
 __past:__ post-baccalaureate technologist @ five college digital humanities
 
 <br><br><br><br>

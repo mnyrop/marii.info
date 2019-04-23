@@ -12,10 +12,8 @@ blog:
   excerpts                   : true
   inline_footnotes           : true
   titles_only                : false
-
-# Fonts
-  font                       : "Rubik', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif"
-  load_google_fonts          : 'Rubik:400,400italic,700,700italic'
+  font                       : "'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif"
+  load_google_fonts          : 'IBM+Plex+Sans:400,400italic,700,700italic'
 
 # Author info
 author:
@@ -25,7 +23,6 @@ author:
   github                    : mnyrop
   rubygems                  : marii
   disqus                    : 'mar-ii'
-  google_analytics          : ''
   photo                     : '/uploads/me2.png'
   photo2x                   : '/uploads/me.png'
 

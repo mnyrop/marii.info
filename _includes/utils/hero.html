@@ -12,21 +12,19 @@ It also needs both :before and :after pseudoclasses to work, that's the only way
 {% endcomment %}
 
 {% if post.hero != nil %}
-{% assign hero = post.hero %}
+  {% assign hero = post.hero %}
 {% else %}
-{% assign hero = site.blog.hero_placeholder %}
+  {% assign hero = site.blog.hero_placeholder %}
 {% endif %}
 
-{% if post.overlay != nil %}
-
-{% if post.overlay == "red" %}{% assign overlay = "rgba(255,0,100," %}{% endif %}
-{% if post.overlay == "blue" %}{% assign overlay = "rgba(0,100,255," %}{% endif %}
-{% if post.overlay == "green" %}{% assign overlay = "rgba(100,255,0," %}{% endif %}
-{% if post.overlay == "purple" %}{% assign overlay = "rgba(100,0,255," %}{% endif %}
-{% if post.overlay == "orange" %}{% assign overlay = "rgba(255,100,0," %}{% endif %}
-
+{% if post.overlay %}
+  {% if post.overlay == "red" %}{% assign overlay = "rgba(255,0,100," %}{% endif %}
+  {% if post.overlay == "blue" %}{% assign overlay = "rgba(0,100,255," %}{% endif %}
+  {% if post.overlay == "green" %}{% assign overlay = "rgba(100,255,0," %}{% endif %}
+  {% if post.overlay == "purple" %}{% assign overlay = "rgba(100,0,255," %}{% endif %}
+  {% if post.overlay == "orange" %}{% assign overlay = "rgba(255,100,0," %}{% endif %}
 {% else %}
-{% assign overlay = "rgba(0,0,0,.8)" %}
+  {% assign overlay = "rgba(0,0,0,.8)" %}
 {% endif %}
 
 {% assign opacity = "0.8)" %}
@@ -39,6 +37,7 @@ It also needs both :before and :after pseudoclasses to work, that's the only way
   .{{ post.url | remove: '/notes/' | remove: '/projects/' }}::before {
     background-image: url('{{ hero }}');
     background-size: cover;
+    filter: grayscale(1) brightness(0.5) contrast(0.5);
     -webkit-filter: grayscale(1) brightness(0.5) contrast(0.5);
 
     content:'';
@@ -46,7 +45,7 @@ It also needs both :before and :after pseudoclasses to work, that's the only way
     width: 100%;
     left: 0;
     top: 0;
-    z-index: -2;
+    z-index: 0;
   }
   .{{ post.url | remove: '/notes/' | remove: '/projects/' }}::after {
     content:'';
@@ -57,11 +56,11 @@ It also needs both :before and :after pseudoclasses to work, that's the only way
 
     background-color: {{ overlay }}{{ opacity }};
 
-    /*mix-blend-mode: darken;
-    mix-blend-mode: color-burn;
-    mix-blend-mode: hard-light;*/
+    /* mix-blend-mode: darken; */
+    /* mix-blend-mode: color-burn; */
+    /* mix-blend-mode: hard-light; */
     mix-blend-mode: overlay;
-    z-index: -1;
+    z-index: 1;
   }
 
   .{{ post.url | remove: '/notes/' | remove: '/projects/' }}-container,

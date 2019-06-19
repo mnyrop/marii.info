@@ -42,6 +42,6 @@ __past:__ post-baccalaureate technologist @ five college digital humanities
 	{% assign booksort = site.data.books | reverse %}
 	{% assign num = booksort | size %}
 	{% for book in booksort %}
-	  <i class="far fa-check-circle"></i> <b><a href="{{ book.link }}" target="\_blank" class="line-link">{{ book.title }}</a></b> ({{ book.author }}){% unless forloop.last %}, {% endunless %}
+	  <i class="far fa-check-circle"></i> <b><a href="{{ book.link }}" target="\_blank" {% if book.wnbt %}style="color: wheat;"{% endif %} class="line-link">{{ book.title }}</a></b> ({{ book.author }}){% unless forloop.last %}, {% endunless %}
 	{% endfor %}
 </p>

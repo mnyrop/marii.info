@@ -1,3 +1,8 @@
+- title: "the antelope wife"
+  author: "louise erdrich"
+  link: "https://www.goodreads.com/book/show/106542.The_Antelope_Wife"
+  sort: "erdrich"
+  wnbt: true
 - title: "discourse networks, 1800/1900"
   author: "friedrich kittler"
   link: "https://library.memoryoftheworld.org/b/mKCOn3PWCicjf2EOl-hzRwqR6cHt_1Twoxw3qaTPAfdKd4Fv"
@@ -6,6 +11,7 @@
   author: "keller easterling"
   link: "https://library.memoryoftheworld.org/b/izBrRD7iK2r4Le4ox1Vh1ulLpKC3har2CdQTreTExCMap2sj"
   sort: "easterling"
+  wnbt: true
 - title: "cylonopedia: complicity with anonymous materials"
   author: "reza negarestani"
   image: "cyclonopedia.jpg"
@@ -81,6 +87,7 @@
   image: "blood-and-guts.jpg"
   link: "https://www.goodreads.com/book/show/321950.Blood_and_Guts_in_High_School"
   sort: "acker"
+  wnbt: true
 - title: "embassytown"
   author: "china miéville"
   image: "embassytown.jpg"
@@ -161,11 +168,13 @@
   image: "gh.jpg"
   link: "https://library.memoryoftheworld.org/b/_oquwr-HatPQJz5eLuHg77qZHNkS_21rssTB8QyP6ShPJ7Cr"
   sort: "lispector"
+  wnbt: true
 - title: "the arab apocalypse"
   author: "etel adnan"
   image: "arab-apocalypse.jpg"
   link: "https://www.goodreads.com/book/show/997629.The_Arab_Apocalypse"
   sort: "adnan"
+  wnbt: true
 - title: "a collapse of horses"
   author: "brian evenson"
   image: "collapse-of-horses.jpg"
@@ -216,15 +225,15 @@
   sort: pelevin
 - title: "all of a twist"
   author: reza negarestani
-  link: https://library.memoryoftheworld.org/b/re1fiTkZXnPE0m2DM9VHWamu4ykAsOlR36UgW7u7ON2tGWsu
+  link: "https://library.memoryoftheworld.org/b/re1fiTkZXnPE0m2DM9VHWamu4ykAsOlR36UgW7u7ON2tGWsu"
   sort: negarestani
 - title: "the militarization of peace"
   author: reza negarestani
-  link: https://library.memoryoftheworld.org/b/pTFyzH9_rKJU54RhAcgbBFoZG8S1nURw3S_WqC35e7ETNFci
+  link: "https://library.memoryoftheworld.org/b/pTFyzH9_rKJU54RhAcgbBFoZG8S1nURw3S_WqC35e7ETNFci"
   sort: negarestani
 - title: "necropolitics"
   author: achille mbembe
-  link: https://library.memoryoftheworld.org/b/UpZa5uJ6eIErgwobA4IWDKs37hV3q-ajgPUoOnt3-TfWWdcz
+  link: "https://library.memoryoftheworld.org/b/UpZa5uJ6eIErgwobA4IWDKs37hV3q-ajgPUoOnt3-TfWWdcz"
   sort: mbembe
 - title: "hollow land: israel's architecture of occupation"
   author: eyal weizman
@@ -238,3 +247,12 @@
   author: hito steyerl
   link: "https://library.memoryoftheworld.org/b/9dpSrq9H8M9UKs01diSOVFqnjuxzPjxdFdyGot5GD1t8xKsD"
   sort: steyerl
+  wnbt: true
+- title: "bobby fischer teaches chess"
+  author: bobby fischer
+  link: "https://www.goodreads.com/book/show/58107.Bobby_Fischer_Teaches_Chess"
+  sort: fischer
+- title: the antipeople
+  author: sony labou tansi
+  link: "https://www.goodreads.com/book/show/1498895.The_Antipeople"
+  sort: tansi

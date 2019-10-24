@@ -49,6 +49,6 @@ __past:__ digital humanities developer @ columbia university libraries; post-bac
 	{% assign booksort = site.data.books | reverse %}
 	{% assign num = booksort | size %}
 	{% for book in booksort %}
-	  <i class="far fa-check-circle"></i> <b><a href="{{ book.link }}" target="\_blank" {% if book.wnbt %}style="color: salmon;"{% endif %} class="line-link">{{ book.title }}</a></b> ({{ book.author }}){% unless forloop.last %}, {% endunless %}
+	  <i class="far fa-check-circle"></i> <b><a href="{{ book.link }}" target="\_blank" {% if book.wnbt %}style="color: khaki;"{% endif %} class="line-link">{{ book.title }}</a></b> ({{ book.author }}){% unless forloop.last %}, {% endunless %}
 	{% endfor %}
 </p>

@@ -12,16 +12,23 @@ published: true
 
 libraries ☞ minimal computing ☞ cybernetic history ☞ soviet sci-fi ☞ fiber art.
 
-__current:__ digital humanities developer @ columbia university libraries<br>
-__past:__ post-baccalaureate technologist @ five college digital humanities
+__current:__ digital humanities technology specialist @ nyu it & libraries  
 
-<br><br><br><br>
+__past:__ digital humanities developer @ columbia university libraries; post-baccalaureate technologist @ five college digital humanities
+
+<br><br>
 
 ## labs ¬
 
 - __[HistoryLab](http://history-lab.org/):__ History as Data Science
 - __[xpMethod](http://xpmethod.plaintext.in/):__ Columbia's Group for Experimental Methods in the Humanities
 - __[irlHumanities](http://irlhumanities.org/):__ Immersive Reality Lab for the Humanities
+
+## advisory / steering committee participation ¬
+- __[Archipelago](http://archipelago.nyc/)__ @ __[Metropolitan NY Library Council](https://metro.org/)__
+- __[CollectionBuilder](https://www.imls.gov/grants/awarded/lg-34-19-0064-19)__ @ __[University of Idaho Libraries](https://www.lib.uidaho.edu/digital/)__
+- __[Strategic Directions: Digital Scholarship](https://strategicdirections.library.columbia.edu/inspire-inquiry)__ @ __[Columbia University Libraries](https://library.columbia.edu)__
+- __[Digital Humanities](https://5colldh.org/)__ @ __[Five College Consortium](https://www.fivecolleges.edu/)__
 
 ## talks given / workshops + courses led ¬
 
@@ -42,6 +49,6 @@ __past:__ post-baccalaureate technologist @ five college digital humanities
 	{% assign booksort = site.data.books | reverse %}
 	{% assign num = booksort | size %}
 	{% for book in booksort %}
-	  <i class="far fa-check-circle"></i> <b><a href="{{ book.link }}" target="\_blank" {% if book.wnbt %}style="color: wheat;"{% endif %} class="line-link">{{ book.title }}</a></b> ({{ book.author }}){% unless forloop.last %}, {% endunless %}
+	  <i class="far fa-check-circle"></i> <b><a href="{{ book.link }}" target="\_blank" {% if book.wnbt %}style="color: salmon;"{% endif %} class="line-link">{{ book.title }}</a></b> ({{ book.author }}){% unless forloop.last %}, {% endunless %}
 	{% endfor %}
 </p>

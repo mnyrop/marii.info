@@ -7,21 +7,26 @@ sitemap:
 
 @import "mixins";
 @import "variables";
+
 @import "base";
+
 @import "header";
 @import "articles";
 @import "titles";
 @import "hero";
+
 @import "components";
+
 @import "notices";
 @import "blockquote";
 @import "table";
 @import "code";
+
 @import "404";
+@import "jekyll-github";
 @import "pagination";
 @import "footer";
-@import "jekyll-github";
-@import "variables";
-@import "barefoot";
-/* mine */
+
+@import "icons";
+
 @import "marii";

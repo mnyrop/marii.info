@@ -10,9 +10,9 @@
     &-post h1 {
         font-size: 4.5rem;
         margin: auto 5rem;
-    }
+    }    
     h1 {
-        color: $hero-heading-color!important;
+        color: $hero-heading-color!important;    
     }
     span {
         color: $hero-date-color!important;
@@ -23,10 +23,21 @@
 }
 
 @media (max-width: 48rem) {
-  .hero-heading h1 {
+  .hero-heading
+      h1 {
       font-size: 2rem;
       margin: initial;
   }
+}
+
+// Hero hover dummy class, used only in blog layout
+.hero-hov {
+    background: transparent;
+    transition: background .25s ease;
+
+    &:hover {
+        background: rgba(0,0,0,.5);
+    }
 }
 
 // Oversized hero in post layout

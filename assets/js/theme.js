@@ -52,15 +52,10 @@ const saveTheme = (theme) => {
 const loadSavedTheme = () => {
   if (window.localStorage) {
     const maybeTheme = localStorage['theme']
-    if (maybeTheme) {
-      return JSON.parse(maybeTheme)
-    }
-    else {
-      return JSON.parse(NightTheme)
-    }
+    if (maybeTheme) return JSON.parse(maybeTheme)
   }
 
-  return JSON.parse(NightTheme)
+  return null
 }
 
 const updateTheme = (theme) => {
@@ -83,12 +78,12 @@ const switchTheme = () => {
   // Check if we have a saved theme
   const theme = loadSavedTheme()
   const currentTheme = localStorage['currentTheme']
-  if (theme && currentTheme === LightTheme.themeName) {
-    updateTheme(NightTheme)
-    el.className = iconForTheme(NightTheme.themeName)
-  } else {
+  if (theme && currentTheme === NightTheme.themeName) {
     updateTheme(LightTheme)
     el.className = iconForTheme(LightTheme.themeName)
+  } else {
+    updateTheme(NightTheme)
+    el.className = iconForTheme(NightTheme.themeName)
   }
 }
 

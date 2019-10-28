@@ -7,22 +7,22 @@ Object.entries = (object) => Object.keys(object).map(
 )
 
 const isObject = (obj) => obj === Object(obj)
-// 
-// const LightTheme = {
-//   '--bg-color': '#eee',
-//   '--text-color': '#484848',
-//   '--text-color-light': '#828282',
-//   '--link-color': '#000',
-//   '--metadata-color': '#999',
-//   '--post-title': '#313131',
-//   '--code-bg-color': '#fff',
-//   '--code-border': '#f5f5f5',
-//   '--table-border-color': '#e5e5e5',
-//   '--table-header-color': '#fefefe',
-//   '--shadow-color': 'rgba(0, 0, 0, 0.1)',
-//   '--invert-logo-color': 'invert(0)',
-//   themeName: 'LightTheme'
-// }
+
+const LightTheme = {
+  '--bg-color': '#eee',
+  '--text-color': '#484848',
+  '--text-color-light': '#828282',
+  '--link-color': '#000',
+  '--metadata-color': '#999',
+  '--post-title': '#313131',
+  '--code-bg-color': '#fff',
+  '--code-border': '#f5f5f5',
+  '--table-border-color': '#e5e5e5',
+  '--table-header-color': '#fefefe',
+  '--shadow-color': 'rgba(0, 0, 0, 0.1)',
+  '--invert-logo-color': 'invert(0)',
+  themeName: 'LightTheme'
+}
 
 const NightTheme = {
   '--bg-color': '#1c1c1c',
@@ -52,10 +52,15 @@ const saveTheme = (theme) => {
 const loadSavedTheme = () => {
   if (window.localStorage) {
     const maybeTheme = localStorage['theme']
-    if (maybeTheme) return JSON.parse(maybeTheme)
+    if (maybeTheme) {
+      return JSON.parse(maybeTheme)
+    }
+    else {
+      return JSON.parse(NightTheme)
+    }
   }
 
-  return null
+  return JSON.parse(NightTheme)
 }
 
 const updateTheme = (theme) => {
@@ -78,12 +83,12 @@ const switchTheme = () => {
   // Check if we have a saved theme
   const theme = loadSavedTheme()
   const currentTheme = localStorage['currentTheme']
-  if (theme && currentTheme === NightTheme.themeName) {
-    updateTheme(LightTheme)
-    el.className = iconForTheme(LightTheme.themeName)
-  } else {
+  if (theme && currentTheme === LightTheme.themeName) {
     updateTheme(NightTheme)
     el.className = iconForTheme(NightTheme.themeName)
+  } else {
+    updateTheme(LightTheme)
+    el.className = iconForTheme(LightTheme.themeName)
   }
 }
 

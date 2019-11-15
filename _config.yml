@@ -30,6 +30,7 @@ author:
 
 ## Advanced blog settings
 
+include: _data
 exclude: [Rakefile]
 # Gems
 plugins:

@@ -1,16 +1,15 @@
 <header>
     <div class="menu">
         <div class="logo">
-            <a href="{{ '/' | prepend: site.baseurl }}">
+            <a href="{{ '/' | absolute_url }}">
                 <img src="{{ site.blog.logo_path | relative_url }}" class="logosvg" style="cursor: pointer !important;" />
             </a>
         </div>
 
         <ul>
-            <li><a href="{{ '/about' | prepend: site.baseurl }}">about</a></li>
-            <li><a href="{{ '/' | prepend: site.baseurl }}">notes</a></li>
-            <li><a href="{{ '/projects/' | prepend: site.baseurl }}">projects</a></li>
-            <li><a href="{{ '/search' | prepend: site.baseurl }}">search</a></li>
+            <li><a href="{{ '/about' | absolute_url }}">about</a></li>
+            <li><a href="{{ '/notes' | absolute_url }}">notes</a></li>
+            <li><a href="{{ '/projects' | absolute_url }}">projects</a></li>
         </ul>
     </div>
     <div class="social">

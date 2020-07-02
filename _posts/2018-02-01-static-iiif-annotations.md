@@ -1,13 +1,10 @@
 ---
 layout: post
 title:  "Create and store static IIIF annotations... Minicomp style"
-date: 2018-01-31
+time_period: 2018
 overlay: green
-hero: 'http://darthcrimson.org/wp-content/uploads/2016/10/parser3-1024x568.png'
-tags:
-  - jekyll
-  - iiif
-  - rake
+img: 'http://darthcrimson.org/wp-content/uploads/2016/10/parser3-1024x568.png'
+tags: jekyll;iiif;rake
 ---
 
 __This post__ is about a recent Proof of Concept demo I made for adding and storing [IIIF](http://iiif.io/) compliant [annotation lists](http://iiif.io/api/presentation/2.1/#annotation-list) without configuring an endpoint or database. Feel free to skip ahead and play with the demo [here](http://marii.info/annotate/).

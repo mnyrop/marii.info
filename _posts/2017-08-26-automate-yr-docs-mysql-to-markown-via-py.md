@@ -1,14 +1,10 @@
 ---
 layout: post
-title:  "Peak Laziness: Automate documentation for database updates with Python, Pandas and Markdown"
-date: 2017-09-14
+title:  "Peak Laziness: Automate docs for DB updates with Pandas + Markdown"
+time_period: 2017
 overlay: blue
-hero: 'http://nsarchive2.gwu.edu/NSAEBB/NSAEBB601-British-appealed-to-US-in-1952-for-coup-against-Mosaddeq-in-Iran/images/1.jpg'
-tags:
-  - markdown
-  - data-science
-  - python
-  - pandas
+img: 'http://nsarchive2.gwu.edu/NSAEBB/NSAEBB601-British-appealed-to-US-in-1952-for-coup-against-Mosaddeq-in-Iran/images/1.jpg'
+tags: documentation; myql; python; markdown
 ---
 
 As part of my gig as the DH developer for Columbia University Libraries, I've become the data steward of the [Foreign Relations of the United States](https://history.state.gov/historicaldocuments/about-frus) (FRUS) collection for the  [History Lab](http://history-lab.org/) project.

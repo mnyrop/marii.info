@@ -1,10 +1,4 @@
-source 'https://rubygems.org'
-gem 'jekyll'
+source "https://rubygems.org"
 
-group :development, :test do
-  gem 'html-proofer'
-  gem 'rake'
-  gem 'jekyll-feed'
-  gem 'jekyll-sitemap'
-  gem 'jekyll-paginate'
-end
+gem "jekyll"
+gem "rake"

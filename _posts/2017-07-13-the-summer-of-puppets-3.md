@@ -1,13 +1,10 @@
 ---
 layout: post
 title: The Summer of Japanese Puppets, Part 3
-date: 2017-07-11
+time_period: 2017
 overlay: purple
-hero: 'https://www1.columbia.edu/sec-cgi-bin/cul/dlo?obj=ldpd_bun_slide_677_4_0606_0607&size=medium'
-tags:
-  - jekyll
-  - github-pages
-  - liquid
+img: 'https://www1.columbia.edu/sec-cgi-bin/cul/dlo?obj=ldpd_bun_slide_677_4_0606_0607&size=medium'
+tags: jekyll;github-pages;liquid
 ---
 
 This post is part 3 of 4 in a series. Feel free to skip around to:
@@ -99,9 +96,3 @@ __Out:__ Compiled Jekyll Pages
 <br><img src="{{ "/images/author.png" | relative_url }}" style="box-shadow: 2px 2px 4pc #23352a;"/><br><br>
 
 After writing templates for each object type as well as templates for viewing the [lists of each type](https://bunraku.cul.columbia.edu/authors/), the main components of the site were finally in place.
-
-<br>
-
-<br>
-Next > [part 4: epilogue]({{ site.url }}/notes/the-summer-of-puppets-4)
-<br><br>

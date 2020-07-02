@@ -1,15 +1,10 @@
 ---
 layout: post
 title: The Summer of Japanese Puppets, Part 2
-date: 2017-07-11
+time_period: 2017
 overlay: orange
-hero: 'http://www.columbia.edu/cgi-bin/dlo?obj=ldpd_bun_slide_493_2_0779_0826&size=medium'
-tags:
-  - jupyter
-  - python
-  - json
-  - openrefine
-  - jq
+img: 'http://www.columbia.edu/cgi-bin/dlo?obj=ldpd_bun_slide_493_2_0779_0826&size=medium'
+tags: jupyter;python;json;openrefine
 ---
 
 This post is part 2 of 4 in a series. Feel free to skip around to:
@@ -116,7 +111,3 @@ $ replace "\"nan\"" "null" -- authors.json
 
 
 __Out:__ [better JSON](https://github.com/mnyrop/bunraku-ipy/tree/master/post-processing/json)
-
-<br>
-Next > [part 3: the site]({{ site.url }}/notes/the-summer-of-puppets-3)
-<br><br>

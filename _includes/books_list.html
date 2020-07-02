@@ -1,0 +1,28 @@
+{% if site.data.books %}
+  <ul class="rows">
+    <li class="row__cols">
+      <div class="row__title">
+        Recent Reads
+      </div>
+      <div class="row__date">
+        Author
+      </div>
+    </li>
+    {% assign sorted = site.data.books | reverse %}
+    {% for book in sorted %}
+      <li class="row__post">
+        <a href="{{ book.link | absolute_url }}" target="_blank">
+          <div class="row__title">
+            {{ book.title }}
+          </div>
+          <div class="row__date">
+            {{ book.author}}
+          </div>
+        </a>
+        {% if book.img %}
+          <img class="row__img" src="/images/book/{{ book.img }}" alt="{{ book.title }}">
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+{% endif %}

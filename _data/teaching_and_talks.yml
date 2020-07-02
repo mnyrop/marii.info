@@ -1,0 +1,35 @@
+- title: 'Minimal Computing: Nimble Projects for Shaping + Sharing Histories'
+  link: 'http://web.sas.upenn.edu/dream-lab/2018/09/14/minimal-computing/'
+  category: workshop
+  venue: Digital Resources and Methods (DReAM) Lab @ University of Pennsylvania
+  date: June 2019
+- title: Research Computing with Python
+  link: 'https://columbiaswc.github.io/2019-01-17-Columbia-Section-3/'
+  venue: Foundations for Research Computing Bootcamp @ Columbia University
+  category: workshop
+  date: January 2019
+- title: 'Minimal Computing for Image Collections: The Case of Wax'
+  link: 'https://slides.com/marii/dlf2018-wax/#/'
+  date: October 2018
+  venue: Digital Library Federation (DLF) Forum
+  category: talk
+- title: Research Computing with Python
+  link: 'https://columbiaswc.github.io/2018-08-27-Columbia-B/'
+  venue: Foundations for Research Computing Bootcamp @ Columbia University
+  date: August 2018
+  category: workshop
+- title: 'Wax:  Minimal IIIF  for Experiments, Exhibitions, and Pedagogy'
+  link: 'https://slides.com/marii/wax-minimal-iiif-for-experiments-exhibitions-and-pedagogy/'
+  date: May 2018
+  venue: IIIF Conference @ Library of Congress
+  category: talk
+- title: Publishing Sites with GitHub Pages
+  link: '/notes/nycdh-2018'
+  date: February 2018
+  venue: NYCDH Week @ Columbia University
+  category: workshop
+- title: 'P2P?: Democracy, Deregulation, and Discontents'
+  link: '/projects/p2p'
+  date: January 2015
+  venue: Hampshire College, sponsored by 5CollDH
+  category: course

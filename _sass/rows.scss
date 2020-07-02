@@ -9,10 +9,10 @@
 
 .row__img {
   display: none;
-  position: absolute;
+  position: fixed;
   max-width: 500px;
   max-height: 500px;
-  top: random(250) - random(250) + px;
+  top: random(500) + px;
   left: random(500) + px;
   z-index: -1;
   opacity: 0;

@@ -1,0 +1,30 @@
+{% if site.data.teaching_and_talks %}
+  <ul class="rows">
+    <li class="row__cols">
+      <div class="row__title">
+        Teaching and Talks
+      </div>
+      <div class="row__date">
+        Date
+      </div>
+      <div class="row__cat">
+        Venue
+      </div>
+    </li>
+    {% for post in site.data.teaching_and_talks %}
+      <li class="row__post">
+        <a href="{{ post.link | absolute_url }}" target="_blank">
+          <div class="row__title">
+            {{ post.category | upcase }} / {{ post.title }}
+          </div>
+          <div class="row__date">
+            {{ post.date }}
+          </div>
+          <div class="row__cat">
+            {{ post.venue }}
+          </div>
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+{% endif %}

@@ -1,13 +1,10 @@
 ---
 layout: post
 title: The Summer of Japanese Puppets, Part 4
-date: 2017-07-11
+time_period: 2017
 overlay: green
-hero: 'https://www1.columbia.edu/sec-cgi-bin/cul/dlo?obj=ldpd_bun_slide_024_1_0427_0621&size=medium'
-tags:
-  - d3js
-  - lunr
-  - jekyll
+img: 'https://www1.columbia.edu/sec-cgi-bin/cul/dlo?obj=ldpd_bun_slide_024_1_0427_0621&size=medium'
+tags: d3js;lunr;jekyll
 ---
 <iframe style="height:450px; width:100%" src="https://www.youtube.com/embed/ZaI8fN4176k" frameborder="0" allowfullscreen></iframe>
 
@@ -72,6 +69,3 @@ Generated [Jekyll collections](https://jekyllrb.com/docs/collections/) (and page
 
 <i class="fa fa-chevron-circle-right" aria-hidden="true"></i>&nbsp;&nbsp;
 Ended with a ~40k page static Jekyll site powered by YAML data, with JSON index for client-side search.
-
-
-<br><br>

@@ -1,13 +1,10 @@
 ---
 layout: post
 title: The Summer of Japanese Puppets, Part 1
-date: 2017-07-11
+time_period: 2017
 overlay: red
-hero: 'http://www.columbia.edu/cgi-bin/dlo?obj=ldpd_bun_slide_362_1_6665_8069&size=medium'
-tags:
-  - sql
-  - jekyll
-  - php
+img: 'http://www.columbia.edu/cgi-bin/dlo?obj=ldpd_bun_slide_362_1_6665_8069&size=medium'
+tags: sql;jekyll;php
 ---
 
 
@@ -59,7 +56,3 @@ Sounds a bit tedious but simple enough. Yet the project necessitated tackling se
 6. Is it possible to make the site lightweight-enough to run smoothly on less-than-stellar connections? ...on mobile?
 
 7. Can I implement advanced English/Japanese search? With both roman and kanji characters?
-
-<br>
-Next > [part 2: data transformation]({{ site.url }}/notes/the-summer-of-puppets-2)
-<br><br>

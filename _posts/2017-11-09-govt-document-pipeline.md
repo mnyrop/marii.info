@@ -1,15 +1,10 @@
 ---
 layout: post
-title:  "Create a Gov't Document Pipeline from Scraping through Full Text Extraction"
-date: 2017-11-09
-hero: '/images/asad.png'
+title:  "Create a Gov't Document Pipeline from Scraping to Full Text OCR"
+time_period: 2017
+img: '/images/asad.png'
 overlay: purple
-tags:
-  - cia
-  - beautifulsoup
-  - python
-  - tesseract
-  - ocr
+tags: bs4;tesseract;ocr
 ---
 
 # Steps:

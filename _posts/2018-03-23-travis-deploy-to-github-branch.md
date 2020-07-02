@@ -1,14 +1,10 @@
 ---
 layout: post
 title:  "Push Compiled Sites to GitHub Branches from Travis"
-date: 2018-03-26
+time_period: 2018
 overlay: red
-hero: "/images/explore-octocat.png"
-tags:
-  - travis
-  - github
-  - deploy
-  - wax
+img: "/images/explore-octocat.png"
+tags: jekyll;github;travis;deploy
 ---
 
 Lately, I've been all but living in [Travis-CI](https://travis-ci.com/). It **runs my tasks**, **performs my tests**, and now **pushes my sites out for deployment**. It's almost as though—gasp!—I've achieved continuous integration. That being said, it took a ton of trial and error to get here. If this post can spare you some of rigmarole, my efforts will be affirmed.

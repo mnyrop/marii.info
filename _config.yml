@@ -1,63 +1,33 @@
-# Base blog settings
-baseurl                      : ''
-url                          : 'http://marii.info'
+# site
+title: marii¨
+baseurl: ""
+url: ""
+favicon: "/assets/snake.png"
+g_analytics: '' #UA-12345678-1
 
-blog:
-  title                      : marii
-  description                : ''
-  logo_path                  : '/assets/img/snake.svg'
-  search_path                : ''
-  hero_layout                : true
-  hero_placeholder           : '/assets/img/generic_hero.jpg'
-  excerpts                   : true
-  inline_footnotes           : true
-  titles_only                : false
-  font                       : "'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif"
-  load_google_fonts          : 'IBM+Plex+Sans:400,400italic,700,700italic'
+# bio
+header: marii¨
+desc: >
+  libraries ☞ minimal computing ☞ soviet sci-fi ☞ fiber art.
 
-# Author info
-author:
-  fullname                  : Marii Nyröp
-  rss                       : false
-  twitter                   : mariinyrop
-  github                    : mnyrop
-  rubygems                  : marii
-  disqus                    : 'mar-ii'
-  photo                     : '/uploads/me2.png'
-  photo2x                   : '/uploads/me.png'
+date_format: "%Y"
+permalink: notes/:slug
 
+post_title: Notes
+post_date: Time Period
+post_cat: Tags
 
-
-## Advanced blog settings
-
-include: _data
-exclude: [Rakefile]
-# Gems
-plugins:
-  - jekyll-sitemap
-
-# Permalinks
-permalink                    : notes/:slug
-
-# Posts
-excerpt_separator            : <!–-break-–>
-
-# Tags
 collections:
-  tags:
-    output: true
-    permalink: /tag/:slug
   projects:
     output: true
-    permalink: /projects/:slug
-defaults:
-  -
-    scope:
-      path: ''
-      type: my_tags
-    values:
-      layout: blog-by-tag
+    permalink: projects/:slug
 
-sass:
-  sass_dir                : _scss
-  style                   : compressed
+# post detail
+prev-next: true
+
+# build settings
+markdown: kramdown
+# theme: louie
+exclude:
+  - Gemfile
+  - Gemfile.lock

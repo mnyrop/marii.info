@@ -1,0 +1,16 @@
+<div class="bio">
+  <div class="bio__header">
+  	<a href="{{ site.url }}{{ "/" | relative_url }}"><img src="/assets/snake.png" style="width:100px;"/></a>
+  </div>
+  <div class="bio__desc">{{ site.desc }}</div>
+  <ul class="bio__social">
+    {% for item in site.data.menu %}
+      <li><a href="{{ item.url | absolute_url }}">{{ item.title }}</a></li>
+    {% endfor %}
+    {% if site.data.social %}
+      {% for item in site.data.social %}
+      <li><a href="{{ item.url | absolute_url }}" target="_blank">{{ item.title }}</a></li>
+      {% endfor %}
+    {% endif %}
+  </ul>
+</div>

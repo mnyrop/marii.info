@@ -219,51 +219,76 @@
   author: "zhores a. medvedev"
   link: "https://www.goodreads.com/book/show/7258695-nuclear-disaster-in-the-urals"
   sort: medvedev
+  link: 'disaster-in-the-urals.jpg'
 - title: "babylon"
   author: "victor pelevin"
   link: "https://www.goodreads.com/book/show/418126.Babylon"
   sort: pelevin
+  img: 'babylon.jpg'
 - title: "all of a twist"
   author: reza negarestani
   link: "https://library.memoryoftheworld.org/b/re1fiTkZXnPE0m2DM9VHWamu4ykAsOlR36UgW7u7ON2tGWsu"
   sort: negarestani
+  img: 'all-of-a-twist.jpg'
 - title: "the militarization of peace"
   author: reza negarestani
   link: "https://library.memoryoftheworld.org/b/pTFyzH9_rKJU54RhAcgbBFoZG8S1nURw3S_WqC35e7ETNFci"
   sort: negarestani
+  img: 'militarization-of-peace.jpg'
 - title: "necropolitics"
   author: achille mbembe
   link: "https://library.memoryoftheworld.org/b/UpZa5uJ6eIErgwobA4IWDKs37hV3q-ajgPUoOnt3-TfWWdcz"
   sort: mbembe
+  img: 'necropolitics.jpg'
 - title: "hollow land: israel's architecture of occupation"
   author: eyal weizman
   link: "https://library.memoryoftheworld.org/b/EMtO4JS7YBsLv4L6yBDGfTKnwlXe-SiEmOcC9xchJF7X9_Pq"
   sort: weizman
+  img: 'hollow-land.jpg'
 - title: critique of black reason
   author: achille mbembe
   link: "https://library.memoryoftheworld.org/b/E_-uu3ZpU9uul7hsUkjq96XfoxC2ClQL6vfZhxXU8wJRQsFH"
   sort: mbembe
+  img: 'black-reason.jpg'
 - title: "duty free art: art in the age of planetary war"
   author: hito steyerl
   link: "https://library.memoryoftheworld.org/b/9dpSrq9H8M9UKs01diSOVFqnjuxzPjxdFdyGot5GD1t8xKsD"
   sort: steyerl
   wnbt: true
+  img: 'duty-free-art.jpg'
 - title: "bobby fischer teaches chess"
   author: bobby fischer
   link: "https://www.goodreads.com/book/show/58107.Bobby_Fischer_Teaches_Chess"
   sort: fischer
+  img: 'bobby-fischer.jpg'
 - title: the antipeople
   author: sony labou tansi
   link: "https://www.goodreads.com/book/show/1498895.The_Antipeople"
   sort: tansi
+  img: 'the-antipeople.jpg'
 - title: the island of dr moreau
   author: h.g. wells
   link: "http://library.memoryoftheworld.org/#/book/72979dae-ad92-4135-9c6b-1c96cf444c83"
+  img: 'dr-moreau.jpg'
 - title: "the world goes on"
   author: "lászló krasznahorkai"
   link: "https://library.memoryoftheworld.org/b/qUXu1JpJRYigVXCPiRIdQoLVY34lRa1f_tiw7bV_EX0cUD_b"
   sort: krasznahorkai
+  img: 'the-world-goes-on.jpg'
 - title: "the doomed city"
   author: "boris + arkady strugatsky"
   link: "https://www.goodreads.com/book/show/27219742-the-doomed-city"
   sort: strugatsky
+  img: 'doomed-city.jpg'
+- title: 'the undying: pain, vulnerability, mortality, medicine, art, time, dreams, data, exhaustion, cancer, and care'
+  author: anne boyer
+  link: "https://www.goodreads.com/en/book/show/40664707-the-undying"
+  sort: boyer
+  wnbt: true
+  img: "the-undying.jpg"
+- title: "the city we became"
+  author: n.k. jemisin
+  link: "https://www.goodreads.com/book/show/42074525-the-city-we-became"
+  sort: jemisin
+  wbnt: true
+  img: "the-city-we-became.jpg"

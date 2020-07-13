@@ -12,8 +12,8 @@
   position: fixed;
   max-width: 500px;
   max-height: 500px;
-  top: random(500) + px;
-  left: random(500) + px;
+  top: random(35) + vh;
+  left: 25 + random(450) + px;
   z-index: -1;
   opacity: 0;
   transition: opacity 500ms;
@@ -90,23 +90,23 @@
     }
 
     &:nth-child(2n) .row__img {
-      top: random(250) - random(250) + px;
-      left: random(500) + px;
+      top: random(35) + vh;
+      left: 25 + random(450) + px;
     }
 
     &:nth-child(3n) .row__img {
-      top: random(250) - random(250) + px;
-      left: random(500) + px;
+      top: random(35) + vh;
+      left: 25 + random(450) + px;
     }
 
     &:nth-child(4n) .row__img {
-      top: random(250) - random(250) + px;
-      left: random(500) + px;
+      top: random(35) + vh;
+      left: 25 + random(450) + px;
     }
 
     &:nth-child(5n) .row__img {
-      top: random(250) - random(250) + px;
-      left: random(500) + px;
+      top: random(35) + vh;
+      left: 25 + random(450) + px;
     }
   }
 }

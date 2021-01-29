@@ -292,3 +292,8 @@
   sort: jemisin
   wbnt: true
   img: "the-city-we-became.jpg"
+- title: "debt: the first 5,000 years"
+  author: david graeber
+  link: "https://www.goodreads.com/book/show/6617037"
+  sort: graeber
+  img: "debt.jpg"

@@ -14,9 +14,9 @@ Feel free to use and remix [this template](https://github.com/nyu-dss/wh-deploil
 
 ### Step 2. **Create an FTP deploy account on your CPanel account**  
 Log in to your dashboard and navigate to the "FTP Accounts" tab under "Files."
-[![ftp dashboard]({% link images/cpanel_ftp.png %}){: .border }]({% link images/cpanel_ftp.png %})
+[![ftp dashboard]({% link images/cpanel_ftp.png %}){: .shadow }]({% link images/cpanel_ftp.png %})
 Create a special FTP account just for deployments. Under "directory" put `public_html`. If you want the site to be in a subdirectory from the root URL (e.g., "marii.hosting.nyu.edu/my-site"), enter the subdirectory after `public_html` with no trailing slash (e.g., `public_html/my-site`).
-[![create ftp account]({% link images/create_ftp_account.png %}){: .border }]({% link images/cpanel_ftp.png %})
+[![create ftp account]({% link images/create_ftp_account.png %}){: .shadow }]({% link images/cpanel_ftp.png %})
 More info available [here](https://docs.cpanel.net/cpanel/files/ftp-accounts/).
 
 ### Step 3. **Add your FTP deploy account credentials to your GitHub repo secrets settings**  
@@ -24,7 +24,7 @@ Since our GitHub repo will initiate FTP deployments for us, we need to give it o
 
 Click "New repository secret" and create the variables one by one using the credentials you made in the last step. Note that `FTP_USERNAME` should have the "Log In" name you created `@` the server name, e.g, "my-deployer-name@marii.hosting.nyu.edu". The `FTP_SERVER` should be the "Host" you entered with no additional file paths or protocols.
 
-[![secrets dashboard]({% link images/secrets_dash.png %}){: .border }]({% link images/secrets_dash.png %})
+[![secrets dashboard]({% link images/secrets_dash.png %}){: .shadow }]({% link images/secrets_dash.png %})
 
 More info available [here](https://docs.github.com/en/actions/reference/encrypted-secrets).
 

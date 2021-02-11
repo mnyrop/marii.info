@@ -8,3 +8,11 @@
   'rows',
   'post'
 ;
+
+img.border {
+  box-shadow: 0 0 .5em .5em salmon;
+  margin: 1em 0 1em 0;
+}
+img.fullwidth {
+  width: 100%;
+}

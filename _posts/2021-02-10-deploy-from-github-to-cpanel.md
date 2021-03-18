@@ -22,7 +22,7 @@ More info available [here](https://docs.cpanel.net/cpanel/files/ftp-accounts/).
 ### Step 3. **Add your FTP deploy account credentials to your GitHub repo secrets settings**  
 Since our GitHub repo will initiate FTP deployments for us, we need to give it our new credentials. To do so, navigate to your repo > Settings > Secrets. As the page says, "Secrets are environment variables that are encrypted" and made available to Actions workflows. The deployment workflow we'll define in the next step needs three environment vars: `FTP_SERVER`, `FTP_USERNAME`, and `FTP_PASSWORD`.  These need to be spelled verbatim unless you plan on customizing the action files.
 
-Click "New repository secret" and create the variables one by one using the credentials you made in the last step. Note that `FTP_USERNAME` should have the "Log In" name you created `@` the server name, e.g, "my-deployer-name@marii.hosting.nyu.edu". The `FTP_SERVER` should be the "Host" you entered with no additional file paths or protocols.
+Click "New repository secret" and create the variables one by one using the credentials you made in the last step. Note that `FTP_USERNAME` should have the "Log In" name you created, e.g, "my-deployer-name". The `FTP_SERVER` should be the "Host" you entered with no additional file paths or protocols.
 
 [![secrets dashboard]({% link images/secrets_dash.png %}){: .shadow }]({% link images/secrets_dash.png %})
 
@@ -61,7 +61,7 @@ jobs:
         uses: SamKirkland/FTP-Deploy-Action@4.0.0
         with:
           server: {% raw %}${{secrets.FTP_SERVER}}{% endraw %}
-          username: {% raw %}${{secrets.FTP_USERNAME}}{% endraw %}
+          username: {% raw %}${{secrets.FTP_USERNAME}}@{{secrets.FTP_SERVER}}{% endraw %}
           password: {% raw %}${{secrets.FTP_PASSWORD}}{% endraw %}
           local-dir: ./_site/
 

@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-<img src="{{ '/images/avatar.jpg' | relative_url }}" style="max-width:300px;"/>
+<img src="{{ '/images/avatar.jpg' | relative_url }}" alt="avatar illustration" style="max-width:300px;"/>
 <br><br>
 
 __current:__ digital humanities technology specialist @ nyu it & libraries  

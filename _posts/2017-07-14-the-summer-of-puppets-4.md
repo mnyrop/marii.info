@@ -52,7 +52,7 @@ Started with a Cake PHP site powered by a relational MYSQL database.
 MySQL dump to CSVs.
 
 <i class="fa fa-chevron-circle-right" aria-hidden="true"></i>&nbsp;&nbsp;
-Imported CSVs into [IPython](https://ipython.org/) as [Pandas](http://pandas.pydata.org/) dataframes.
+Imported CSVs into [IPython](https://ipython.org/) as [Pandas](https://pandas.pydata.org/) dataframes.
 
 <i class="fa fa-chevron-circle-right" aria-hidden="true"></i>&nbsp;&nbsp;
 Merged relational data (from CSV jointables) onto dataframes by type.

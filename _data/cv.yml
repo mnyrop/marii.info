@@ -2,7 +2,7 @@ name: Marii Nyrop
 contact:
   email: m.s.nyrop@gmail.com
   github: "https://github.com/mnyrop"
-  website: "http://marii.info"
+  website: "//marii.info"
 profile: "Arts and technology specialist with a skill set spanning web development, design, and deployment alongside fine art and critical theory sensibilities. A curator, programmer, and project coordinator in environments online and off."
 education:
 - type: degree
@@ -91,7 +91,7 @@ teaching:
   time: January 2015
   duration: 3 weeks
   topics: history and philosophy of networked cultures
-  link: "http://marii.info/projects/p2p"
+  link: "//marii.info/projects/p2p"
 presentations:
 - type: talk
   title: "Minimal Computing for Digital Image Collections: The Case of Wax"
@@ -134,7 +134,7 @@ projects:
     start: "2013"
     end: "2014"
   description: "Organized and contributed work to an international, virtual artists' residency and curated the resulting group exhibitions on the affect of cloud computing."
-  link: "http://embarrassment.party"
+  link: "//embarrassment.party"
 community_participation:
 - type: advisory_committee
   title: Archipelago
@@ -143,7 +143,7 @@ community_participation:
   time_period:
     start: "2019"
     end: present
-  link: "http://archipelago.nyc/"
+  link: "//archipelago.nyc/"
 - type: advisory_committee
   title: CollectionBuilder
   institution: University of Idaho Libraries
@@ -159,7 +159,7 @@ community_participation:
     start: "2016"
     end: present
   description: "Co-started a collaborative lab for humanistic inquiry into immersive environments and augmented and virtual realities."
-  link: "http://irlhumanities.org"
+  link: "//irlhumanities.org"
 - type: lab
   title: History Lab
   role: core contributor
@@ -167,7 +167,7 @@ community_participation:
     start: "2017"
     end: "2019"
   description: "Streamlined processing tasks for massive amounts of declassified government data—ranging from XML to PDFs without OCR—for History and Data Science researchers."
-  link: "http://history-lab.org"
+  link: "https://history-lab.org"
 - type: lab
   title: Group for Experimental Methods in the Humanities (xpMethod)
   role: contributor

@@ -3,7 +3,7 @@ layout: post
 title: The Summer of Japanese Puppets, Part 2
 time_period: 2017
 overlay: orange
-img: 'http://www.columbia.edu/cgi-bin/dlo?obj=ldpd_bun_slide_493_2_0779_0826&size=medium'
+img: '//www.columbia.edu/cgi-bin/dlo?obj=ldpd_bun_slide_493_2_0779_0826&size=medium'
 tags: jupyter;python;json;openrefine
 ---
 
@@ -15,15 +15,15 @@ This post is part 2 of 4 in a series. Feel free to skip around to:
 
 # Act 2: Data transformation montage
 
-After taking a detour prototyping with [Google Lovefield](https://google.github.io/lovefield/) + [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API) and making a pitstop to play with [GraphQL](http://graphql.org/), I finally settled on a simpler plan: __export each object type as an array of JSON records, and have each record point to its relationships via arrays of IDs.__ With this thought, the montage began:
+After taking a detour prototyping with [Google Lovefield](https://google.github.io/lovefield/) + [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API) and making a pitstop to play with [GraphQL](https://graphql.org/), I finally settled on a simpler plan: __export each object type as an array of JSON records, and have each record point to its relationships via arrays of IDs.__ With this thought, the montage began:
 
 ## scene i. plan + tidy
 
 __In:__ MySQL dump
 
-__Tools:__ any ol' [erd](https://www.draw.io/) / [OpenRefine](http://openrefine.org/) / [json-schema](http://json-schema.org/)
+__Tools:__ any ol' [erd](https://www.draw.io/) / [OpenRefine](https://openrefine.org/) / [json-schema](https://json-schema.org/)
 
-I started by using a simple entity relationship diagramming (ERD) tool and [JSON Schema](http://json-schema.org/) to plan out what each object type (e.g. play, kashira, character, etc.) should look like at the end of the processing stage by asking/answerinq questions like: _Which keys does each type need? Which keys should be named in a standardized way across object types? What kind of value does a given key expect (maybe an int? a nullable string...? ), and does it expect 1 or many? What does the object need to "know" about itself, and what can it inherit from other types?_
+I started by using a simple entity relationship diagramming (ERD) tool and [JSON Schema](https://json-schema.org/) to plan out what each object type (e.g. play, kashira, character, etc.) should look like at the end of the processing stage by asking/answerinq questions like: _Which keys does each type need? Which keys should be named in a standardized way across object types? What kind of value does a given key expect (maybe an int? a nullable string...? ), and does it expect 1 or many? What does the object need to "know" about itself, and what can it inherit from other types?_
 
 <br><a href="{{ "/images/erd.png" | relative_url }}"><img src="{{ "/images/erd.png" | relative_url }}" style="box-shadow: 2px 2px 4pc #23352a;"/></a><br><br>
 
@@ -59,7 +59,7 @@ I started by using a simple entity relationship diagramming (ERD) tool and [JSON
 }
 ```
 
-Once each type was reasonably mapped out, I exported the MySQL database as a set of CSV files and turned to [OpenRefine](http://openrefine.org/) to clean them up. I used faceting to get a better sense of each set, recast strings as ints and visa versa, scrubbed out line breaks, dropped unused columns, consolidated similar cells, and so on. Then I renamed as many columns as possible to cohere to the somewhat-standardized JSON schema I'd created, and re-exported them as spiffed-up CSVs.
+Once each type was reasonably mapped out, I exported the MySQL database as a set of CSV files and turned to [OpenRefine](https://openrefine.org/) to clean them up. I used faceting to get a better sense of each set, recast strings as ints and visa versa, scrubbed out line breaks, dropped unused columns, consolidated similar cells, and so on. Then I renamed as many columns as possible to cohere to the somewhat-standardized JSON schema I'd created, and re-exported them as spiffed-up CSVs.
 
 <br><img src="{{ "/images/open-refine.png" | relative_url }}" style="box-shadow: 2px 2px 4pc #23352a;max-width:600px;"/><br><br>
 
@@ -72,9 +72,9 @@ __Out:__ [Optimized CSVs](https://github.com/mnyrop/bunraku-ipy/tree/master/in)
 
 __In:__ [CSVs](https://github.com/mnyrop/bunraku-ipy/tree/master/in)</span>
 
-__Tools:__ [iPython](https://ipython.org/) / [Pandas](http://pandas.pydata.org/)
+__Tools:__ [iPython](https://ipython.org/) / [Pandas](https://pandas.pydata.org/)
 
-Next I created an [iPython](https://ipython.org/) (aka Jupyter) notebook imported [Pandas](http://pandas.pydata.org/), which is a data analysis library built on [Numpy](http://www.numpy.org/). Pandas works primarily with a datatype called a dataframe, which takes its name from the same type in [R](https://www.r-project.org/about.html).
+Next I created an [iPython](https://ipython.org/) (aka Jupyter) notebook imported [Pandas](https://pandas.pydata.org/), which is a data analysis library built on [Numpy](https://www.numpy.org/). Pandas works primarily with a datatype called a dataframe, which takes its name from the same type in [R](https://www.r-project.org/about.html).
 
 After reading each CSV file into my Jupyter notebook as a Pandas dataframe, I was able to perform powerful SQL-like tasks on the data, including a chained `.merge()` `.groupby()` `.apply(list)` function that allowed me to merge a join table onto a dataframe, appending an array of ids from the join onto each row.
 

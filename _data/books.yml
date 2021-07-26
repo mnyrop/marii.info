@@ -217,9 +217,9 @@
   sort: medvedev
 - title: "nuclear distaster in the urals"
   author: "zhores a. medvedev"
-  link: "https://www.goodreads.com/book/show/7258695-nuclear-disaster-in-the-urals"
-  sort: medvedev
   link: 'disaster-in-the-urals.jpg'
+  sort: medvedev
+  link: "https://www.goodreads.com/book/show/7258695-nuclear-disaster-in-the-urals"
 - title: "babylon"
   author: "victor pelevin"
   link: "https://www.goodreads.com/book/show/418126.Babylon"
@@ -268,7 +268,7 @@
   img: 'the-antipeople.jpg'
 - title: the island of dr moreau
   author: h.g. wells
-  link: "http://library.memoryoftheworld.org/#/book/72979dae-ad92-4135-9c6b-1c96cf444c83"
+  link: "https://library.memoryoftheworld.org/#/book/72979dae-ad92-4135-9c6b-1c96cf444c83"
   img: 'dr-moreau.jpg'
 - title: "the world goes on"
   author: "lászló krasznahorkai"

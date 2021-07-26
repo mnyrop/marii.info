@@ -14,7 +14,7 @@ The term "headless" refers to software capable of working without a GUI. Accordi
 
 **In simpler terms:** they're programs that go test your features for you, and come back bearing some good or not-so-good news.
 
-Headless feature tests (like any [unit tests](http://searchsoftwarequality.techtarget.com/definition/unit-testing)) are an important part of any **[Continuous Integration](https://aws.amazon.com/devops/continuous-integration/) (CI)** architecture. If you're new to CI and want to figure out how to set up your Jekyll site in a continuously integrated way, check out [this other post]({{ site.baseurl }}/notes/jekyll-ci) first. If you're all set up with CI for Jekyll and want to take it to the next step, this post is for you.
+Headless feature tests (like any [unit tests](https://searchsoftwarequality.techtarget.com/definition/unit-testing)) are an important part of any **[Continuous Integration](https://aws.amazon.com/devops/continuous-integration/) (CI)** architecture. If you're new to CI and want to figure out how to set up your Jekyll site in a continuously integrated way, check out [this other post]({{ site.baseurl }}/notes/jekyll-ci) first. If you're all set up with CI for Jekyll and want to take it to the next step, this post is for you.
 
 
 
@@ -23,13 +23,13 @@ Headless feature tests (like any [unit tests](http://searchsoftwarequality.techt
 ## [Travis-CI](https://travis-ci.org)
 "... is a hosted, distributed continuous integration service used to build and test software projects hosted at GitHub," that basically tests your build and performs any other tasks you specify on a VM in the cloud. For more on Jekyll and Travis, refer back to [this post]({{ site.baseurl }}/notes/jekyll-ci).
 
-## [Rspec](http://rspec.info/)
+## [Rspec](https://rspec.info/)
 ... is a Ruby gem and "spec runner" for *behavior-driven development*, which is exactly what it sounds like. Rspec lets you write tests for what your code *should* do, which in turn helps you write better, less fickle code.
 
 ## [Rack-Jekyll](https://github.com/adaoraul/rack-jekyll)
 ... is a Ruby gem and Jekyll plugin that transforms your Jekyll site into a [Rack](https://rack.github.io/) application. If you're not familiar with Rack, all you need to know is that it is the preferred app format for Capybara, so Jekyll-Rack is just translating our Jekyll site to an app that Capybara will get along with better.
 
-## [Capybara](http://teamcapybara.github.io/capybara/)
+## [Capybara](https://teamcapybara.github.io/capybara/)
 ... is a Ruby gem that "helps you test web applications by simulating how a real user would interact with your app." It's basically what makes Rspec act like a user.
 
 ## [Poltergeist](https://github.com/teampoltergeist/poltergeist)
@@ -121,7 +121,7 @@ Then execute `$ bundle` or `$ bundle install` to load the gems and update your `
 
 ## part 2 – set up for your search spec
 
-> __Note:__ This example test assumes that you have search enabled on your Jekyll site, presumably with [Lunr](http://lunrjs.com) client-side search. I won't get into indexing your site with Lunr here (that will have to wait for another post), but if you have a working search bar with `id="search"`, and it dynamically generates html results with `class="results"`, this spec should work for you. For sample jQuery for dynamically showing search results, check out [this gist](https://gist.github.com/mnyrop/a0a8834e29a3d3ed403242660719f87b).
+> __Note:__ This example test assumes that you have search enabled on your Jekyll site, presumably with [Lunr](https://lunrjs.com) client-side search. I won't get into indexing your site with Lunr here (that will have to wait for another post), but if you have a working search bar with `id="search"`, and it dynamically generates html results with `class="results"`, this spec should work for you. For sample jQuery for dynamically showing search results, check out [this gist](https://gist.github.com/mnyrop/a0a8834e29a3d3ed403242660719f87b).
 
 
 

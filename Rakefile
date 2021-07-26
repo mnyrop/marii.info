@@ -2,15 +2,17 @@ require 'html-proofer'
 
 desc 'run htmlproofer, rspec if .rspec file exists'
 task :test do
+  sh 'bundle exec jekyll clean'
+  sh 'bundle exec jekyll build'
   opts = {
-    check_external_hash: true,
-    allow_hash_href: true,
+    # allow_hash_href: true,
     check_html: true,
-    disable_external: true,
+    assume_extension: true,
     empty_alt_ignore: true,
-    only_4xx: true,
+    enforce_https: true,
+    disable_external: true,
     verbose: true
   }
   HTMLProofer.check_directory('./_site', opts).run
-  system 'bundle exec rspec' if File.exist? '.rspec'
+  sh 'bundle exec rspec' if File.exist? '.rspec'
 end

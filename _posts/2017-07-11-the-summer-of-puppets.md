@@ -3,7 +3,7 @@ layout: post
 title: The Summer of Japanese Puppets, Part 1
 time_period: 2017
 overlay: red
-img: 'http://www.columbia.edu/cgi-bin/dlo?obj=ldpd_bun_slide_362_1_6665_8069&size=medium'
+img: '//www.columbia.edu/cgi-bin/dlo?obj=ldpd_bun_slide_362_1_6665_8069&size=medium'
 tags: sql;jekyll;php
 ---
 
@@ -15,7 +15,7 @@ This post is part 1 of 4 in a series. Feel free to skip around to:
 
 # Enter: Bunraku
 
-A few months ago, I was given access to a MySQL database with 27 tables of data on _[Bunraku](https://en.wikipedia.org/wiki/Bunraku)_, or Japanese puppet theater. The data consists primarily of digitized images from the Barbara Curtis Adachi Bunraku Collection here at [Columbia University Libraries](http://library.columbia.edu), but it also contains a ton of relational data on the Bunraku community as Barbara encountered it—which is to say, as a rich network of performers, plays, productions, puppets, craftsmen, narrators, musicians, authors, theaters, instruments, old friends, and even older tales. To be more specific, the data models the complex interrelations of...
+A few months ago, I was given access to a MySQL database with 27 tables of data on _[Bunraku](https://en.wikipedia.org/wiki/Bunraku)_, or Japanese puppet theater. The data consists primarily of digitized images from the Barbara Curtis Adachi Bunraku Collection here at [Columbia University Libraries](https://library.columbia.edu), but it also contains a ton of relational data on the Bunraku community as Barbara encountered it—which is to say, as a rich network of performers, plays, productions, puppets, craftsmen, narrators, musicians, authors, theaters, instruments, old friends, and even older tales. To be more specific, the data models the complex interrelations of...
 
 - 123 __authors__,
 - 2,107 __characters__,
@@ -30,10 +30,10 @@ A few months ago, I was given access to a MySQL database with 27 tables of data 
 
 ... spanning decades of Barbara's involvement with the leading Bunraku troupes in Japan (1964-2003).
 
-An aside: _[Want to learn more about Barbara?](http://www.sfgate.com/bayarea/article/Barbara-Curtis-Adachi-puppet-theater-expert-2822735.php)_
+An aside: _[Want to learn more about Barbara?](https://www.sfgate.com/bayarea/article/Barbara-Curtis-Adachi-puppet-theater-expert-2822735.php)_
 
 <br><br>
-<img src="http://www.columbia.edu/cgi-bin/dlo?obj=ldpd_bun_slide_382_1_7021_8470&size=medium" style="box-shadow: 2px 2px 4pc #23352a;"/>
+<img src="//www.columbia.edu/cgi-bin/dlo?obj=ldpd_bun_slide_382_1_7021_8470&size=medium" style="box-shadow: 2px 2px 4pc #23352a;"/>
 <br><br>
 
 # Act 1: The Task

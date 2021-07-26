@@ -3,13 +3,13 @@ layout: post
 title:  "Create and store static IIIF annotations... Minicomp style"
 time_period: 2018
 overlay: green
-img: 'http://darthcrimson.org/wp-content/uploads/2016/10/parser3-1024x568.png'
+img: '//darthcrimson.org/wp-content/uploads/2016/10/parser3-1024x568.png'
 tags: jekyll;iiif;rake
 ---
 
-__This post__ is about a recent Proof of Concept demo I made for adding and storing [IIIF](http://iiif.io/) compliant [annotation lists](http://iiif.io/api/presentation/2.1/#annotation-list) without configuring an endpoint or database. Feel free to skip ahead and play with the demo [here](http://marii.info/annotate/).
+__This post__ is about a recent Proof of Concept demo I made for adding and storing [IIIF](https://iiif.io/) compliant [annotation lists](https://iiif.io/api/presentation/2.1/#annotation-list) without configuring an endpoint or database. Feel free to skip ahead and play with the demo [here](https://marii.info/annotate/).
 
-__what it is:__ A workflow for creating and storing annotations on IIIF manifests that leverages the [Project Mirador](http://projectmirador.org/) viewer, [Jekyll](http://jekyllrb.com/), and [Rake](https://ruby.github.io/rake/).
+__what it is:__ A workflow for creating and storing annotations on IIIF manifests that leverages the [Project Mirador](https://projectmirador.org/) viewer, [Jekyll](https://jekyllrb.com/), and [Rake](https://ruby.github.io/rake/).
 
 __mirador:__ serves as the UI for adding and displaying annotations.
 

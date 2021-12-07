@@ -297,3 +297,8 @@
   link: "https://www.goodreads.com/book/show/6617037"
   sort: graeber
   img: "debt.jpg"
+- title: "near to the wild at heart"
+  author: clarice lispector
+  link: "https://www.goodreads.com/book/show/153425.Near_to_the_Wild_Heart"
+  sort: lispector
+  img: "wildatheart.jpg"

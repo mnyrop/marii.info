@@ -3,11 +3,11 @@ permalink: '0919'
 layout: default
 link: 'https://photos.app.goo.gl/uk99MwBpAQvC3yP6A'
 ---
-<meta http-equiv="refresh" content="URL=0; {{ page.link }}" />
+<meta http-equiv="refresh" content="0;URL={{ page.link }}" />
 <script>
   var uagent = navigator.userAgent.toLowerCase();
-  if(/safari/.test(uagent) && !/chrome/.test(uagent)) {
+  if(/safari/.test(uagent) || /chrome/.test(uagent)) {
     window.location.href = "{{ page.link }}"
   }
 </script>
-<p>This page should redirect you to a photo album! If not, click <a href="{{ page.link }}">here</a>.</p>
+<p>After 2 seconds, this page should redirect you to a photo album! If not, click <a href="{{ page.link }}">here</a>. -M</p>

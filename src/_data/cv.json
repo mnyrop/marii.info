@@ -2,8 +2,8 @@
    "name": "Marii Nyrop",
    "contact": {
       "email": "m.s.nyrop@gmail.com",
-      "github": "//github.com/mnyrop",
-      "website": "//marii.info"
+      "github": "https://github.com/mnyrop",
+      "website": "https://marii.info"
    },
    "profile": "Arts and technology specialist with a skill set spanning web development, design, and deployment alongside fine art and critical theory sensibilities. A curator, programmer, and project coordinator in environments online and off.",
    "education": [
@@ -120,7 +120,7 @@
          "time": "January 2015",
          "duration": "3 weeks",
          "topics": "history and philosophy of networked cultures",
-         "link": "//marii.info/projects/p2p"
+         "link": "https://marii.info/projects/p2p"
       }
    ],
    "presentations": [
@@ -180,7 +180,7 @@
             "end": "2014"
          },
          "description": "Organized and contributed work to an international, virtual artists' residency and curated the resulting group exhibitions on the affect of cloud computing.",
-         "link": "//embarrassment.party"
+         "link": "https://embarrassment.party"
       }
    ],
    "community_participation": [
@@ -193,7 +193,7 @@
             "start": "2019",
             "end": "present"
          },
-         "link": "//archipelago.nyc/"
+         "link": "https://archipelago.nyc/"
       },
       {
          "type": "advisory_committee",
@@ -215,7 +215,7 @@
             "end": "present"
          },
          "description": "Co-started a collaborative lab for humanistic inquiry into immersive environments and augmented and virtual realities.",
-         "link": "//irlhumanities.org"
+         "link": "https://irlhumanities.org"
       },
       {
          "type": "lab",

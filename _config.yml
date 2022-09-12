@@ -1,33 +1,25 @@
-# site
-title: marii¨
-baseurl: ""
-url: ""
-favicon: "/assets/snake.png"
-g_analytics: ''
+title:        marii¨
+baseurl:      ''
+url:          ''
 
-# bio
-header: marii¨
-desc: >
-  libraries ☞ minimal computing ☞ soviet sci-fi ☞ fiber art.
-
-date_format: "%Y"
-permalink: notes/:slug
-
-post_title: Notes
-post_date: Time Period
-post_cat: Tags
+favicon:      '/assets/snake.png'
+date_format:  "%Y"
+permalink:    notes/:slug
+post_title:   Notes
+post_date:    Time Period
+post_cat:     Tags
+prev-next:    true
+markdown:     kramdown
+theme:        louie
+source:       src
 
 collections:
   projects:
     output: true
     permalink: projects/:slug
 
-# post detail
-prev-next: true
-
-# build settings
-markdown: kramdown
-# theme: louie
 exclude:
   - Gemfile
   - Gemfile.lock
+  - Rakefile
+  - README.md

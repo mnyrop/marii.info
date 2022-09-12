@@ -3,7 +3,7 @@ layout: post
 title: The Summer of Japanese Puppets, Part 2
 time_period: 2017
 overlay: orange
-img: '//www.columbia.edu/cgi-bin/dlo?obj=ldpd_bun_slide_493_2_0779_0826&size=medium'
+img: 'https://www.columbia.edu/cgi-bin/dlo?obj=ldpd_bun_slide_493_2_0779_0826&size=medium'
 tags: jupyter;python;json;openrefine
 ---
 

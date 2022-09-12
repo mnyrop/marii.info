@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Peak Laziness: Automate docs for DB updates with Pandas + Markdown"
+title:  "Automate docs for DB updates with Pandas + Markdown"
 time_period: 2017
 overlay: blue
 img: 'https://nsarchive2.gwu.edu/NSAEBB/NSAEBB601-British-appealed-to-US-in-1952-for-coup-against-Mosaddeq-in-Iran/images/1.jpg'

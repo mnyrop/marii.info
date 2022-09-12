@@ -3,7 +3,7 @@ layout: post
 title: The Summer of Japanese Puppets, Part 1
 time_period: 2017
 overlay: red
-img: '//www.columbia.edu/cgi-bin/dlo?obj=ldpd_bun_slide_362_1_6665_8069&size=medium'
+img: 'https://www.columbia.edu/cgi-bin/dlo?obj=ldpd_bun_slide_362_1_6665_8069&size=medium'
 tags: sql;jekyll;php
 ---
 
@@ -33,7 +33,7 @@ A few months ago, I was given access to a MySQL database with 27 tables of data 
 An aside: _[Want to learn more about Barbara?](https://www.sfgate.com/bayarea/article/Barbara-Curtis-Adachi-puppet-theater-expert-2822735.php)_
 
 <br><br>
-<img src="//www.columbia.edu/cgi-bin/dlo?obj=ldpd_bun_slide_382_1_7021_8470&size=medium" style="box-shadow: 2px 2px 4pc #23352a;"/>
+<img src="https://www.columbia.edu/cgi-bin/dlo?obj=ldpd_bun_slide_382_1_7021_8470&size=medium" style="box-shadow: 2px 2px 4pc #23352a;"/>
 <br><br>
 
 # Act 1: The Task

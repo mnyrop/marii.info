@@ -40,7 +40,7 @@ It is navigable through the above directory listings, through several dynamic se
 To learn more about implementing D3 visualizations in Jekyll, you can check out [this post]({{ site.url }}/notes/autogenerate-json-for-d3-from-jekyll-collection-data). And a post on building multi-language Lunr indexes in Jekyll should be coming soon!
 
 <br>
-<iframe width="100%" height="700" src="//jsfiddle.net/marii_/zkdzy0qq/2/embedded/result,js/" allowfullscreen="allowfullscreen" frameborder="0" style="box-shadow: 2px 2px 4pc #23352a;"></iframe>
+<iframe width="100%" height="700" src="https://jsfiddle.net/marii_/zkdzy0qq/2/embedded/result,js/" allowfullscreen="allowfullscreen" frameborder="0" style="box-shadow: 2px 2px 4pc #23352a;"></iframe>
 <br><br>
 
 # tl;dr.

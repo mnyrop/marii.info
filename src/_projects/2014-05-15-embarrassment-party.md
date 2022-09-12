@@ -2,7 +2,7 @@
 layout: post
 title:  Embarrassment Party
 category: art/curtorial
-img: '//embarrassment.party/stuff/smoke_water.gif'
+img: 'https://embarrassment.party/stuff/smoke_water.gif'
 time_period: 2014
 ---
 
@@ -29,5 +29,5 @@ annelyse gelman (.us/.nz/.de), jesse darling (.uk/.de), viktor timofeev (.lv/.us
 <h1></h1>
 
 <center>
-  <a href="//embarrassment.party/"><img src="{{ site.baseurl }}/images/ep.gif" style="width:100%"/></a>
+  <a href="https://embarrassment.party/"><img src="{{ site.baseurl }}/images/ep.gif" style="width:100%"/></a>
 </center>

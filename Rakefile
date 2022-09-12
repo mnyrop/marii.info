@@ -5,9 +5,7 @@ task :test do
   sh 'bundle exec jekyll clean'
   sh 'bundle exec jekyll build'
   opts = {
-    # allow_hash_href: true,
     check_html: true,
-    assume_extension: true,
     empty_alt_ignore: true,
     enforce_https: true,
     disable_external: true,

@@ -3,7 +3,7 @@ layout: post
 title:  "Create and store static IIIF annotations... Minicomp style"
 time_period: 2018
 overlay: green
-img: '//darthcrimson.org/wp-content/uploads/2016/10/parser3-1024x568.png'
+img: 'https://darthcrimson.org/wp-content/uploads/2016/10/parser3-1024x568.png'
 tags: jekyll;iiif;rake
 ---
 

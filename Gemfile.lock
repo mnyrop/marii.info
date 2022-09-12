@@ -1,5 +1,5 @@
 PATH
-  remote: theme
+  remote: scaffold
   specs:
     louie (0.1.4)
       jekyll (~> 3.3)

@@ -1,0 +1,22 @@
+{% if site.data.labs %}
+  <ul class="rows">
+    <li class="row__cols">
+      <div class="row__title">
+        Lab Participation
+      </div>
+      <div class="row__date"></div>
+    </li>
+    {% for lab in site.data.labs %}
+      <li class="row__post">
+        <a href="{{ lab.link | absolute_url }}">
+          <div class="row__title">
+            {{ lab.title }}
+          </div>
+          <div class="row__date">
+            {{ lab.date }}
+          </div>
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+{% endif %}

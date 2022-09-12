@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 gem 'jekyll'
 gem 'kramdown-parser-gfm'
-gem 'louie', path: 'theme'
+gem 'louie', path: 'scaffold'
 
 
 group :development do

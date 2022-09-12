@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+
+  <title>The Summer of Japanese Puppets, Part 2</title>
+  <meta name="description" content="This post is part 2 of 4 in a series. Feel free to skip around to:">
+
+  
+  <link rel="icon" href="/assets/snake.png" />
+  
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="/notes/the-summer-of-puppets-2">
+
+  
+</head>
+
+
+  <body>
+    <div class="container">
+      <div class="post">
+        <div class="bio">
+  <div class="bio__header">
+  	<a href="/"><img src="/assets/snake.png" alt="2 headed snake logo" style="width:100px;"/></a>
+  </div>
+  <!-- <div class="bio__desc"></div> -->
+  <div class="bio__menu">
+    
+    <a href="/">Home</a>&nbsp;
+    
+    <a href="/about">About</a>&nbsp;
+    
+    
+      
+      <a href="https://twitter.com/mariinyrop" target="_blank">Twitter ⇝</a>&nbsp;
+      
+      <a href="https://github.com/mnyrop" target="_blank">Github ⇝</a>&nbsp;
+      
+      <a href="https://open.spotify.com/user/marii_marii" target="_blank">Spotify ⇝</a>
+      
+    
+  </div>
+</div>
+
+
+        <div class="post__meta">
+          <div class="post__title">The Summer of Japanese Puppets, Part 2</div>
+          <div class="post__date">
+            
+              2017
+            
+          </div>
+          <div class="post__cat"></div>
+        </div>
+
+        <div class="post__body">
+          <img src="https://www.columbia.edu/cgi-bin/dlo?obj=ldpd_bun_slide_493_2_0779_0826&size=medium" />
+          <p>This post is part 2 of 4 in a series. Feel free to skip around to:</p>
+
+<p><a href="/notes/the-summer-of-puppets">part 1: the task</a>,
+<a href="/notes/the-summer-of-puppets-3">part 3: the site</a>, or
+<a href="/notes/the-summer-of-puppets-4">part 4: epilogue</a>.</p>
+
+<h1 id="act-2-data-transformation-montage">Act 2: Data transformation montage</h1>
+
+<p>After taking a detour prototyping with <a href="https://google.github.io/lovefield/">Google Lovefield</a> + <a href="https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API">IndexedDB</a> and making a pitstop to play with <a href="https://graphql.org/">GraphQL</a>, I finally settled on a simpler plan: <strong>export each object type as an array of JSON records, and have each record point to its relationships via arrays of IDs.</strong> With this thought, the montage began:</p>
+
+<h2 id="scene-i-plan--tidy">scene i. plan + tidy</h2>
+
+<p><strong>In:</strong> MySQL dump</p>
+
+<p><strong>Tools:</strong> any ol’ <a href="https://www.draw.io/">erd</a> / <a href="https://openrefine.org/">OpenRefine</a> / <a href="https://json-schema.org/">json-schema</a></p>
+
+<p>I started by using a simple entity relationship diagramming (ERD) tool and <a href="https://json-schema.org/">JSON Schema</a> to plan out what each object type (e.g. play, kashira, character, etc.) should look like at the end of the processing stage by asking/answerinq questions like: <em>Which keys does each type need? Which keys should be named in a standardized way across object types? What kind of value does a given key expect (maybe an int? a nullable string…? ), and does it expect 1 or many? What does the object need to “know” about itself, and what can it inherit from other types?</em></p>
+
+<p><br /><a href="/images/erd.png"><img src="/images/erd.png" style="box-shadow: 2px 2px 4pc #23352a;" /></a><br /><br /></p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"$schema"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"definitions"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"author"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"authors"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"integer"</span><span class="w"> </span><span class="p">},</span><span class="w">
+          </span><span class="nl">"label_eng"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w"> </span><span class="p">},</span><span class="w">
+          </span><span class="nl">"label_ka"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w"> </span><span class="p">},</span><span class="w">
+          </span><span class="nl">"dates"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w"> </span><span class="p">},</span><span class="w">
+          </span><span class="nl">"reference"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w"> </span><span class="p">},</span><span class="w">
+          </span><span class="nl">"sort_ja"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w"> </span><span class="p">},</span><span class="w">
+          </span><span class="nl">"play_id"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"integer"</span><span class="w"> </span><span class="p">}</span><span class="w">
+              </span><span class="p">},</span><span class="w">
+              </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"array"</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>Once each type was reasonably mapped out, I exported the MySQL database as a set of CSV files and turned to <a href="https://openrefine.org/">OpenRefine</a> to clean them up. I used faceting to get a better sense of each set, recast strings as ints and visa versa, scrubbed out line breaks, dropped unused columns, consolidated similar cells, and so on. Then I renamed as many columns as possible to cohere to the somewhat-standardized JSON schema I’d created, and re-exported them as spiffed-up CSVs.</p>
+
+<p><br /><img src="/images/open-refine.png" style="box-shadow: 2px 2px 4pc #23352a;max-width:600px;" /><br /><br /></p>
+
+<p><strong>Out:</strong> <a href="https://github.com/mnyrop/bunraku-ipy/tree/master/in">Optimized CSVs</a></p>
+
+<p><br /></p>
+
+<h2 id="scene-ii-process--convert-to-json">scene ii. Process + convert to JSON</h2>
+
+<p><strong>In:</strong> <a href="https://github.com/mnyrop/bunraku-ipy/tree/master/in">CSVs</a>&lt;/span&gt;</p>
+
+<p><strong>Tools:</strong> <a href="https://ipython.org/">iPython</a> / <a href="https://pandas.pydata.org/">Pandas</a></p>
+
+<p>Next I created an <a href="https://ipython.org/">iPython</a> (aka Jupyter) notebook imported <a href="https://pandas.pydata.org/">Pandas</a>, which is a data analysis library built on <a href="https://www.numpy.org/">Numpy</a>. Pandas works primarily with a datatype called a dataframe, which takes its name from the same type in <a href="https://www.r-project.org/about.html">R</a>.</p>
+
+<p>After reading each CSV file into my Jupyter notebook as a Pandas dataframe, I was able to perform powerful SQL-like tasks on the data, including a chained <code class="language-plaintext highlighter-rouge">.merge()</code> <code class="language-plaintext highlighter-rouge">.groupby()</code> <code class="language-plaintext highlighter-rouge">.apply(list)</code> function that allowed me to merge a join table onto a dataframe, appending an array of ids from the join onto each row.</p>
+
+<p>For example, given a dataframe of authors and a join table of <code class="language-plaintext highlighter-rouge">author_ids</code> and <code class="language-plaintext highlighter-rouge">play_ids</code>, the function (shown below) will merge a list of <code class="language-plaintext highlighter-rouge">play_ids</code> on to each corresponding author record. This is exactly the task I needed to perform on most data objects—adding multiple plays to each author, multiple performances to each play, multiple scenes to each performance, and so on.</p>
+
+<p><br /><a href="/images/ipy.png"><img src="/images/ipy.png" style="box-shadow: 2px 2px 4pc #23352a;max-width:600px;" /></a><br /><br /></p>
+
+<p>Once each dataframe was transformed to mirror the JSON schema I’d planned, I wrote them out to new json files using Pandas’ <code class="language-plaintext highlighter-rouge">.to_json(orient='records')</code> function. (You can see the complete process and notebook <a href="https://github.com/mnyrop/bunraku-ipy/blob/master/bunraku-online.ipynb">here</a>.)</p>
+
+<p>An aside: <em>If i were more versed in the powers of Jupyter and Pandas at the time, I could have connected my notebook directly to the MySQL database and performed the cleaning tasks of OpenRefine with Pandas, skipping the CSV steps entirely. For tips on something similar, check out <strong><a href="/notes/automate-yr-docs-mysql-to-markown-via-py">this post</a></strong>.</em></p>
+
+<p><strong>Out:</strong> <a href="https://github.com/mnyrop/bunraku-ipy/tree/master/out/json">JSON</a></p>
+
+<p><br /></p>
+
+<h2 id="scene-iii-minify">scene iii. Minify</h2>
+
+<p><strong>In:</strong> <a href="https://github.com/mnyrop/bunraku-ipy/tree/master/out/json">JSON</a>&lt;</p>
+
+<p><strong>Tools:</strong> <a href="https://stedolan.github.io/jq/">JQ</a></p>
+
+<p>With the bulk of the processing done, I used a few post-processing tricks to make my JSON files smaller and more usable. I used the JSON manipulation library <a href="https://stedolan.github.io/jq/">JQ</a> to drop null key:value pairs from my files, since most objects (especially images) had a <em>lot</em> of empty fields. I also used the option <code class="language-plaintext highlighter-rouge">--compact-output</code> to minify the non-null files:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>jq <span class="s1">'del(.[][] | nulls)'</span> <span class="nt">--compact-output</span> authors.json <span class="o">&gt;</span> authors-min.json
+</code></pre></div></div>
+
+<p>Bonus: <em>if you have MySQL installed on your machine, you can use the <a href="https://stackoverflow.com/questions/5956993/mysql-string-replace">string REPLACE function</a> to swap out any null arrays (<code class="language-plaintext highlighter-rouge">[null]</code>) or null values that stayed defined as Pandas’ <code class="language-plaintext highlighter-rouge">NaN</code> for a true <code class="language-plaintext highlighter-rouge">null</code> before using JQ, and make sure that it drops *every* null pair possible. If not, you can also use <code class="language-plaintext highlighter-rouge">grep</code> and <code class="language-plaintext highlighter-rouge">sed</code>, though it’s less straightforward.</em></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>replace <span class="s2">"[null]"</span> <span class="s2">"null"</span> <span class="nt">--</span> authors.json
+<span class="nv">$ </span>replace <span class="s2">"</span><span class="se">\"</span><span class="s2">nan</span><span class="se">\"</span><span class="s2">"</span> <span class="s2">"null"</span> <span class="nt">--</span> authors.json
+</code></pre></div></div>
+
+<p><strong>Out:</strong> <a href="https://github.com/mnyrop/bunraku-ipy/tree/master/post-processing/json">better JSON</a></p>
+
+        </div>
+
+        
+          <div class="post__paginate">
+            
+              <a class="post__paginate-left" href="/notes/the-summer-of-puppets">The Summer of Japanese Puppets, Part 1</a>
+            
+
+            
+              <a class="post__paginate-right" href="/notes/the-summer-of-puppets-3">The Summer of Japanese Puppets, Part 3</a>
+            
+          </div>
+        
+      </div>
+
+      
+  <ul class="rows">
+    <li class="row__cols">
+      <div class="row__title">
+        
+          Notes
+        
+      </div>
+      <div class="row__date">
+        
+          Time Period
+        
+      </div>
+      <div class="row__cat">
+        
+          Tags
+        
+      </div>
+    </li>
+    
+      <li class="row__post">
+        <a href="/notes/deploy-from-github-to-cpanel">
+          <div class="row__title ">
+            Actions!!! Automate FTP deploys from GitHub to CPanel
+          </div>
+          <div class="row__date ">
+            2021
+          </div>
+          <div class="row__cat ">
+            actions;ci;cpanel;github;
+          </div>
+        </a>
+
+        
+          <img class="row__img" src="https://i.makeagif.com/media/5-21-2015/W4vUS3.gif" alt="Actions!!! Automate FTP deploys from GitHub to CPanel">
+        
+      </li>
+    
+      <li class="row__post">
+        <a href="/notes/ghostscript-for-washed-out-pdfs">
+          <div class="row__title ">
+            Using Ghostscript to Covert Washed-Out PDFs to PNGs for OCR Processing
+          </div>
+          <div class="row__date ">
+            2020
+          </div>
+          <div class="row__cat ">
+            ghostscript;ocr;bash
+          </div>
+        </a>
+
+        
+          <img class="row__img" src="/images/ghostscript.gif" alt="Using Ghostscript to Covert Washed-Out PDFs to PNGs for OCR Processing">
+        
+      </li>
+    
+      <li class="row__post">
+        <a href="/notes/nycdh-2018">
+          <div class="row__title ">
+            NYCDH Week Workshop: Publishing Sites with GitHub Pages
+          </div>
+          <div class="row__date ">
+            2018
+          </div>
+          <div class="row__cat ">
+            jekyll;workshop;github;dh
+          </div>
+        </a>
+
+        
+          <img class="row__img" src="https://i1.wp.com/blog.rapidapi.com/wp-content/uploads/2017/01/octocat.gif?resize=800%2C500&ssl=1" alt="NYCDH Week Workshop: Publishing Sites with GitHub Pages">
+        
+      </li>
+    
+      <li class="row__post">
+        <a href="/notes/static-iiif-annotations">
+          <div class="row__title ">
+            Create and store static IIIF annotations... Minicomp style
+          </div>
+          <div class="row__date ">
+            2018
+          </div>
+          <div class="row__cat ">
+            jekyll;iiif;rake
+          </div>
+        </a>
+
+        
+          <img class="row__img" src="https://darthcrimson.org/wp-content/uploads/2016/10/parser3-1024x568.png" alt="Create and store static IIIF annotations... Minicomp style">
+        
+      </li>
+    
+      <li class="row__post">
+        <a href="/notes/govt-document-pipeline">
+          <div class="row__title ">
+            Create a Gov't Document Pipeline from Scraping to Full Text OCR
+          </div>
+          <div class="row__date ">
+            2017
+          </div>
+          <div class="row__cat ">
+            bs4;tesseract;ocr
+          </div>
+        </a>
+
+        
+          <img class="row__img" src="/images/asad.png" alt="Create a Gov't Document Pipeline from Scraping to Full Text OCR">
+        
+      </li>
+    
+      <li class="row__post">
+        <a href="/notes/headless-test-dynamic-search">
+          <div class="row__title ">
+            Continuous Integration II: Headless Tests w/ RSpec, Capybara, and Poltergeist
+          </div>
+          <div class="row__date ">
+            2017
+          </div>
+          <div class="row__cat ">
+            ci;rspec;capybara;poltergeist
+          </div>
+        </a>
+
+        
+          <img class="row__img" src="https://i.gifer.com/8Qfd.gif" alt="Continuous Integration II: Headless Tests w/ RSpec, Capybara, and Poltergeist">
+        
+      </li>
+    
+      <li class="row__post">
+        <a href="/notes/jekyll-ci">
+          <div class="row__title ">
+            Continuous Integration! Or: Jekyll gets some robot nannies.
+          </div>
+          <div class="row__date ">
+            2017
+          </div>
+          <div class="row__cat ">
+            jekyll;ci
+          </div>
+        </a>
+
+        
+          <img class="row__img" src="https://i.pinimg.com/736x/cf/51/2d/cf512d30b3916dd255cec4222269f216--solaris-daniel-oconnell.jpg" alt="Continuous Integration! Or: Jekyll gets some robot nannies.">
+        
+      </li>
+    
+      <li class="row__post">
+        <a href="/notes/automate-yr-docs-mysql-to-markown-via-py">
+          <div class="row__title ">
+            Automate docs for DB updates with Pandas + Markdown
+          </div>
+          <div class="row__date ">
+            2017
+          </div>
+          <div class="row__cat ">
+            documentation;myql;python;markdown
+          </div>
+        </a>
+
+        
+          <img class="row__img" src="https://nsarchive2.gwu.edu/NSAEBB/NSAEBB601-British-appealed-to-US-in-1952-for-coup-against-Mosaddeq-in-Iran/images/1.jpg" alt="Automate docs for DB updates with Pandas + Markdown">
+        
+      </li>
+    
+      <li class="row__post">
+        <a href="/notes/the-summer-of-puppets-4">
+          <div class="row__title ">
+            The Summer of Japanese Puppets, Part 4
+          </div>
+          <div class="row__date ">
+            2017
+          </div>
+          <div class="row__cat ">
+            d3js;lunr;jekyll
+          </div>
+        </a>
+
+        
+          <img class="row__img" src="https://www1.columbia.edu/sec-cgi-bin/cul/dlo?obj=ldpd_bun_slide_024_1_0427_0621&size=medium" alt="The Summer of Japanese Puppets, Part 4">
+        
+      </li>
+    
+      <li class="row__post">
+        <a href="/notes/the-summer-of-puppets-3">
+          <div class="row__title ">
+            The Summer of Japanese Puppets, Part 3
+          </div>
+          <div class="row__date ">
+            2017
+          </div>
+          <div class="row__cat ">
+            jekyll;github-pages;liquid
+          </div>
+        </a>
+
+        
+          <img class="row__img" src="https://www1.columbia.edu/sec-cgi-bin/cul/dlo?obj=ldpd_bun_slide_677_4_0606_0607&size=medium" alt="The Summer of Japanese Puppets, Part 3">
+        
+      </li>
+    
+      <li class="row__post">
+        <a href="/notes/the-summer-of-puppets-2">
+          <div class="row__title row__active">
+            The Summer of Japanese Puppets, Part 2
+          </div>
+          <div class="row__date row__active">
+            2017
+          </div>
+          <div class="row__cat row__active">
+            jupyter;python;json;openrefine
+          </div>
+        </a>
+
+        
+          <img class="row__img" src="https://www.columbia.edu/cgi-bin/dlo?obj=ldpd_bun_slide_493_2_0779_0826&size=medium" alt="The Summer of Japanese Puppets, Part 2">
+        
+      </li>
+    
+      <li class="row__post">
+        <a href="/notes/the-summer-of-puppets">
+          <div class="row__title ">
+            The Summer of Japanese Puppets, Part 1
+          </div>
+          <div class="row__date ">
+            2017
+          </div>
+          <div class="row__cat ">
+            sql;jekyll;php
+          </div>
+        </a>
+
+        
+          <img class="row__img" src="https://www.columbia.edu/cgi-bin/dlo?obj=ldpd_bun_slide_362_1_6665_8069&size=medium" alt="The Summer of Japanese Puppets, Part 1">
+        
+      </li>
+    
+  </ul>
+
+
+    </div>
+  </body>
+
+</html>

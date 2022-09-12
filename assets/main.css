@@ -1,0 +1,223 @@
+@import url("https://fonts.googleapis.com/css?family=Inconsolata:400,700");
+* {
+  box-sizing: border-box; }
+
+::selection {
+  background: #fefeca; }
+
+::-moz-selection {
+  background: #fefeca; }
+
+hr {
+  color: #000000;
+  background-color: #000000; }
+
+a {
+  color: #000000;
+  text-decoration: underline; }
+  a:hover {
+    color: #000000; }
+
+html {
+  overflow-x: hidden;
+  overflow-y: scroll; }
+
+body {
+  width: 100%;
+  margin: 25px 0;
+  padding: 0;
+  background: #f8f8f1;
+  font-family: "Inconsolata", monospace;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.5; }
+
+.container {
+  max-width: 1200px;
+  margin: 0 25px; }
+
+@media screen and (min-width: 600px) {
+  body {
+    margin: 50px 0 25px; }
+
+  .container {
+    margin: 0 50px; } }
+@media screen and (min-width: 800px) {
+  body {
+    margin: 120px 0 50px; }
+
+  .container {
+    margin: 0 120px; } }
+.bio {
+  max-width: 500px;
+  margin-bottom: 50px; }
+
+.bio__header {
+  margin-bottom: 20px;
+  font-weight: 700; }
+  .bio__header a {
+    text-decoration: none; }
+    .bio__header a:hover {
+      text-decoration: none; }
+
+.bio__social {
+  margin: 0;
+  margin-top: 10px;
+  padding: 0;
+  list-style: none; }
+
+.rows {
+  position: relative;
+  width: 100%;
+  margin: 0;
+  margin-top: 50px;
+  padding: 0;
+  list-style: none; }
+
+.row__img {
+  display: none;
+  position: fixed;
+  max-width: 500px;
+  max-height: 500px;
+  top: 22vh;
+  left: 296px;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 500ms; }
+
+.row__cols,
+.row__post {
+  display: block;
+  margin-bottom: 10px; }
+
+.row__cols {
+  font-weight: 700;
+  overflow: hidden; }
+
+.row__post {
+  width: 100%;
+  overflow: hidden; }
+
+.row__title, .post__title,
+.row__date,
+.post__date,
+.row__cat,
+.post__cat {
+  float: left; }
+
+.row__title, .post__title {
+  width: 100%; }
+
+.row__date, .post__date,
+.row__cat,
+.post__cat {
+  width: auto; }
+
+.row__cat, .post__cat {
+  position: relative;
+  margin-left: 10px; }
+  .row__cat:before, .post__cat:before {
+    position: absolute;
+    content: '|';
+    left: -9px; }
+
+.row__body {
+  margin: 20px 0; }
+
+.row__active {
+  text-decoration: line-through; }
+
+@media screen and (min-width: 800px) {
+  .row__post:hover * {
+    text-decoration: underline;
+    cursor: pointer; }
+  .row__post:hover .row__active {
+    text-decoration: line-through; }
+  .row__post:hover .row__img {
+    display: block;
+    opacity: 0.5; }
+  .row__post:nth-child(2n) .row__img {
+    top: 2vh;
+    left: 140px; }
+  .row__post:nth-child(3n) .row__img {
+    top: 35vh;
+    left: 133px; }
+  .row__post:nth-child(4n) .row__img {
+    top: 31vh;
+    left: 385px; }
+  .row__post:nth-child(5n) .row__img {
+    top: 27vh;
+    left: 418px; } }
+@media screen and (min-width: 600px) {
+  .row__cols,
+  .row__post {
+    margin: 0; }
+
+  .row__title, .post__title {
+    width: 50%; }
+
+  .row__date, .post__date,
+  .row__cat,
+  .post__cat {
+    width: 25%; }
+
+  .row__cat, .post__cat {
+    margin: 0; }
+    .row__cat:before, .post__cat:before {
+      content: ''; } }
+.post__meta {
+  margin: 30px 0 20px;
+  border-bottom: 1px solid #000000;
+  overflow: hidden;
+  font-weight: 700; }
+
+.post__paginate {
+  overflow: hidden; }
+
+.post__paginate-left,
+.post__paginate-right {
+  position: relative;
+  display: block;
+  width: 50%; }
+
+.post__paginate-left {
+  padding-left: 13px;
+  float: left; }
+  .post__paginate-left:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: "\21FD"; }
+
+.post__paginate-right {
+  padding-right: 13px;
+  text-align: right;
+  float: right; }
+  .post__paginate-right:after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    content: "\21FE"; }
+
+.post__body {
+  padding-bottom: 20px;
+  border-bottom: 1px solid #000000; }
+  .post__body pre {
+    background: #eeeeee;
+    padding: 10px 20px; }
+  .post__body code {
+    background: #eeeeee;
+    font-size: 12px; }
+  .post__body img {
+    max-width: 100%; }
+
+@media screen and (min-width: 800px) {
+  .post {
+    min-width: 500px;
+    width: 50%; } }
+img.shadow {
+  box-shadow: 2px 2px 2pc olive;
+  margin: 3pc 0 3pc 0; }
+
+img.fullwidth {
+  width: 100%; }

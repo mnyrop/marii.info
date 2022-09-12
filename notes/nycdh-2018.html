@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+
+  <title>NYCDH Week Workshop: Publishing Sites with GitHub Pages</title>
+  <meta name="description" content="Overview">
+
+  
+  <link rel="icon" href="/assets/snake.png" />
+  
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="/notes/nycdh-2018">
+
+  
+</head>
+
+
+  <body>
+    <div class="container">
+      <div class="post">
+        <div class="bio">
+  <div class="bio__header">
+  	<a href="/"><img src="/assets/snake.png" alt="2 headed snake logo" style="width:100px;"/></a>
+  </div>
+  <!-- <div class="bio__desc"></div> -->
+  <div class="bio__menu">
+    
+    <a href="/">Home</a>&nbsp;
+    
+    <a href="/about">About</a>&nbsp;
+    
+    
+      
+      <a href="https://twitter.com/mariinyrop" target="_blank">Twitter ⇝</a>&nbsp;
+      
+      <a href="https://github.com/mnyrop" target="_blank">Github ⇝</a>&nbsp;
+      
+      <a href="https://open.spotify.com/user/marii_marii" target="_blank">Spotify ⇝</a>
+      
+    
+  </div>
+</div>
+
+
+        <div class="post__meta">
+          <div class="post__title">NYCDH Week Workshop: Publishing Sites with GitHub Pages</div>
+          <div class="post__date">
+            
+              2018
+            
+          </div>
+          <div class="post__cat"></div>
+        </div>
+
+        <div class="post__body">
+          <img src="https://i1.wp.com/blog.rapidapi.com/wp-content/uploads/2017/01/octocat.gif?resize=800%2C500&ssl=1" />
+          <h1 id="overview">Overview</h1>
+
+<p><strong>1:</strong> <a href="https://github.com">GitHub</a> is a place for Open Source projects, which are stored in <em>repositories</em>.</p>
+
+<p><strong>2:</strong> A <em>fork</em> is a copy of a repository that is all your own and helps you track changes.</p>
+
+<p><strong>3:</strong> <a href="https://daringfireball.net/projects/markdown/">Markdown</a> is an easy to use <em>markup schema</em> for designating headings, lists, links, images and more.</p>
+
+<p><strong>4:</strong> <a href="https://jekyllrb.com">Jekyll</a> is software for creating static sites that GitHub can run for you. It is responsible for converting your markdown into your site’s HTML files.</p>
+
+<p><strong>5:</strong> <a href="https://shopify.github.io/liquid/">Liquid</a> is a templating engine that helps you work with your site’s data and content in more dynamic ways than Markdown. Jekyll also converts liquid into HTML files for you.</p>
+
+<h1 id="instructions">Instructions</h1>
+
+<p><strong>Table of Contents</strong></p>
+<ol>
+  <li><a href="#step-1-set-up-a-github-account">Set up a GitHub Account</a></li>
+  <li><a href="#step-2-fork-the-sample-site-into-your-account">Fork the sample site into your account</a></li>
+  <li><a href="#step-3-set-up-your-github-domain">Set up your GitHub domain</a></li>
+  <li><a href="#step-4-view-your-site">View your site</a></li>
+  <li><a href="#step-5-edit-a-post">Edit a post</a></li>
+  <li><a href="#step-6-add-a-new-page">Add a new page</a></li>
+</ol>
+
+<p><strong>Advanced:</strong></p>
+
+<ul>
+  <li><a href="#advanced-liquid-for-jekyll-functionality">Learn about Liquid</a></li>
+  <li><a href="#advanced-change-your-theme">Change your theme</a></li>
+</ul>
+
+<h2 id="step-1-set-up-a-github-account">Step 1: Set up a GitHub Account</h2>
+
+<p>Visit <a href="https://github.com/join">https://github.com/join</a> and add your information. Choose the Free/Public plan, then activate your account by checking your email for the registration link.</p>
+
+<p><em><strong>Note:</strong> Your username will also be part of your site’s public URL, so choose one you can live with!</em></p>
+
+<p><img src="/images/sign_up.gif" style="width:100%" /></p>
+
+<h2 id="step-2-fork-the-sample-site-into-your-account">Step 2: Fork the sample site into your account</h2>
+
+<p>Visit the base site repository <a href="https://github.com/mnyrop/nycdh-jekyll">https://github.com/mnyrop/nycdh-jekyll</a> in a new tab and click on the fork button near the top right corner.</p>
+
+<p>This creates a <a href="https://help.github.com/articles/fork-a-repo/">fork</a> (i.e. a diverging copy) of our base site for you to use and change however you want.</p>
+
+<p><img src="/images/fork.gif" style="width:100%" /></p>
+
+<h2 id="step-3-set-up-your-github-domain">Step 3: Set up your GitHub domain</h2>
+
+<p>Before we start changing how things look, we’ll need to see your site live at your own domain.
+Click on the Settings tab and rename your repository to reflect your domain. This will be:</p>
+
+<blockquote>
+  <p>your-username.github.io</p>
+</blockquote>
+
+<p>For example, if your GitHub username is <code class="language-plaintext highlighter-rouge">bharkonnen</code>, your site will be <code class="language-plaintext highlighter-rouge">bharkonnen.github.io</code>.
+<br /><br /></p>
+
+<p><img src="/images/rename_repo.gif" style="width:100%" /></p>
+
+<p>Return back to the page with your files and find <code class="language-plaintext highlighter-rouge">_config.yml</code>. Click on it, then click the pencil button to edit. Replace the <code class="language-plaintext highlighter-rouge">baseurl</code> value with empty single quotes: <code class="language-plaintext highlighter-rouge">''</code>. (This will serve your site at your domain instead of <code class="language-plaintext highlighter-rouge">yourdomain.github.io/nycdh-jekyll/</code>.)</p>
+
+<p>Next, fill in other information (e.g. <code class="language-plaintext highlighter-rouge">title</code>, <code class="language-plaintext highlighter-rouge">description</code>, and <code class="language-plaintext highlighter-rouge">username</code>) as you like. Scroll down and click “Commit changes” when you are ready.</p>
+
+<p>You can always change these later, so don’t worry!
+<br /><br />
+<img src="/images/config.gif" style="width:100%" /></p>
+
+<h2 id="step-4-view-your-site">Step 4: View your site</h2>
+
+<p>Open up a new tab, and navigate to your domain. It may take a minute or so, but should look like something like this:
+<br /><br />
+<img src="/images/view_site.gif" style="width:100%" /></p>
+
+<h2 id="step-5-edit-a-post">Step 5: Edit a post</h2>
+
+<p>While still on your live site, click on “Writing My Own Post.” (It should be at <code class="language-plaintext highlighter-rouge">yourdomain.github.io/2018/01/22/my-own-post/</code>.)</p>
+
+<p>Open the <a href="https://github.com/mnyrop/nycdh-jekyll/blob/master/docs/markdown-cheatsheet.md">Markdown Cheatsheet</a> in another tab. And in one more tab, open your site repository on GitHub, navigate into <code class="language-plaintext highlighter-rouge">_posts</code>, open <code class="language-plaintext highlighter-rouge">2018-01-22-my-own-post.md</code>, and click edit.</p>
+
+<p>Skim through the Markdown Cheatsheet and rewrite the contents of the post with headers, lists, and links. Commit the edits and refresh the live post to see your changes.</p>
+
+<p><em><strong>Note:</strong> Jekyll is very picky about post titles and dates. If you want to change them, make sure you keep the same date format! Titles cannot have <code class="language-plaintext highlighter-rouge">:</code> characters unless you wrap the entire title in quotes (<code class="language-plaintext highlighter-rouge">title: "My Tile: My Subtitle"</code>). Lastly change the file name (up top) to reflect your new title and date.</em></p>
+
+<p><em><strong>Bonus:</strong> You can use <a href="https://stackedit.io/app">StackEdit</a> to preview what your Markdown will look like before editing your files, if you like!</em></p>
+
+<h2 id="step-6-add-a-new-page">Step 6: Add a new page</h2>
+
+<p>Now that we’ve edited an existing post with Markdown, we can add a brand new page with text and images. Navigate to the home of your site repository on GitHub, and click <strong>“Create New File”</strong>.</p>
+
+<p>Enter the name of your file up top. It <strong>cannot</strong> have spaces or special characters, <strong>must</strong> be lowercase, and must end in <strong>.md</strong> (for Markdown).</p>
+
+<p><strong>Good:</strong></p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">my-project-name.md</code></li>
+  <li><code class="language-plaintext highlighter-rouge">test-page.md</code></li>
+  <li><code class="language-plaintext highlighter-rouge">really-long-but-still-okay-name.md </code></li>
+</ul>
+
+<p><strong>Bad:</strong></p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">has spaces .md</code></li>
+  <li><code class="language-plaintext highlighter-rouge">badextension.doc</code></li>
+  <li><code class="language-plaintext highlighter-rouge">too-$pec!al.md</code></li>
+</ul>
+
+<p>Add metadata to the top of your file, between two lines with three hypthens, like so:</p>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
+<span class="na">layout</span><span class="pi">:</span> <span class="s">page</span>
+<span class="na">title</span><span class="pi">:</span> <span class="s">Your Title</span>
+<span class="nn">---</span>
+</code></pre></div></div>
+<p>Underneath the metadata, add info to your page just like with the post. This time, try to add at least one image! The syntax for an image is:</p>
+
+<p><code class="language-plaintext highlighter-rouge">![label][//link-to-full-image.jpg]</code></p>
+
+<h2 id="advanced-liquid-for-jekyll-functionality">Advanced: Liquid for Jekyll functionality</h2>
+
+<p>Congrats! If you’re reading this, you’re likely ahead of the game. Now is a good time to dive deeper into Jekyll and its templating engine <a href="https://learn.cloudcannon.com/jekyll/introduction-to-liquid/">Liquid</a>.</p>
+
+<p>Liquid is a kind of pseudo-code that lets you access information about your site, its pages, posts, and more to display on your site.</p>
+
+<p>For example, Liquid is powering your current home page and how it shows posts. Under the hood, it looks something like this:</p>
+
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span><span class="nv">post</span><span class="w"> </span><span class="nt">in</span><span class="w"> </span><span class="nv">site.posts</span><span class="w"> </span><span class="p">%}</span>
+
+ &lt;h2&gt;
+   &lt;a href="<span class="p">{{</span><span class="w"> </span><span class="nv">post</span><span class="p">.</span><span class="nv">url</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">prepend</span><span class="p">:</span><span class="w"> </span><span class="nv">site</span><span class="p">.</span><span class="nv">baseurl</span><span class="w"> </span><span class="p">}}</span>"&gt;<span class="p">{{</span><span class="w"> </span><span class="nv">post</span><span class="p">.</span><span class="nv">title</span><span class="w"> </span><span class="p">}}</span>&lt;/a&gt;
+ &lt;/h2&gt;
+
+ &lt;a href="<span class="p">{{</span><span class="w"> </span><span class="nv">post</span><span class="p">.</span><span class="nv">url</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">prepend</span><span class="p">:</span><span class="w"> </span><span class="nv">site</span><span class="p">.</span><span class="nv">baseurl</span><span class="w"> </span><span class="p">}}</span>"&gt;
+  <span class="p">{{</span><span class="w"> </span><span class="nv">post</span><span class="p">.</span><span class="nv">date</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">date</span><span class="p">:</span><span class="w"> </span><span class="s2">"%b %-d, %Y"</span><span class="w"> </span><span class="p">}}</span>
+ &lt;/a&gt;
+
+ &lt;p&gt;<span class="p">{{</span><span class="w"> </span><span class="nv">post</span><span class="p">.</span><span class="nv">content</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">strip_html</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">truncatewords</span><span class="p">:</span><span class="mi">30</span><span class="w"> </span><span class="p">}}</span>&lt;/p&gt;
+
+<span class="p">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="p">%}</span>
+</code></pre></div></div>
+
+<p>This constructs a post loop so that each of your posts automatically shows up and has the same type of information displayed in the same way.</p>
+
+<p>Try adding your post’s categories to one of your posts with liquid. You’ll need to replace/add categories in the metadata of your post (in brackets <code class="language-plaintext highlighter-rouge">[ ]</code> and separated by commas), and then add liquid to the body of your post. To get you started, you’ll set up the loop with:</p>
+
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span><span class="nv">category</span><span class="w"> </span><span class="nt">in</span><span class="w"> </span><span class="nv">page.categories</span><span class="w"> </span><span class="p">%}</span>
+ <span class="p">{{</span><span class="w"> </span><span class="nv">category</span><span class="w"> </span><span class="p">}}</span>
+<span class="p">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="p">%}</span>
+</code></pre></div></div>
+
+<h2 id="advanced-change-your-theme">Advanced: Change your theme</h2>
+
+<p>The following link has a list of themes that are currently supported by GitHub Pages through the <code class="language-plaintext highlighter-rouge">remote_theme</code> variable in <code class="language-plaintext highlighter-rouge">_config.yml</code>: <a href="https://github.com/topics/jekyll-theme">https://github.com/topics/jekyll-theme</a>. You can peruse to find one you like and, when you’re ready, replace</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">remote_theme</span><span class="pi">:</span>     <span class="s">broccolini/athena</span>
+</code></pre></div></div>
+
+<p>with the theme you want, with the structure <code class="language-plaintext highlighter-rouge">username/repository-name</code>. (e.g. <code class="language-plaintext highlighter-rouge">mmistakes/minimal-mistakes</code> )</p>
+
+        </div>
+
+        
+          <div class="post__paginate">
+            
+              <a class="post__paginate-left" href="/notes/static-iiif-annotations">Create and store static IIIF annotations... Minicomp style</a>
+            
+
+            
+              <a class="post__paginate-right" href="/notes/ghostscript-for-washed-out-pdfs">Using Ghostscript to Covert Washed-Out PDFs to PNGs for OCR Processing</a>
+            
+          </div>
+        
+      </div>
+
+      
+  <ul class="rows">
+    <li class="row__cols">
+      <div class="row__title">
+        
+          Notes
+        
+      </div>
+      <div class="row__date">
+        
+          Time Period
+        
+      </div>
+      <div class="row__cat">
+        
+          Tags
+        
+      </div>
+    </li>
+    
+      <li class="row__post">
+        <a href="/notes/deploy-from-github-to-cpanel">
+          <div class="row__title ">
+            Actions!!! Automate FTP deploys from GitHub to CPanel
+          </div>
+          <div class="row__date ">
+            2021
+          </div>
+          <div class="row__cat ">
+            actions;ci;cpanel;github;
+          </div>
+        </a>
+
+        
+          <img class="row__img" src="https://i.makeagif.com/media/5-21-2015/W4vUS3.gif" alt="Actions!!! Automate FTP deploys from GitHub to CPanel">
+        
+      </li>
+    
+      <li class="row__post">
+        <a href="/notes/ghostscript-for-washed-out-pdfs">
+          <div class="row__title ">
+            Using Ghostscript to Covert Washed-Out PDFs to PNGs for OCR Processing
+          </div>
+          <div class="row__date ">
+            2020
+          </div>
+          <div class="row__cat ">
+            ghostscript;ocr;bash
+          </div>
+        </a>
+
+        
+          <img class="row__img" src="/images/ghostscript.gif" alt="Using Ghostscript to Covert Washed-Out PDFs to PNGs for OCR Processing">
+        
+      </li>
+    
+      <li class="row__post">
+        <a href="/notes/nycdh-2018">
+          <div class="row__title row__active">
+            NYCDH Week Workshop: Publishing Sites with GitHub Pages
+          </div>
+          <div class="row__date row__active">
+            2018
+          </div>
+          <div class="row__cat row__active">
+            jekyll;workshop;github;dh
+          </div>
+        </a>
+
+        
+          <img class="row__img" src="https://i1.wp.com/blog.rapidapi.com/wp-content/uploads/2017/01/octocat.gif?resize=800%2C500&ssl=1" alt="NYCDH Week Workshop: Publishing Sites with GitHub Pages">
+        
+      </li>
+    
+      <li class="row__post">
+        <a href="/notes/static-iiif-annotations">
+          <div class="row__title ">
+            Create and store static IIIF annotations... Minicomp style
+          </div>
+          <div class="row__date ">
+            2018
+          </div>
+          <div class="row__cat ">
+            jekyll;iiif;rake
+          </div>
+        </a>
+
+        
+          <img class="row__img" src="https://darthcrimson.org/wp-content/uploads/2016/10/parser3-1024x568.png" alt="Create and store static IIIF annotations... Minicomp style">
+        
+      </li>
+    
+      <li class="row__post">
+        <a href="/notes/govt-document-pipeline">
+          <div class="row__title ">
+            Create a Gov't Document Pipeline from Scraping to Full Text OCR
+          </div>
+          <div class="row__date ">
+            2017
+          </div>
+          <div class="row__cat ">
+            bs4;tesseract;ocr
+          </div>
+        </a>
+
+        
+          <img class="row__img" src="/images/asad.png" alt="Create a Gov't Document Pipeline from Scraping to Full Text OCR">
+        
+      </li>
+    
+      <li class="row__post">
+        <a href="/notes/headless-test-dynamic-search">
+          <div class="row__title ">
+            Continuous Integration II: Headless Tests w/ RSpec, Capybara, and Poltergeist
+          </div>
+          <div class="row__date ">
+            2017
+          </div>
+          <div class="row__cat ">
+            ci;rspec;capybara;poltergeist
+          </div>
+        </a>
+
+        
+          <img class="row__img" src="https://i.gifer.com/8Qfd.gif" alt="Continuous Integration II: Headless Tests w/ RSpec, Capybara, and Poltergeist">
+        
+      </li>
+    
+      <li class="row__post">
+        <a href="/notes/jekyll-ci">
+          <div class="row__title ">
+            Continuous Integration! Or: Jekyll gets some robot nannies.
+          </div>
+          <div class="row__date ">
+            2017
+          </div>
+          <div class="row__cat ">
+            jekyll;ci
+          </div>
+        </a>
+
+        
+          <img class="row__img" src="https://i.pinimg.com/736x/cf/51/2d/cf512d30b3916dd255cec4222269f216--solaris-daniel-oconnell.jpg" alt="Continuous Integration! Or: Jekyll gets some robot nannies.">
+        
+      </li>
+    
+      <li class="row__post">
+        <a href="/notes/automate-yr-docs-mysql-to-markown-via-py">
+          <div class="row__title ">
+            Automate docs for DB updates with Pandas + Markdown
+          </div>
+          <div class="row__date ">
+            2017
+          </div>
+          <div class="row__cat ">
+            documentation;myql;python;markdown
+          </div>
+        </a>
+
+        
+          <img class="row__img" src="https://nsarchive2.gwu.edu/NSAEBB/NSAEBB601-British-appealed-to-US-in-1952-for-coup-against-Mosaddeq-in-Iran/images/1.jpg" alt="Automate docs for DB updates with Pandas + Markdown">
+        
+      </li>
+    
+      <li class="row__post">
+        <a href="/notes/the-summer-of-puppets-4">
+          <div class="row__title ">
+            The Summer of Japanese Puppets, Part 4
+          </div>
+          <div class="row__date ">
+            2017
+          </div>
+          <div class="row__cat ">
+            d3js;lunr;jekyll
+          </div>
+        </a>
+
+        
+          <img class="row__img" src="https://www1.columbia.edu/sec-cgi-bin/cul/dlo?obj=ldpd_bun_slide_024_1_0427_0621&size=medium" alt="The Summer of Japanese Puppets, Part 4">
+        
+      </li>
+    
+      <li class="row__post">
+        <a href="/notes/the-summer-of-puppets-3">
+          <div class="row__title ">
+            The Summer of Japanese Puppets, Part 3
+          </div>
+          <div class="row__date ">
+            2017
+          </div>
+          <div class="row__cat ">
+            jekyll;github-pages;liquid
+          </div>
+        </a>
+
+        
+          <img class="row__img" src="https://www1.columbia.edu/sec-cgi-bin/cul/dlo?obj=ldpd_bun_slide_677_4_0606_0607&size=medium" alt="The Summer of Japanese Puppets, Part 3">
+        
+      </li>
+    
+      <li class="row__post">
+        <a href="/notes/the-summer-of-puppets-2">
+          <div class="row__title ">
+            The Summer of Japanese Puppets, Part 2
+          </div>
+          <div class="row__date ">
+            2017
+          </div>
+          <div class="row__cat ">
+            jupyter;python;json;openrefine
+          </div>
+        </a>
+
+        
+          <img class="row__img" src="https://www.columbia.edu/cgi-bin/dlo?obj=ldpd_bun_slide_493_2_0779_0826&size=medium" alt="The Summer of Japanese Puppets, Part 2">
+        
+      </li>
+    
+      <li class="row__post">
+        <a href="/notes/the-summer-of-puppets">
+          <div class="row__title ">
+            The Summer of Japanese Puppets, Part 1
+          </div>
+          <div class="row__date ">
+            2017
+          </div>
+          <div class="row__cat ">
+            sql;jekyll;php
+          </div>
+        </a>
+
+        
+          <img class="row__img" src="https://www.columbia.edu/cgi-bin/dlo?obj=ldpd_bun_slide_362_1_6665_8069&size=medium" alt="The Summer of Japanese Puppets, Part 1">
+        
+      </li>
+    
+  </ul>
+
+
+    </div>
+  </body>
+
+</html>

@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Turn Up the Volume! Amplifying the <i>Soul of Reason</i>
-category: lib/community dev
+category: digital scholarship
 img: 'https://nyu-dss.github.io/soul-of-reason/images/uploads/roscoe.jpg'
 time_period: 2020 – 2021
 ---

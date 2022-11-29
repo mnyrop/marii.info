@@ -18,7 +18,7 @@ time_period: 2014
 
 in november 2013, i released an open call online for artists, writers, and theorists to apply to the embarrassment_party virtual residency program. i purchased the domain embarrassmentparty.biz and the email address maestro@embarrassmentparty.biz, and from then on operated as "the maestro" of the e_p project. in the following weeks, over 50 applications were received and the website was viewed by several hundred visitors from 32 countries. applicants were asked to submit responses in any medium to the project’s initial themes, including remote intimacies, cloud capital, over exposure, data labor, and free fall in the cloud.
 
-residents were selected and notified in january 2014, and the virtual "residency" began. skype talks brought us together. We made (it) work. the embarrassment_party exhibition, in its IRL and URL forms (in the gallery and at [embarrassment.party](//embarrassment.party/), respectively) are the culmination of the collective residency.
+residents were selected and notified in january 2014, and the virtual "residency" began. skype talks brought us together. We made (it) work. the embarrassment_party exhibition, in its IRL and URL forms (in the gallery and at [embarrassment.party](https://embarrassment.party/), respectively) are the culmination of the collective residency.
 
 ## artists in residence
 

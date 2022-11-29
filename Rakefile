@@ -6,7 +6,8 @@ task :test do
   sh 'bundle exec jekyll build'
   opts = {
     check_html: true,
-    empty_alt_ignore: true,
+    ignore_missing_alt: true,
+    allow_missing_href: true,
     enforce_https: true,
     disable_external: true,
     verbose: true

@@ -1,4 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,300;1,300&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Inconsolata:400,700");
+@font-face {
+  font-family: "karrik";
+  src: url("./fonts/Karrik-Regular.woff2") format("woff2"); }
+@font-face {
+  font-family: "blocus";
+  src: url("./fonts/blocuswebfont.woff") format("woff"); }
 * {
   box-sizing: border-box; }
 
@@ -12,11 +19,33 @@ hr {
   color: #000000;
   background-color: #000000; }
 
+.alt-font {
+  font-family: "blocus", serif;
+  font-weight: bold; }
+
+.lg {
+  font-size: 2.5rem; }
+
 a {
   color: #000000;
-  text-decoration: underline; }
+  text-decoration: none;
+  background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+  background-repeat: no-repeat;
+  background-size: 100% 0.2em;
+  background-position: 0 88%;
+  transition: background-size 0.25s ease-in; }
   a:hover {
-    color: #000000; }
+    background-size: 100% 88%;
+    text-decoration: none; }
+
+a.no-magic {
+  background-image: unset;
+  background-repeat: unset;
+  background-size: unset;
+  background-position: unset;
+  transition: background-size unset; }
+  a.no-magic:hover {
+    background-size: unset; }
 
 html {
   overflow-x: hidden;
@@ -24,30 +53,20 @@ html {
 
 body {
   width: 100%;
-  margin: 25px 0;
-  padding: 0;
+  margin: 25px auto;
+  padding: 1rem;
   background: #f8f8f1;
-  font-family: "Inconsolata", monospace;
+  font-family: "karrik", monospace;
   font-size: 15px;
   font-weight: 400;
-  line-height: 1.5; }
+  line-height: 1.5;
+  letter-spacing: 0.08rem;
+  text-transform: lowercase; }
 
 .container {
   max-width: 1200px;
-  margin: 0 25px; }
+  margin: 125px auto; }
 
-@media screen and (min-width: 600px) {
-  body {
-    margin: 50px 0 25px; }
-
-  .container {
-    margin: 0 50px; } }
-@media screen and (min-width: 800px) {
-  body {
-    margin: 120px 0 50px; }
-
-  .container {
-    margin: 0 120px; } }
 .bio {
   max-width: 500px;
   margin-bottom: 50px; }
@@ -79,8 +98,8 @@ body {
   position: fixed;
   max-width: 500px;
   max-height: 500px;
-  top: 2vh;
-  left: 436px;
+  top: 16vh;
+  left: 85px;
   z-index: -1;
   opacity: 0;
   transition: opacity 500ms; }
@@ -92,79 +111,68 @@ body {
 
 .row__cols {
   font-weight: 700;
-  overflow: hidden; }
+  overflow: hidden;
+  padding-bottom: 0.85rem; }
 
 .row__post {
   width: 100%;
-  overflow: hidden; }
+  overflow: hidden;
+  padding-top: 0.5rem; }
 
-.row__title, .post__title,
+.row__title,
 .row__date,
-.post__date,
-.row__cat,
-.post__cat {
+.row__cat {
   float: left; }
 
-.row__title, .post__title {
+.row__title {
   width: 100%; }
 
-.row__date, .post__date,
-.row__cat,
-.post__cat {
+.row__date,
+.row__cat {
   width: auto; }
 
-.row__cat, .post__cat {
+.row__cat {
   position: relative;
   margin-left: 10px; }
-  .row__cat:before, .post__cat:before {
+  .row__cat:after {
     position: absolute;
-    content: '|';
-    left: -9px; }
+    content: ""; }
 
 .row__body {
   margin: 20px 0; }
 
-.row__active {
-  text-decoration: line-through; }
-
 @media screen and (min-width: 800px) {
-  .row__post:hover * {
-    text-decoration: underline;
-    cursor: pointer; }
-  .row__post:hover .row__active {
-    text-decoration: line-through; }
   .row__post:hover .row__img {
     display: block;
     opacity: 0.5; }
   .row__post:nth-child(2n) .row__img {
-    top: 15vh;
-    left: 475px; }
+    top: 19vh;
+    left: 174px; }
   .row__post:nth-child(3n) .row__img {
-    top: 21vh;
-    left: 439px; }
+    top: 29vh;
+    left: 298px; }
   .row__post:nth-child(4n) .row__img {
-    top: 31vh;
-    left: 88px; }
+    top: 14vh;
+    left: 63px; }
   .row__post:nth-child(5n) .row__img {
-    top: 35vh;
-    left: 135px; } }
+    top: 30vh;
+    left: 265px; } }
 @media screen and (min-width: 600px) {
   .row__cols,
   .row__post {
     margin: 0; }
 
-  .row__title, .post__title {
+  .row__title {
     width: 50%; }
 
-  .row__date, .post__date,
-  .row__cat,
-  .post__cat {
+  .row__date,
+  .row__cat {
     width: 25%; }
 
-  .row__cat, .post__cat {
+  .row__cat {
     margin: 0; }
-    .row__cat:before, .post__cat:before {
-      content: ''; } }
+    .row__cat:before {
+      content: ""; } }
 .post__meta {
   margin: 30px 0 20px;
   border-bottom: 1px solid #000000;
@@ -199,9 +207,20 @@ body {
     right: 0;
     content: "\21FE"; }
 
+.row__cols .row__title,
+.row__cols .row__date,
+.row__cols .row__cat {
+  text-decoration: underline wavy;
+  font-family: "blocus", serif;
+  font-weight: bold;
+  font-size: 1.3rem;
+  text-underline-offset: .8rem;
+  margin-bottom: 1rem; }
+
 .post__body {
   padding-bottom: 20px;
-  border-bottom: 1px solid #000000; }
+  border-bottom: 1px solid #000000;
+  font-family: 'Urbanist', sans-serif; }
   .post__body pre {
     background: #eeeeee;
     padding: 10px 20px; }

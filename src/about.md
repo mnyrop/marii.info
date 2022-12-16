@@ -1,11 +1,19 @@
 ---
 layout: default
 ---
-<img src="{{ '/images/avatar.jpg' | relative_url }}" alt="avatar illustration" style="max-width:300px;"/>
-<br><br>
+<img src="{{ '/images/avatar.jpg' | relative_url }}" alt="avatar illustration" style="max-height:200px;float:left;margin-right:2.5rem;"/>
 
-__current:__ digital humanities technology specialist @ nyu it & libraries  
-__past:__ digital humanities developer @ columbia university libraries; post-baccalaureate technologist @ five college digital humanities
+## marii nyrop
+{: .alt-font .lg }
+
+<p style="max-width:75ch;">
+    <b>current:</b> digital humanities technology specialist @ nyu it & libraries  
+</p>
+<p style="max-width:75ch;">
+    <b>past:</b> digital humanities developer @ columbia university libraries; post-baccalaureate technologist @ five college digital humanities
+</p>
+
+<br><br>
 
 {% include labs_list.html %}
 {% include committees_list.html %}

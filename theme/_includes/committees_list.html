@@ -13,17 +13,15 @@
     </li>
     {% for post in site.data.committees %}
       <li class="row__post">
-        <a href="{{ site.url }}{{ post.url | relative_url }}">
-          <div class="row__title">
-            {{ post.title }}
-          </div>
-          <div class="row__date">
-            {{ post.date }}
-          </div>
-          <div class="row__cat">
-            {{ post.institution }}
-          </div>
-        </a>
+        <div class="row__title">
+          <a href="{{ site.url }}{{ post.url | relative_url }}">{{ post.title }}</a>
+        </div>
+        <div class="row__date">
+          {{ post.date }}
+        </div>
+        <div class="row__cat">
+          {{ post.institution }}
+        </div>
       </li>
     {% endfor %}
   </ul>

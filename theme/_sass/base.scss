@@ -1,18 +1,33 @@
-$on-palm:           600px !default;
-$on-laptop:         800px !default;
+$on-palm: 600px !default;
+$on-laptop: 800px !default;
 
 // typography
-@import url('https://fonts.googleapis.com/css?family=Inconsolata:400,700');
-$inconsolata:       'Inconsolata', monospace;
-$font__size:        15px;
-$font__weight:      400;
+$font-path: "./fonts" !default;
+
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,300;1,300&display=swap');
+
+@font-face {
+  font-family: "karrik";
+  src: url("#{$font-path}/Karrik-Regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "blocus";
+  src: url("#{$font-path}/blocuswebfont.woff") format("woff");
+}
+
+@import url("https://fonts.googleapis.com/css?family=Inconsolata:400,700");
+$inconsolata: "karrik", monospace;
+$alt__font: "blocus", serif;
+$font__size: 15px;
+$font__weight: 400;
 $font__line-height: 1.5;
 
 // colors
-$color__black:      #000000;
-$color__gray:       #eeeeee;
-$color__beige:      #f8f8f1;
-$color__yellow:     #fefeca;
+$color__black: #000000;
+$color__gray: #eeeeee;
+$color__beige: #f8f8f1;
+$color__yellow: #fefeca;
 
 @mixin media-query($device) {
   @media screen and (min-width: $device) {
@@ -38,15 +53,36 @@ hr {
   background-color: $color__black;
 }
 
-a {
-  // display: block;
-  // width: 100%;
-  // height: 100%;
-  color: $color__black;
-  text-decoration: underline;
+.alt-font {
+  font-family: $alt__font;
+  font-weight: bold;
+}
 
+.lg {
+  font-size: 2.5rem;
+}
+
+a {
+  color: $color__black;
+  text-decoration: none;
+  background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+  background-repeat: no-repeat;
+  background-size: 100% 0.2em;
+  background-position: 0 88%;
+  transition: background-size 0.25s ease-in;
   &:hover {
-    color: $color__black;
+    background-size: 100% 88%;
+    text-decoration: none;
+  }
+}
+a.no-magic {
+  background-image: unset;
+  background-repeat: unset;
+  background-size: unset;
+  background-position: unset;
+  transition: background-size unset;
+  &:hover {
+    background-size: unset;
   }
 }
 
@@ -58,37 +94,39 @@ html {
 
 body {
   width: 100%;
-  margin: 25px 0;
-  padding: 0;
+  margin: 25px auto;
+  padding: 1rem;
   background: $color__beige;
   font-family: $inconsolata;
   font-size: $font__size;
   font-weight: $font__weight;
   line-height: $font__line-height;
+  letter-spacing: 0.08rem;
+  text-transform: lowercase;
 }
 
 .container {
   max-width: 1200px;
-  margin: 0 25px;
+  margin: 125px auto;
 }
 
 // media queries
-@include media-query($on-palm) {
-  body {
-    margin: 50px 0 25px;
-  }
+// @include media-query($on-palm) {
+//   body {
+//     margin: 50px 0 25px;
+//   }
 
-  .container {
-    margin: 0 50px;
-  }
-}
+//   .container {
+//     margin: 50px auto;
+//   }
+// }
 
-@include media-query($on-laptop) {
-  body {
-    margin: 120px 0 50px;
-  }
+// @include media-query($on-laptop) {
+//   body {
+//     margin: 120px 0 50px;
+//   }
 
-  .container {
-    margin: 0 120px;
-  }
-}
+//   .container {
+//     margin: 120px auto;
+//   }
+// }

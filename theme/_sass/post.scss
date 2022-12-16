@@ -42,21 +42,23 @@ $paginate-padding: 13px;
   }
 }
 
-.post__title {
-  @extend .row__title;
-}
-
-.post__date {
-  @extend .row__date;
-}
-
-.post__cat {
-  @extend .row__cat;
+.row__cols {
+  .row__title, 
+  .row__date,
+  .row__cat {
+    text-decoration: underline wavy;
+    font-family: $alt__font;
+    font-weight: bold;
+    font-size: 1.3rem;
+    text-underline-offset: .8rem;
+    margin-bottom: 1rem;
+  }
 }
 
 .post__body {
   padding-bottom: 20px;
   border-bottom: 1px solid $color__black;
+  font-family: 'Urbanist', sans-serif;
 
   pre {
     background: $color__gray;

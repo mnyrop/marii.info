@@ -4,18 +4,16 @@
       <div class="row__title">
         Lab Participation
       </div>
-      <div class="row__date"></div>
+      <div class="row__date">Date</div>
     </li>
     {% for lab in site.data.labs %}
       <li class="row__post">
-        <a href="{{ lab.link | absolute_url }}">
-          <div class="row__title">
-            {{ lab.title }}
-          </div>
-          <div class="row__date">
-            {{ lab.date }}
-          </div>
-        </a>
+        <div class="row__title">
+          <a href="{{ lab.link | absolute_url }}">{{ lab.title }}</a>
+        </div>
+        <div class="row__date">
+          {{ lab.date }}
+        </div>
       </li>
     {% endfor %}
   </ul>

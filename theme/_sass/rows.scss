@@ -19,6 +19,8 @@
   transition: opacity 500ms;
 }
 
+
+
 .row__cols,
 .row__post {
   display: block;
@@ -28,11 +30,13 @@
 .row__cols {
   font-weight: 700;
   overflow: hidden;
+  padding-bottom: 0.85rem;
 }
 
 .row__post {
   width: 100%;
   overflow: hidden;
+  padding-top: 0.5rem;
 }
 
 .row__title,
@@ -54,10 +58,9 @@
   position: relative;
   margin-left: 10px;
 
-  &:before {
+  &:after {
     position: absolute;
-    content: '|';
-    left: -9px;
+    content: "";
   }
 }
 
@@ -66,22 +69,22 @@
 }
 
 // behaviors
-.row__active {
-  text-decoration: line-through;
-}
+// .row__active {
+//   text-decoration: line-through;
+// }
 
 // media queries
 @include media-query($on-laptop) {
   .row__post {
-      &:hover {
-      * {
-        text-decoration: underline;
-        cursor: pointer;
-      }
+    &:hover {
+      // * {
+      //   text-decoration: underline;
+      //   cursor: pointer;
+      // }
 
-      .row__active {
-        text-decoration: line-through;
-      }
+      // .row__active {
+      //   text-decoration: line-through;
+      // }
 
       .row__img {
         display: block;
@@ -130,7 +133,7 @@
     margin: 0;
 
     &:before {
-      content: '';
+      content: "";
     }
   }
 }

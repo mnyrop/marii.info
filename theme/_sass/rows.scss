@@ -137,3 +137,17 @@
     }
   }
 }
+
+.row__cols {
+  .row__title, 
+  .row__date,
+  .row__cat {
+    @include wavy-underline;
+
+    font-family: $alt__font;
+    font-weight: bold;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+  }
+}
+

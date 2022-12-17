@@ -5,6 +5,21 @@
   font-weight: 700;
 }
 
+.project__meta {
+  padding-bottom: 1rem;
+  border-bottom: 1px solid $color__black;
+  font-weight: 700;
+}
+
+.project__title {
+  font-family: $alt__font;
+  font-size: 3.5rem;
+  max-width: 46ch;
+  font-weight: lighter;
+  line-height: 4rem;
+  margin-bottom: 2rem;
+}
+
 .post__paginate {
   overflow: hidden;
 }
@@ -14,7 +29,6 @@ $paginate-padding: 13px;
 .post__paginate-right {
   position: relative;
   display: block;
-  width: 50%;
 }
 
 .post__paginate-left {
@@ -42,23 +56,14 @@ $paginate-padding: 13px;
   }
 }
 
-.row__cols {
-  .row__title, 
-  .row__date,
-  .row__cat {
-    text-decoration: underline wavy;
-    font-family: $alt__font;
-    font-weight: bold;
-    font-size: 1.3rem;
-    text-underline-offset: .8rem;
-    margin-bottom: 1rem;
-  }
-}
-
 .post__body {
   padding-bottom: 20px;
-  border-bottom: 1px solid $color__black;
+  margin-top: 2rem;
   font-family: 'Urbanist', sans-serif;
+  border-bottom: 1px solid $color__black;
+  // text-transform: none;
+  line-height: 1.5em;
+  font-size: 1.15em;
 
   pre {
     background: $color__gray;
@@ -68,6 +73,12 @@ $paginate-padding: 13px;
   code {
     background: $color__gray;
     font-size: 12px;
+  }
+  h1, h2, h3, h4 {
+    font-family: "karrik";
+  }
+  h1, h2, h3, h4, p, li {
+    max-width: 65ch;
   }
 
   img {
@@ -80,6 +91,5 @@ $paginate-padding: 13px;
 @include media-query($on-laptop) {
   .post {
     min-width: 500px;
-    width: 50%;
   }
 }

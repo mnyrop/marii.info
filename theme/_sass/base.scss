@@ -5,6 +5,7 @@ $on-laptop: 800px !default;
 $font-path: "./fonts" !default;
 
 @import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,300;1,300&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Inconsolata:400,700");
 
 @font-face {
   font-family: "karrik";
@@ -16,7 +17,6 @@ $font-path: "./fonts" !default;
   src: url("#{$font-path}/blocuswebfont.woff") format("woff");
 }
 
-@import url("https://fonts.googleapis.com/css?family=Inconsolata:400,700");
 $inconsolata: "karrik", monospace;
 $alt__font: "blocus", serif;
 $font__size: 15px;
@@ -70,6 +70,7 @@ a {
   background-size: 100% 0.2em;
   background-position: 0 88%;
   transition: background-size 0.25s ease-in;
+
   &:hover {
     background-size: 100% 88%;
     text-decoration: none;
@@ -85,6 +86,18 @@ a.no-magic {
     background-size: unset;
   }
 }
+
+a:has(img) {
+  background-image: unset;
+  background-repeat: unset;
+  background-size: unset;
+  background-position: unset;
+  transition: background-size unset;
+  &:hover {
+    background-size: unset;
+  }
+}
+
 
 // layout
 html {
@@ -108,6 +121,15 @@ body {
 .container {
   max-width: 1200px;
   margin: 125px auto;
+}
+
+@mixin wavy-underline {
+  text-decoration: underline wavy !important;
+  text-underline-offset: .8rem;
+}
+
+.wavy-underline {
+  @include wavy-underline;
 }
 
 // media queries

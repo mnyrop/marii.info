@@ -6,12 +6,15 @@
     <div class="container">
       {% include header.html %}
       <div class="post">
-        <div class="project__meta">
-          <h1 class="project__title">{{ page.title }}</h2>
-        </div>
+        <h1 class="project__title">{{ page.title }}</h2>
+        <p class="project__meta">
+          {% if page.time_period %}{{ page.time_period }}&nbsp;☀&nbsp;{% endif %}
+          {% if page.category %}{{ page.category }}&nbsp;☀&nbsp;{% endif %}
+          {% if page.link %}<a href="{{ page.link }}">website ⇝</a>{% endif %}
+        </p>
 
         <div class="post__body">
-          <img src="{{ page.img | absolute_url }}" />
+          <!-- <img src="{{ page.img | absolute_url }}"  /> -->
           {{ content }}
         </div>
 

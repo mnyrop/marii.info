@@ -1,9 +1,10 @@
 ---
-layout: post
+layout: project
 title:  Embarrassment Party
 category: art/curtorial
 img: 'https://embarrassment.party/stuff/smoke_water.gif'
 time_period: 2014
+link: "https://embarrassment.party"
 ---
 
 ## curatorial statement
@@ -22,12 +23,4 @@ residents were selected and notified in january 2014, and the virtual "residency
 
 ## artists in residence
 
-annelyse gelman (.us/.nz/.de), jesse darling (.uk/.de), viktor timofeev (.lv/.us/.ne), sanguine cb (n/a), cristine brache (.fr/.cn), mehron abdollmohammadi (.us), emilio vavarella (.us/.it), + marii nyröp (.us/.hk).
-
-## the installation
-
-<h1></h1>
-
-<center>
-  <a href="https://embarrassment.party/"><img src="{{ site.baseurl }}/images/ep.gif" style="width:100%"/></a>
-</center>
+annelyse gelman (.us/.nz/.de), jesse darling (.uk/.de), viktor timofeev (.lv/.us/.ne), sanguine cb (n/a), cristine brache (.fr/.cn), mehron abdollmohammadi (.us), emilio vavarella (.us/.it), + marii nyrop (.us/.hk).

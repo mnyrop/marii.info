@@ -1,14 +1,11 @@
 ---
-layout: post
+layout: project
 title:  IIIF.io Redesign
 category: web development
-img: 'https://avatars3.githubusercontent.com/u/5812589?v=3&s=200'
+# img: ''
 time_period: 2021
+link: https://iiif.io/
 ---
-## Project Website:
-<https://iiif.io/>
-
-## Project Description:
 
 The IIIF consortium has some brand new, great looking websites!
 

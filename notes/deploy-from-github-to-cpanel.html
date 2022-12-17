@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
 
-  <title>Actions!!! Automate FTP deploys from GitHub to CPanel</title>
+  <title>Action! Automate FTP deploys from GitHub to CPanel</title>
   <meta name="description" content="The process leverages GitHub Actions to build, test, and deploy a compiled Jekyll site to a CPanel account on a shared Reclaim hosting server. With slight mo...">
 
   
@@ -31,8 +31,7 @@
 
   <body>
     <div class="container">
-      <div class="post">
-        <div class="bio">
+      <div class="bio">
   <div class="bio__header">
   	<a href="/" class="no-magic"><img src="/assets/snake.png" alt="2 headed snake logo" style="width:100px;"/></a>
   </div>
@@ -47,7 +46,7 @@
       
       <a href="https://github.com/mnyrop" target="_blank">Github ⇝</a>&nbsp;
       
-      <a href="https://open.spotify.com/user/marii_marii" target="_blank">Spotify ⇝</a>&nbsp;
+      <a href="https://open.spotify.com/user/marii_marii/playlists" target="_blank">Spotify ⇝</a>&nbsp;
       
       <a href="https://www.linkedin.com/in/m-nyrop/" target="_blank">Linkedin ⇝</a>
       
@@ -55,37 +54,33 @@
   </div>
 </div>
 
-
-        <div class="post__meta">
-          <div class="post__title">Actions!!! Automate FTP deploys from GitHub to CPanel</div>
-          <div class="post__date">
-            
-              2021
-            
-          </div>
-          <div class="post__cat"></div>
+      <div class="post">
+        <div class="project__meta">
+          <h1 class="project__title">Action! Automate FTP deploys from GitHub to CPanel</h2>
         </div>
 
         <div class="post__body">
-          <img src="https://i.makeagif.com/media/5-21-2015/W4vUS3.gif" class="fullwidth"/>
+          <img src="https://i.makeagif.com/media/5-21-2015/W4vUS3.gif" />
           <p><strong>The process leverages GitHub Actions to build, test, and deploy a compiled Jekyll site to a CPanel account on a shared Reclaim hosting server.</strong> With slight modification, it should work for any fully-static or statically-generated site and any ol’ server with FTP. Depending on how you build your site, the server shouldn’t need Apache or Nginx since we’ll syncing static files directly to <code class="language-plaintext highlighter-rouge">/public_html</code>.</p>
 
-<h3 id="step-1-create-a-gitgub-a-repository-with-your-site-files">Step 1. <strong>Create a GitGub a repository with your site files</strong></h3>
+<h3 id="step-1-create-a-github-repository-with-your-site-files">Step 1. <strong>Create a GitHub repository with your site files</strong></h3>
 <p>Feel free to use and remix <a href="https://github.com/nyu-dss/wh-deploilerplate">this template</a>.</p>
 
 <h3 id="step-2-create-an-ftp-deploy-account-on-your-cpanel-account">Step 2. <strong>Create an FTP deploy account on your CPanel account</strong></h3>
 <p>Log in to your dashboard and navigate to the “FTP Accounts” tab under “Files.”
-<a href="/images/cpanel_ftp.png"><img src="/images/cpanel_ftp.png" alt="ftp dashboard" class="shadow" /></a>
-Create a special FTP account just for deployments. Under “directory” put <code class="language-plaintext highlighter-rouge">public_html</code>. If you want the site to be in a subdirectory from the root URL (e.g., “marii.hosting.nyu.edu/my-site”), enter the subdirectory after <code class="language-plaintext highlighter-rouge">public_html</code> with no trailing slash (e.g., <code class="language-plaintext highlighter-rouge">public_html/my-site</code>).
-<a href="/images/cpanel_ftp.png"><img src="/images/create_ftp_account.png" alt="create ftp account" class="shadow" /></a>
-More info available <a href="https://docs.cpanel.net/cpanel/files/ftp-accounts/">here</a>.</p>
+<a href="/images/cpanel_ftp.png" class="no-magic"><img src="/images/cpanel_ftp.png" alt="ftp dashboard" /></a></p>
+
+<p>Create a special FTP account just for deployments. Under “directory” put <code class="language-plaintext highlighter-rouge">public_html</code>. If you want the site to be in a subdirectory from the root URL (e.g., “marii.hosting.nyu.edu/my-site”), enter the subdirectory after <code class="language-plaintext highlighter-rouge">public_html</code> with no trailing slash (e.g., <code class="language-plaintext highlighter-rouge">public_html/my-site</code>).
+<a href="/images/cpanel_ftp.png" class="no-magic"><img src="/images/create_ftp_account.png" alt="create ftp account" /></a></p>
+
+<p>More info available <a href="https://docs.cpanel.net/cpanel/files/ftp-accounts/">here</a>.</p>
 
 <h3 id="step-3-add-your-ftp-deploy-account-credentials-to-your-github-repo-secrets-settings">Step 3. <strong>Add your FTP deploy account credentials to your GitHub repo secrets settings</strong></h3>
 <p>Since our GitHub repo will initiate FTP deployments for us, we need to give it our new credentials. To do so, navigate to your repo &gt; Settings &gt; Secrets. As the page says, “Secrets are environment variables that are encrypted” and made available to Actions workflows. The deployment workflow we’ll define in the next step needs three environment vars: <code class="language-plaintext highlighter-rouge">FTP_SERVER</code>, <code class="language-plaintext highlighter-rouge">FTP_USERNAME</code>, and <code class="language-plaintext highlighter-rouge">FTP_PASSWORD</code>.  These need to be spelled verbatim unless you plan on customizing the action files.</p>
 
 <p>Click “New repository secret” and create the variables one by one using the credentials you made in the last step. Note that <code class="language-plaintext highlighter-rouge">FTP_USERNAME</code> should have the “Log In” name you created, e.g, “my-deployer-name”. The <code class="language-plaintext highlighter-rouge">FTP_SERVER</code> should be the “Host” you entered with no additional file paths or protocols.</p>
 
-<p><a href="/images/secrets_dash.png"><img src="/images/secrets_dash.png" alt="secrets dashboard" class="shadow" /></a></p>
+<p><a href="/images/secrets_dash.png" class="no-magic"><img src="/images/secrets_dash.png" alt="secrets dashboard" /></a></p>
 
 <p>More info available <a href="https://docs.github.com/en/actions/reference/encrypted-secrets">here</a>.</p>
 
@@ -167,7 +162,7 @@ More info available <a href="https://docs.cpanel.net/cpanel/files/ftp-accounts/"
       <li class="row__post">
         <div class="row__title row__active">
           <a href="/notes/deploy-from-github-to-cpanel">
-            Actions!!! Automate FTP deploys from GitHub to CPanel
+            Action! Automate FTP deploys from GitHub to CPanel
           </a>
         </div>
         <div class="row__date row__active">

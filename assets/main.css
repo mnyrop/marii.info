@@ -47,6 +47,15 @@ a.no-magic {
   a.no-magic:hover {
     background-size: unset; }
 
+a:has(img) {
+  background-image: unset;
+  background-repeat: unset;
+  background-size: unset;
+  background-position: unset;
+  transition: background-size unset; }
+  a:has(img):hover {
+    background-size: unset; }
+
 html {
   overflow-x: hidden;
   overflow-y: scroll; }
@@ -66,6 +75,10 @@ body {
 .container {
   max-width: 1200px;
   margin: 125px auto; }
+
+.wavy-underline {
+  text-decoration: underline wavy !important;
+  text-underline-offset: .8rem; }
 
 .bio {
   max-width: 500px;
@@ -98,8 +111,8 @@ body {
   position: fixed;
   max-width: 500px;
   max-height: 500px;
-  top: 16vh;
-  left: 85px;
+  top: 32vh;
+  left: 80px;
   z-index: -1;
   opacity: 0;
   transition: opacity 500ms; }
@@ -146,17 +159,17 @@ body {
     display: block;
     opacity: 0.5; }
   .row__post:nth-child(2n) .row__img {
-    top: 19vh;
-    left: 174px; }
+    top: 3vh;
+    left: 312px; }
   .row__post:nth-child(3n) .row__img {
-    top: 29vh;
-    left: 298px; }
+    top: 5vh;
+    left: 46px; }
   .row__post:nth-child(4n) .row__img {
-    top: 14vh;
-    left: 63px; }
+    top: 29vh;
+    left: 60px; }
   .row__post:nth-child(5n) .row__img {
-    top: 30vh;
-    left: 265px; } }
+    top: 24vh;
+    left: 421px; } }
 @media screen and (min-width: 600px) {
   .row__cols,
   .row__post {
@@ -173,11 +186,34 @@ body {
     margin: 0; }
     .row__cat:before {
       content: ""; } }
+.row__cols .row__title,
+.row__cols .row__date,
+.row__cols .row__cat {
+  text-decoration: underline wavy !important;
+  text-underline-offset: .8rem;
+  font-family: "blocus", serif;
+  font-weight: bold;
+  font-size: 1.3rem;
+  margin-bottom: 1rem; }
+
 .post__meta {
   margin: 30px 0 20px;
   border-bottom: 1px solid #000000;
   overflow: hidden;
   font-weight: 700; }
+
+.project__meta {
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #000000;
+  font-weight: 700; }
+
+.project__title {
+  font-family: "blocus", serif;
+  font-size: 3.5rem;
+  max-width: 46ch;
+  font-weight: lighter;
+  line-height: 4rem;
+  margin-bottom: 2rem; }
 
 .post__paginate {
   overflow: hidden; }
@@ -185,8 +221,7 @@ body {
 .post__paginate-left,
 .post__paginate-right {
   position: relative;
-  display: block;
-  width: 50%; }
+  display: block; }
 
 .post__paginate-left {
   padding-left: 13px;
@@ -207,33 +242,29 @@ body {
     right: 0;
     content: "\21FE"; }
 
-.row__cols .row__title,
-.row__cols .row__date,
-.row__cols .row__cat {
-  text-decoration: underline wavy;
-  font-family: "blocus", serif;
-  font-weight: bold;
-  font-size: 1.3rem;
-  text-underline-offset: .8rem;
-  margin-bottom: 1rem; }
-
 .post__body {
   padding-bottom: 20px;
+  margin-top: 2rem;
+  font-family: 'Urbanist', sans-serif;
   border-bottom: 1px solid #000000;
-  font-family: 'Urbanist', sans-serif; }
+  line-height: 1.5em;
+  font-size: 1.15em; }
   .post__body pre {
     background: #eeeeee;
     padding: 10px 20px; }
   .post__body code {
     background: #eeeeee;
     font-size: 12px; }
+  .post__body h1, .post__body h2, .post__body h3, .post__body h4 {
+    font-family: "karrik"; }
+  .post__body h1, .post__body h2, .post__body h3, .post__body h4, .post__body p, .post__body li {
+    max-width: 65ch; }
   .post__body img {
     max-width: 100%; }
 
 @media screen and (min-width: 800px) {
   .post {
-    min-width: 500px;
-    width: 50%; } }
+    min-width: 500px; } }
 img.shadow {
   box-shadow: 2px 2px 2pc olive;
   margin: 3pc 0 3pc 0; }

@@ -67,6 +67,3 @@ Breaking it down line by line:
   <dt><b>$pdf</b></dt>
   <dd>this is (absolute or relative path) to the path to the file you want to convert. in my case, <code>$pdf</code> is the variable for the path to each PDF file as globbed by my shell script. you can similarly use a variable or write out the path.</dd>
 </dl>
-
-
-(more soon...)

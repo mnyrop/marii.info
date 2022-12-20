@@ -76,8 +76,9 @@ $paginate-padding: 13px;
   }
   h1, h2, h3, h4 {
     font-family: "karrik";
+    max-width: 40ch;
   }
-  h1, h2, h3, h4, p, li {
+  p, li, pre, code, dl {
     max-width: 65ch;
   }
 

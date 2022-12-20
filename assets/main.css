@@ -111,8 +111,8 @@ body {
   position: fixed;
   max-width: 500px;
   max-height: 500px;
-  top: 7vh;
-  left: 303px;
+  top: 12vh;
+  left: 447px;
   z-index: -1;
   opacity: 0;
   transition: opacity 500ms; }
@@ -159,17 +159,17 @@ body {
     display: block;
     opacity: 0.5; }
   .row__post:nth-child(2n) .row__img {
-    top: 27vh;
-    left: 159px; }
+    top: 22vh;
+    left: 308px; }
   .row__post:nth-child(3n) .row__img {
-    top: 32vh;
-    left: 378px; }
+    top: 34vh;
+    left: 236px; }
   .row__post:nth-child(4n) .row__img {
-    top: 11vh;
-    left: 28px; }
+    top: 5vh;
+    left: 156px; }
   .row__post:nth-child(5n) .row__img {
-    top: 30vh;
-    left: 202px; } }
+    top: 3vh;
+    left: 361px; } }
 @media screen and (min-width: 600px) {
   .row__cols,
   .row__post {

@@ -1,7 +1,8 @@
 ---
 layout: default
+title: about
 ---
-<img src="{{ '/images/avatar.jpg' | relative_url }}" alt="avatar illustration" style="max-height:200px;float:left;margin-right:2.5rem;"/>
+<img src="{{ '/images/avatar.jpg' | relative_url }}" alt="avatar illustration" style="max-height:250px;float:left;margin-right:2.5rem;"/>
 
 ## marii nyrop
 {: .alt-font .lg }
@@ -12,8 +13,6 @@ layout: default
 <p style="max-width:75ch;">
     <b>past:</b> digital humanities developer @ columbia university libraries; post-baccalaureate technologist @ five college digital humanities
 </p>
-
-<br><br>
 
 {% include labs_list.html %}
 {% include committees_list.html %}

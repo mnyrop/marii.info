@@ -111,8 +111,8 @@ body {
   position: fixed;
   max-width: 500px;
   max-height: 500px;
-  top: 32vh;
-  left: 80px;
+  top: 3vh;
+  left: 119px;
   z-index: -1;
   opacity: 0;
   transition: opacity 500ms; }
@@ -159,17 +159,17 @@ body {
     display: block;
     opacity: 0.5; }
   .row__post:nth-child(2n) .row__img {
-    top: 3vh;
-    left: 312px; }
+    top: 11vh;
+    left: 416px; }
   .row__post:nth-child(3n) .row__img {
-    top: 5vh;
-    left: 46px; }
+    top: 2vh;
+    left: 55px; }
   .row__post:nth-child(4n) .row__img {
-    top: 29vh;
-    left: 60px; }
+    top: 26vh;
+    left: 258px; }
   .row__post:nth-child(5n) .row__img {
-    top: 24vh;
-    left: 421px; } }
+    top: 20vh;
+    left: 372px; } }
 @media screen and (min-width: 600px) {
   .row__cols,
   .row__post {
@@ -256,8 +256,9 @@ body {
     background: #eeeeee;
     font-size: 12px; }
   .post__body h1, .post__body h2, .post__body h3, .post__body h4 {
-    font-family: "karrik"; }
-  .post__body h1, .post__body h2, .post__body h3, .post__body h4, .post__body p, .post__body li {
+    font-family: "karrik";
+    max-width: 40ch; }
+  .post__body p, .post__body li, .post__body pre, .post__body code, .post__body dl {
     max-width: 65ch; }
   .post__body img {
     max-width: 100%; }

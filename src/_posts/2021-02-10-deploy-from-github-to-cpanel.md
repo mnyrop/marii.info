@@ -33,7 +33,7 @@ More info available [here](https://docs.github.com/en/actions/reference/encrypte
 
 To set up a GitHub actions workflow, you'll define a set of steps and settings in YAML format and put them in your repo in a special directory `.github/workflows`. If you're using the [template](https://github.com/nyu-dss/wh-deploilerplate), this is already set up.
 
-```yml
+``` yml
 # build, test, and ftp deploy a jekyll site
 name: ci:deploy
 on:

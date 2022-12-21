@@ -64,21 +64,20 @@ $paginate-padding: 13px;
   // text-transform: none;
   line-height: 1.5em;
   font-size: 1.15em;
-
-  pre {
-    background: $color__gray;
-    padding: 10px 20px;
-  }
-
-  code {
-    background: $color__gray;
+  
+  pre, code {
     font-size: 12px;
+    margin-left: 0;
+    max-width: 100%;
+  }
+  code {
+    max-width: 90ch;
   }
   h1, h2, h3, h4 {
     font-family: "karrik";
     max-width: 40ch;
   }
-  p, li, pre, code, dl {
+  p, li, dl {
     max-width: 65ch;
   }
 

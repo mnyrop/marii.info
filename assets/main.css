@@ -1,30 +1,39 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,300;1,300&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Inconsolata:400,700");
 @font-face {
   font-family: "karrik";
-  src: url("./fonts/Karrik-Regular.woff2") format("woff2"); }
+  src: url("./fonts/Karrik-Regular.woff2") format("woff2");
+}
 @font-face {
   font-family: "blocus";
-  src: url("./fonts/blocuswebfont.woff") format("woff"); }
+  src: url("./fonts/blocuswebfont.woff") format("woff");
+}
 * {
-  box-sizing: border-box; }
+  box-sizing: border-box;
+}
 
 ::selection {
-  background: #fefeca; }
+  background: #fefeca;
+}
 
 ::-moz-selection {
-  background: #fefeca; }
+  background: #fefeca;
+}
 
 hr {
   color: #000000;
-  background-color: #000000; }
+  background-color: #000000;
+}
 
 .alt-font {
   font-family: "blocus", serif;
-  font-weight: bold; }
+  font-weight: bold;
+}
 
 .lg {
-  font-size: 2.5rem; }
+  font-size: 2.5rem;
+}
 
 a {
   color: #000000;
@@ -33,70 +42,83 @@ a {
   background-repeat: no-repeat;
   background-size: 100% 0.2em;
   background-position: 0 88%;
-  transition: background-size 0.25s ease-in; }
-  a:hover {
-    background-size: 100% 88%;
-    text-decoration: none; }
+  transition: background-size 0.25s ease-in;
+}
+a:hover {
+  background-size: 100% 88%;
+  text-decoration: none;
+}
 
 a.no-magic {
   background-image: unset;
   background-repeat: unset;
   background-size: unset;
   background-position: unset;
-  transition: background-size unset; }
-  a.no-magic:hover {
-    background-size: unset; }
+  transition: background-size unset;
+}
+a.no-magic:hover {
+  background-size: unset;
+}
 
 a:has(img) {
   background-image: unset;
   background-repeat: unset;
   background-size: unset;
   background-position: unset;
-  transition: background-size unset; }
-  a:has(img):hover {
-    background-size: unset; }
+  transition: background-size unset;
+}
+a:has(img):hover {
+  background-size: unset;
+}
 
 html {
   overflow-x: hidden;
-  overflow-y: scroll; }
+  overflow-y: scroll;
+}
 
 body {
   width: 100%;
-  margin: 25px auto;
-  padding: 1rem;
   background: #f8f8f1;
   font-family: "karrik", monospace;
   font-size: 15px;
   font-weight: 400;
   line-height: 1.5;
   letter-spacing: 0.08rem;
-  text-transform: lowercase; }
+  text-transform: lowercase;
+}
 
 .container {
   max-width: 1200px;
-  margin: 125px auto; }
+  margin: 100px auto;
+}
 
 .wavy-underline {
   text-decoration: underline wavy !important;
-  text-underline-offset: .8rem; }
+  text-underline-offset: 0.8rem;
+}
 
 .bio {
   max-width: 500px;
-  margin-bottom: 50px; }
+  margin-bottom: 50px;
+}
 
 .bio__header {
   margin-bottom: 20px;
-  font-weight: 700; }
-  .bio__header a {
-    text-decoration: none; }
-    .bio__header a:hover {
-      text-decoration: none; }
+  font-weight: 700;
+}
+.bio__header a {
+  text-decoration: none;
+}
+.bio__header a:hover {
+  text-decoration: none;
+}
 
 .bio__social {
   margin: 0;
   margin-top: 10px;
   padding: 0;
-  list-style: none; }
+  list-style: none;
+}
 
 .rows {
   position: relative;
@@ -104,108 +126,131 @@ body {
   margin: 0;
   margin-top: 50px;
   padding: 0;
-  list-style: none; }
+  list-style: none;
+}
 
 .row__img {
   display: none;
   position: fixed;
   max-width: 500px;
   max-height: 500px;
-  top: 30vh;
-  left: 97px;
+  top: 9vh;
+  left: 192px;
   z-index: -1;
   opacity: 0;
-  transition: opacity 500ms; }
+  transition: opacity 500ms;
+}
 
 .row__cols,
 .row__post {
   display: block;
-  margin-bottom: 10px; }
+  margin-bottom: 10px;
+}
 
 .row__cols {
   font-weight: 700;
   overflow: hidden;
-  padding-bottom: 0.85rem; }
+  padding-bottom: 0.85rem;
+}
 
 .row__post {
   width: 100%;
   overflow: hidden;
-  padding-top: 0.5rem; }
+  padding-top: 0.5rem;
+}
 
 .row__title,
 .row__date,
 .row__cat {
-  float: left; }
+  float: left;
+}
 
 .row__title {
-  width: 100%; }
+  width: 100%;
+}
 
 .row__date,
 .row__cat {
-  width: auto; }
+  width: auto;
+}
 
 .row__cat {
   position: relative;
-  margin-left: 10px; }
-  .row__cat:after {
-    position: absolute;
-    content: ""; }
+  margin-left: 10px;
+}
+.row__cat:after {
+  position: absolute;
+  content: "";
+}
 
 .row__body {
-  margin: 20px 0; }
+  margin: 20px 0;
+}
 
 @media screen and (min-width: 800px) {
   .row__post:hover .row__img {
     display: block;
-    opacity: 0.5; }
+    opacity: 0.5;
+  }
   .row__post:nth-child(2n) .row__img {
-    top: 11vh;
-    left: 56px; }
+    top: 1vh;
+    left: 335px;
+  }
   .row__post:nth-child(3n) .row__img {
-    top: 30vh;
-    left: 272px; }
+    top: 34vh;
+    left: 151px;
+  }
   .row__post:nth-child(4n) .row__img {
-    top: 29vh;
-    left: 102px; }
+    top: 3vh;
+    left: 68px;
+  }
   .row__post:nth-child(5n) .row__img {
-    top: 2vh;
-    left: 258px; } }
+    top: 16vh;
+    left: 46px;
+  }
+}
 @media screen and (min-width: 600px) {
   .row__cols,
   .row__post {
-    margin: 0; }
-
+    margin: 0;
+  }
   .row__title {
-    width: 50%; }
-
+    width: 50%;
+  }
   .row__date,
   .row__cat {
-    width: 25%; }
-
+    width: 25%;
+  }
   .row__cat {
-    margin: 0; }
-    .row__cat:before {
-      content: ""; } }
+    margin: 0;
+  }
+  .row__cat:before {
+    content: "";
+  }
+}
 .row__cols .row__title,
 .row__cols .row__date,
 .row__cols .row__cat {
   text-decoration: underline wavy !important;
-  text-underline-offset: .8rem;
+  text-underline-offset: 0.8rem;
   font-family: "blocus", serif;
   font-weight: bold;
   font-size: 1.3rem;
-  margin-bottom: 1rem; }
+  margin-bottom: 1rem;
+}
 
 .post__meta {
   margin: 30px 0 20px;
   border-bottom: 1px solid #000000;
   overflow: hidden;
-  font-weight: 700; }
+  font-weight: 700;
+}
 
 .project__meta {
   padding-bottom: 1rem;
   border-bottom: 1px solid #000000;
-  font-weight: 700; }
+  font-weight: 700;
+}
 
 .project__title {
   font-family: "blocus", serif;
@@ -213,62 +258,81 @@ body {
   max-width: 46ch;
   font-weight: lighter;
   line-height: 4rem;
-  margin-bottom: 2rem; }
+  margin-bottom: 2rem;
+}
 
 .post__paginate {
-  overflow: hidden; }
+  overflow: hidden;
+}
 
 .post__paginate-left,
 .post__paginate-right {
   position: relative;
-  display: block; }
+  display: block;
+}
 
 .post__paginate-left {
   padding-left: 13px;
-  float: left; }
-  .post__paginate-left:before {
-    position: absolute;
-    top: 0;
-    left: 0;
-    content: "\21FD"; }
+  float: left;
+}
+.post__paginate-left:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "⇽";
+}
 
 .post__paginate-right {
   padding-right: 13px;
   text-align: right;
-  float: right; }
-  .post__paginate-right:after {
-    position: absolute;
-    top: 0;
-    right: 0;
-    content: "\21FE"; }
+  float: right;
+}
+.post__paginate-right:after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  content: "⇾";
+}
 
 .post__body {
   padding-bottom: 20px;
   margin-top: 2rem;
-  font-family: 'Urbanist', sans-serif;
+  font-family: "Urbanist", sans-serif;
   border-bottom: 1px solid #000000;
   line-height: 1.5em;
-  font-size: 1.15em; }
-  .post__body pre, .post__body code {
-    font-size: 12px;
-    margin-left: 0;
-    max-width: 100%; }
-  .post__body code {
-    max-width: 90ch; }
-  .post__body h1, .post__body h2, .post__body h3, .post__body h4 {
-    font-family: "karrik";
-    max-width: 40ch; }
-  .post__body p, .post__body li, .post__body dl {
-    max-width: 65ch; }
-  .post__body img {
-    max-width: 100%; }
+  font-size: 1.15em;
+}
+.post__body pre, .post__body code {
+  font-size: 12px;
+  margin-left: 0;
+  max-width: 100%;
+}
+.post__body code {
+  max-width: 90ch;
+}
+.post__body h1, .post__body h2, .post__body h3, .post__body h4 {
+  font-family: "karrik";
+  max-width: 40ch;
+}
+.post__body p, .post__body li, .post__body dl {
+  max-width: 65ch;
+}
+.post__body img {
+  max-width: 100%;
+}
 
 @media screen and (min-width: 800px) {
   .post {
-    min-width: 500px; } }
+    min-width: 500px;
+  }
+}
 img.shadow {
   box-shadow: 2px 2px 2pc olive;
-  margin: 3pc 0 3pc 0; }
+  margin: 3pc 0 3pc 0;
+}
 
 img.fullwidth {
-  width: 100%; }
+  width: 100%;
+}
+
+/*# sourceMappingURL=main.css.map */

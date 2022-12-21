@@ -112,7 +112,7 @@ body {
   max-width: 500px;
   max-height: 500px;
   top: 30vh;
-  left: 145px;
+  left: 97px;
   z-index: -1;
   opacity: 0;
   transition: opacity 500ms; }
@@ -159,17 +159,17 @@ body {
     display: block;
     opacity: 0.5; }
   .row__post:nth-child(2n) .row__img {
-    top: 3vh;
-    left: 411px; }
-  .row__post:nth-child(3n) .row__img {
-    top: 10vh;
-    left: 245px; }
-  .row__post:nth-child(4n) .row__img {
     top: 11vh;
-    left: 360px; }
+    left: 56px; }
+  .row__post:nth-child(3n) .row__img {
+    top: 30vh;
+    left: 272px; }
+  .row__post:nth-child(4n) .row__img {
+    top: 29vh;
+    left: 102px; }
   .row__post:nth-child(5n) .row__img {
-    top: 23vh;
-    left: 302px; } }
+    top: 2vh;
+    left: 258px; } }
 @media screen and (min-width: 600px) {
   .row__cols,
   .row__post {
@@ -249,16 +249,16 @@ body {
   border-bottom: 1px solid #000000;
   line-height: 1.5em;
   font-size: 1.15em; }
-  .post__body pre {
-    background: #eeeeee;
-    padding: 10px 20px; }
+  .post__body pre, .post__body code {
+    font-size: 12px;
+    margin-left: 0;
+    max-width: 100%; }
   .post__body code {
-    background: #eeeeee;
-    font-size: 12px; }
+    max-width: 90ch; }
   .post__body h1, .post__body h2, .post__body h3, .post__body h4 {
     font-family: "karrik";
     max-width: 40ch; }
-  .post__body p, .post__body li, .post__body pre, .post__body code, .post__body dl {
+  .post__body p, .post__body li, .post__body dl {
     max-width: 65ch; }
   .post__body img {
     max-width: 100%; }

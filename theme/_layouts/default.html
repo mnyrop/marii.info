@@ -1,8 +1,13 @@
 <!DOCTYPE html>
-<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+<html lang="{{ page.lang | default: site.lang | default: 'en' }}">
   {% include head.html %}
 
   <body>
+    <!-- <div style="position:sticky;top:0;left:0;width:100vw;background:#0e0e0e;text-align:center;">
+      <div style="max-width:1200px;margin:0 auto;">
+        <p style="color:#F8F8F1;padding:.5rem;text-align:left;">if you have a project to propose, please click here to copy my email and drop a line! </p>
+      </div>
+    </div> -->
     <div class="container">
       {% include header.html %}
       {{ content }}

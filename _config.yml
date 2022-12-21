@@ -10,7 +10,7 @@ post_date:    Time Period
 post_cat:     Tags
 prev-next:    true
 markdown:     kramdown
-theme:        louie
+theme:        marii-theme
 source:       src
 
 collections:

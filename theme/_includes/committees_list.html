@@ -14,7 +14,7 @@
     {% for post in site.data.committees %}
       <li class="row__post">
         <div class="row__title">
-          <a href="{{ site.url }}{{ post.url | relative_url }}">{{ post.title }}</a>
+          <a href="{{ post.link | absolute_url }}" target="_blank">{{ post.title }}</a>
         </div>
         <div class="row__date">
           {{ post.date }}

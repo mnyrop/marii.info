@@ -107,8 +107,8 @@ html {
 
 body {
   width: 100%;
-  margin: 25px auto;
-  padding: 1rem;
+  // margin: 25px auto;
+  // padding: 1rem;
   background: $color__beige;
   font-family: $inconsolata;
   font-size: $font__size;
@@ -120,7 +120,7 @@ body {
 
 .container {
   max-width: 1200px;
-  margin: 125px auto;
+  margin: 100px auto;
 }
 
 @mixin wavy-underline {
@@ -131,24 +131,3 @@ body {
 .wavy-underline {
   @include wavy-underline;
 }
-
-// media queries
-// @include media-query($on-palm) {
-//   body {
-//     margin: 50px 0 25px;
-//   }
-
-//   .container {
-//     margin: 50px auto;
-//   }
-// }
-
-// @include media-query($on-laptop) {
-//   body {
-//     margin: 120px 0 50px;
-//   }
-
-//   .container {
-//     margin: 120px auto;
-//   }
-// }

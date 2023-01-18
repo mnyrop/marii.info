@@ -8,10 +8,10 @@ title: about
 {: .alt-font .lg }
 
 <p style="max-width:75ch;">
-    <b>current:</b> digital humanities technology specialist @ nyu it & libraries  
+    <b>current:</b> senior research data engineer @ nyu it & libraries
 </p>
 <p style="max-width:75ch;">
-    <b>past:</b> digital humanities developer @ columbia university libraries; post-baccalaureate technologist @ five college digital humanities
+    <b>past:</b> digital humanities technology specialist @ nyu it & libraries; digital humanities developer @ columbia university libraries; post-baccalaureate technologist @ five college digital humanities
 </p>
 
 {% include labs_list.html %}

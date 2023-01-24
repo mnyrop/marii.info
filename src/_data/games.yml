@@ -1,0 +1,60 @@
+- title: "the legend of zelda: breath of the wild"
+  developer: nintendo 
+  link: "https://www.zelda.com/breath-of-the-wild/"
+  console: nintendo switch
+- title: super mario odyssey
+  developer: nintendo
+  link: "https://www.nintendo.com/store/products/super-mario-odyssey-switch/"
+  console: nintendo switch
+- title: stardew valley 
+  console: nintendo switch
+  developer: concernedape
+  link: "https://www.stardewvalley.net/"
+- title: persona 5 royal
+  developer: atlus
+  link: "https://persona.atlus.com/p5r/"
+  console: ps4
+- title: disco elysium
+  developer: za/um
+  link: "https://discoelysium.com/"
+  console: nintendo switch
+- title: bully
+  link: "https://www.rockstargames.com/games/bully"
+  developer: rockstar
+  console: ps2
+- title: persona 5 strikers
+  developer: atlus
+  link: "https://www.atlus.com/p5s/"
+  console: ps4
+- title: stray
+  developer: bluetwelve studio
+  link: "https://stray.game/"
+  console: ps4
+- title: unpacking
+  developer: witch beam
+  link: "https://www.unpackinggame.com/"
+  console: steam deck
+- title: the case of the golden idol
+  developer: color gray games
+  link: "https://www.thegoldenidol.com/"
+  console: steam deck
+- title: "pentiment"
+  developer: obsidian
+  link: "https://pentiment.obsidian.net"
+  console: steam deck
+- title: strange horticulture
+  developer: bad viking
+  link: "https://strangehorticulture.com/"
+  console: steam deck
+- title: journey
+  developer: "thatgamecompany"
+  link: "https://thatgamecompany.com/journey/"
+  console: ps4
+- title: the forgotten city
+  developer: modern storyteller
+  link: "https://forgottencitygame.com/"
+  console: steam deck
+- title: "phoenix wright: ace attourney trilogy"
+  developer: capcom
+  link: "https://www.ace-attorney.com/trilogy/us/"
+  console: steam deck

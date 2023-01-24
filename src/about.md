@@ -17,4 +17,11 @@ title: about
 {% include labs_list.html %}
 {% include committees_list.html %}
 {% include teaching_and_talks_list.html %}
+
+
+<br><br>
+
+---- 
+
+{% include games_list.html %}
 {% include books_list.html %}

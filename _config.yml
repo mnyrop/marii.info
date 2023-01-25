@@ -2,7 +2,7 @@ title:        marii¨
 baseurl:      ''
 url:          ''
 
-favicon:      '/assets/snake.png'
+favicon:      '/assets/favicon.ico'
 date_format:  "%Y"
 permalink:    notes/:slug
 post_title:   Notes

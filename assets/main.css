@@ -74,6 +74,7 @@ a:has(img):hover {
 html {
   overflow-x: hidden;
   overflow-y: scroll;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -134,8 +135,8 @@ body {
   position: fixed;
   max-width: 500px;
   max-height: 500px;
-  top: 12vh;
-  left: 312px;
+  top: 30vh;
+  left: 160px;
   z-index: -1;
   opacity: 0;
   transition: opacity 500ms;
@@ -193,20 +194,20 @@ body {
     opacity: 0.5;
   }
   .row__post:nth-child(2n) .row__img {
-    top: 18vh;
-    left: 467px;
+    top: 1vh;
+    left: 216px;
   }
   .row__post:nth-child(3n) .row__img {
-    top: 33vh;
-    left: 178px;
+    top: 30vh;
+    left: 176px;
   }
   .row__post:nth-child(4n) .row__img {
-    top: 27vh;
-    left: 124px;
+    top: 13vh;
+    left: 434px;
   }
   .row__post:nth-child(5n) .row__img {
-    top: 24vh;
-    left: 52px;
+    top: 30vh;
+    left: 69px;
   }
 }
 @media screen and (min-width: 600px) {

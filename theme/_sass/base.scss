@@ -103,6 +103,7 @@ a:has(img) {
 html {
   overflow-x: hidden;
   overflow-y: scroll;
+  scroll-behavior: smooth;
 }
 
 body {

@@ -3,10 +3,22 @@
   {% include head.html %}
 
   <body>
-    <div class="container">
+    <div style="
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      background: #0e0e0e;
+      background-image: url('/assets/banner.png');
+      height: 100px;
+      background-size: cover;
+    "></div>
+
+    <div class="container" style="padding-top:50px">
       {% include header.html %}
       <div class="post">
-        <h1 class="project__title">{{ page.title }}</h2>
+        <hr>
+        <h1><a href="/#notes">notes</a> > {{ page.title }}</h2>
         <p class="project__meta">
           {{ page.date | date_to_long_string }}
           <!-- <br>

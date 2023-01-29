@@ -16,12 +16,9 @@ title: cv
 <p style="max-width:75ch;">
     <b>past:</b> digital humanities technology specialist @ nyu it & libraries; digital humanities developer @ columbia university libraries; post-baccalaureate technologist @ five college digital humanities
 </p>
+
 {% if site.data.social %}
-<p>
-{% for item in site.data.social %}
-    <a href="{{ item.url | absolute_url }}" target="_blank">{{ item.title }}</a>{% unless forloop.last %}&nbsp;{% endunless %}
-{% endfor %}
-</p>
+<p>{% include social_list.html %}</p>
 {% endif %}
 
 <br>

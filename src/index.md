@@ -16,15 +16,11 @@ title: home
 </p>
 
 <p style="max-width:75ch">
-    if you have a project to propose, please <a id="contact-clip" href="#">click here</a> to copy my email and drop a line!
+    if you have a project to propose, please copy my email below and drop a line!
 </p>
-<script src="/assets/clippy.js"></script>
+
 {% if site.data.social %}
-<p>
-{% for item in site.data.social %}
-    <a href="{{ item.url | absolute_url }}" target="_blank">{{ item.title }}</a>{% unless forloop.last %}&nbsp;{% endunless %}
-{% endfor %}
-</p>
+<p>{% include social_list.html %}</p>
 {% endif %}
 
 <br>

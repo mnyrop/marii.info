@@ -1,6 +1,10 @@
-# - title: Twitter ⇝
-#   url: https://twitter.com/mariinyrop
-- title: Github ⇝
+- title: Github
   url: https://github.com/mnyrop
-- title: Linkedin ⇝
+  external: true
+- title: Linkedin
   url: https://www.linkedin.com/in/m-nyrop/
+  external: true
+- title: Email
+  url: '#'
+  id: 'email-tooltip'
+  data-tooltip: 'Copy to Clipboard'

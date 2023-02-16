@@ -98,6 +98,15 @@ body {
   text-underline-offset: 0.8rem;
 }
 
+.wavy-heading {
+  text-decoration: underline wavy !important;
+  text-underline-offset: 0.8rem;
+  font-family: "blocus", serif;
+  font-weight: bold;
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+
 .bio {
   max-width: 500px;
   margin-bottom: 50px;
@@ -135,8 +144,8 @@ body {
   position: fixed;
   max-width: 500px;
   max-height: 500px;
-  top: 14vh;
-  left: 219px;
+  top: 33vh;
+  left: 280px;
   z-index: -1;
   opacity: 0;
   transition: opacity 500ms;
@@ -194,20 +203,20 @@ body {
     opacity: 0.5;
   }
   .row__post:nth-child(2n) .row__img {
-    top: 23vh;
-    left: 244px;
+    top: 5vh;
+    left: 72px;
   }
   .row__post:nth-child(3n) .row__img {
-    top: 24vh;
-    left: 388px;
+    top: 10vh;
+    left: 191px;
   }
   .row__post:nth-child(4n) .row__img {
-    top: 14vh;
-    left: 33px;
+    top: 34vh;
+    left: 393px;
   }
   .row__post:nth-child(5n) .row__img {
-    top: 15vh;
-    left: 107px;
+    top: 25vh;
+    left: 140px;
   }
 }
 @media screen and (min-width: 600px) {

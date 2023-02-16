@@ -24,6 +24,7 @@ title: cv
 <br>
 <hr>
 
+{% include skills_list.html %}
 {% include labs_list.html %}
 {% include committees_list.html %}
 {% include teaching_and_talks_list.html %}

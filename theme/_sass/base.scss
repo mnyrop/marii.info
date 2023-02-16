@@ -133,5 +133,13 @@ body {
   @include wavy-underline;
 }
 
+.wavy-heading {
+  @include wavy-underline;
+  font-family: 'blocus', serif;
+  font-weight: bold;
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+
 
 

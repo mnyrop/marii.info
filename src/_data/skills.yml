@@ -1,0 +1,74 @@
+- skill: Software development and scripting
+  tools:
+    - label: Ruby
+      link: https://www.ruby-lang.org/en/
+    - label: Python
+      link: https://www.python.org/
+    - label: Bash
+      link: https://www.gnu.org/software/bash/
+    - label: JavaScript 
+      link: https://developer.mozilla.org/en-US/docs/Web/JavaScript
+    - label: Rake
+      link: https://ruby.github.io/rake/
+- skill: Data querying, transformation, and analysis
+  tools: 
+    - label: SQL
+      link: https://www.iso.org/standard/63555.html
+    - label: Pandas
+      link: https://pandas.pydata.org/
+    - label: Tesseract OCR
+      link: https://github.com/tesseract-ocr/tesseract#tesseract-ocr
+    - label: OpenRefine
+      link: https://openrefine.org/
+- skill: Data visualization
+  tools:
+    - label: D3.js
+      link: https://d3js.org/
+    - label: Matplotlib
+      link: https://matplotlib.org/
+    - label: LeafletJS
+      link: https://leafletjs.com/
+    - label: Processing
+      link: https://processing.org/
+- skill: DevOps and provisioning
+  tools:
+    - label: AWS CLI
+      link: https://aws.amazon.com/cli/
+    - label: Docker
+      link: https://www.docker.com/
+    - label: Ansible
+      link: https://github.com/ansible/ansible#ansible
+    - label: Vagrant
+      link: https://www.vagrantup.com/
+    - label: Certbot
+      link: https://certbot.eff.org/
+- skill: Automated Unit and feature testing
+  tools:
+    - label: RSpec
+      link: https://rspec.info/
+    - label: Selenium
+      link: https://www.selenium.dev/
+    - label: GitHub Actions
+      link: https://github.com/features/actions
+    - label: Lighthouse A11y
+      link: https://github.com/GoogleChrome/lighthouse-ci#lighthouse-ci
+- skill: UI design and development
+  tools:
+    - label: Sass
+      link: https://sass-lang.com/
+    - label: HTML5
+      link: https://developer.mozilla.org/en-US/docs/Glossary/HTML5
+    - label: Bootstrap
+      link: https://getbootstrap.com/
+    - label: Bulma
+      link: https://bulma.io/
+    - label: Webpack
+      link: https://webpack.js.org/
+    - label: Jekyll
+      link: https://jekyllrb.com/
+    - label: Svelte
+      link: https://svelte.dev/
+- skill: Workshop, sprint, and course facilitation
+  tools:
+    - label: Software Carpentry
+      link: https://software-carpentry.org/

@@ -36,8 +36,6 @@
       link: https://aws.amazon.com/cli/
     - label: Docker
       link: https://www.docker.com/
-    - label: Ansible
-      link: https://github.com/ansible/ansible#ansible
     - label: Vagrant
       link: https://www.vagrantup.com/
     - label: Certbot

@@ -144,8 +144,8 @@ body {
   position: fixed;
   max-width: 500px;
   max-height: 500px;
-  top: 10vh;
-  left: 257px;
+  top: 9vh;
+  left: 80px;
   z-index: -1;
   opacity: 0;
   transition: opacity 500ms;
@@ -203,20 +203,20 @@ body {
     opacity: 0.5;
   }
   .row__post:nth-child(2n) .row__img {
-    top: 34vh;
-    left: 182px;
+    top: 23vh;
+    left: 167px;
   }
   .row__post:nth-child(3n) .row__img {
-    top: 3vh;
-    left: 273px;
+    top: 8vh;
+    left: 284px;
   }
   .row__post:nth-child(4n) .row__img {
-    top: 12vh;
-    left: 255px;
+    top: 1vh;
+    left: 83px;
   }
   .row__post:nth-child(5n) .row__img {
-    top: 6vh;
-    left: 95px;
+    top: 34vh;
+    left: 119px;
   }
 }
 @media screen and (min-width: 600px) {

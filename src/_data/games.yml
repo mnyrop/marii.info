@@ -74,3 +74,11 @@
   developer: "square enix"
   link: "https://dragonquest.square-enix-games.com/xi/en-us/"
   console: steam deck
+- title: "the case of the golden idol: the spider of lanka"
+  developer: color gray games
+  link: "https://store.steampowered.com/app/2377000/Golden_Idol_Mysteries_The_Spider_of_Lanka/"
+  console: steam deck
+- title: "the legend of zelda: tears of the kingdom"
+  developer: nintendo
+  link: "https://www.zelda.com/tears-of-the-kingdom/"
+  console: nintendo switch

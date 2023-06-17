@@ -6,7 +6,7 @@
   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
 
   <title>marii¨ | action! automate ftp deploys from github to cpanel</title>
-  <meta name="description" content="The process leverages GitHub Actions to build, test, and deploy a compiled Jekyll site to a CPanel account on a shared Reclaim hosting server. With slight mo...">
+  <meta name="description" content="">
 
   
   <link rel="icon" href="/assets/favicon.ico" />
@@ -15,9 +15,12 @@
   <link rel="stylesheet" href="/assets/main.css">
   <link rel="canonical" href="/notes/deploy-from-github-to-cpanel">
 
-  <link rel="stylesheet" href="https:///ajax/libs/highlight.js/11.7.0/styles/base16/material-palenight.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.4.0/styles/base16/material-palenight.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script>
+  <script>
+    hljs.configure({ignoreUnescapedHTML: true});
+    hljs.highlightAll();
+  </script>
   
   
 <!-- Google tag (gtag.js) -->
@@ -53,21 +56,20 @@
   <!-- <div class="bio__desc"></div> -->
   <div class="bio__menu">
     
-    <a href="/">home</a>&nbsp;
+    <a href="/">Home</a>&nbsp;
     
-    <a href="/about">cv</a>&nbsp;
+    <a href="/about">CV</a>&nbsp;
     
-    <a href="/listening">listening</a>&nbsp;
+    <a href="/listening">Listening</a>&nbsp;
     
-    <a href="/playing">playing</a>&nbsp;
+    <a href="/playing">Playing</a>&nbsp;
     
-    <a href="/reading">reading</a>&nbsp;
+    <a href="/reading">Reading</a>&nbsp;
     
   </div>
 </div>
 
       <div class="post">
-        <hr>
         <h1><a href="/#notes">notes</a> > Action! Automate FTP deploys from GitHub to CPanel</h2>
         <p class="project__meta">
           10 February 2021
@@ -76,8 +78,10 @@
         </p>
 
         <div class="post__body">
-          <img src="https://i.makeagif.com/media/5-21-2015/W4vUS3.gif" />
-          <p><strong>The process leverages GitHub Actions to build, test, and deploy a compiled Jekyll site to a CPanel account on a shared Reclaim hosting server.</strong> With slight modification, it should work for any fully-static or statically-generated site and any ol’ server with FTP. Depending on how you build your site, the server shouldn’t need Apache or Nginx since we’ll syncing static files directly to <code class="language-plaintext highlighter-rouge">/public_html</code>.</p>
+          <img src="" />
+          <p><img src="https://thumbs.gfycat.com/AlarmingVeneratedArgentinehornedfrog-small.gif" alt="deploy gif" /></p>
+
+<p>This process leverages GitHub Actions to build, test, and deploy a compiled Jekyll site to a CPanel account on a shared Reclaim hosting server. With slight modification, it should work for any fully-static or statically-generated site and any ol’ server with FTP. Depending on how you build your site, the server shouldn’t need Apache or Nginx since we’ll syncing static files directly to <code class="language-plaintext highlighter-rouge">/public_html</code>.</p>
 
 <h3 id="step-1-create-a-github-repository-with-your-site-files">Step 1. <strong>Create a GitHub repository with your site files</strong></h3>
 <p>Feel free to use and remix <a href="https://github.com/nyu-dss/wh-deploilerplate">this template</a>.</p>
@@ -138,8 +142,6 @@
 
 </code></pre></div></div>
 
-<p><img src="https://thumbs.gfycat.com/AlarmingVeneratedArgentinehornedfrog-small.gif" alt="deploy gif" /></p>
-
 <p>More info available <a href="https://docs.github.com/en/actions">here</a>.</p>
 
         </div>
@@ -148,7 +150,7 @@
           <div class="post__paginate">
             
               <span class="post__paginate-left">
-                <a href="/notes/ghostscript-for-washed-out-pdfs">Using Ghostscript to Covert Washed-Out PDFs to PNGs for OCR Processing</a>
+                <a href="/notes/ghostscript-for-washed-out-pdfs">Using Ghostscript to Covert Washed-Out PDFs for OCR Processing</a>
               </span>
             
 
@@ -190,7 +192,7 @@
       <li class="row__post">
         <div class="row__title ">
           <a href="/notes/ghostscript-for-washed-out-pdfs">
-            Using Ghostscript to Covert Washed-Out PDFs to PNGs for OCR Processing
+            Using Ghostscript to Covert Washed-Out PDFs for OCR Processing
           </a>
         </div>
         <div class="row__date ">

@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
 
-  <title>marii¨ | digitalhumanities.nyu.edu design</title>
+  <title>marii¨ | nyu digital humanities redesign</title>
   <meta name="description" content="Digital Humanities at New York University now has its own flagship site with custom Jekyll theme and a content workflow driven by Google Sheets and GitHub ac...">
 
   
@@ -15,9 +15,12 @@
   <link rel="stylesheet" href="/assets/main.css">
   <link rel="canonical" href="/projects/nyu-dh">
 
-  <link rel="stylesheet" href="https:///ajax/libs/highlight.js/11.7.0/styles/base16/material-palenight.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.4.0/styles/base16/material-palenight.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script>
+  <script>
+    hljs.configure({ignoreUnescapedHTML: true});
+    hljs.highlightAll();
+  </script>
   
   
 <!-- Google tag (gtag.js) -->
@@ -53,22 +56,21 @@
   <!-- <div class="bio__desc"></div> -->
   <div class="bio__menu">
     
-    <a href="/">home</a>&nbsp;
+    <a href="/">Home</a>&nbsp;
     
-    <a href="/about">cv</a>&nbsp;
+    <a href="/about">CV</a>&nbsp;
     
-    <a href="/listening">listening</a>&nbsp;
+    <a href="/listening">Listening</a>&nbsp;
     
-    <a href="/playing">playing</a>&nbsp;
+    <a href="/playing">Playing</a>&nbsp;
     
-    <a href="/reading">reading</a>&nbsp;
+    <a href="/reading">Reading</a>&nbsp;
     
   </div>
 </div>
 
       <div class="post">
-        <hr>
-        <h1><a href="/#projects">projects</a> > digitalhumanities.nyu.edu design</h2>
+        <h1><a href="/#projects">projects</a> > NYU Digital Humanities Redesign</h2>
         <p class="project__meta">
           2022&nbsp;☀&nbsp;
           web development&nbsp;☀&nbsp;
@@ -93,7 +95,7 @@
 
             
               <span class="post__paginate-right">
-                <a href="/projects/aperitiiif">middlicomp/aperitiiif</a>
+                <a href="/projects/aperitiiif">Aperitiiif</a>
               </span>
             
           </div>
@@ -133,7 +135,7 @@
       <li class="row__post">
         <div class="row__title ">
           <a href="/notes/ghostscript-for-washed-out-pdfs">
-            Using Ghostscript to Covert Washed-Out PDFs to PNGs for OCR Processing
+            Using Ghostscript to Covert Washed-Out PDFs for OCR Processing
           </a>
         </div>
         <div class="row__date ">

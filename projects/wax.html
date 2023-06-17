@@ -5,8 +5,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
 
-  <title>marii¨ | minicomp/wax</title>
-  <meta name="description" content="what is wax?">
+  <title>marii¨ | wax</title>
+  <meta name="description" content="Wax is an extensible workflow for producing scholarly exhibitions with minimal computing principles.">
 
   
   <link rel="icon" href="/assets/favicon.ico" />
@@ -15,9 +15,12 @@
   <link rel="stylesheet" href="/assets/main.css">
   <link rel="canonical" href="/projects/wax">
 
-  <link rel="stylesheet" href="https:///ajax/libs/highlight.js/11.7.0/styles/base16/material-palenight.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.4.0/styles/base16/material-palenight.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script>
+  <script>
+    hljs.configure({ignoreUnescapedHTML: true});
+    hljs.highlightAll();
+  </script>
   
   
 <!-- Google tag (gtag.js) -->
@@ -53,22 +56,21 @@
   <!-- <div class="bio__desc"></div> -->
   <div class="bio__menu">
     
-    <a href="/">home</a>&nbsp;
+    <a href="/">Home</a>&nbsp;
     
-    <a href="/about">cv</a>&nbsp;
+    <a href="/about">CV</a>&nbsp;
     
-    <a href="/listening">listening</a>&nbsp;
+    <a href="/listening">Listening</a>&nbsp;
     
-    <a href="/playing">playing</a>&nbsp;
+    <a href="/playing">Playing</a>&nbsp;
     
-    <a href="/reading">reading</a>&nbsp;
+    <a href="/reading">Reading</a>&nbsp;
     
   </div>
 </div>
 
       <div class="post">
-        <hr>
-        <h1><a href="/#projects">projects</a> > Minicomp/Wax</h2>
+        <h1><a href="/#projects">projects</a> > Wax</h2>
         <p class="project__meta">
           2018 — present&nbsp;☀&nbsp;
           software development&nbsp;☀&nbsp;
@@ -77,11 +79,9 @@
 
         <div class="post__body">
           <!-- <img src="https://minicomp.github.io/wiki/assets/wax_screen.gif"  /> -->
-          <h2 id="what-is-wax">what is wax?</h2>
+          <p><strong>Wax is an extensible workflow for producing scholarly exhibitions with minimal computing principles.</strong></p>
 
-<p><strong>Wax is an extensible workflow for producing scholarly exhibitions with minimal computing principles.</strong></p>
-
-<p>It’s comprised of: <strong>a few Ruby gems</strong> for processing image data and associated metadata (<a href="https://github.com/minicomp/wax_tasks/">wax_tasks</a>, <a href="https://github.com/minicomp/wax_iiif/">wax_iiif</a>), <strong>a Jekyll theme</strong> (<a href="https://github.com/minicomp/wax/">wax_theme</a>), and (hopefully soon!) a lot of <strong>documentation and recipes</strong> for creating, deploying, and maintaining digital exhibitions.</p>
+<p>It’s comprised of: a few Ruby gems for processing image data and associated metadata (<a href="https://github.com/minicomp/wax_tasks/">wax_tasks</a>, <a href="https://github.com/minicomp/wax_iiif/">wax_iiif</a>), a Jekyll theme(<a href="https://github.com/minicomp/wax/">wax_theme</a>), and documentation for creating, deploying, and maintaining digital exhibitions.</p>
 
 <p><strong>The exhibition sites created by Wax are static.</strong></p>
 
@@ -94,8 +94,6 @@
 <p><strong>Wax keeps the collection presentation separate from the collection data.</strong></p>
 
 <p>The Wax workflow starts with making standardized image files and metadata records and builds around them, handling canonical information, scholarly content, and site styling differently and deliberately. This makes it easier for you or others to reuse and reimagine your collection data in other contexts, or to preserve the collection when it comes time to sunset the exhibition.</p>
-
-<h2 id="who-is-wax-for">Who is Wax for?</h2>
 
 <p>Wax was created for individuals and groups who either don’t have or don’t want to use a lot of resources to create their scholarly exhibitions. It’s best suited for folks who are willing to take on some technical responsibility in exchange for a lot of flexibility.</p>
 
@@ -110,7 +108,9 @@
   <li>Editing HTML, CSS, and some JavaScript.</li>
 </ul>
 
-<p><strong>However, Wax is also great for teaching the skills above!</strong> For examples of digital humanities pedagogy through the creation of Wax exhibitions, check out <a href="https://library.columbia.edu/news/events/event.html?guid=CAL-00bb9e25-6667531c-0166-695e8946-00001777events%40columbia.edu&amp;returnlinkurl=/content/libraryweb/research/workshops&amp;returnlinktext=Workshops">this workshop</a>, <a href="https://github.com/stylerevolution/stylerevolution.github.io">this GitHub repository</a>, and <a href="https://stylerevolution.github.io/">this custom Wax site</a>.</p>
+<p><strong>However, Wax is also great for teaching the skills above!</strong></p>
+
+<p>For examples of digital humanities pedagogy through the creation of Wax exhibitions, check out <a href="https://library.columbia.edu/news/events/event.html?guid=CAL-00bb9e25-6667531c-0166-695e8946-00001777events%40columbia.edu&amp;returnlinkurl=/content/libraryweb/research/workshops&amp;returnlinktext=Workshops">this workshop</a>, <a href="https://github.com/stylerevolution/stylerevolution.github.io">this GitHub repository</a>, and <a href="https://stylerevolution.github.io/">this custom Wax site</a>.</p>
 
         </div>
 
@@ -164,7 +164,7 @@
       <li class="row__post">
         <div class="row__title ">
           <a href="/notes/ghostscript-for-washed-out-pdfs">
-            Using Ghostscript to Covert Washed-Out PDFs to PNGs for OCR Processing
+            Using Ghostscript to Covert Washed-Out PDFs for OCR Processing
           </a>
         </div>
         <div class="row__date ">

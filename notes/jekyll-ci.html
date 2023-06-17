@@ -15,9 +15,12 @@
   <link rel="stylesheet" href="/assets/main.css">
   <link rel="canonical" href="/notes/jekyll-ci">
 
-  <link rel="stylesheet" href="https:///ajax/libs/highlight.js/11.7.0/styles/base16/material-palenight.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.4.0/styles/base16/material-palenight.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script>
+  <script>
+    hljs.configure({ignoreUnescapedHTML: true});
+    hljs.highlightAll();
+  </script>
   
   
 <!-- Google tag (gtag.js) -->
@@ -53,21 +56,20 @@
   <!-- <div class="bio__desc"></div> -->
   <div class="bio__menu">
     
-    <a href="/">home</a>&nbsp;
+    <a href="/">Home</a>&nbsp;
     
-    <a href="/about">cv</a>&nbsp;
+    <a href="/about">CV</a>&nbsp;
     
-    <a href="/listening">listening</a>&nbsp;
+    <a href="/listening">Listening</a>&nbsp;
     
-    <a href="/playing">playing</a>&nbsp;
+    <a href="/playing">Playing</a>&nbsp;
     
-    <a href="/reading">reading</a>&nbsp;
+    <a href="/reading">Reading</a>&nbsp;
     
   </div>
 </div>
 
       <div class="post">
-        <hr>
         <h1><a href="/#notes">notes</a> > Continuous Integration! Or: Jekyll gets some robot nannies.</h2>
         <p class="project__meta">
           12 September 2017
@@ -121,7 +123,7 @@
 
 <h2 id="what-it-does">What it does:</h2>
 
-<center><img src="/images/gemnasium.png" style="box-shadow: 2px 2px 4pc #23352a;margin-top:50px;" /></center>
+<center><img src="/images/gemnasium.png" /></center>
 
 <p><span id="travis"></span></p>
 <h1 id="2-travis-continuous-integration-ci">2. Travis Continuous Integration (CI)</h1>
@@ -180,7 +182,7 @@ end
 
 <p>When you commit these changes (e.g. to a <code class="language-plaintext highlighter-rouge">html-proofer</code> branch), Travis will trigger a new build which will (once again) test the build itself, and then proceed to check for HTML errors.</p>
 
-<p><img src="/images/travis-build.png" style="box-shadow: 2px 2px 4pc #23352a;margin-top:30px;margin-bottom:30px;" /></p>
+<p><img src="/images/travis-build.png" /></p>
 
 <p><strong>You now have a very reasonably tested Jekyll site set up for continuous integration!</strong> For a more advanced topic, continue on to the next post on <a href="/notes/headless-test-dynamic-search">headless testing with rspec, capybara, and poltergeist</a>.</p>
 
@@ -236,7 +238,7 @@ end
       <li class="row__post">
         <div class="row__title ">
           <a href="/notes/ghostscript-for-washed-out-pdfs">
-            Using Ghostscript to Covert Washed-Out PDFs to PNGs for OCR Processing
+            Using Ghostscript to Covert Washed-Out PDFs for OCR Processing
           </a>
         </div>
         <div class="row__date ">

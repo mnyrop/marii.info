@@ -15,9 +15,12 @@
   <link rel="stylesheet" href="/assets/main.css">
   <link rel="canonical" href="/">
 
-  <link rel="stylesheet" href="https:///ajax/libs/highlight.js/11.7.0/styles/base16/material-palenight.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.4.0/styles/base16/material-palenight.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script>
+  <script>
+    hljs.configure({ignoreUnescapedHTML: true});
+    hljs.highlightAll();
+  </script>
   
   
 <!-- Google tag (gtag.js) -->
@@ -53,34 +56,28 @@
   <!-- <div class="bio__desc"></div> -->
   <div class="bio__menu">
     
-    <a href="/">home</a>&nbsp;
+    <a href="/">Home</a>&nbsp;
     
-    <a href="/about">cv</a>&nbsp;
+    <a href="/about">CV</a>&nbsp;
     
-    <a href="/listening">listening</a>&nbsp;
+    <a href="/listening">Listening</a>&nbsp;
     
-    <a href="/playing">playing</a>&nbsp;
+    <a href="/playing">Playing</a>&nbsp;
     
-    <a href="/reading">reading</a>&nbsp;
+    <a href="/reading">Reading</a>&nbsp;
     
   </div>
 </div>
 
-      <hr />
-
-<h2 id="marii-nyrop">marii nyrop</h2>
-
-<hr />
-
-<p><br /></p>
+      <h2 id="marii-nyrop">Marii Nyrop</h2>
 
 <p style="max-width:75ch">
-    full stack open source developer and senior data engineer based in queens, ny. <br /><br />
-    i author software packages, design user interfaces, and build cloud architectures and workflows for librarians, archivists, humanities researchers, and other keepers of cultural heritage.
+    Full stack open source developer &amp; solutions engineer based in Queens, NY. <br /><br />
+    I author software packages, design user interfaces, and build cloud architectures and workflows for librarians, archivists, humanities researchers, and other keepers of cultural heritage.
 </p>
 
 <p style="max-width:75ch">
-    if you have a project to propose, please copy my email below and drop a line!
+    If you have a project to propose, please copy my email below and drop a line!
 </p>
 
 <p><style>
@@ -175,7 +172,6 @@
 </script></p>
 
 <p><br /></p>
-<hr />
 
 <p><span id="projects"></span></p>
 
@@ -192,7 +188,7 @@
    
   <li class="row__post">
     <div class="row__title ">
-      <a href="/projects/aperitiiif">middlicomp/aperitiiif</a>
+      <a href="/projects/aperitiiif">Aperitiiif</a>
     </div>
     <div class="row__date ">2022 — present</div>
     <div class="row__cat ">
@@ -202,7 +198,7 @@
   
   <li class="row__post">
     <div class="row__title ">
-      <a href="/projects/nyu-dh">digitalhumanities.nyu.edu design</a>
+      <a href="/projects/nyu-dh">NYU Digital Humanities Redesign</a>
     </div>
     <div class="row__date ">2022</div>
     <div class="row__cat ">
@@ -232,7 +228,7 @@
   
   <li class="row__post">
     <div class="row__title ">
-      <a href="/projects/wax">Minicomp/Wax</a>
+      <a href="/projects/wax">Wax</a>
     </div>
     <div class="row__date ">2018 — present</div>
     <div class="row__cat ">
@@ -306,7 +302,7 @@
       <li class="row__post">
         <div class="row__title ">
           <a href="/notes/ghostscript-for-washed-out-pdfs">
-            Using Ghostscript to Covert Washed-Out PDFs to PNGs for OCR Processing
+            Using Ghostscript to Covert Washed-Out PDFs for OCR Processing
           </a>
         </div>
         <div class="row__date ">

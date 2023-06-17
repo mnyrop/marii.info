@@ -15,9 +15,12 @@
   <link rel="stylesheet" href="/assets/main.css">
   <link rel="canonical" href="/about">
 
-  <link rel="stylesheet" href="https:///ajax/libs/highlight.js/11.7.0/styles/base16/material-palenight.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.4.0/styles/base16/material-palenight.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script>
+  <script>
+    hljs.configure({ignoreUnescapedHTML: true});
+    hljs.highlightAll();
+  </script>
   
   
 <!-- Google tag (gtag.js) -->
@@ -53,32 +56,26 @@
   <!-- <div class="bio__desc"></div> -->
   <div class="bio__menu">
     
-    <a href="/">home</a>&nbsp;
+    <a href="/">Home</a>&nbsp;
     
-    <a href="/about">cv</a>&nbsp;
+    <a href="/about">CV</a>&nbsp;
     
-    <a href="/listening">listening</a>&nbsp;
+    <a href="/listening">Listening</a>&nbsp;
     
-    <a href="/playing">playing</a>&nbsp;
+    <a href="/playing">Playing</a>&nbsp;
     
-    <a href="/reading">reading</a>&nbsp;
+    <a href="/reading">Reading</a>&nbsp;
     
   </div>
 </div>
 
-      <hr />
-
-<h2 id="marii-nyrop--cv">marii nyrop – cv</h2>
-
-<hr />
-
-<p><br /></p>
+      <h2 id="marii-nyrop--cv">Marii Nyrop – CV</h2>
 
 <p style="max-width:75ch;">
-    <b>current:</b> senior research data engineer @ nyu it &amp; libraries
+    <b>Current:</b> Senior Research Data Engineer @ NYU IT &amp; Libraries
 </p>
 <p style="max-width:75ch;">
-    <b>past:</b> digital humanities technology specialist @ nyu it &amp; libraries; digital humanities developer @ columbia university libraries; post-baccalaureate technologist @ five college digital humanities
+    <b>Past:</b> Digital Humanities Technology Specialist @ NYU IT &amp; Libraries; Digital Humanities Developer @ Columbia University Libraries; Post-Baccalaureate Technologist @ Five College Digital Humanities
 </p>
 
 <p><style>
@@ -173,14 +170,13 @@
 </script></p>
 
 <p><br /></p>
-<hr />
 
 <ul class="rows">
     <li class="row__cols">
       <div class="row__title">
         Skills
       </div>
-      <div class="row__date">Related Tools</div>
+      <div class="row__date">Tools &amp; Methods</div>
     </li>
     
       <li class="row__post">
@@ -246,7 +242,7 @@
       </li>
     
       <li class="row__post">
-        <div class="row__title">Automated Unit and feature testing</div>
+        <div class="row__title">Automated unit and feature testing</div>
         <div class="row__date" style="width: 50%">
           
           <a class="tag" target="_blank" href="https://rspec.info/">RSpec</a>; 

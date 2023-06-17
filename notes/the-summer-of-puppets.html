@@ -15,9 +15,12 @@
   <link rel="stylesheet" href="/assets/main.css">
   <link rel="canonical" href="/notes/the-summer-of-puppets">
 
-  <link rel="stylesheet" href="https:///ajax/libs/highlight.js/11.7.0/styles/base16/material-palenight.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.4.0/styles/base16/material-palenight.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script>
+  <script>
+    hljs.configure({ignoreUnescapedHTML: true});
+    hljs.highlightAll();
+  </script>
   
   
 <!-- Google tag (gtag.js) -->
@@ -53,21 +56,20 @@
   <!-- <div class="bio__desc"></div> -->
   <div class="bio__menu">
     
-    <a href="/">home</a>&nbsp;
+    <a href="/">Home</a>&nbsp;
     
-    <a href="/about">cv</a>&nbsp;
+    <a href="/about">CV</a>&nbsp;
     
-    <a href="/listening">listening</a>&nbsp;
+    <a href="/listening">Listening</a>&nbsp;
     
-    <a href="/playing">playing</a>&nbsp;
+    <a href="/playing">Playing</a>&nbsp;
     
-    <a href="/reading">reading</a>&nbsp;
+    <a href="/reading">Reading</a>&nbsp;
     
   </div>
 </div>
 
       <div class="post">
-        <hr>
         <h1><a href="/#notes">notes</a> > The Summer of Japanese Puppets, Part 1</h2>
         <p class="project__meta">
           11 July 2017
@@ -76,13 +78,13 @@
         </p>
 
         <div class="post__body">
-          <img src="https://www.columbia.edu/cgi-bin/dlo?obj=ldpd_bun_slide_362_1_6665_8069&size=medium" />
+          <img src="https://www1.columbia.edu/sec-cgi-bin/cul/dlo?obj=ldpd_bun_slide_219_1_4033_5147&size=medium" />
           <p>This post is part 1 of 4 in a series. Feel free to skip around to:</p>
 
 <p><a href="/notes/the-summer-of-puppets-2">part 2: data transformation</a>,
 <a href="/notes/the-summer-of-puppets-3">part 3: the site</a>, or <a href="/notes/the-summer-of-puppets-4">part 4: epilogue</a>.</p>
 
-<h1 id="enter-bunraku">Enter: Bunraku</h1>
+<p><strong>Enter: Bunraku</strong></p>
 
 <p>A few months ago, I was given access to a MySQL database with 27 tables of data on <em><a href="https://en.wikipedia.org/wiki/Bunraku">Bunraku</a></em>, or Japanese puppet theater. The data consists primarily of digitized images from the Barbara Curtis Adachi Bunraku Collection here at <a href="https://library.columbia.edu">Columbia University Libraries</a>, but it also contains a ton of relational data on the Bunraku community as Barbara encountered it—which is to say, as a rich network of performers, plays, productions, puppets, craftsmen, narrators, musicians, authors, theaters, instruments, old friends, and even older tales. To be more specific, the data models the complex interrelations of…</p>
 
@@ -104,10 +106,10 @@
 <p>An aside: <em><a href="https://www.sfgate.com/bayarea/article/Barbara-Curtis-Adachi-puppet-theater-expert-2822735.php">Want to learn more about Barbara?</a></em></p>
 
 <p><br /><br />
-<img src="https://www.columbia.edu/cgi-bin/dlo?obj=ldpd_bun_slide_382_1_7021_8470&amp;size=medium" style="box-shadow: 2px 2px 4pc #23352a;" />
+<img src="https://www1.columbia.edu/sec-cgi-bin/cul/dlo?obj=ldpd_bun_slide_232_1_4262_5407&amp;size=medium" />
 <br /><br /></p>
 
-<h1 id="act-1-the-task">Act 1: The Task</h1>
+<p><strong>Act 1: The Task</strong></p>
 
 <p>Both the MySQL database and the PHP site it powers have been slated for retirement this summer, so my task has been to create a modern, sustainable, and <a href="https://en.wikipedia.org/wiki/Web_template_system#Static_page_generators">static</a> replacement. This replacement needs to handle each of the ten main data object types and their associations—connecting authors to the plays they’d written, connecting those plays to their respective performances (via productions), connecting performers to those performances, and so on in a semi-hierarchical and sprawling fashion. It also needs to approximate the advanced search capabilities of the current site, add new navigational entry points and paths, and accommodate the sometimes enormous number of images associated with a given play or other type of object.</p>
 
@@ -185,7 +187,7 @@
       <li class="row__post">
         <div class="row__title ">
           <a href="/notes/ghostscript-for-washed-out-pdfs">
-            Using Ghostscript to Covert Washed-Out PDFs to PNGs for OCR Processing
+            Using Ghostscript to Covert Washed-Out PDFs for OCR Processing
           </a>
         </div>
         <div class="row__date ">

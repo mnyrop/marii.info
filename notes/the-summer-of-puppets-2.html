@@ -15,9 +15,12 @@
   <link rel="stylesheet" href="/assets/main.css">
   <link rel="canonical" href="/notes/the-summer-of-puppets-2">
 
-  <link rel="stylesheet" href="https:///ajax/libs/highlight.js/11.7.0/styles/base16/material-palenight.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.4.0/styles/base16/material-palenight.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script>
+  <script>
+    hljs.configure({ignoreUnescapedHTML: true});
+    hljs.highlightAll();
+  </script>
   
   
 <!-- Google tag (gtag.js) -->
@@ -53,21 +56,20 @@
   <!-- <div class="bio__desc"></div> -->
   <div class="bio__menu">
     
-    <a href="/">home</a>&nbsp;
+    <a href="/">Home</a>&nbsp;
     
-    <a href="/about">cv</a>&nbsp;
+    <a href="/about">CV</a>&nbsp;
     
-    <a href="/listening">listening</a>&nbsp;
+    <a href="/listening">Listening</a>&nbsp;
     
-    <a href="/playing">playing</a>&nbsp;
+    <a href="/playing">Playing</a>&nbsp;
     
-    <a href="/reading">reading</a>&nbsp;
+    <a href="/reading">Reading</a>&nbsp;
     
   </div>
 </div>
 
       <div class="post">
-        <hr>
         <h1><a href="/#notes">notes</a> > The Summer of Japanese Puppets, Part 2</h2>
         <p class="project__meta">
           12 July 2017
@@ -76,18 +78,18 @@
         </p>
 
         <div class="post__body">
-          <img src="https://www.columbia.edu/cgi-bin/dlo?obj=ldpd_bun_slide_493_2_0779_0826&size=medium" />
+          <img src="https://www1.columbia.edu/sec-cgi-bin/cul/dlo?obj=ldpd_bun_slide_076_1_1393_2197&size=medium" />
           <p>This post is part 2 of 4 in a series. Feel free to skip around to:</p>
 
 <p><a href="/notes/the-summer-of-puppets">part 1: the task</a>,
 <a href="/notes/the-summer-of-puppets-3">part 3: the site</a>, or
 <a href="/notes/the-summer-of-puppets-4">part 4: epilogue</a>.</p>
 
-<h1 id="act-2-data-transformation-montage">Act 2: Data transformation montage</h1>
+<p><strong>Act 2: Data transformation montage</strong></p>
 
 <p>After taking a detour prototyping with <a href="https://google.github.io/lovefield/">Google Lovefield</a> + <a href="https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API">IndexedDB</a> and making a pitstop to play with <a href="https://graphql.org/">GraphQL</a>, I finally settled on a simpler plan: <strong>export each object type as an array of JSON records, and have each record point to its relationships via arrays of IDs.</strong> With this thought, the montage began:</p>
 
-<h2 id="scene-i-plan--tidy">scene i. plan + tidy</h2>
+<p><strong>scene i. plan + tidy</strong></p>
 
 <p><strong>In:</strong> MySQL dump</p>
 
@@ -95,7 +97,7 @@
 
 <p>I started by using a simple entity relationship diagramming (ERD) tool and <a href="https://json-schema.org/">JSON Schema</a> to plan out what each object type (e.g. play, kashira, character, etc.) should look like at the end of the processing stage by asking/answerinq questions like: <em>Which keys does each type need? Which keys should be named in a standardized way across object types? What kind of value does a given key expect (maybe an int? a nullable string…? ), and does it expect 1 or many? What does the object need to “know” about itself, and what can it inherit from other types?</em></p>
 
-<p><br /><a href="/images/erd.png"><img src="/images/erd.png" style="box-shadow: 2px 2px 4pc #23352a;" /></a><br /><br /></p>
+<p><br /><a href="/images/erd.png"><img src="/images/erd.png" /></a><br /><br /></p>
 
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"$schema"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
@@ -129,15 +131,15 @@
 
 <p>Once each type was reasonably mapped out, I exported the MySQL database as a set of CSV files and turned to <a href="https://openrefine.org/">OpenRefine</a> to clean them up. I used faceting to get a better sense of each set, recast strings as ints and visa versa, scrubbed out line breaks, dropped unused columns, consolidated similar cells, and so on. Then I renamed as many columns as possible to cohere to the somewhat-standardized JSON schema I’d created, and re-exported them as spiffed-up CSVs.</p>
 
-<p><br /><img src="/images/open-refine.png" style="box-shadow: 2px 2px 4pc #23352a;max-width:600px;" /><br /><br /></p>
+<p><br /><img src="/images/open-refine.png" /><br /><br /></p>
 
 <p><strong>Out:</strong> <a href="https://github.com/mnyrop/bunraku-ipy/tree/master/in">Optimized CSVs</a></p>
 
 <p><br /></p>
 
-<h2 id="scene-ii-process--convert-to-json">scene ii. Process + convert to JSON</h2>
+<p><strong>scene ii. Process + convert to JSON</strong></p>
 
-<p><strong>In:</strong> <a href="https://github.com/mnyrop/bunraku-ipy/tree/master/in">CSVs</a>&lt;/span&gt;</p>
+<p><strong>In:</strong> <a href="https://github.com/mnyrop/bunraku-ipy/tree/master/in">CSVs</a></p>
 
 <p><strong>Tools:</strong> <a href="https://ipython.org/">iPython</a> / <a href="https://pandas.pydata.org/">Pandas</a></p>
 
@@ -147,7 +149,7 @@
 
 <p>For example, given a dataframe of authors and a join table of <code class="language-plaintext highlighter-rouge">author_ids</code> and <code class="language-plaintext highlighter-rouge">play_ids</code>, the function (shown below) will merge a list of <code class="language-plaintext highlighter-rouge">play_ids</code> on to each corresponding author record. This is exactly the task I needed to perform on most data objects—adding multiple plays to each author, multiple performances to each play, multiple scenes to each performance, and so on.</p>
 
-<p><br /><a href="/images/ipy.png"><img src="/images/ipy.png" style="box-shadow: 2px 2px 4pc #23352a;max-width:600px;" /></a><br /><br /></p>
+<p><br /><a href="/images/ipy.png"><img src="/images/ipy.png" /></a><br /><br /></p>
 
 <p>Once each dataframe was transformed to mirror the JSON schema I’d planned, I wrote them out to new json files using Pandas’ <code class="language-plaintext highlighter-rouge">.to_json(orient='records')</code> function. (You can see the complete process and notebook <a href="https://github.com/mnyrop/bunraku-ipy/blob/master/bunraku-online.ipynb">here</a>.)</p>
 
@@ -157,9 +159,9 @@
 
 <p><br /></p>
 
-<h2 id="scene-iii-minify">scene iii. Minify</h2>
+<p><strong>scene iii. Minify</strong></p>
 
-<p><strong>In:</strong> <a href="https://github.com/mnyrop/bunraku-ipy/tree/master/out/json">JSON</a>&lt;</p>
+<p><strong>In:</strong> <a href="https://github.com/mnyrop/bunraku-ipy/tree/master/out/json">JSON</a></p>
 
 <p><strong>Tools:</strong> <a href="https://stedolan.github.io/jq/">JQ</a></p>
 
@@ -228,7 +230,7 @@
       <li class="row__post">
         <div class="row__title ">
           <a href="/notes/ghostscript-for-washed-out-pdfs">
-            Using Ghostscript to Covert Washed-Out PDFs to PNGs for OCR Processing
+            Using Ghostscript to Covert Washed-Out PDFs for OCR Processing
           </a>
         </div>
         <div class="row__date ">

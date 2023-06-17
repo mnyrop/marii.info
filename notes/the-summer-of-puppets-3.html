@@ -15,9 +15,12 @@
   <link rel="stylesheet" href="/assets/main.css">
   <link rel="canonical" href="/notes/the-summer-of-puppets-3">
 
-  <link rel="stylesheet" href="https:///ajax/libs/highlight.js/11.7.0/styles/base16/material-palenight.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.4.0/styles/base16/material-palenight.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script>
+  <script>
+    hljs.configure({ignoreUnescapedHTML: true});
+    hljs.highlightAll();
+  </script>
   
   
 <!-- Google tag (gtag.js) -->
@@ -53,21 +56,20 @@
   <!-- <div class="bio__desc"></div> -->
   <div class="bio__menu">
     
-    <a href="/">home</a>&nbsp;
+    <a href="/">Home</a>&nbsp;
     
-    <a href="/about">cv</a>&nbsp;
+    <a href="/about">CV</a>&nbsp;
     
-    <a href="/listening">listening</a>&nbsp;
+    <a href="/listening">Listening</a>&nbsp;
     
-    <a href="/playing">playing</a>&nbsp;
+    <a href="/playing">Playing</a>&nbsp;
     
-    <a href="/reading">reading</a>&nbsp;
+    <a href="/reading">Reading</a>&nbsp;
     
   </div>
 </div>
 
       <div class="post">
-        <hr>
         <h1><a href="/#notes">notes</a> > The Summer of Japanese Puppets, Part 3</h2>
         <p class="project__meta">
           13 July 2017
@@ -83,9 +85,9 @@
 <a href="/notes/the-summer-of-puppets-2">part 2: data transformation</a>, or
 <a href="/notes/the-summer-of-puppets-4">part 4: epilogue</a>.</p>
 
-<h1 id="act-3-the-site-emerges">Act 3: The site emerges</h1>
+<p><strong>Act 3: The site emerges</strong></p>
 
-<h2 id="iv-ingest--generate">iv. Ingest + generate</h2>
+<p><strong>iv. Ingest + generate</strong></p>
 
 <p><strong>In:</strong> <a href="https://github.com/mnyrop/bunraku-ipy/tree/master/post-processing/json">JSON</a></p>
 
@@ -131,7 +133,7 @@
 
 <p><br /></p>
 
-<h2 id="v--template--build">v.  Template + build</h2>
+<p><strong>v.  Template + build</strong></p>
 
 <p><strong>In:</strong> Jekyll Collections</p>
 
@@ -139,7 +141,7 @@
 
 <p><code class="language-plaintext highlighter-rouge">wax_tasks</code> also gives you the option to designate a layout for each collection, and will add that metadata to each markdown page it creates. I gave each type its own layout, for example <code class="language-plaintext highlighter-rouge">author-page.html</code>, shown below:</p>
 
-<p><br /><img src="/images/layout.png" style="box-shadow: 2px 2px 4pc #23352a;" /><br /><br /></p>
+<p><br /><img src="/images/layout.png" /><br /><br /></p>
 
 <p>If you’re familiar with Jekyll’s templating language <a href="https://shopify.github.io/liquid/">Liquid</a>, this should look very familiar. <code class="language-plaintext highlighter-rouge">{{ page.label_eng }}</code> compiles as the string specified as <code class="language-plaintext highlighter-rouge">label_eng</code> in the page’s front matter, the same goes for <code class="language-plaintext highlighter-rouge">{{ page.label_ka }}</code>, and so on. What’s interesting, though, is line #13:</p>
 
@@ -158,7 +160,7 @@
 
 <p><strong>Out:</strong> Compiled Jekyll Pages</p>
 
-<p><br /><img src="/images/author.png" style="box-shadow: 2px 2px 4pc #23352a;" /><br /><br /></p>
+<p><br /><img src="/images/author.png" /><br /><br /></p>
 
 <p>After writing templates for each object type as well as templates for viewing the <a href="https://bunraku.cul.columbia.edu/authors/">lists of each type</a>, the main components of the site were finally in place.</p>
 
@@ -214,7 +216,7 @@
       <li class="row__post">
         <div class="row__title ">
           <a href="/notes/ghostscript-for-washed-out-pdfs">
-            Using Ghostscript to Covert Washed-Out PDFs to PNGs for OCR Processing
+            Using Ghostscript to Covert Washed-Out PDFs for OCR Processing
           </a>
         </div>
         <div class="row__date ">

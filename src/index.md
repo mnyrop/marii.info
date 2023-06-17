@@ -8,7 +8,7 @@ title: home
 
 
 <p style="max-width:75ch">
-    Full stack open source developer & solutions engineer based in Queens, NY. <br><br>
+    Full stack open source developer & data engineer based in Queens, NY. <br><br>
     I author software packages, design user interfaces, and build cloud architectures and workflows for librarians, archivists, humanities researchers, and other keepers of cultural heritage.
 </p>
 

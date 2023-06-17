@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Using Ghostscript to Covert Washed-Out PDFs to PNGs for OCR Processing
+title: Using Ghostscript to Covert Washed-Out PDFs for OCR Processing
 time_period: 2020
 img: '/images/ghostscript.gif'
 tags: ghostscript;ocr;bash

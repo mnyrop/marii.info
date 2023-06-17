@@ -40,7 +40,7 @@
       link: https://www.vagrantup.com/
     - label: Certbot
       link: https://certbot.eff.org/
-- skill: Automated Unit and feature testing
+- skill: Automated unit and feature testing
   tools:
     - label: RSpec
       link: https://rspec.info/

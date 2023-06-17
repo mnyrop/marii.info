@@ -4,9 +4,7 @@ $on-laptop: 800px !default;
 // typography
 $font-path: "./fonts" !default;
 
-@import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,300;1,300&display=swap');
-@import url("https://fonts.googleapis.com/css?family=Inconsolata:400,700");
-
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
 @font-face {
   font-family: "karrik";
   src: url("#{$font-path}/Karrik-Regular.woff2") format("woff2");
@@ -17,14 +15,14 @@ $font-path: "./fonts" !default;
   src: url("#{$font-path}/blocuswebfont.woff") format("woff");
 }
 
-$inconsolata: "karrik", monospace;
+$karrik: "Jost", monospace;
 $alt__font: "blocus", serif;
 $font__size: 15px;
-$font__weight: 400;
+$font__weight: 500;
 $font__line-height: 1.5;
 
 // colors
-$color__black: #000000;
+$color__black: #344527;
 $color__gray: #eeeeee;
 $color__beige: #f8f8f1;
 $color__yellow: #fefeca;
@@ -65,7 +63,7 @@ hr {
 a {
   color: $color__black;
   text-decoration: none;
-  background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+  background-image: linear-gradient(120deg, #d5cece 0%, #fde97e 100%);
   background-repeat: no-repeat;
   background-size: 100% 0.2em;
   background-position: 0 88%;
@@ -104,6 +102,7 @@ html {
   overflow-x: hidden;
   overflow-y: scroll;
   scroll-behavior: smooth;
+  color: $color__black;
 }
 
 body {
@@ -111,12 +110,13 @@ body {
   // margin: 25px auto;
   // padding: 1rem;
   background: $color__beige;
-  font-family: $inconsolata;
+  color: $color__black;
+  font-family: $karrik;
   font-size: $font__size;
   font-weight: $font__weight;
   line-height: $font__line-height;
   letter-spacing: 0.08rem;
-  text-transform: lowercase;
+  // text-transform: lowercase;
 }
 
 .container {

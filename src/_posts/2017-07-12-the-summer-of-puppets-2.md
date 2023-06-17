@@ -2,8 +2,7 @@
 layout: post
 title: The Summer of Japanese Puppets, Part 2
 time_period: 2017
-overlay: orange
-img: 'https://www.columbia.edu/cgi-bin/dlo?obj=ldpd_bun_slide_493_2_0779_0826&size=medium'
+img: 'https://www1.columbia.edu/sec-cgi-bin/cul/dlo?obj=ldpd_bun_slide_076_1_1393_2197&size=medium'
 tags: jupyter;python;json;openrefine
 ---
 
@@ -13,11 +12,11 @@ This post is part 2 of 4 in a series. Feel free to skip around to:
 [part 3: the site]({{ site.url }}/notes/the-summer-of-puppets-3), or
 [part 4: epilogue]({{ site.url }}/notes/the-summer-of-puppets-4).
 
-# Act 2: Data transformation montage
+**Act 2: Data transformation montage**
 
 After taking a detour prototyping with [Google Lovefield](https://google.github.io/lovefield/) + [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API) and making a pitstop to play with [GraphQL](https://graphql.org/), I finally settled on a simpler plan: __export each object type as an array of JSON records, and have each record point to its relationships via arrays of IDs.__ With this thought, the montage began:
 
-## scene i. plan + tidy
+**scene i. plan + tidy**
 
 __In:__ MySQL dump
 
@@ -25,7 +24,7 @@ __Tools:__ any ol' [erd](https://www.draw.io/) / [OpenRefine](https://openrefine
 
 I started by using a simple entity relationship diagramming (ERD) tool and [JSON Schema](https://json-schema.org/) to plan out what each object type (e.g. play, kashira, character, etc.) should look like at the end of the processing stage by asking/answerinq questions like: _Which keys does each type need? Which keys should be named in a standardized way across object types? What kind of value does a given key expect (maybe an int? a nullable string...? ), and does it expect 1 or many? What does the object need to "know" about itself, and what can it inherit from other types?_
 
-<br><a href="{{ "/images/erd.png" | relative_url }}"><img src="{{ "/images/erd.png" | relative_url }}" style="box-shadow: 2px 2px 4pc #23352a;"/></a><br><br>
+<br><a href="{{ "/images/erd.png" | relative_url }}"><img src="{{ "/images/erd.png" | relative_url }}" /></a><br><br>
 
 
 ```json
@@ -61,16 +60,16 @@ I started by using a simple entity relationship diagramming (ERD) tool and [JSON
 
 Once each type was reasonably mapped out, I exported the MySQL database as a set of CSV files and turned to [OpenRefine](https://openrefine.org/) to clean them up. I used faceting to get a better sense of each set, recast strings as ints and visa versa, scrubbed out line breaks, dropped unused columns, consolidated similar cells, and so on. Then I renamed as many columns as possible to cohere to the somewhat-standardized JSON schema I'd created, and re-exported them as spiffed-up CSVs.
 
-<br><img src="{{ "/images/open-refine.png" | relative_url }}" style="box-shadow: 2px 2px 4pc #23352a;max-width:600px;"/><br><br>
+<br><img src="{{ "/images/open-refine.png" | relative_url }}" /><br><br>
 
 __Out:__ [Optimized CSVs](https://github.com/mnyrop/bunraku-ipy/tree/master/in)
 
 <br>
 
 
-## scene ii. Process + convert to JSON
+**scene ii. Process + convert to JSON**
 
-__In:__ [CSVs](https://github.com/mnyrop/bunraku-ipy/tree/master/in)</span>
+__In:__ [CSVs](https://github.com/mnyrop/bunraku-ipy/tree/master/in)
 
 __Tools:__ [iPython](https://ipython.org/) / [Pandas](https://pandas.pydata.org/)
 
@@ -80,7 +79,7 @@ After reading each CSV file into my Jupyter notebook as a Pandas dataframe, I wa
 
 For example, given a dataframe of authors and a join table of `author_ids` and `play_ids`, the function (shown below) will merge a list of `play_ids` on to each corresponding author record. This is exactly the task I needed to perform on most data objects—adding multiple plays to each author, multiple performances to each play, multiple scenes to each performance, and so on.
 
-<br><a href="{{ "/images/ipy.png" | relative_url }}"><img src="{{ "/images/ipy.png" | relative_url }}" style="box-shadow: 2px 2px 4pc #23352a;max-width:600px;"/></a><br><br>
+<br><a href="{{ "/images/ipy.png" | relative_url }}"><img src="{{ "/images/ipy.png" | relative_url }}"/></a><br><br>
 
 Once each dataframe was transformed to mirror the JSON schema I'd planned, I wrote them out to new json files using Pandas' `.to_json(orient='records')` function. (You can see the complete process and notebook [here](https://github.com/mnyrop/bunraku-ipy/blob/master/bunraku-online.ipynb).)
 
@@ -90,9 +89,9 @@ __Out:__ [JSON](https://github.com/mnyrop/bunraku-ipy/tree/master/out/json)
 
 <br>
 
-## scene iii. Minify
+**scene iii. Minify**
 
-__In:__ [JSON](https://github.com/mnyrop/bunraku-ipy/tree/master/out/json)<
+__In:__ [JSON](https://github.com/mnyrop/bunraku-ipy/tree/master/out/json)
 
 __Tools:__ [JQ](https://stedolan.github.io/jq/)
 

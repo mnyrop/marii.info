@@ -3,20 +3,17 @@ layout: default
 title: home
 ---
 
-<hr>
 
-## marii nyrop
+## Marii Nyrop
 
-<hr>
-<br>
 
 <p style="max-width:75ch">
-    full stack open source developer and senior data engineer based in queens, ny. <br><br>
-    i author software packages, design user interfaces, and build cloud architectures and workflows for librarians, archivists, humanities researchers, and other keepers of cultural heritage.
+    Full stack open source developer & solutions engineer based in Queens, NY. <br><br>
+    I author software packages, design user interfaces, and build cloud architectures and workflows for librarians, archivists, humanities researchers, and other keepers of cultural heritage.
 </p>
 
 <p style="max-width:75ch">
-    if you have a project to propose, please copy my email below and drop a line!
+    If you have a project to propose, please copy my email below and drop a line!
 </p>
 
 {% if site.data.social %}
@@ -24,7 +21,7 @@ title: home
 {% endif %}
 
 <br>
-<hr>
+
 
 <span id="projects"></span>
 {% include projects_list.html %}

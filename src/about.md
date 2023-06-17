@@ -3,18 +3,14 @@ layout: default
 title: cv
 ---
 
-<hr>
+## Marii Nyrop – CV
 
-## marii nyrop – cv
-
-<hr>
-<br>
 
 <p style="max-width:75ch;">
-    <b>current:</b> senior research data engineer @ nyu it & libraries
+    <b>Current:</b> Senior Research Data Engineer @ NYU IT & Libraries
 </p>
 <p style="max-width:75ch;">
-    <b>past:</b> digital humanities technology specialist @ nyu it & libraries; digital humanities developer @ columbia university libraries; post-baccalaureate technologist @ five college digital humanities
+    <b>Past:</b> Digital Humanities Technology Specialist @ NYU IT & Libraries; Digital Humanities Developer @ Columbia University Libraries; Post-Baccalaureate Technologist @ Five College Digital Humanities
 </p>
 
 {% if site.data.social %}
@@ -22,7 +18,6 @@ title: cv
 {% endif %}
 
 <br>
-<hr>
 
 {% include skills_list.html %}
 {% include labs_list.html %}

@@ -1,10 +1,10 @@
-- title: home
+- title: Home
   url: '/'
-- title: cv
+- title: CV
   url: /about
-- title: listening
+- title: Listening
   url: /listening
-- title: playing
+- title: Playing
   url: /playing
-- title: reading
+- title: Reading
   url: reading

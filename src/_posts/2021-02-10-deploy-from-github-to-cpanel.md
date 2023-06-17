@@ -2,11 +2,11 @@
 layout: post
 title: Action! Automate FTP deploys from GitHub to CPanel
 time_period: 2021
-img: 'https://i.makeagif.com/media/5-21-2015/W4vUS3.gif'
 tags: actions;ci;cpanel;github;
 ---
+![deploy gif](https://thumbs.gfycat.com/AlarmingVeneratedArgentinehornedfrog-small.gif)
 
-**The process leverages GitHub Actions to build, test, and deploy a compiled Jekyll site to a CPanel account on a shared Reclaim hosting server.** With slight modification, it should work for any fully-static or statically-generated site and any ol' server with FTP. Depending on how you build your site, the server shouldn't need Apache or Nginx since we'll syncing static files directly to `/public_html`.
+This process leverages GitHub Actions to build, test, and deploy a compiled Jekyll site to a CPanel account on a shared Reclaim hosting server. With slight modification, it should work for any fully-static or statically-generated site and any ol' server with FTP. Depending on how you build your site, the server shouldn't need Apache or Nginx since we'll syncing static files directly to `/public_html`.
 
 ### Step 1. **Create a GitHub repository with your site files**  
 Feel free to use and remix [this template](https://github.com/nyu-dss/wh-deploilerplate).
@@ -67,7 +67,5 @@ jobs:
           local-dir: ./_site/
 
 ```
-
-![deploy gif](https://thumbs.gfycat.com/AlarmingVeneratedArgentinehornedfrog-small.gif)
 
 More info available [here](https://docs.github.com/en/actions).

@@ -14,9 +14,9 @@ This post is part 3 of 4 in a series. Feel free to skip around to:
 [part 4: epilogue]({{ site.url }}/notes/the-summer-of-puppets-4).
 
 
-# Act 3: The site emerges
+**Act 3: The site emerges**
 
-## iv. Ingest + generate
+**iv. Ingest + generate**
 
 __In:__ [JSON](https://github.com/mnyrop/bunraku-ipy/tree/master/post-processing/json)
 
@@ -65,7 +65,7 @@ __Out:__ Jekyll Collections
 <br>
 
 
-## v.  Template + build
+**v.  Template + build**
 
 
 __In:__ Jekyll Collections
@@ -74,7 +74,7 @@ __Tools:__ [Liquid](https://shopify.github.io/liquid/)
 
 `wax_tasks` also gives you the option to designate a layout for each collection, and will add that metadata to each markdown page it creates. I gave each type its own layout, for example `author-page.html`, shown below:
 
-<br><img src="{{ "/images/layout.png" | relative_url }}" style="box-shadow: 2px 2px 4pc #23352a;"/><br><br>
+<br><img src="{{ "/images/layout.png" | relative_url }}"/><br><br>
 
 If you're familiar with Jekyll's templating language [Liquid](https://shopify.github.io/liquid/), this should look very familiar. `{% raw %}{{ page.label_eng }}{% endraw %}` compiles as the string specified as `label_eng` in the page's front matter, the same goes for `{% raw %}{{ page.label_ka }}{% endraw %}`, and so on. What's interesting, though, is line #13:
 
@@ -93,6 +93,6 @@ You _must_ include the pipe `| first` at the end of your tag because Liquid `| w
 
 __Out:__ Compiled Jekyll Pages
 
-<br><img src="{{ "/images/author.png" | relative_url }}" style="box-shadow: 2px 2px 4pc #23352a;"/><br><br>
+<br><img src="{{ "/images/author.png" | relative_url }}"/><br><br>
 
 After writing templates for each object type as well as templates for viewing the [lists of each type](https://bunraku.cul.columbia.edu/authors/), the main components of the site were finally in place.

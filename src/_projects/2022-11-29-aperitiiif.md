@@ -1,6 +1,6 @@
 ---
 layout: project
-title:  middlicomp/aperitiiif
+title:  Aperitiiif
 category: software development
 img: 'https://media4.giphy.com/media/4OPta6flqKAUVAkM5R/200w.gif?cid=6c09b952i180c328eocqyrd94q5ed3prpj252ko6b5ji8cpj&rid=200w.gif&ct=v'
 time_period: 2022 — present

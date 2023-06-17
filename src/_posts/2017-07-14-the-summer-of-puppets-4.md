@@ -6,7 +6,7 @@ overlay: green
 img: 'https://www1.columbia.edu/sec-cgi-bin/cul/dlo?obj=ldpd_bun_slide_024_1_0427_0621&size=medium'
 tags: d3js;lunr;jekyll
 ---
-<iframe style="height:450px; width:100%" src="https://www.youtube.com/embed/ZaI8fN4176k" frameborder="0" allowfullscreen></iframe>
+<iframe height="450" width="800" src="https://www.youtube.com/embed/ZaI8fN4176k" frameborder="0" allowfullscreen></iframe>
 
 This post is part 4 of 4 in a series. Feel free to skip around to:
 
@@ -18,7 +18,7 @@ This post is part 4 of 4 in a series. Feel free to skip around to:
 
 # epilogue
 
-<br><a href="https://bunraku.cul.columbia.edu/"><img src="{{ "/images/demo.png" | relative_url }}" style="box-shadow: 2px 2px 4pc #23352a;"/></a><br><br>
+<br><a href="https://bunraku.cul.columbia.edu/"><img src="{{ "/images/demo.png" | relative_url }}" /></a><br><br>
 
 ## [The demo](https://bunraku.cul.columbia.edu/)!
 
@@ -39,32 +39,16 @@ It is navigable through the above directory listings, through several dynamic se
 
 
 <br>
-<iframe width="100%" height="700" src="https://jsfiddle.net/marii_/zkdzy0qq/2/embedded/result,js/" allowfullscreen="allowfullscreen" frameborder="0" style="box-shadow: 2px 2px 4pc #23352a;"></iframe>
+<iframe width="800" height="500" src="https://jsfiddle.net/marii_/zkdzy0qq/2/embedded/result,js/" allowfullscreen="allowfullscreen" frameborder="0" ></iframe>
 <br><br>
 
 # tl;dr.
 
-<i class="fa fa-chevron-circle-right" aria-hidden="true"></i>&nbsp;&nbsp;
-Started with a Cake PHP site powered by a relational MYSQL database.
-
-<i class="fa fa-chevron-circle-right" aria-hidden="true"></i>&nbsp;&nbsp;
-MySQL dump to CSVs.
-
-<i class="fa fa-chevron-circle-right" aria-hidden="true"></i>&nbsp;&nbsp;
-Imported CSVs into [IPython](https://ipython.org/) as [Pandas](https://pandas.pydata.org/) dataframes.
-
-<i class="fa fa-chevron-circle-right" aria-hidden="true"></i>&nbsp;&nbsp;
-Merged relational data (from CSV jointables) onto dataframes by type.
-
-<i class="fa fa-chevron-circle-right" aria-hidden="true"></i>&nbsp;&nbsp;
-Exported dataframes as JSON records (and CSVs, for archival purposes only).
-
-<i class="fa fa-chevron-circle-right" aria-hidden="true"></i>&nbsp;&nbsp;
-Dropped null key:value pairs from JSON using [JQ](https://stedolan.github.io/jq/).
-
-
-<i class="fa fa-chevron-circle-right" aria-hidden="true"></i>&nbsp;&nbsp;
-Generated [Jekyll collections](https://jekyllrb.com/docs/collections/) (and pages) from YAML using [wax_tasks gem](https://github.com/mnyrop/wax_tasks).
-
-<i class="fa fa-chevron-circle-right" aria-hidden="true"></i>&nbsp;&nbsp;
-Ended with a ~40k page static Jekyll site powered by YAML data, with JSON index for client-side search.
+- Started with a Cake PHP site powered by a relational MYSQL database.
+- MySQL dump to CSVs.
+- Imported CSVs into [IPython](https://ipython.org/) as [Pandas](https://pandas.pydata.org/) dataframes.
+- Merged relational data (from CSV jointables) onto dataframes by type.
+- Exported dataframes as JSON records (and CSVs, for archival purposes only).
+- Dropped null key:value pairs from JSON using [JQ](https://stedolan.github.io/jq/).
+- Generated [Jekyll collections](https://jekyllrb.com/docs/collections/) (and pages) from YAML using [wax_tasks gem](https://github.com/mnyrop/wax_tasks).
+- Ended with a ~40k page static Jekyll site powered by YAML data, with JSON index for client-side search.

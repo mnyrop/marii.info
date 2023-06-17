@@ -1,12 +1,10 @@
 ---
 layout: default
-title: playing
+title: Playing
 ---
 
-<hr>
+## Playing
 
-## playing
-----
 
 {% include games_list.html %}
 

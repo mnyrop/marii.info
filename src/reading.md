@@ -1,12 +1,9 @@
 ---
 layout: default
-title: reading
+title: Reading
 ---
 
-<hr>
-
-## reading
-----
+## Reading
 
 {% include books_list.html %}
 

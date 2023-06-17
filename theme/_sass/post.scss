@@ -1,13 +1,13 @@
 .post__meta {
   margin: 30px 0 20px;
-  border-bottom: 1px solid $color__black;
+  // border-bottom: 1px solid $color__black;
   overflow: hidden;
   font-weight: 700;
 }
 
 .project__meta {
   padding-bottom: 1rem;
-  border-bottom: 1px solid $color__black;
+  // border-bottom: 1px solid $color__black;
   font-weight: 700;
 }
 
@@ -58,12 +58,22 @@ $paginate-padding: 13px;
 
 .post__body {
   padding-bottom: 20px;
+  font-family: 'Jost', sans-serif;
+  font-weight: lighter;
   margin-top: 2rem;
-  font-family: 'Urbanist', sans-serif;
   border-bottom: 1px solid $color__black;
-  // text-transform: none;
   line-height: 1.5em;
   font-size: 1.15em;
+
+  strong, b {
+    font-weight: 600;
+  }
+
+  img, iframe {
+    max-width: 600px;
+    max-height: 600px;
+    max-width: 100%;
+  }
   
   pre, code {
     font-size: 12px;
@@ -74,7 +84,6 @@ $paginate-padding: 13px;
     max-width: 90ch;
   }
   h1, h2, h3, h4 {
-    font-family: "karrik";
     max-width: 40ch;
   }
   p, li, dl {

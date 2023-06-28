@@ -1,6 +1,8 @@
 ---
 layout: project
 title:  "Wax"
+order: 0
+tagline: digital exhibitions but make it minimal computing
 img: 'https://minicomp.github.io/wiki/assets/wax_screen.gif'
 link: "https://minicomp.github.io/wax/"
 ---

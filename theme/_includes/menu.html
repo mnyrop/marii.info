@@ -1,7 +1,0 @@
-{% for item in site.data.menu %}
-    <a href="{{ item.url }}"
-        {% if item.external %}
-        target="_blank"
-        {% endif %}>{{ item.title }}</a>
-    {% unless forloop.last %}&nbsp;{% endunless %}
-{% endfor %}

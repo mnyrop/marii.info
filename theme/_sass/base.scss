@@ -4,11 +4,7 @@ $on-laptop: 800px !default;
 // typography
 $font-path: "./fonts" !default;
 
-@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
-@font-face {
-  font-family: "karrik";
-  src: url("#{$font-path}/Karrik-Regular.woff2") format("woff2");
-}
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap');
 
 @font-face {
   font-family: "blocus";
@@ -107,8 +103,6 @@ html {
 
 body {
   width: 100%;
-  // margin: 25px auto;
-  // padding: 1rem;
   background: $color__beige;
   color: $color__black;
   font-family: $karrik;
@@ -116,12 +110,6 @@ body {
   font-weight: $font__weight;
   line-height: $font__line-height;
   letter-spacing: 0.08rem;
-  // text-transform: lowercase;
-}
-
-.container {
-  max-width: 1200px;
-  margin: 100px auto;
 }
 
 @mixin wavy-underline {

@@ -1,7 +1,7 @@
 ---
 layout: project
 title:  Embarrassment Party
-category: art/curtorial
+tagline: cloud computing and a curatorial pipe dream
 img: 'https://embarrassment.party/stuff/smoke_water.gif'
 time_period: 2014
 link: "https://embarrassment.party"

@@ -1,7 +1,7 @@
 ---
 layout: project
-title:  Turn Up the Volume! Amplifying Soul of Reason
-category: digital scholarship
+title:  Turn Up the Volume! Amplifying <i>Soul of Reason</i>
+tagline: transcribing 1970s radio broadcasts with community events & ai scripts
 img: 'https://digitalhumanities.nyu.edu/media/projects/soul-of-reason.jpg'
 time_period: 2020 – 2021
 link: https://specialcollections.hosting.nyu.edu/projects/soul-of-reason/

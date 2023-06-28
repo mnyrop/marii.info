@@ -3,16 +3,17 @@ layout: default
 title: home
 ---
 
-<p style="max-width:75ch">
-    Full stack open source developer & data engineer based in Queens, NY. <br><br>
+<p class="max-w-prose pb-2">
+    Hi! I'm an open source developer and data engineer based in Queens, NY.
+</p>
+<p class="max-w-prose pb-2">
     I author software packages, design user interfaces, and build cloud architectures and workflows for librarians, archivists, humanities researchers, and other keepers of cultural heritage.
 </p>
-<br>
-<p style="max-width:75ch">
+<p class="max-w-prose pb-2">
     If you have a project to propose, please copy my email below and drop a line!
 </p>
 
-<p>{% include social.html %}</p>
+{% include social.html %}
 
 <br>
 <br>

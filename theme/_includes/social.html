@@ -36,13 +36,13 @@
     }
         
     [data-tooltip]::after {
-        height: 22px;
-        padding: 8px 8px 4px;
+        height: 16px;
+        padding: 0px 8px 4px;
         margin-left: -20px;
         margin-bottom: 5px;
         border-radius: 8px;
 
-        font-size: 14px;
+        font-size: 10px;
         content: attr(data-tooltip); 
         white-space: nowrap;
 
@@ -52,7 +52,7 @@
 </style>
 
 <br>
-
+<p>
 {% for item in site.data.social %}
     <a href="{{ item.url }}"
         {% if item.external %}
@@ -69,7 +69,7 @@
     >{{ item.title }}</a>
     {% unless forloop.last %}&nbsp;{% endunless %}
 {% endfor %}
-
+</p>
 
 <script>
     const tooltip = document.getElementById('email-tooltip');

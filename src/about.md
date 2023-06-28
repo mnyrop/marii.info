@@ -3,15 +3,13 @@ layout: default
 title: cv
 ---
 
-<p style="max-width:75ch;">
+<p class="max-w-prose pb-2">
     <b>Current:</b> Senior Research Data Engineer @ NYU IT & Libraries
 </p>
-<br>
-<p style="max-width:75ch;">
+<p class="max-w-prose pb-2">
     <b>Past:</b> Digital Humanities Technology Specialist @ NYU IT & Libraries; Digital Humanities Developer @ Columbia University Libraries; Post-Baccalaureate Technologist @ Five College Digital Humanities
 </p>
-
-<p>{% include social.html %}</p>
+{% include social.html %}
 
 <br>
 

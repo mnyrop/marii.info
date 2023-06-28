@@ -1,6 +1,12 @@
-<div class="row__cols my-3">
-  <div class="row__title" style="font-size:1.75rem">
-    <a href="/" class="no-magic">Marii Nyrop</a>
-  </div>
-  <div>{% include menu.html %}</div>
-</div>
+<nav class="mb-8">
+  <a href="/" class="no-magic wavy-heading" style="font-size:1.75rem">Marii Nyrop</a>
+  <div class="float-right">
+    {% for item in site.data.menu %}
+        <a href="{{ item.url }}"
+            {% if item.external %}
+            target="_blank"
+            {% endif %}>{{ item.title }}</a>
+        {% unless forloop.last %}&nbsp;{% endunless %}
+    {% endfor %}
+    </div>
+</nav>

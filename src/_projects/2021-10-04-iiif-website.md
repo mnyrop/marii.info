@@ -1,7 +1,7 @@
 ---
 layout: project
-title:  IIIF.io Redesign
-category: web development
+title:  IIIF.io
+tagline: flagship website for the international image interoperability framework
 img: 'https://iiif.io/assets/uploads/Shin-Nihon-chokanzu-rumsey.webp'
 time_period: 2021
 link: https://iiif.io/

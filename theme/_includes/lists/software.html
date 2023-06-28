@@ -5,12 +5,12 @@
 </div>
 
 <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 mt-4 mb-8">
-  {% assign sorted = site.software | sort: "date" | reverse %}
+  {% assign sorted = site.software | sort: "order" %}
   {% for project in sorted %}
     <div class="">
       <a href="{{ site.url }}{{ project.url | relative_url }}">
-        <img class="transition-all object-cover invert h-40 w-full saturate-0 hover:saturate-100 hover:invert-0" src="{{ project.img | default: 'https://images.unsplash.com/photo-1554629947-334ff61d85dc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib' }}">
-        {{ project.title }}</a>
+        <img class="pb-2 transition-all object-cover invert h-36 w-full saturate-0 hover:saturate-100 hover:invert-0" src="{{ project.img | default: 'https://images.unsplash.com/photo-1554629947-334ff61d85dc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib' }}">
+        {{ project.title }}</a> {% if project.tagline %} — <span class="alt-font">{{ project.tagline | downcase }}</span>{% endif %}
     </div>
   {% endfor %}
 </div>

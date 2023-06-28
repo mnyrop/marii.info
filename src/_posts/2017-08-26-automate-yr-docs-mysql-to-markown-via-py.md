@@ -19,13 +19,13 @@ Because of the enormity of the collection (~300K documents and growing!), manual
 
 Below is the best response I've been able to provide for that question. It's a Python script that **connects to both the production database and the update database created by the ingestion process.** It then extracts information about the databases in the form of Pandas dataframes and **writes a Markdown report of the ingestion results, including:**
 
-- **a list of tables that were dropped** (i.e. tables present in the production db but not in the update db)<br><br>
-- **the % change in rowcount** (between the production tables and their update counterparts), and<br><br>
+- **a list of tables that were dropped** (i.e. tables present in the production db but not in the update db)
+- **the % change in rowcount** (between the production tables and their update counterparts), and
 - **at-a-glance previews** (first 5 rows) of each updated table.
 
 Because I included this script directly in the ingestion pipeline, the markdown report is automatically generated on ingest and needs only to be pushed to my repository's `documentation` directory after the process is complete.
 
-## the .cnf file
+### the .cnf file
 
 *<sup>(You can learn more about .cnf option files [here](https://dev.mysql.com/doc/refman/5.7/en/option-files.html).)</sup>*
 
@@ -36,7 +36,7 @@ password= # your mysql password
 host= # your mysql host (url or localhost)
 ```
 
-## the main script
+### the main script
 *<sup>(aka `results.py` or something similar)</sup>*
 
 ```python
@@ -101,7 +101,7 @@ f.write(unicode(file_as_string,'utf-8'))
 
 ```
 
-## multi-purpose methods
+### multi-purpose methods
 
 *<sup>(Add the following methods before the config section of the main script, or put them in another file like `helpers.py` to be imported as a local module.)</sup>*
 
@@ -184,7 +184,7 @@ def format_list(heading, list): # returns md formatted list w h3 heading
 
 
 
-## Final thoughts:
+### Final thoughts:
 
 I'm hoping to implement this style of automated documentation across History_Lab's various collection ingestion pipelines. The goal is not only to create standardized, thorough system for documentation, but also to better understand changes to the collection over time and anticipate possible issues.
 

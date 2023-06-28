@@ -3,7 +3,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
 
-  <title>{{ site.title | downcase | escape }}{% if page.title %} | {{ page.title | downcase | escape }}{% endif %}</title>
+  <title>{{ site.title | downcase | escape | strip_html }}{% if page.title %} | {{ page.title | downcase | escape | strip_html }}{% endif %}</title>
   <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}">
 
   {% if site.favicon %}
@@ -16,6 +16,7 @@
   <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.4.0/styles/base16/material-palenight.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://unpkg.com/@tailwindcss/typography@0.2.x/dist/typography.min.css">
   <script>
     hljs.configure({ignoreUnescapedHTML: true});
     hljs.highlightAll();

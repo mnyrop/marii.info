@@ -1,11 +1,16 @@
 ---
 layout: project
 order: 1
-tagline: craft batch publishing with serverless-iiif
+tagline: Craft Batch Publishing with Serverless IIIF
 title:  Aperitiiif
 # img: 'https://media4.giphy.com/media/4OPta6flqKAUVAkM5R/200w.gif?cid=6c09b952i180c328eocqyrd94q5ed3prpj252ko6b5ji8cpj&rid=200w.gif&ct=v'
 img: '/images/aperitiiif.jpg'
-link: "https://middlicomp.github.io/aperitiiif"
+show_img: true
+links: 
+  - label: Documentation
+    url: https://middlicomp.github.io/aperitiiif
+  - label: GitHub Org
+    url: https://github.com/middlicomp
 ---
 
 [Aperitiiif](https://middlicomp.github.io/aperitiiif) is a workflow and set of components for batch publishing [IIIF](https://iiif.io/)-compliant image collections. It addresses the needs of research and scholarly collections—needs often distinct from collections formally acquired and stewarded by research institutions.

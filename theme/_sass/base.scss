@@ -58,7 +58,7 @@ hr {
 
 a {
   color: $color__black;
-  text-decoration: none;
+  text-decoration: none !important;
   background-image: linear-gradient(120deg, #d5cece 0%, #fde97e 100%);
   background-repeat: no-repeat;
   background-size: 100% 0.2em;
@@ -127,6 +127,18 @@ body {
   font-weight: bold;
   font-size: 1.3rem;
   margin-bottom: 1rem;
+}
+
+.prose {
+  color: $color__black !important;
+  b, strong, i, p, a, h1, h2, h3, h4, h5 {
+    color: unset !important;
+  }
+  .prose-title {
+    font-size: 2rem !important;
+    line-height: 2.5rem !important;
+    margin-bottom: 1rem !important;
+  }
 }
 
 

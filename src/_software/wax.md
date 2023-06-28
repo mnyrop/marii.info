@@ -2,38 +2,14 @@
 layout: project
 title:  "Wax"
 order: 0
-tagline: digital exhibitions but make it minimal computing
+tagline: Digital Exhibitions But Make It Minimal Computing
 img: 'https://minicomp.github.io/wiki/assets/wax_screen.gif'
-link: "https://minicomp.github.io/wax/"
+show_img: true
+links: 
+  - label: Documentation
+    url: "https://minicomp.github.io/wax/"
 ---
 
-**Wax is an extensible workflow for producing scholarly exhibitions with minimal computing principles.**  
+Wax is an extensible workflow for producing scholarly exhibitions with minimal computing principles. It's comprised of: a few Ruby gems for processing image data and associated metadata ([wax_tasks](https://github.com/minicomp/wax_tasks/), [wax_iiif](https://github.com/minicomp/wax_iiif/)), a Jekyll theme ([wax_theme](https://github.com/minicomp/wax/)), and documentation for creating, deploying, and maintaining digital exhibitions.
 
-It's comprised of: a few Ruby gems for processing image data and associated metadata ([wax_tasks](https://github.com/minicomp/wax_tasks/), [wax_iiif](https://github.com/minicomp/wax_iiif/)), a Jekyll theme([wax_theme](https://github.com/minicomp/wax/)), and documentation for creating, deploying, and maintaining digital exhibitions.
-
-**The exhibition sites created by Wax are static.**  
-
-This means they consist of flat HTML, CSS, and JavaScript files that don't need to communicate in a complex way back to a server. This makes them cheaper, safer, and generally easier to maintain—as long as you're willing to learn some new skills.
-
-**The skills needed to create Wax sites are fundamental.**  
-
-This means they are largely transferable for use in other digital projects. 'Learning Wax' does not mean learning how to use a platform. It involves learning the basics of web development, data management, and [plain text editing](https://zapier.com/blog/beginner-ultimate-guide-markdown/) while leveraging a few great open source libraries and frameworks along the way.
-
-**Wax keeps the collection presentation separate from the collection data.**  
-
-The Wax workflow starts with making standardized image files and metadata records and builds around them, handling canonical information, scholarly content, and site styling differently and deliberately. This makes it easier for you or others to reuse and reimagine your collection data in other contexts, or to preserve the collection when it comes time to sunset the exhibition.
-
-Wax was created for individuals and groups who either don't have or don't want to use a lot of resources to create their scholarly exhibitions. It's best suited for folks who are willing to take on some technical responsibility in exchange for a lot of flexibility.
-
-This is to say that Wax has a relatively high but general-purpose learning curve. To get the most out of Wax, you should have some familiarity with:
-
-- Using an interactive shell (e.g., Bash/Terminal) to install and interact with programs, files, and directories on your local computer.
-- Using Git and GitHub to version control and collaborate on projects.
-- Using Jekyll to generate static sites.
-- Creating and normalizing data files (e.g., CSVs, JSON, YAML)
-- Using file-naming conventions and best practices.
-- Editing HTML, CSS, and some JavaScript.
-
-**However, Wax is also great for teaching the skills above!**
-
-For examples of digital humanities pedagogy through the creation of Wax exhibitions, check out [this workshop](https://library.columbia.edu/news/events/event.html?guid=CAL-00bb9e25-6667531c-0166-695e8946-00001777events%40columbia.edu&returnlinkurl=/content/libraryweb/research/workshops&returnlinktext=Workshops), [this GitHub repository](https://github.com/stylerevolution/stylerevolution.github.io), and [this custom Wax site](https://stylerevolution.github.io/).
+The exhibition sites created by Wax are static. This means they consist of flat HTML, CSS, and JavaScript files that don't need to communicate in a complex way back to a server. This makes them cheaper, safer, and generally easier to maintain—as long as you're willing to learn some new skills.

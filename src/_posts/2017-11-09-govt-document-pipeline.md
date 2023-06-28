@@ -7,7 +7,7 @@ overlay: purple
 tags: bs4;tesseract;ocr
 ---
 
-# Steps:
+### Steps:
 
 1. Scrape and save metadata with Python
 2. Scrape and download .pdfs to local directory with Python
@@ -15,7 +15,7 @@ tags: bs4;tesseract;ocr
 4. Extract raw text from .tifs using Tesseract OCR
 5. Connect raw text to metadata (in a static format like csv or in a database)
 
-## cia-scraper.python&#172;
+#### cia-scraper.python&#172;
 
 ```python
 from bs4 import BeautifulSoup
@@ -106,7 +106,7 @@ df = meta_df(True)
 
 
 
-## tif-convert.sh&#172;
+#### tif-convert.sh&#172;
 
 ```bash
 TIF_DIR="tif"
@@ -127,7 +127,7 @@ mv ${TIF_DIR} ..
 ```
 
 
-## tesseract.sh &#172;
+#### tesseract.sh &#172;
 
 ```bash
 TXT_DIR="texts"

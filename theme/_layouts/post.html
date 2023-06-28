@@ -6,7 +6,8 @@ layout: default
   <h2 class="prose-title">
     {{ page.title }}
   </h2>
-  <img src="{{ page.img }}" class="pt-5" style="max-height:34rem;">
+  <p>{{ page.date | date_to_long_string }}</p>
+  <img src="{{ page.img }}" class="pt-2" style="max-height:34rem;">
   {{ content }}
 </article>
 

@@ -1,11 +1,6 @@
-<div class="bio">
-  <div class="bio__header">
-  	<a href="{{ '/' | absolute_url }}" class="no-magic"><img src="{{ '/assets/snake.png' | absolute_url }}" alt="2 headed snake logo" style="width:100px;"/></a>
+<div class="row__cols my-3">
+  <div class="row__title" style="font-size:1.75rem">
+    <a href="/" class="no-magic">Marii Nyrop</a>
   </div>
-  <!-- <div class="bio__desc">{{ site.desc }}</div> -->
-  <div class="bio__menu">
-    {% for item in site.data.menu %}
-    <a href="{{ item.url | absolute_url }}">{{ item.title }}</a>&nbsp;
-    {% endfor %}
-  </div>
+  <div>{% include menu.html %}</div>
 </div>

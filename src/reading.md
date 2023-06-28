@@ -5,7 +5,7 @@ title: Reading
 
 ## Reading
 
-{% include books_list.html %}
+{% include lists/books.html %}
 
 <br><br>
 <br><br>

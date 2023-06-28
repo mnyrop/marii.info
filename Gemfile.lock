@@ -2,7 +2,8 @@ PATH
   remote: theme
   specs:
     marii-theme (0.1.0)
-      jekyll (~> 4.2)
+      jekyll
+      kramdown-parser-gfm
 
 GEM
   remote: https://rubygems.org/
@@ -106,7 +107,6 @@ PLATFORMS
 DEPENDENCIES
   html-proofer
   jekyll
-  kramdown-parser-gfm
   marii-theme!
   rake
   webrick

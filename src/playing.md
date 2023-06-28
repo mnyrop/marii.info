@@ -6,7 +6,7 @@ title: Playing
 ## Playing
 
 
-{% include games_list.html %}
+{% include lists/games.html %}
 
 <br><br>
 <br><br>

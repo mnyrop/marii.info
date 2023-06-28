@@ -14,7 +14,7 @@
       background-size: cover;
     "></div>
 
-    <div class="container" style="padding-top:50px">
+    <div class="container mx-auto max-w-screen-xl py-10">
       {% include header.html %}
       <div class="post">
         <h1><a href="/#notes">notes</a> > {{ page.title }}</h2>
@@ -46,7 +46,7 @@
         {% endif %}
       </div>
 
-      {% include posts_list.html uid=page.id %}
+      {% include lists/notes.html uid=page.id %}
     </div>
   </body>
 

@@ -1,10 +1,10 @@
 ---
 layout: project
-title:  Turn Up the Volume! Amplifying <span class="wavy-underline">Soul of Reason</span>
+title:  Turn Up the Volume! Amplifying Soul of Reason
 category: digital scholarship
-img: 'https://nyu-dss.github.io/soul-of-reason/images/uploads/roscoe.jpg'
+img: 'https://digitalhumanities.nyu.edu/media/projects/soul-of-reason.jpg'
 time_period: 2020 – 2021
-link: https://nyu-dss.github.io/soul-of-reason/
+link: https://specialcollections.hosting.nyu.edu/projects/soul-of-reason/
 ---
 
 “Raising the Volume” is a cross-departmental initiative at NYU to transform *Soul of Reason*, a historically and culturally rich 1970s radio program on Black and Latinx culture, into a collaboratively curated collection as data. The show’s host, Dr. Roscoe C. Brown, Jr., served as the first Director of the IAAA and the recordings are part of the records of NYU’s Institute for Afro-American (now African American) Affairs (IAAA), housed within NYU Special Collections. Soul of Reason showcased unique and vital conversations with leaders, politicians, writers, activists, and artists of African descent in New York City during the civil rights and Black Power and Arts movements that spanned nearly two decades.

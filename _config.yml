@@ -16,7 +16,12 @@ source:       src
 collections:
   projects:
     output: true
-    permalink: projects/:slug
+    permalink: projects/dh/:slug
+    layout: project
+  software:
+    output: true
+    permalink: software/:slug
+    layout: project
 
 exclude:
   - Gemfile

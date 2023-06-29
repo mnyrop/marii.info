@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="overscroll-none">
   <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,6 +17,8 @@
 
   <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.4.0/styles/base16/material-palenight.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://unpkg.com/@tailwindcss/typography@0.2.x/dist/typography.min.css">
   <script>
     hljs.configure({ignoreUnescapedHTML: true});
     hljs.highlightAll();
@@ -37,49 +39,46 @@
 
 
   <body>
-    <div style="
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      background: #0e0e0e;
-      background-image: url('/assets/banner.png');
-      height: 100px;
-      background-size: cover;
-    "></div>
-
-    <div class="container" style="padding-top:50px">
-      <div class="bio">
-  <div class="bio__header">
-  	<a href="/" class="no-magic"><img src="/assets/snake.png" alt="2 headed snake logo" style="width:100px;"/></a>
-  </div>
-  <!-- <div class="bio__desc"></div> -->
-  <div class="bio__menu">
+    <div class="relative w-screen h-40 sm:mb-6 md:mb-8 bg-yellow-800 relative bg-fixed" style="background-image: url('/assets/banner.png')">
+      <div class="container mx-auto pt-5 px-5 max-w-full">
+        <a class="text-white no-magic" href="/">
+          <img class="max-h-10 invert hover:invert-0" src="/assets/snake.png">
+        </a>
+      </div>
+    </div>
     
-    <a href="/">Home</a>&nbsp;
-    
-    <a href="/about">CV</a>&nbsp;
-    
-    <a href="/listening">Listening</a>&nbsp;
-    
-    <a href="/playing">Playing</a>&nbsp;
-    
-    <a href="/reading">Reading</a>&nbsp;
-    
-  </div>
-</div>
-
-      <div class="post">
-        <h1><a href="/#notes">notes</a> > Create and store static IIIF annotations Minicomp style</h2>
-        <p class="project__meta">
-          01 February 2018
-          <!-- <br>
-          jekyll;iiif;rake -->
-        </p>
-
-        <div class="post__body">
-          <img src="https://darthcrimson.org/wp-content/uploads/2016/10/parser3-1024x568.png" />
-          <p><strong>This post</strong> is about a recent Proof of Concept demo I made for adding and storing <a href="https://iiif.io/">IIIF</a> compliant <a href="https://iiif.io/api/presentation/2.1/#annotation-list">annotation lists</a> without configuring an endpoint or database. Feel free to skip ahead and play with the demo <a href="https://marii.info/annotate/">here</a>.</p>
+    <div class="container mx-auto max-w-screen-lg py-10 px-5 mb-10">
+      <nav class="mb-10 flex flex-wrap justify-between gap-4">
+    <h1 class="flex-none">
+        <a href="/" class="no-magic wavy-heading hover:text-yellow-800" style="font-size:1.75rem">Marii Nyrop</a>
+    </h1>
+    <div class="flex-none pt-4">
+        
+            <a href="/about"
+                >CV</a>
+            &nbsp;
+        
+            <a href="/listening"
+                >Listening</a>
+            &nbsp;
+        
+            <a href="/playing"
+                >Playing</a>
+            &nbsp;
+        
+            <a href="reading"
+                >Reading</a>
+            
+        
+    </div>
+</nav>
+      <article class="prose prose-p:py-2 mb-10">
+  <h2 class="prose-title">
+    Create and store static IIIF annotations Minicomp style
+  </h2>
+  <p>01 February 2018</p>
+  <img src="https://darthcrimson.org/wp-content/uploads/2016/10/parser3-1024x568.png" class="pt-2" style="max-height:34rem;">
+  <p><strong>This post</strong> is about a recent Proof of Concept demo I made for adding and storing <a href="https://iiif.io/">IIIF</a> compliant <a href="https://iiif.io/api/presentation/2.1/#annotation-list">annotation lists</a> without configuring an endpoint or database. Feel free to skip ahead and play with the demo <a href="https://marii.info/annotate/">here</a>.</p>
 
 <p><strong>what it is:</strong> A workflow for creating and storing annotations on IIIF manifests that leverages the <a href="https://projectmirador.org/">Project Mirador</a> viewer, <a href="https://jekyllrb.com/">Jekyll</a>, and <a href="https://ruby.github.io/rake/">Rake</a>.</p>
 
@@ -95,26 +94,25 @@
 
 <iframe width="100%" height="400" src="https://www.youtube-nocookie.com/embed/nHbsm8T1BnI?rel=0&amp;controls=0&amp;showinfo=0?rel=0&amp;autoplay=1&amp;vq=hd720" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
 
-        </div>
+</article>
 
-        
-          <div class="post__paginate">
-            
-              <span class="post__paginate-left">
-                <a href="/notes/govt-document-pipeline">Create a Gov't Document Pipeline from Scraping to Full Text OCR</a>
-              </span>
-            
 
-            
-              <span class="post__paginate-right">
-                <a href="/notes/nycdh-2018">NYCDH Week Workshop: Publishing Sites with GitHub Pages</a>
-              </span>
-            
-          </div>
-        
-      </div>
+  <div class="post__paginate border-t border-slate-900 pt-2 mt-4">
+    
+      <span class="post__paginate-left max-w-sm">
+        <a href="/notes/nycdh-2018">NYCDH Week Workshop: Publishing Sites with GitHub Pages</a>
+      </span>
+    
 
-      
+    
+      <span class="post__paginate-right max-w-sm">
+        <a href="/notes/govt-document-pipeline">Create a Gov't Document Pipeline from Scraping to Full Text OCR</a>
+      </span>
+    
+  </div>
+
+
+
   <ul class="rows">
     <li class="row__cols">
       <div class="row__title">
@@ -207,7 +205,7 @@
       <li class="row__post">
         <div class="row__title ">
           <a href="/notes/jekyll-ci">
-            Continuous Integration! Or: Jekyll gets some robot nannies.
+            Continuous Integration! Or: Jekyll Gets Some Robot Nannies.
           </a>
         </div>
         <div class="row__date ">
@@ -277,6 +275,7 @@
       </li>
     
   </ul>
+
 
 
     </div>

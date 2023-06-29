@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="overscroll-none">
   <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,6 +17,8 @@
 
   <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.4.0/styles/base16/material-palenight.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://unpkg.com/@tailwindcss/typography@0.2.x/dist/typography.min.css">
   <script>
     hljs.configure({ignoreUnescapedHTML: true});
     hljs.highlightAll();
@@ -37,49 +39,46 @@
 
 
   <body>
-    <div style="
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      background: #0e0e0e;
-      background-image: url('/assets/banner.png');
-      height: 100px;
-      background-size: cover;
-    "></div>
-
-    <div class="container" style="padding-top:50px">
-      <div class="bio">
-  <div class="bio__header">
-  	<a href="/" class="no-magic"><img src="/assets/snake.png" alt="2 headed snake logo" style="width:100px;"/></a>
-  </div>
-  <!-- <div class="bio__desc"></div> -->
-  <div class="bio__menu">
+    <div class="relative w-screen h-40 sm:mb-6 md:mb-8 bg-yellow-800 relative bg-fixed" style="background-image: url('/assets/banner.png')">
+      <div class="container mx-auto pt-5 px-5 max-w-full">
+        <a class="text-white no-magic" href="/">
+          <img class="max-h-10 invert hover:invert-0" src="/assets/snake.png">
+        </a>
+      </div>
+    </div>
     
-    <a href="/">Home</a>&nbsp;
-    
-    <a href="/about">CV</a>&nbsp;
-    
-    <a href="/listening">Listening</a>&nbsp;
-    
-    <a href="/playing">Playing</a>&nbsp;
-    
-    <a href="/reading">Reading</a>&nbsp;
-    
-  </div>
-</div>
-
-      <div class="post">
-        <h1><a href="/#notes">notes</a> > Continuous Integration II: Headless Tests w/ RSpec, Capybara, and Poltergeist</h2>
-        <p class="project__meta">
-          13 September 2017
-          <!-- <br>
-          ci;rspec;capybara;poltergeist -->
-        </p>
-
-        <div class="post__body">
-          <img src="https://i.gifer.com/8Qfd.gif" />
-          <h1 id="what-is-a-headless-feature-test">What is a headless feature test?</h1>
+    <div class="container mx-auto max-w-screen-lg py-10 px-5 mb-10">
+      <nav class="mb-10 flex flex-wrap justify-between gap-4">
+    <h1 class="flex-none">
+        <a href="/" class="no-magic wavy-heading hover:text-yellow-800" style="font-size:1.75rem">Marii Nyrop</a>
+    </h1>
+    <div class="flex-none pt-4">
+        
+            <a href="/about"
+                >CV</a>
+            &nbsp;
+        
+            <a href="/listening"
+                >Listening</a>
+            &nbsp;
+        
+            <a href="/playing"
+                >Playing</a>
+            &nbsp;
+        
+            <a href="reading"
+                >Reading</a>
+            
+        
+    </div>
+</nav>
+      <article class="prose prose-p:py-2 mb-10">
+  <h2 class="prose-title">
+    Continuous Integration II: Headless Tests w/ RSpec, Capybara, and Poltergeist
+  </h2>
+  <p>13 September 2017</p>
+  <img src="https://i.gifer.com/8Qfd.gif" class="pt-2" style="max-height:34rem;">
+  <h3 id="what-is-a-headless-feature-test">What is a headless feature test?</h3>
 
 <p>The term “headless” refers to software capable of working without a GUI. Accordingly, <strong>headless feature tests</strong> are programmatic actions that <strong>simulate in-brower user interactions with site features</strong> (without needing to actually open a GUI browser!) <strong>and then return results on the success (or failure)</strong> of that interaction.</p>
 
@@ -87,26 +86,26 @@
 
 <p>Headless feature tests (like any <a href="https://searchsoftwarequality.techtarget.com/definition/unit-testing">unit tests</a>) are an important part of any <strong><a href="https://aws.amazon.com/devops/continuous-integration/">Continuous Integration</a> (CI)</strong> architecture. If you’re new to CI and want to figure out how to set up your Jekyll site in a continuously integrated way, check out <a href="/notes/jekyll-ci">this other post</a> first. If you’re all set up with CI for Jekyll and want to take it to the next step, this post is for you.</p>
 
-<h1 id="what-tools-do-we-need">What tools do we need?</h1>
+<h3 id="what-tools-do-we-need">What tools do we need?</h3>
 
-<h2 id="travis-ci"><a href="https://travis-ci.org">Travis-CI</a></h2>
+<h4 id="travis-ci"><a href="https://travis-ci.org">Travis-CI</a></h4>
 <p>“… is a hosted, distributed continuous integration service used to build and test software projects hosted at GitHub,” that basically tests your build and performs any other tasks you specify on a VM in the cloud. For more on Jekyll and Travis, refer back to <a href="/notes/jekyll-ci">this post</a>.</p>
 
-<h2 id="rspec"><a href="https://rspec.info/">Rspec</a></h2>
+<h4 id="rspec"><a href="https://rspec.info/">Rspec</a></h4>
 <p>… is a Ruby gem and “spec runner” for <em>behavior-driven development</em>, which is exactly what it sounds like. Rspec lets you write tests for what your code <em>should</em> do, which in turn helps you write better, less fickle code.</p>
 
-<h2 id="rack-jekyll"><a href="https://github.com/adaoraul/rack-jekyll">Rack-Jekyll</a></h2>
+<h4 id="rack-jekyll"><a href="https://github.com/adaoraul/rack-jekyll">Rack-Jekyll</a></h4>
 <p>… is a Ruby gem and Jekyll plugin that transforms your Jekyll site into a <a href="https://rack.github.io/">Rack</a> application. If you’re not familiar with Rack, all you need to know is that it is the preferred app format for Capybara, so Jekyll-Rack is just translating our Jekyll site to an app that Capybara will get along with better.</p>
 
-<h2 id="capybara"><a href="https://teamcapybara.github.io/capybara/">Capybara</a></h2>
+<h4 id="capybara"><a href="https://teamcapybara.github.io/capybara/">Capybara</a></h4>
 <p>… is a Ruby gem that “helps you test web applications by simulating how a real user would interact with your app.” It’s basically what makes Rspec act like a user.</p>
 
-<h2 id="poltergeist"><a href="https://github.com/teampoltergeist/poltergeist">Poltergeist</a></h2>
+<h4 id="poltergeist"><a href="https://github.com/teampoltergeist/poltergeist">Poltergeist</a></h4>
 <p>… is a Ruby gem and driver for Capybara that allows you to run your tests on a headless WebKit browser provided by PhantomJS. It’s basically what gives Capybara access to your browser in order to go around pretending like a user.</p>
 
 <p><strong>To summarize (very roughly):</strong> You write Rspec tests. Rack-Jekyll will translate your Jekyll site to a Rack app. Capybara, pretending to be a user, will access a headless (non-GUI) browser with the help of Poltergeist, open your Rack-like Jekyll site and, finally, perform your RSpec tests on it. This is a crude depiction, since many of these roles overlap. But you get the picture.</p>
 
-<h1 id="example-testing-your-site-search">Example: testing your site search</h1>
+<h3 id="example-testing-your-site-search">Example: testing your site search</h3>
 
 <p>I have Lunr search enabled on several of my Jekyll sites and, since Lunr indexing is a little wild and prone to errors, I’ve make a headless test for my search feature.</p>
 
@@ -116,7 +115,7 @@
 
 <p>The following will show you step-by-step how to configure and write such a test.</p>
 
-<h2 id="part-1--rspec-configuration">part 1 – rspec configuration</h2>
+<h4 id="part-1--rspec-configuration">part 1 – rspec configuration</h4>
 
 <div class="highlighter-rouge">
   <pre class="highlight"><code>
@@ -139,7 +138,7 @@
 
 <p>Add a <code class="language-plaintext highlighter-rouge">spec</code> directory to the root of your site, and create <code class="language-plaintext highlighter-rouge">spec_helper.rb</code> and <code class="language-plaintext highlighter-rouge">lunr_spec.rb</code> inside it. You’ll leave these empty for now and come back to them later.</p>
 
-<h3 id="rspec-1">.rspec:</h3>
+<h5 id="rspec-1">.rspec:</h5>
 
 <p>Next add an <code class="language-plaintext highlighter-rouge">.rspec</code> file to the root of your site and give it the following information:</p>
 
@@ -148,7 +147,7 @@
 --format documentation
 </code></pre></div></div>
 
-<h3 id="gemfile">Gemfile:</h3>
+<h5 id="gemfile">Gemfile:</h5>
 
 <p>Add <code class="language-plaintext highlighter-rouge">rspec</code>, <code class="language-plaintext highlighter-rouge">capybara</code>, <code class="language-plaintext highlighter-rouge">poltergeist</code>, and <code class="language-plaintext highlighter-rouge">rack-jekyll</code> to the dev/test group of your <code class="language-plaintext highlighter-rouge">Gemfile</code>:</p>
 
@@ -167,7 +166,7 @@
   </code></pre>
 </div>
 
-<h3 id="travisyml">.travis.yml:</h3>
+<h5 id="travisyml">.travis.yml:</h5>
 
 <p>Add <code class="language-plaintext highlighter-rouge">bundle exec rspec</code> test to the <code class="language-plaintext highlighter-rouge">script</code> group of your <code class="language-plaintext highlighter-rouge">.travis.yml</code> file:</p>
 
@@ -187,13 +186,13 @@
 
 <p>Then execute <code class="language-plaintext highlighter-rouge">$ bundle</code> or <code class="language-plaintext highlighter-rouge">$ bundle install</code> to load the gems and update your <code class="language-plaintext highlighter-rouge">Gemfile.lock</code>.</p>
 
-<h2 id="part-2--set-up-for-your-search-spec">part 2 – set up for your search spec</h2>
+<h4 id="part-2--set-up-for-your-search-spec">part 2 – set up for your search spec</h4>
 
 <blockquote>
   <p><strong>Note:</strong> This example test assumes that you have search enabled on your Jekyll site, presumably with <a href="https://lunrjs.com">Lunr</a> client-side search. I won’t get into indexing your site with Lunr here (that will have to wait for another post), but if you have a working search bar with <code class="language-plaintext highlighter-rouge">id="search"</code>, and it dynamically generates html results with <code class="language-plaintext highlighter-rouge">class="results"</code>, this spec should work for you. For sample jQuery for dynamically showing search results, check out <a href="https://gist.github.com/mnyrop/a0a8834e29a3d3ed403242660719f87b">this gist</a>.</p>
 </blockquote>
 
-<h3 id="_configyml_">_config.yml:<span style="display:none">_</span></h3>
+<h5 id="_configyml_">_config.yml:<span style="display:none">_</span></h5>
 
 <p>For our search spec specifically, you’ll need to tell your <code class="language-plaintext highlighter-rouge">_config.yml</code> which pages have (unique) search bars/indexes and which terms you want to test on each of those pages.</p>
 
@@ -215,9 +214,9 @@ search_tests:
       - poltergeist
 </code></pre></div></div>
 
-<h2 id="part-3--write-a-helper-spec">part 3 – write a helper spec</h2>
+<h4 id="part-3--write-a-helper-spec">part 3 – write a helper spec</h4>
 
-<h3 id="spec_helperrb">spec_helper.rb:</h3>
+<h5 id="spec_helperrb">spec_helper.rb:</h5>
 
 <p>Add the following to the <code class="language-plaintext highlighter-rouge">spec_helper.rb</code> file in your <code class="language-plaintext highlighter-rouge">spec</code> directory:</p>
 
@@ -244,9 +243,9 @@ search_tests:
 </code></pre></div></div>
 <p>This will: hand your spec test the necessary gems, tell RSpec to use Capybara, tell Capybara to use Poltergeist, and tell rack-jekyll to register the Jekyll site. It will also read in your <code class="language-plaintext highlighter-rouge">baseurl</code> and <code class="language-plaintext highlighter-rouge">search_tests</code> info from your <code class="language-plaintext highlighter-rouge">_config.yml</code>, in order to correctly visit your pages and test the queries that you expect.</p>
 
-<h2 id="part-4--write-a-test-spec">part 4 – write a test spec</h2>
+<h4 id="part-4--write-a-test-spec">part 4 – write a test spec</h4>
 
-<h3 id="lunr_specrb">lunr_spec.rb:</h3>
+<h5 id="lunr_specrb">lunr_spec.rb:</h5>
 
 <p>Add the following to the <code class="language-plaintext highlighter-rouge">lunr_spec.rb</code> file in your <code class="language-plaintext highlighter-rouge">spec</code> directory:</p>
 
@@ -298,7 +297,7 @@ search_tests:
 
 <p>… and should be very readable. For more information on formatting RSpec tests, I recommend exploring the documentation on  <a href="https://relishapp.com/rspec/rspec-core/v/3-6/docs/example-groups/basic-structure-describe-it">Relish</a>.</p>
 
-<h2 id="results">results</h2>
+<h4 id="results">results</h4>
 
 <p>When you run your Rspec test (either locally with <code class="language-plaintext highlighter-rouge">$ bundle exec rspec</code>) or via Git commit with Travis, you should see results logged that resemble the following:</p>
 
@@ -330,26 +329,25 @@ tags.html
 
 <p>If there are red lines and failed examples, it’s time to troubleshoot and refactor until you see nothing but that sweet green. Either way, your headless test is now doing its job: simulating the actions of a user and warning you about issues in your code.</p>
 
-        </div>
+</article>
 
-        
-          <div class="post__paginate">
-            
-              <span class="post__paginate-left">
-                <a href="/notes/jekyll-ci">Continuous Integration! Or: Jekyll gets some robot nannies.</a>
-              </span>
-            
 
-            
-              <span class="post__paginate-right">
-                <a href="/notes/govt-document-pipeline">Create a Gov't Document Pipeline from Scraping to Full Text OCR</a>
-              </span>
-            
-          </div>
-        
-      </div>
+  <div class="post__paginate border-t border-slate-900 pt-2 mt-4">
+    
+      <span class="post__paginate-left max-w-sm">
+        <a href="/notes/govt-document-pipeline">Create a Gov't Document Pipeline from Scraping to Full Text OCR</a>
+      </span>
+    
 
-      
+    
+      <span class="post__paginate-right max-w-sm">
+        <a href="/notes/jekyll-ci">Continuous Integration! Or: Jekyll Gets Some Robot Nannies.</a>
+      </span>
+    
+  </div>
+
+
+
   <ul class="rows">
     <li class="row__cols">
       <div class="row__title">
@@ -442,7 +440,7 @@ tags.html
       <li class="row__post">
         <div class="row__title ">
           <a href="/notes/jekyll-ci">
-            Continuous Integration! Or: Jekyll gets some robot nannies.
+            Continuous Integration! Or: Jekyll Gets Some Robot Nannies.
           </a>
         </div>
         <div class="row__date ">
@@ -512,6 +510,7 @@ tags.html
       </li>
     
   </ul>
+
 
 
     </div>

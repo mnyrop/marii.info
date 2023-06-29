@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="overscroll-none">
   <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
 
-  <title>marii¨ | cv</title>
+  <title>marii¨ | cv (of a sort)</title>
   <meta name="description" content="">
 
   
@@ -17,6 +17,8 @@
 
   <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.4.0/styles/base16/material-palenight.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://unpkg.com/@tailwindcss/typography@0.2.x/dist/typography.min.css">
   <script>
     hljs.configure({ignoreUnescapedHTML: true});
     hljs.highlightAll();
@@ -37,48 +39,51 @@
 
 
   <body>
-    <div style="
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      background: #0e0e0e;
-      background-image: url('/assets/banner.png');
-      height: 100px;
-      background-size: cover;
-    "></div>
+    <div class="relative w-screen h-40 sm:mb-6 md:mb-8 bg-yellow-800 relative bg-fixed" style="background-image: url('/assets/banner.png')">
+      <div class="container mx-auto pt-5 px-5 max-w-full">
+        <a class="text-white no-magic" href="/">
+          <img class="max-h-10 invert hover:invert-0" src="/assets/snake.png">
+        </a>
+      </div>
+    </div>
     
-    <div class="container" style="padding-top:50px">
-      <div class="bio">
-  <div class="bio__header">
-  	<a href="/" class="no-magic"><img src="/assets/snake.png" alt="2 headed snake logo" style="width:100px;"/></a>
-  </div>
-  <!-- <div class="bio__desc"></div> -->
-  <div class="bio__menu">
-    
-    <a href="/">Home</a>&nbsp;
-    
-    <a href="/about">CV</a>&nbsp;
-    
-    <a href="/listening">Listening</a>&nbsp;
-    
-    <a href="/playing">Playing</a>&nbsp;
-    
-    <a href="/reading">Reading</a>&nbsp;
-    
-  </div>
-</div>
-
-      <h2 id="marii-nyrop--cv">Marii Nyrop – CV</h2>
-
-<p style="max-width:75ch;">
+    <div class="container mx-auto max-w-screen-lg py-10 px-5 mb-10">
+      <nav class="mb-10 flex flex-wrap justify-between gap-4">
+    <h1 class="flex-none">
+        <a href="/" class="no-magic wavy-heading hover:text-yellow-800" style="font-size:1.75rem">Marii Nyrop</a>
+    </h1>
+    <div class="flex-none pt-4">
+        
+            <a href="/about"
+                >CV</a>
+            &nbsp;
+        
+            <a href="/listening"
+                >Listening</a>
+            &nbsp;
+        
+            <a href="/playing"
+                >Playing</a>
+            &nbsp;
+        
+            <a href="reading"
+                >Reading</a>
+            
+        
+    </div>
+</nav>
+      <article class="prose prose-p:py-2 mb-10">
+  <h2 class="prose-title">
+    CV (of a sort)
+  </h2>
+</article>
+<p class="max-w-prose pb-2">
     <b>Current:</b> Senior Research Data Engineer @ NYU IT &amp; Libraries
 </p>
-<p style="max-width:75ch;">
+<p class="max-w-prose pb-2">
     <b>Past:</b> Digital Humanities Technology Specialist @ NYU IT &amp; Libraries; Digital Humanities Developer @ Columbia University Libraries; Post-Baccalaureate Technologist @ Five College Digital Humanities
 </p>
-
-<p><style>
+<style>
     [data-tooltip]{
         cursor: pointer;
         position: relative;
@@ -116,13 +121,13 @@
     }
         
     [data-tooltip]::after {
-        height: 22px;
-        padding: 8px 8px 4px;
+        height: 16px;
+        padding: 0px 8px 4px;
         margin-left: -20px;
         margin-bottom: 5px;
         border-radius: 8px;
 
-        font-size: 14px;
+        font-size: 10px;
         content: attr(data-tooltip); 
         white-space: nowrap;
 
@@ -131,19 +136,18 @@
     }
 </style>
 
-<br />
+<p class="pt-4">
 
-
-    <a href="https://github.com/mnyrop" target="_blank">Github</a>
+    <a href="https://github.com/mnyrop" target="_blank">GitHub</a>
     &nbsp;
 
-    <a href="https://www.linkedin.com/in/m-nyrop/" target="_blank">Linkedin</a>
+    <a href="https://www.linkedin.com/in/m-nyrop/" target="_blank">LinkedIn</a>
     &nbsp;
 
     <a href="#" id="email-tooltip" data-tooltip="Copy to Clipboard">Email</a>
     
 
-
+</p>
 
 <script>
     const tooltip = document.getElementById('email-tooltip');
@@ -167,7 +171,7 @@
             alert('Failed to copy text');
         });
     });
-</script></p>
+</script>
 
 <p><br /></p>
 
@@ -526,6 +530,11 @@
 <p><br /><br />
 <br /><br /></p>
 
+
+<br>
+<br>
+<br>
+<br>
     </div>
   </body>
 

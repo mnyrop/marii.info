@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="overscroll-none">
   <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,6 +17,8 @@
 
   <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.4.0/styles/base16/material-palenight.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://unpkg.com/@tailwindcss/typography@0.2.x/dist/typography.min.css">
   <script>
     hljs.configure({ignoreUnescapedHTML: true});
     hljs.highlightAll();
@@ -37,49 +39,46 @@
 
 
   <body>
-    <div style="
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      background: #0e0e0e;
-      background-image: url('/assets/banner.png');
-      height: 100px;
-      background-size: cover;
-    "></div>
-
-    <div class="container" style="padding-top:50px">
-      <div class="bio">
-  <div class="bio__header">
-  	<a href="/" class="no-magic"><img src="/assets/snake.png" alt="2 headed snake logo" style="width:100px;"/></a>
-  </div>
-  <!-- <div class="bio__desc"></div> -->
-  <div class="bio__menu">
+    <div class="relative w-screen h-40 sm:mb-6 md:mb-8 bg-yellow-800 relative bg-fixed" style="background-image: url('/assets/banner.png')">
+      <div class="container mx-auto pt-5 px-5 max-w-full">
+        <a class="text-white no-magic" href="/">
+          <img class="max-h-10 invert hover:invert-0" src="/assets/snake.png">
+        </a>
+      </div>
+    </div>
     
-    <a href="/">Home</a>&nbsp;
-    
-    <a href="/about">CV</a>&nbsp;
-    
-    <a href="/listening">Listening</a>&nbsp;
-    
-    <a href="/playing">Playing</a>&nbsp;
-    
-    <a href="/reading">Reading</a>&nbsp;
-    
-  </div>
-</div>
-
-      <div class="post">
-        <h1><a href="/#notes">notes</a> > The Summer of Japanese Puppets, Part 2</h2>
-        <p class="project__meta">
-          12 July 2017
-          <!-- <br>
-          jupyter;python;json;openrefine -->
-        </p>
-
-        <div class="post__body">
-          <img src="https://www1.columbia.edu/sec-cgi-bin/cul/dlo?obj=ldpd_bun_slide_076_1_1393_2197&size=medium" />
-          <p>This post is part 2 of 4 in a series. Feel free to skip around to:</p>
+    <div class="container mx-auto max-w-screen-lg py-10 px-5 mb-10">
+      <nav class="mb-10 flex flex-wrap justify-between gap-4">
+    <h1 class="flex-none">
+        <a href="/" class="no-magic wavy-heading hover:text-yellow-800" style="font-size:1.75rem">Marii Nyrop</a>
+    </h1>
+    <div class="flex-none pt-4">
+        
+            <a href="/about"
+                >CV</a>
+            &nbsp;
+        
+            <a href="/listening"
+                >Listening</a>
+            &nbsp;
+        
+            <a href="/playing"
+                >Playing</a>
+            &nbsp;
+        
+            <a href="reading"
+                >Reading</a>
+            
+        
+    </div>
+</nav>
+      <article class="prose prose-p:py-2 mb-10">
+  <h2 class="prose-title">
+    The Summer of Japanese Puppets, Part 2
+  </h2>
+  <p>12 July 2017</p>
+  <img src="https://www1.columbia.edu/sec-cgi-bin/cul/dlo?obj=ldpd_bun_slide_076_1_1393_2197&size=medium" class="pt-2" style="max-height:34rem;">
+  <p>This post is part 2 of 4 in a series. Feel free to skip around to:</p>
 
 <p><a href="/notes/the-summer-of-puppets">part 1: the task</a>,
 <a href="/notes/the-summer-of-puppets-3">part 3: the site</a>, or
@@ -178,26 +177,25 @@
 
 <p><strong>Out:</strong> <a href="https://github.com/mnyrop/bunraku-ipy/tree/master/post-processing/json">better JSON</a></p>
 
-        </div>
+</article>
 
-        
-          <div class="post__paginate">
-            
-              <span class="post__paginate-left">
-                <a href="/notes/the-summer-of-puppets">The Summer of Japanese Puppets, Part 1</a>
-              </span>
-            
 
-            
-              <span class="post__paginate-right">
-                <a href="/notes/the-summer-of-puppets-3">The Summer of Japanese Puppets, Part 3</a>
-              </span>
-            
-          </div>
-        
-      </div>
+  <div class="post__paginate border-t border-slate-900 pt-2 mt-4">
+    
+      <span class="post__paginate-left max-w-sm">
+        <a href="/notes/the-summer-of-puppets-3">The Summer of Japanese Puppets, Part 3</a>
+      </span>
+    
 
-      
+    
+      <span class="post__paginate-right max-w-sm">
+        <a href="/notes/the-summer-of-puppets">The Summer of Japanese Puppets, Part 1</a>
+      </span>
+    
+  </div>
+
+
+
   <ul class="rows">
     <li class="row__cols">
       <div class="row__title">
@@ -290,7 +288,7 @@
       <li class="row__post">
         <div class="row__title ">
           <a href="/notes/jekyll-ci">
-            Continuous Integration! Or: Jekyll gets some robot nannies.
+            Continuous Integration! Or: Jekyll Gets Some Robot Nannies.
           </a>
         </div>
         <div class="row__date ">
@@ -360,6 +358,7 @@
       </li>
     
   </ul>
+
 
 
     </div>

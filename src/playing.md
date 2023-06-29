@@ -1,12 +1,6 @@
 ---
-layout: default
+layout: page
 title: Playing
 ---
 
-## Playing
-
-
 {% include lists/games.html %}
-
-<br><br>
-<br><br>

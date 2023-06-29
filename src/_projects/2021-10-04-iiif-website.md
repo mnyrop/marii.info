@@ -2,7 +2,7 @@
 layout: project
 title:  IIIF.io
 tagline: A Flagship Site for the International Image Interoperability Framework
-img: 'https://iiif.io/assets/uploads/Shin-Nihon-chokanzu-rumsey.webp'
+img: '/images/iiif.webp'
 show_img: true
 time_period: 2021
 links: 

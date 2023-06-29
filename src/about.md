@@ -1,6 +1,6 @@
 ---
-layout: default
-title: cv
+layout: page
+title: CV (of a sort)
 ---
 
 <p class="max-w-prose pb-2">

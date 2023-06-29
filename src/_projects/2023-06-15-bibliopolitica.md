@@ -2,7 +2,7 @@
 layout: project
 title:  "Biblio-Política"
 tagline: A Digital History Exhibiton for the Chicano Studies Library 
-img: 'https://upload.wikimedia.org/wikipedia/commons/1/1a/San_Jose_Chicano_Rights_Marches_California003.jpg'
+img: '/images/bibliopolitica.jpg'
 show_img: true
 time_period: 2023
 link: "https://digitalhumanities.nyu.edu/projects/biblio-politica/"

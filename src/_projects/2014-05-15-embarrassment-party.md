@@ -2,7 +2,7 @@
 layout: project
 title:  Embarrassment Party
 tagline: Cloud Computing and a Curatorial Pipe Dream
-img: 'https://embarrassment.party/stuff/smoke_water.gif'
+img: '/images/ep2.gif'
 time_period: 2014
 show_img: true
 links: 

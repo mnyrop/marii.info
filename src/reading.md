@@ -1,11 +1,6 @@
 ---
-layout: default
+layout: page
 title: Reading
 ---
 
-## Reading
-
 {% include lists/books.html %}
-
-<br><br>
-<br><br>

@@ -2,7 +2,7 @@
 layout: project
 title:  Amplifying Soul of Reason
 tagline: Transcribing 1970s Radio Broadcasts with Community Events & AI Scripts
-img: 'https://digitalhumanities.nyu.edu/media/projects/soul-of-reason.jpg'
+img: '/images/soul-of-reason.jpg'
 time_period: 2020 – 2021
 links:
   - label: Website

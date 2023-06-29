@@ -1,0 +1,28 @@
+{% if site.data.committees %}
+  <ul class="rows">
+    <li class="row__cols">
+      <div class="row__title">
+        Committee Membership/Grant Advisory Roles
+      </div>
+      <div class="row__date">
+        Date
+      </div>
+      <div class="row__cat">
+        Institution
+      </div>
+    </li>
+    {% for post in site.data.committees %}
+      <li class="row__post">
+        <div class="row__title">
+          <a href="{{ post.link | absolute_url }}" target="_blank">{{ post.title }}</a>
+        </div>
+        <div class="row__date">
+          {{ post.date }}
+        </div>
+        <div class="row__cat">
+          {{ post.institution }}
+        </div>
+      </li>
+    {% endfor %}
+  </ul>
+{% endif %}

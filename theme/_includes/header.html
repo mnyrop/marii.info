@@ -1,11 +1,14 @@
-<div class="bio">
-  <div class="bio__header">
-  	<a href="{{ '/' | absolute_url }}" class="no-magic"><img src="{{ '/assets/snake.png' | absolute_url }}" alt="2 headed snake logo" style="width:100px;"/></a>
-  </div>
-  <!-- <div class="bio__desc">{{ site.desc }}</div> -->
-  <div class="bio__menu">
-    {% for item in site.data.menu %}
-    <a href="{{ item.url | absolute_url }}">{{ item.title }}</a>&nbsp;
-    {% endfor %}
-  </div>
-</div>
+<nav class="mb-10 flex flex-wrap justify-between gap-4">
+    <h1 class="flex-none">
+        <a href="/" class="no-magic wavy-heading hover:text-yellow-800" style="font-size:1.75rem">Marii Nyrop</a>
+    </h1>
+    <div class="flex-none pt-4">
+        {% for item in site.data.menu %}
+            <a href="{{ item.url }}"
+                {% if item.external %}
+                target="_blank"
+                {% endif %}>{{ item.title }}</a>
+            {% unless forloop.last %}&nbsp;{% endunless %}
+        {% endfor %}
+    </div>
+</nav>

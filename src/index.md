@@ -1,33 +1,24 @@
 ---
 layout: default
-title: home
+title: Marii Nyrop
 ---
 
+<article class="prose prose-p:py-2 prose-p:max-w-prose my-12">
+    <p>Hi! I'm an open source developer & senior data engineer in Queens, NY.</p>
+    <p>I author software packages, design user interfaces, and build cloud architectures and workflows for librarians, archivists, humanities researchers, and other keepers of cultural heritage.</p>
+    <p>If you have a project to propose, please copy my email below and drop a line!</p>
 
-## Marii Nyrop
+    {% include social.html %}
+</article>
 
 
-<p style="max-width:75ch">
-    Full stack open source developer & data engineer based in Queens, NY. <br><br>
-    I author software packages, design user interfaces, and build cloud architectures and workflows for librarians, archivists, humanities researchers, and other keepers of cultural heritage.
-</p>
+{% include lists/software.html %}
 
-<p style="max-width:75ch">
-    If you have a project to propose, please copy my email below and drop a line!
-</p>
+{% include lists/projects.html %}
 
-{% if site.data.social %}
-<p>{% include social_list.html %}</p>
-{% endif %}
+{% include lists/notes.html %}
 
 <br>
-
-
-<span id="projects"></span>
-{% include projects_list.html %}
-
-<span id="notes"></span>
-{% include posts_list.html %}
-
-<br><br>
-<br><br>
+<br>
+<br>
+<br>

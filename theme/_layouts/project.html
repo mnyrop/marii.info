@@ -1,53 +1,61 @@
-<!DOCTYPE html>
-<html lang="{{ page.lang | default: site.lang | default: "en" }}">
-  {% include head.html %}
+---
+layout: default 
+---
+<div class="flex flex-wrap my-12 justify-between">
+  <article class="prose prose-p:py-2 mb-10">
+    <h2 class="prose-title">
+      {{ page.title }} <span class="italic text-yellow-800"> — {{ page.tagline }}</span>
+    </h2>
+    {% if page.show_img %}<img src="{{ page.img }}" class="pt-2" style="max-height:34rem;">{% endif %}
+    {{ content }}
+  </article>
+  <div class="">
+    {% if page.links %}
+    <h3 class="text-2xl pb-2">Links</h3>
+    <ul>
+    {% for link in page.links %}
+      <li class="my-2">
+        <a href="{{ link.url }}" target="_none">{{ link.label }}</a>
+      </li>
+    {% endfor %}
+    </ul>
+    {% endif %}
+  </div>
+</div>
 
-  <body>
-    <div style="
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      background: #0e0e0e;
-      background-image: url('/assets/banner.png');
-      height: 100px;
-      background-size: cover;
-    "></div>
+{% if page.order %}
+{% assign collection = site[page.collection] |  sort: "order" %}
+{% else %}
+{% assign collection = site[page.collection] | sort: "date" | reverse %}
+{% endif %}
+{% assign i = 0 %}
+{% assign max = collection | size %}
+{% for item in collection %}
+  {% if item.id == page.id %}
+    {% assign previdx = i | minus: 1 %}
+    {% assign prev = collection[previdx] %}
+    {% assign nextidx = i | plus: 1 %}
+    {% assign next = collection[nextidx] %}
 
-    <div class="container" style="padding-top:50px">
-      {% include header.html %}
-      <div class="post">
-        <h1><a href="/#projects">projects</a> > {{ page.title }}</h2>
-        <p class="project__meta">
-          {% if page.time_period %}{{ page.time_period }}&nbsp;☀&nbsp;{% endif %}
-          {% if page.category %}{{ page.category }}&nbsp;☀&nbsp;{% endif %}
-          {% if page.link %}<a href="{{ page.link }}" target="_blank">website ⇝</a>{% endif %}
-        </p>
+    <div class="post__paginate border-t border-slate-900 pt-2 mt-4">
+      {% unless previdx < 0 %}
+      <span class="post__paginate-left">
+        <a href="{{ site.url }}{{ prev.url | relative_url }}">{{ prev.title }}</a>
+      </span>
+      {% endunless %}
 
-        <div class="post__body">
-          <!-- <img src="{{ page.img | absolute_url }}"  /> -->
-          {{ content }}
-        </div>
-
-        {% if site.prev-next %}
-          <div class="post__paginate">
-            {% if page.previous.url %}
-              <span class="post__paginate-left">
-                <a href="{{ site.url }}{{ page.previous.url | relative_url }}">{{ page.previous.title }}</a>
-              </span>
-            {% endif %}
-
-            {% if page.next.url %}
-              <span class="post__paginate-right">
-                <a href="{{ site.url }}{{ page.next.url | relative_url }}">{{ page.next.title }}</a>
-              </span>
-            {% endif %}
-          </div>
-        {% endif %}
-      </div>
-
-      {% include posts_list.html uid=page.id %}
+      {% unless nextidx >= max %}
+      <span class="post__paginate-right">
+        <a href="{{ site.url }}{{ next.url | relative_url }}">{{ next.title }}</a>
+      </span>
+      {% endunless %}
     </div>
-  </body>
-
-</html>
+    {% break %}
+  {% else %}
+    {% assign i = i | plus: 1 %}
+  {% endif %}
+{% endfor %}
+<br>
+<br>
+<br>
+<br>

@@ -4,3 +4,8 @@ markdown: kramdown
 exclude:
   - Gemfile
   - Gemfile.lock
+plugins:
+  - jekyll-postcss
+postcss:
+  cache: false
+

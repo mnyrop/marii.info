@@ -1,10 +1,13 @@
 ---
 layout: project
 title:  Embarrassment Party
-category: art/curtorial
-img: 'https://embarrassment.party/stuff/smoke_water.gif'
+tagline: Cloud Computing and a Curatorial Pipe Dream
+img: '/images/ep2.gif'
 time_period: 2014
-link: "https://embarrassment.party"
+show_img: true
+links: 
+  - label: Digital Exhibit
+    url: "https://embarrassment.party"
 ---
 
 ## curatorial statement

@@ -1,0 +1,20 @@
+{% if site.data.skills %}
+  <ul class="rows">
+    <li class="row__cols">
+      <div class="row__title">
+        Skills
+      </div>
+      <div class="row__date">Tools & Methods</div>
+    </li>
+    {% for item in site.data.skills %}
+      <li class="row__post">
+        <div class="row__title">{{ item.skill }}</div>
+        <div class="row__date" style="width: 50%">
+          {% for tool in item.tools %}
+          <a class="tag" target="_blank" href="{{ tool.link }}">{{ tool.label }}</a>{% unless forloop.last %}; {% endunless %}
+          {% endfor %}
+        </div>
+      </li>
+    {% endfor %}
+  </ul>
+{% endif %}

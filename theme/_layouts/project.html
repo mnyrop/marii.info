@@ -2,14 +2,18 @@
 layout: default 
 ---
 <div class="flex flex-wrap my-12 justify-between">
-  <article class="prose prose-p:py-2 mb-10">
-    <h2 class="prose-title">
-      {{ page.title }} <span class="italic text-yellow-800"> — {{ page.tagline }}</span>
-    </h2>
-    {% if page.show_img %}<img src="{{ page.img }}" class="pt-2" style="max-height:34rem;">{% endif %}
-    {{ content }}
-  </article>
-  <div class="">
+  <div>
+    <article class="prose prose-p:py-2">
+      <h2 class="prose-title">
+        {{ page.title }} <span class="italic text-yellow-800"> — {{ page.tagline }}</span>
+      </h2>
+    </article>
+      {% if page.show_img %}{% include figure.html src=page.img caption=page.img_caption %}{% endif %}
+    <article class="prose prose-p:py-2 mb-10">
+      {{ content }}
+    </article>
+  </div>
+  <div>
     {% if page.links %}
     <h3 class="text-2xl pb-2">Links</h3>
     <ul>

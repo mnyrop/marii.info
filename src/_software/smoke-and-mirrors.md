@@ -4,6 +4,8 @@ order: 3
 title:  "Smoke & Mirrors"
 tagline: Commit Crimes of the Git Profile Kind 
 img: '/images/smoke_and_mirrors.gif'
+img_caption: |
+  Screengrab gif from Solaris / Солярис (1972) dir. Andrei Tarkovsky.
 show_img: true
 links: 
   - label: GitHub Repo

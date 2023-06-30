@@ -5,6 +5,8 @@ tagline: Craft Batch Publishing with Serverless IIIF
 title:  Aperitiiif
 # img: 'https://media4.giphy.com/media/4OPta6flqKAUVAkM5R/200w.gif?cid=6c09b952i180c328eocqyrd94q5ed3prpj252ko6b5ji8cpj&rid=200w.gif&ct=v'
 img: '/images/aperitiiif.jpg'
+img_caption: |
+  « Arcachon : à ta santé Gustave ! » by Eloi Fouché. Retrieved from [Bibliothèque municipale de Bordeaux](https://selene.bordeaux.fr/notice?id=h%3A%3ABordeauxS_B330636101_EST163album_29&queryId=2a84ea2c-b163-494d-a791-8d390005c9d5&posInSet=1) (Licence Creative Commons Marque du Domaine Public 1.0.).
 show_img: true
 links: 
   - label: Documentation

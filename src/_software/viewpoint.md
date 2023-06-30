@@ -4,6 +4,8 @@ order: 2
 tagline: Create, Style, & Embed IIIF Views from URI Params 
 title:  "Viewpoint"
 img: '/images/viewpoint.jpg'
+img_caption: |
+  Bodleian Library Curzon b.11(104) "Second thoughts are best." Retrieved from [Bodleian Libraries](https://digital.bodleian.ox.ac.uk/objects/a5215321-4d47-4a91-94c3-87c47876f19c/) (creativecommons 3.0)
 show_img: true
 links: 
   - label: Live Demo

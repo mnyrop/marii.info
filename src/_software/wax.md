@@ -4,6 +4,8 @@ title:  "Wax"
 order: 0
 tagline: Digital Exhibitions But Make It Minimal Computing
 img: '/images/wax_screen.gif'
+img_caption: |
+  Screengrab gif from [Wax Demo](https://minicomp.github.io/wax/) showing *Diwan of Jami Manuscript*. Original source retrieved from [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Unknown,_Iran,_16th_Century_-_Diwan_of_Jami_Manuscript_-_Google_Art_Project.jpg).
 show_img: true
 links: 
   - label: Demo

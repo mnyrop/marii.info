@@ -10,6 +10,8 @@ show_img: true
 links:
   - label: Website 
     url: "https://specialcollections.hosting.nyu.edu/exhibitions/black-solidarity-day/"
+  - label: GitHub Repo
+    url: https://github.com/nyu-dss/black-solidarity-day
 ---
 
 *Activist, ambassador, and professor Dr. Carlos Russell created Black Solidarity Day in 1969. He was inspired by a play written by Douglas Turner Ward, “Day of Absence,” in which Black residents of a fictional Southern town disappear, revealing to the town’s white residents the extent to which their lives depend on Black labor.*

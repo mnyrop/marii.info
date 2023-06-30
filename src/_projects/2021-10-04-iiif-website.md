@@ -14,6 +14,8 @@ links:
     url: https://iiif.io/api
   - label: Press Release
     url: https://iiif.io/news/2021/10/29/new-website-theme/
+  - label: Theme Repo
+    url: https://github.com/IIIF/iiifc-theme
 ---
 
 The IIIF consortium has some brand new, great looking websites!

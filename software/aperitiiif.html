@@ -73,17 +73,26 @@
     </div>
 </nav>
       <div class="flex flex-wrap my-12 justify-between">
-  <article class="prose prose-p:py-2 mb-10">
-    <h2 class="prose-title">
-      Aperitiiif <span class="italic text-yellow-800"> — Craft Batch Publishing with Serverless IIIF</span>
-    </h2>
-    <img src="/images/aperitiiif.jpg" class="pt-2" style="max-height:34rem;">
-    <p><a href="https://middlicomp.github.io/aperitiiif">Aperitiiif</a> is a workflow and set of components for batch publishing <a href="https://iiif.io/">IIIF</a>-compliant image collections. It addresses the needs of research and scholarly collections—needs often distinct from collections formally acquired and stewarded by research institutions.</p>
+  <div>
+    <article class="prose prose-p:py-2">
+      <h2 class="prose-title">
+        Aperitiiif <span class="italic text-yellow-800"> — Craft Batch Publishing with Serverless IIIF</span>
+      </h2>
+    </article>
+      <figure class="my-8">
+  <img src="/images/aperitiiif.jpg" alt="« Arcachon : à ta santé Gustave ! » by Eloi Fouché. Retrieved from [Bibliothèque municipale de Bordeaux](https://selene.bordeaux.fr/notice?id=h%3A%3ABordeauxS_B330636101_EST163album_29&queryId=2a84ea2c-b163-494d-a791-8d390005c9d5&posInSet=1) (Licence Creative Commons Marque du Domaine Public 1.0.).
+" class="pt-2" style="max-height:34rem;">
+  <figcaption class="text-yellow-800 pt-5 text-xs max-w-md py-2"><p>« Arcachon : à ta santé Gustave ! » by Eloi Fouché. Retrieved from <a href="https://selene.bordeaux.fr/notice?id=h%3A%3ABordeauxS_B330636101_EST163album_29&amp;queryId=2a84ea2c-b163-494d-a791-8d390005c9d5&amp;posInSet=1">Bibliothèque municipale de Bordeaux</a> (Licence Creative Commons Marque du Domaine Public 1.0.).</p>
+</figcaption>
+</figure>
+    <article class="prose prose-p:py-2 mb-10">
+      <p><a href="https://middlicomp.github.io/aperitiiif">Aperitiiif</a> is a workflow and set of components for batch publishing <a href="https://iiif.io/">IIIF</a>-compliant image collections. It addresses the needs of research and scholarly collections—needs often distinct from collections formally acquired and stewarded by research institutions.</p>
 
 <p>Aperitiiif leverages a multi-tenant <a href="https://github.com/samvera-labs/serverless-iiif">serverless-iiif</a> implementation on AWS. “Batches” (i.e., discrete research collections) are managed via GitHub repos. GitHub handles all of the scoped user auth, GitHub Actions workflows create the IIIF manifests and deploy the generated resources to AWS, and GitHub Pages hosts an automated catalog site to present items for reuse. This architecture enables flexible user contributions with lower overhead for financial cost and technical maintenance.</p>
 
-  </article>
-  <div class="">
+    </article>
+  </div>
+  <div>
     
     <h3 class="text-2xl pb-2">Links</h3>
     <ul>

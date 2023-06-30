@@ -3,6 +3,8 @@ layout: project
 title:  Embarrassment Party
 tagline: Cloud Computing and a Curatorial Pipe Dream
 img: '/images/ep2.gif'
+img_caption: |
+  Gif excerpt from "Smoke on the Water" by Mehron Abdollmohammadi (2014). Source [Embarrassment Party](https://embarrassment.party/).
 time_period: 2014
 show_img: true
 links: 

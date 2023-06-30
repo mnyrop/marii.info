@@ -3,6 +3,8 @@ layout: project
 title: Style Revolution
 tagline: A Digital Exhibition of French Fashion from 1797–1804 per the <i>Journal des Dames et des Modes</i>
 img: '/images/stylerev.jpg'
+img_caption: |
+  Detail of Style Revolution Plate 24 from « Journal des dames et des modes » held by The Morgan Library & Museum. Retrieved from [stylerevolution.github.io](https://stylerevolution.github.io/plates/254/).
 time_period: 2019
 show_img: true
 links:

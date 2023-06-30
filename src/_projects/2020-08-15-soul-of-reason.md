@@ -3,6 +3,9 @@ layout: project
 title:  Amplifying Soul of Reason
 tagline: Transcribing 1970s Radio Broadcasts with Community Events & AI Scripts
 img: '/images/soul-of-reason.jpg'
+show_img: true
+img_caption: |
+  Screenshot of Named Entity Reconition (NER) work performed on a *Soul of Reason* transcription by Nyla Ennels. Retrieved from [Raising the Volume! Amplifying *Soul of Reason*](https://specialcollections.hosting.nyu.edu/projects/soul-of-reason/updates/creating-a-named-entity-recognition-pipeline/).
 time_period: 2020 – 2021
 links:
   - label: Website

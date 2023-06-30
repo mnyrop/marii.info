@@ -3,6 +3,8 @@ layout: project
 title:  "Black Solidarity Day"
 tagline: A Digital Exhibition with Historical Ephemera & Timely Resources
 img: '/images/bsd.jpg'
+img_caption: |
+  "Black Solidarity Day Parade, 1972" from Tamiment-Wagner Collections, Photos.223.001, Box 33, Shoot 720258. Retrieved from Black Solidarity Day [digital exhibit](https://specialcollections.hosting.nyu.edu/exhibitions/black-solidarity-day/bsd/blacksolidarityday_paradephoto_1972_4/).
 time_period: 2021
 show_img: true
 links:

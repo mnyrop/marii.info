@@ -4,6 +4,8 @@ title:  IIIF.io
 tagline: A Flagship Site for the International Image Interoperability Framework
 img: '/images/iiif.webp'
 show_img: true
+img_caption: |
+  新日本鳥瞰圖 / [Bird's eye view of the New Japan] (1912-1926) held by the National Museum of Taiwan History. Retrieved from [IIIF.io](https://iiif.io/demos/).
 time_period: 2021
 links: 
   - label: Website

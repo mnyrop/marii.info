@@ -53,7 +53,12 @@
 
 <p class="pt-4">
 {% for item in site.data.social %}
-    <a href="{{ item.url }}"
+    <a  {% if item.rel %}
+        rel="{{ item.rel }}"
+        {% endif %}
+        
+        href="{{ item.url }}"
+        
         {% if item.external %}
         target="_blank"
         {% endif %}

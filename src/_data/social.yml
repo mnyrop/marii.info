@@ -4,6 +4,10 @@
 - title: LinkedIn
   url: https://www.linkedin.com/in/m-nyrop/
   external: true
+- title: Mastodon
+  url: https://code4lib.social/@marii
+  external: true
+  rel: me
 - title: Email
   url: '#'
   id: 'email-tooltip'

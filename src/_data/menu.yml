@@ -1,10 +1,8 @@
-# - title: Home
-#   url: /
+- title: Software
+  url: /#software
+- title: Web + Teaching
+  url: /#web-and-teaching
+- title: Notes
+  url: /#notes
 - title: CV
   url: /about
-- title: Listening
-  url: /listening
-- title: Playing
-  url: /playing
-- title: Reading
-  url: reading

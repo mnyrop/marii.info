@@ -3,8 +3,6 @@ layout: project
 title:  "Biblio-Política"
 tagline: A Digital History Exhibiton for the Chicano Studies Library 
 img: '/images/bibliopolitica.jpg'
-img_caption: |
-  Photograph from San Jose Chicano Rights Marches from the San José Library. Retrieved from [Wikimedia](https://en.m.wikipedia.org/wiki/File:San_Jose_Chicano_Rights_Marches_California003.jpg).
 show_img: true
 time_period: 2023
 links:

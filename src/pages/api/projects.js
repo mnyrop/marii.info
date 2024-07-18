@@ -72,7 +72,7 @@ export default {
     "text": "prototype UI and API for querying historical immigration documents at scale",
     "url": "https://migrantsandthestate.org/",
     "keywords": ["iiif api", "machine learning", "python", "client-side search", "archives", "open computer vision", "ocr", "metadat extraction"],
-    "img": "https://marii.info/images/mats.jpg"
+    "img": "/img/mats.jpg"
   },
   "no-turning-back": {
     "article": "an",

@@ -17,6 +17,7 @@ jobs:
           fetch-depth: 1
       - name: Setup Node
         uses: actions/setup-node@v4
+      - run: npm install
       - name: build
         run:  npm run build
       - name: deploy

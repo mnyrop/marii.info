@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body::before {
+  content: "";
+  z-index: 100;
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  right: -50%;
+  bottom: -50%;
+  width: 200%;
+  height: 200vh;
+  background: transparent url('/img/noise-transparent.png') repeat 0 0;
+  background-repeat: repeat;
+  animation: bg-animation 1.2s infinite;
+  opacity: .9;
+  visibility: visible;
+  pointer-events: none;
+}
+
+@keyframes bg-animation {
+  0% { transform: translate(0,0) }
+  10% { transform: translate(-5%,-5%) }
+  20% { transform: translate(-10%,5%) }
+  30% { transform: translate(5%,-10%) }
+  40% { transform: translate(-5%,15%) }
+  50% { transform: translate(-10%,5%) }
+  60% { transform: translate(15%,0) }
+  70% { transform: translate(0,10%) }
+  80% { transform: translate(-15%,0) }
+  90% { transform: translate(10%,5%) }
+  100% { transform: translate(5%,0) }
+}
+
+#projTextList {
+  li:not(:last-child):after {
+    content: ", "
+  }
+  li:nth-last-child(2):after {
+    content: ", and "
+  }
+}
+
+#spinarooni {
+  transition: transform .7s ease-in-out;
+  &:hover { 
+    transform: rotate(360deg);
+  }
+}
+
+#random {
+  &::before {
+    content: "🎲 ";
+    transition: transform .7s ease-in-out;
+    display: none;
+  }
+  &:hover::before {
+    display: initial;
+    transform: rotate(360deg);
+  }
+}

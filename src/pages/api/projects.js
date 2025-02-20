@@ -70,7 +70,7 @@ export default {
     "slug": "migrants-and-the-state",
     "role": "developer & data architecture consultant",
     "text": "prototype UI and API for querying historical immigration documents at scale",
-    "url": "https://migrantsandthestate.org/",
+    "url": "https://migrants-and-the-state.github.io/",
     "keywords": ["iiif api", "machine learning", "python", "client-side search", "archives", "open computer vision", "ocr", "metadat extraction"],
     "img": "/img/mats.jpg"
   },

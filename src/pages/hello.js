@@ -14,7 +14,7 @@ export default function Hello() {
             <ul className="list-none">
               <li className="inline"><span className="text-sm opacity-70"> (1)</span> web ui/ui development</li>
               <li className="inline"><span className="text-sm opacity-70"> (2)</span> software architecture and sustainability consulting</li>
-              <li className="inline"><span className="text-sm opacity-70"> (3)</span> digital humanties project management</li>
+              <li className="inline"><span className="text-sm opacity-70"> (3)</span> digital humanities project management</li>
               <li className="inline"><span className="text-sm opacity-70"> (4)</span> legacy application and site migration</li>
               <li className="inline"><span className="text-sm opacity-70"> (5)</span> workshop, sprint, and course facilitation</li>
             </ul>
